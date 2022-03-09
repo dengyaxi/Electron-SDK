@@ -5635,7 +5635,7 @@ export interface AudioFileInfo {
  * @since v3.6.1.4
  */
 /** The information acquisition state. This enum is reported
- * in \ref IRtcEngineEventHandler::onRequestAudioFileInfo "onRequestAudioFileInfo".
+ * in `requestAudioFileInfo`.
  *
  * @since v3.6.1.4
  */

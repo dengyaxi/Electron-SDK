@@ -282,7 +282,7 @@ This Agora Electron SDK is developed upon the Native SDK for macOS and the Nativ
 | {@link AgoraRtcEngine.getPlaybackDeviceInfo getPlaybackDeviceInfo} | Gets the information of the audio playback device. |
 | {@link AgoraRtcEngine.getCurrentAudioPlaybackDevice getCurrentAudioPlaybackDevice} | Gets the current audio playback device. |
 | {@link AgoraRtcEngine.getDefaultAudioPlaybackDevices getDefaultAudioPlaybackDevices} | Gets the default audio playback device of the system. |
-| {@link AgoraRtcEngine.followSystemPlaybackDevice followSystemPlaybackDevice} | Sets the audio recording device used by the SDK to follow the system default audio playback device. |
+| {@link AgoraRtcEngine.followSystemPlaybackDevice followSystemPlaybackDevice} | Sets the audio playback device used by the SDK to follow the system default audio playback device. |
 | {@link AgoraRtcEngine.setAudioPlaybackDeviceMute setAudioPlaybackDeviceMute} | Mutes/Unmutes the audio playback device. |
 | {@link AgoraRtcEngine.getAudioPlaybackDeviceMute getAudioPlaybackDeviceMute} | Gets the mute state of the audio playback device. |
 | {@link AgoraRtcEngine.setAudioPlaybackVolume setAudioPlaybackVolume} | Sets the volume of the audio playback device. |
@@ -621,3 +621,4 @@ Error codes occur when the SDK encounters an error that cannot be recovered auto
 | `-1601`   | Video Device Module: An error occurs in initializing the video encoder. <br/>The error is a serious error, please try to rejoin the channel.|
 | `-1602`   | Video Device Module: An error occurs in encoding.<br/>The error is a serious error, please try to rejoin the channel. |
 | `-1603`   | Video Device Module: An error occurs in setting the video encoder.     |
+

@@ -6044,8 +6044,8 @@ class AgoraRtcEngine extends EventEmitter {
    * @deprecated This method is deprecated. Use {@link getScreenDisplaysInfo} instead.
    *
    */
-  getRealScreenDisplaysInfo(): Array<DisplayInfo> {
-    return this.rtcEngine.getScreenDisplaysInfo();
+  getRealScreenDisplaysInfo(callback: (list: DisplayInfo[]) => void): void {
+    return this.rtcEngine.getScreenDisplaysInfo(callback);
   }
 
   /** @zh-cn
@@ -9888,6 +9888,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - < 0: 方法调用失败
    */
   /**
+  /**
    * Takes a snapshot of a video stream.
    *
    * @since v3.6.1.4
@@ -10212,7 +10213,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - true: The SDK returns screen and window information.
    * - false: The SDK returns window information only.
    *
-   * @return IScreenCaptureSourceList
+   * @return Array<Object>
    */
   getScreenCaptureSources(
     thumbSize: SIZE,
@@ -11416,8 +11417,7 @@ on(
    * @note To receive this callback, you need to call the
    * {@link enableAudioVolumeIndication} method.
    *
-   * @param cb.uid User ID of the active speaker. A uid of 0 represents the
-   * local user.
+   * @param cb.uid User ID of the active speaker.
    * If the user enables the audio volume indication by calling the
    * {@link enableAudioVolumeIndication} method, this callback returns the uid
    * of the
@@ -11849,7 +11849,7 @@ on(
    * occur, you can troubleshoot issues by referring to the detailed error
    * descriptions in the `code` parameter.
    * @param cb.url The RTMP URL address.
-   * @param cb.state The Media Push state:
+   * @param cb.state Media Push state:
    * - `0`: Media Push has not started or has ended. This state is also
    * triggered after you remove an RTMP address from the CDN by calling
    * {@link removePublishStreamUrl}.
@@ -11857,7 +11857,7 @@ on(
    * server. This state is triggered after you call the
    * {@link addPublishStreamUrl} method.
    * - `2`: Media Push publishes. The SDK successfully publishes the
-   * Media Push and returns this state.
+   * Media Push stream and returns this state.
    * - `3`: Media Push is recovering. When exceptions occur to the CDN,
    * or the streaming is interrupted, the SDK tries to resume Media Push
    * and returns this state.
@@ -11868,7 +11868,7 @@ on(
    * method.
    * - `4`: Media Push fails. See the `code` parameter for the
    * detailed error information. You can also call the
-   * {@link addPublishStreamUrl} method to publish again.
+   * {@link addPublishStreamUrl} method to publish Media Push again.
    * @param cb.code The detailed error information:
    * - `0`: Media Push publishes successfully.
    * - `1`: Invalid argument used.
@@ -13936,7 +13936,7 @@ class AgoraRtcChannel extends EventEmitter {
    *
    * In the `1` (live streaming) profile, the host can call this method to
    * publish the local stream to a specified CDN URL address, which is called
-   * "Media Push" or "Media Push."
+   * "Media Push."
    *
    * During Media Push, the SDK triggers the
    * `rtmpStreamingStateChanged` callback is any streaming state changes.
@@ -15519,7 +15519,7 @@ declare interface AgoraRtcChannel {
    * occur, you can troubleshoot issues by referring to the detailed error
    * descriptions in the `code` parameter.
    * @param cb.url The RTMP URL address.
-   * @param cb.state The Media Push state:
+   * @param cb.state Media Push state:
    * - `0`: Media Push has not started or has ended. This state is also
    * triggered after you remove an RTMP address from the CDN by calling
    * {@link removePublishStreamUrl}.
@@ -15527,7 +15527,7 @@ declare interface AgoraRtcChannel {
    * server. This state is triggered after you call the
    * {@link addPublishStreamUrl} method.
    * - `2`: Media Push publishes. The SDK successfully publishes the
-   * Media Push and returns this state.
+   * Media Push stream and returns this state.
    * - `3`: Media Push is recovering. When exceptions occur to the CDN,
    * or the streaming is interrupted, the SDK tries to resume Media Push
    * and returns this state.
@@ -15538,9 +15538,7 @@ declare interface AgoraRtcChannel {
    * method.
    * - `4`: Media Push fails. See the `code` parameter for the
    * detailed error information. You can also call the
-   * {@link addPublishStreamUrl} method to publish again.
-   * - `5`: The SDK is disconnecting from the Agora streaming server and CDN.
-   * When you call remove or stop to stop the streaming normally, the SDK reports the streaming state as `DISCONNECTING`, `IDLE` in sequence.
+   * {@link addPublishStreamUrl} method to publish Media Push again.
    * @param cb.code The detailed error information:
    * - `0`: Media Push publishes successfully.
    * - `1`: Invalid argument used.
