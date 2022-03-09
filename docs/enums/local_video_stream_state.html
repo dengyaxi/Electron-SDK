@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Local video state types.</p>
+						<p>本地视频状态</p>
 					</div>
 				</div>
 			</section>
@@ -93,30 +93,19 @@
 					<a name="local_video_stream_state_capturing" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>CAPTURING</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>CAPTURING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2423</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>1: The local video capturing device starts successfully.</p>
+							<p>1: 本地视频采集设备启动成功。通过 Window Symbol 共享窗口且共享窗口为最大化时，也会报告该状态。</p>
 						</div>
-						<p>The SDK also reports this state when you share a maximized window by calling \ref IRtcEngine::startScreenCaptureByWindowId &quot;startScreenCaptureByWindowId&quot;.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="local_video_stream_state_encoding" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>ENCODING</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>ENCODING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2425</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>2: The first video frame is successfully encoded.</p>
+							<p>2: 本地视频首帧编码成功。</p>
 						</div>
 					</div>
 				</section>
@@ -124,14 +113,9 @@
 					<a name="local_video_stream_state_failed" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>FAILED</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>FAILED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2427</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>3: The local video fails to start.</p>
+							<p>3: 本地视频启动失败。</p>
 						</div>
 					</div>
 				</section>
@@ -139,14 +123,9 @@
 					<a name="local_video_stream_state_stopped" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>STOPPED</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE_<wbr>STOPPED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2418</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>0: Initial state.</p>
+							<p>0: 本地视频默认初始状态。</p>
 						</div>
 					</div>
 				</section>
@@ -200,6 +179,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

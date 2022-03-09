@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The configurations for the data stream.</p>
+						<p>数据流设置。</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
@@ -75,44 +75,32 @@
 							<table>
 								<thead>
 									<tr>
-										<th>`syncWithAudio`</th>
-										<th>`ordered`</th>
-										<th>SDK behaviors</th>
+										<th><code>syncWithAudio</code></th>
+										<th><code>ordered</code></th>
+										<th>SDK 行为</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
+								<tbody><tr>
 										<td>false</td>
 										<td>false</td>
-										<td>The SDK triggers the <br>`streamMessage`<br> callback immediately
-										after the receiver receives a data packet.</td>
+										<td>接收端接收到数据包后，SDK 立刻触发 <code>streamMessage</code> 回调。</td>
 									</tr>
 									<tr>
 										<td>true</td>
 										<td>false</td>
-										<td>If the data packet delay is within the audio delay, the SDK
-											triggers the <br>`streamMessage`<br> callback when the synchronized audio
-											packet is played out.<br>If the data packet delay exceeds the audio delay,
-											the SDK triggers the <br>`streamMessage`<br> callback as soon as the data
-											packet is received. In this case, the data packet is not synchronized with
-										the audio packet.</td>
+										<td><p>如果数据包的延迟在音频延迟的范围内，SDK 会在播放音频的同时触发与该音频包同步的 <code>streamMessage</code> 回调。</p><p>如果数据包的延迟超出了音频延迟，SDK 会在接收到该数据包时立刻触发 <code>streamMessage</code> 回调；此情况会造成音频包和数据包的不同步。</p></td>
 									</tr>
 									<tr>
 										<td>false</td>
 										<td>true</td>
-										<td>If the delay of a data packet is within five seconds, the SDK
-											corrects the order of the data packet.<br>If the delay of a data packet
-										exceeds five seconds, the SDK discards the data packet.</td>
+										<td><p>如果数据包的延迟在 5 秒以内，SDK 会修正数据包的乱序问题。</p><p>如果数据包的延迟超出 5 秒，SDK 会丢弃该数据包。</p></td>
 									</tr>
 									<tr>
 										<td>true</td>
 										<td>true</td>
-										<td>If the delay of a data packet is within the audio delay, the SDK
-											corrects the order of the data packet.<br>If the delay of a data packet
-										exceeds the audio delay, the SDK discards this data packet.</td>
+										<td><p>如果数据包的延迟在音频延迟的范围内，SDK 会修正数据包的乱序问题。</p><p>如果数据包的延迟超出音频延迟，SDK 会丢弃该数据包。</p></td>
 									</tr>
-								</tbody>
-							</table>
+							</tbody></table>
 						</dd>
 					</dl>
 				</div>
@@ -145,53 +133,31 @@
 					<a name="ordered" class="tsd-anchor"></a>
 					<h3>ordered</h3>
 					<div class="tsd-signature tsd-kind-icon">ordered<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2592</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether the SDK guarantees that the receiver receives the data in the
-							sent order.</p>
+							<p>是否保证接收到的数据按发送的顺序排列：</p>
 						</div>
 						<ul>
-							<li>true: Guarantee that the receiver receives the data in the sent order.</li>
-							<li>false: Do not guarantee that the receiver receives the data in the sent
-							order.</li>
+							<li>true: 保证 SDK 按照发送方发送的顺序输出数据包。</li>
+							<li>false: 不保证 SDK 按照发送方发送的顺序输出数据包。</li>
 						</ul>
-						<p>Do not set this parameter to <code>true</code> if you need the receiver to receive
-						the data immediately.</p>
+						<p>当需要数据包立刻到达接收端时，不能将该参数设置为 <code>true</code>。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="syncwithaudio" class="tsd-anchor"></a>
 					<h3>sync<wbr>With<wbr>Audio</h3>
 					<div class="tsd-signature tsd-kind-icon">sync<wbr>With<wbr>Audio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2581</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether to synchronize the data packet with the published audio packet.</p>
+							<p>是否与本地发送的音频流同步：</p>
 						</div>
 						<ul>
-							<li>true: Synchronize the data packet with the audio packet.</li>
-							<li>false: Do not synchronize the data packet with the audio packet.</li>
+							<li>true: 数据流与音频流同步。</li>
+							<li>false: 数据流与音频流不同步。</li>
 						</ul>
-						<p>When you set the data packet to synchronize with the audio, then if the
-							data
-							packet delay is within the audio delay, the SDK triggers the
-							<code>streamMessage</code> callback when
-							the synchronized audio packet is played out. Do not set this parameter
-							as <code>true</code> if you
-							need the receiver to receive the data packet immediately. Agora
-							recommends that you set
-							this parameter to <code>true</code> only when you need to implement specific
-							functions, for example
-						lyric synchronization.</p>
+						<p>设置为与音频同步后，如果数据包的延迟在音频延迟的范围内，SDK 会在播放音频的同时触发与该音频包同步的 <code>streamMessage</code> 回调。
+						当需要数据包立刻到达接收端时，不能将该参数设置为 <code>true</code>。Agora 建议你仅在需要实现特殊场景，例如歌词同步时，设置为与音频同步。</p>
 					</div>
 				</section>
 			</section>
@@ -238,6 +204,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

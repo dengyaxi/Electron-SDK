@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The options for SDK preset audio effects.</p>
+						<p>预设的音效选项。</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
@@ -113,14 +113,9 @@
 					<a name="audio_effect_off" class="tsd-anchor"></a>
 					<h3>AUDIO_<wbr>EFFECT_<wbr>OFF</h3>
 					<div class="tsd-signature tsd-kind-icon">AUDIO_<wbr>EFFECT_<wbr>OFF<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1760</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Turn off audio effects and use the original voice.</p>
+							<p>原声，即关闭人声音效。</p>
 						</div>
 					</div>
 				</section>
@@ -128,24 +123,15 @@
 					<a name="pitch_correction" class="tsd-anchor"></a>
 					<h3>PITCH_<wbr>CORRECTION</h3>
 					<div class="tsd-signature tsd-kind-icon">PITCH_<wbr>CORRECTION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33816832</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1926</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A pitch correction effect that corrects the user&#39;s pitch based on
-								the pitch of the natural C major scale.
-								To change the basic mode and tonic pitch,
-							call <a href="../classes/agorartcengine.html#setaudioeffectparameters">setAudioEffectParameters</a> after this method.</p>
+							<p>电音，即 SDK 以主音音高为 C 的自然大调为基础修正音频的实际音高。设置该音效后，你还可以
+							调用 <a href="../classes/agorartcengine.html#setaudioeffectparameters">setAudioEffectParameters</a> 调整修音的基础调式和主音音高。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -154,51 +140,31 @@
 					<a name="room_acoustics_3d_voice" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>3<wbr>D_<wbr>VOICE</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>3<wbr>D_<wbr>VOICE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33622016</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1829</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A 3D voice effect that makes the voice appear to be moving around
-								the user. The default cycle period of the 3D
-								voice effect is 10 seconds. To change the cycle period,
-								call <a href="../classes/agorartcengine.html#setaudioeffectparameters">setAudioEffectParameters</a>
-							after this method.</p>
+							<p>3D 人声，即 SDK 将音频渲染出在用户周围环绕的效果，环绕周期为 10 秒。设置该音效后，你还可以
+							调用 <a href="../classes/agorartcengine.html#setaudioeffectparameters">setAudioEffectParameters</a> 修改环绕周期。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Call <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a> and set the <code>profile</code> parameter to <code>3</code>
-										or <code>5</code> before setting this enumerator; otherwise, the enumerator
-									setting does not take effect.</li>
-									<li>If the 3D voice effect is enabled, users need to use stereo audio
-									playback devices to hear the anticipated voice effect.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>你需要在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a> 的 <code>profile</code> 参数设置
+							为 <code>3</code> 或 <code>5</code>，否则该枚举设置无效。</li>
+							<li>启用 3D 人声后，用户需要使用支持双声道的音频播放设备才能听到预期效果。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="room_acoustics_ethereal" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>ETHEREAL</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>ETHEREAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33621760</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1815</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A more ethereal audio effect.</p>
+							<p>空灵。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -207,21 +173,14 @@
 					<a name="room_acoustics_ktv" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>KTV</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>KTV<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33620224</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1768</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of a KTV venue.</p>
+							<p>KTV。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -230,21 +189,14 @@
 					<a name="room_acoustics_phonograph" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>PHONOGRAPH</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>PHONOGRAPH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33620992</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1792</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of a vintage phonograph.</p>
+							<p>留声机。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -253,21 +205,14 @@
 					<a name="room_acoustics_spacial" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>SPACIAL</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>SPACIAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33621504</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1807</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A more spatial audio effect.</p>
+							<p>空旷。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -276,21 +221,14 @@
 					<a name="room_acoustics_studio" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>STUDIO</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>STUDIO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33620736</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1784</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of a recording studio.</p>
+							<p>录音棚。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -299,20 +237,14 @@
 					<a name="room_acoustics_virtual_stereo" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>VIRTUAL_<wbr>STEREO</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>VIRTUAL_<wbr>STEREO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33621248</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1799</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A virtual stereo effect that renders monophonic audio as stereo audio.</p>
+							<p>虚拟立体声，即 SDK 将单声道的音频渲染出双声道的音效。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>Call <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a> and set the <code>profile</code> parameter to
-									<code>3</code> or <code>5</code> before setting this
-								enumerator; otherwise, the enumerator setting does not take effect.</p>
+							<dd><p>你需要在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置 <code>3</code> 或 <code>5</code>，否则该枚举设置无效。</p>
 							</dd>
 						</dl>
 					</div>
@@ -321,21 +253,14 @@
 					<a name="room_acoustics_vocal_concert" class="tsd-anchor"></a>
 					<h3>ROOM_<wbr>ACOUSTICS_<wbr>VOCAL_<wbr>CONCERT</h3>
 					<div class="tsd-signature tsd-kind-icon">ROOM_<wbr>ACOUSTICS_<wbr>VOCAL_<wbr>CONCERT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33620480</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1776</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of a concert hall.</p>
+							<p>演唱会。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -344,20 +269,14 @@
 					<a name="style_transformation_popular" class="tsd-anchor"></a>
 					<h3>STYLE_<wbr>TRANSFORMATION_<wbr>POPULAR</h3>
 					<div class="tsd-signature tsd-kind-icon">STYLE_<wbr>TRANSFORMATION_<wbr>POPULAR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33751552</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1915</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of popular music.</p>
+							<p>流行。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>Call <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a> and set the <code>profile</code> parameter
-									to <code>4</code> or <code>5</code> before setting this enumerator; otherwise, the enumerator
-								setting does not take effect.</p>
+							<dd><p>你需要在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置 <code>4</code> 或 <code>5</code>，否则该枚举设置无效。</p>
 							</dd>
 						</dl>
 					</div>
@@ -366,20 +285,14 @@
 					<a name="style_transformation_rnb" class="tsd-anchor"></a>
 					<h3>STYLE_<wbr>TRANSFORMATION_<wbr>RNB</h3>
 					<div class="tsd-signature tsd-kind-icon">STYLE_<wbr>TRANSFORMATION_<wbr>RNB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33751296</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1908</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An audio effect typical of R&amp;B music.</p>
+							<p>R&amp;B。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>Call <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a> and set the <code>profile</code> parameter
-									to <code>4</code> or <code>5</code> before setting this enumerator; otherwise, the enumerator
-								setting does not take effect.</p>
+							<dd><p>你需要在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置 <code>4</code> 或 <code>5</code>，否则该枚举设置无效。</p>
 							</dd>
 						</dl>
 					</div>
@@ -388,75 +301,46 @@
 					<a name="voice_changer_effect_boy" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>BOY</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>BOY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33686272</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1862</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of a boy.</p>
+							<p>男孩。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Agora recommends using this enumerator to process a male-sounding
-									voice; otherwise, you may not hear the anticipated voice effect.</li>
-									<li>To achieve better audio effect quality, Agora recommends
-										calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-										and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-									before setting this enumerator.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>建议用于处理男声，否则无法达到预期效果。</li>
+							<li>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+							的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="voice_changer_effect_girl" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>GIRL</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>GIRL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33686784</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1884</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of a girl.</p>
+							<p>女孩。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Agora recommends using this enumerator to process a female-sounding
-									voice; otherwise, you may not hear the anticipated voice effect.</li>
-									<li>To achieve better audio effect quality, Agora recommends
-										calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-										and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-									before setting this enumerator.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>建议用于处理女声，否则无法达到预期效果。</li>
+							<li>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+							的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="voice_changer_effect_hulk" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>HULK</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>HULK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33687296</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1901</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of Hulk.</p>
+							<p>绿巨人。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -465,49 +349,30 @@
 					<a name="voice_changer_effect_oldman" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>OLDMAN</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>OLDMAN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33686016</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1851</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of an old man.</p>
+							<p>老年男性。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Agora recommends using this enumerator to process a male-sounding
-									voice; otherwise, you may not hear the anticipated voice effect.</li>
-									<li>To achieve better audio effect quality, Agora recommends
-										calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-										and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-									before setting this enumerator.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>建议用于处理男声，否则无法达到预期效果。</li>
+							<li>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+							的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="voice_changer_effect_pigking" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>PIGKING</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>PIGKING<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33687040</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1893</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of Pig King, a character in Journey to the West who has a
-							voice like a growling bear.</p>
+							<p>猪八戒。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>To achieve better audio effect quality, Agora recommends
-									calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-									and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-								before setting this enumerator.</p>
+							<dd><p>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+								的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -516,54 +381,32 @@
 					<a name="voice_changer_effect_sister" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>SISTER</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>SISTER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33686528</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1873</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of a young woman.</p>
+							<p>少女。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Agora recommends using this enumerator to process a female-sounding
-									voice; otherwise, you may not hear the anticipated voice effect.</li>
-									<li>To achieve better audio effect quality, Agora recommends
-										calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-										and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-									before setting this enumerator.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>建议用于处理女声，否则无法达到预期效果。</li>
+							<li>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+							的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="voice_changer_effect_uncle" class="tsd-anchor"></a>
 					<h3>VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>UNCLE</h3>
 					<div class="tsd-signature tsd-kind-icon">VOICE_<wbr>CHANGER_<wbr>EFFECT_<wbr>UNCLE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;33685760</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1840</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The voice of an uncle.</p>
+							<p>大叔。</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>note</dt>
-							<dd><ul>
-									<li>Agora recommends using this enumerator to process a male-sounding
-									voice; otherwise, you may not hear the anticipated voice effect.</li>
-									<li>To achieve better audio effect quality, Agora recommends
-										calling <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
-										and setting the <code>profile</code> parameter to <code>4</code> or <code>5</code>
-									before setting this enumerator.</li>
-								</ul>
-							</dd>
-						</dl>
+						<p><strong>Note</strong>:</p>
+						<ul>
+							<li>建议用于处理男声，否则无法达到预期效果。</li>
+							<li>为获取更好的人声效果，Agora 建议你在使用该枚举前将 <a href="../classes/agorartcengine.html#setaudioprofile">setAudioProfile</a>
+							的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -661,6 +504,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

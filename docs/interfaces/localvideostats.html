@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Statistics of the local video.</p>
+						<p>本地视频相关的统计信息。</p>
 					</div>
 				</div>
 			</section>
@@ -112,15 +112,9 @@
 					<a name="capturebrightnesslevel" class="tsd-anchor"></a>
 					<h3>capture<wbr>Brightness<wbr>Level</h3>
 					<div class="tsd-signature tsd-kind-icon">capture<wbr>Brightness<wbr>Level<span class="tsd-signature-symbol">:</span> <a href="../enums/capture_brightness_level_type.html" class="tsd-signature-type">CAPTURE_BRIGHTNESS_LEVEL_TYPE</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:800</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The brightness level of the video image captured by the local camera.
-							See <a href="../enums/capture_brightness_level_type.html">CAPTURE_BRIGHTNESS_LEVEL_TYPE</a>.</p>
+							<p>本地采集的画质亮度级别。详见 <a href="../enums/capture_brightness_level_type.html">CAPTURE_BRIGHTNESS_LEVEL_TYPE</a></p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -133,14 +127,9 @@
 					<a name="captureframerate" class="tsd-anchor"></a>
 					<h3>capture<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">capture<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:794</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The capture frame rate (fps) of the local video.</p>
+							<p>本地视频采集帧率 (fps)。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -153,105 +142,61 @@
 					<a name="codectype" class="tsd-anchor"></a>
 					<h3>codec<wbr>Type</h3>
 					<div class="tsd-signature tsd-kind-icon">codec<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:783</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>The codec type of the local video. See <a href="../globals.html#video_codec_type">VIDEO_CODEC_TYPE</a>.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>视频的编码类型，详见 <a href="../enums/video_codec_type.html">VIDEO_CODEC_TYPE</a></p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="encodedbitrate" class="tsd-anchor"></a>
 					<h3>encoded<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">encoded<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:759</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>The encoding bitrate (Kbps), which does not include the bitrate of the
-								retransmission video after packet loss.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>视频编码码率（Kbps）。</p>
+						</div>
+						<p><strong>Note</strong>:</p>
+						<p>不包含丢包后重传视频等的编码码率。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="encodedframecount" class="tsd-anchor"></a>
 					<h3>encoded<wbr>Frame<wbr>Count</h3>
 					<div class="tsd-signature tsd-kind-icon">encoded<wbr>Frame<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:777</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>The value of the sent frames, represented by an aggregate value.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>视频发送的帧数，累计值。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="encodedframeheight" class="tsd-anchor"></a>
 					<h3>encoded<wbr>Frame<wbr>Height</h3>
 					<div class="tsd-signature tsd-kind-icon">encoded<wbr>Frame<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:771</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>The height of the encoding frame (px).</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>视频编码高度（px）。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="encodedframewidth" class="tsd-anchor"></a>
 					<h3>encoded<wbr>Frame<wbr>Width</h3>
 					<div class="tsd-signature tsd-kind-icon">encoded<wbr>Frame<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:765</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>The width of the encoding frame (px).</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>视频编码宽度（px）。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="encoderoutputframerate" class="tsd-anchor"></a>
 					<h3>encoder<wbr>Output<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">encoder<wbr>Output<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:737</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The encoder output frame rate (fps) of the local video.</p>
+							<p>本地编码器的输出帧率，单位为 fps。</p>
 						</div>
 					</div>
 				</section>
@@ -259,16 +204,10 @@
 					<a name="qualityadaptindication" class="tsd-anchor"></a>
 					<h3>quality<wbr>Adapt<wbr>Indication</h3>
 					<div class="tsd-signature tsd-kind-icon">quality<wbr>Adapt<wbr>Indication<span class="tsd-signature-symbol">:</span> <a href="../enums/qualityadaptindication.html" class="tsd-signature-type">QualityAdaptIndication</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:752</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Quality change of the local video in terms of target frame rate and
-								target bit rate in this reported interval.
-							See <a href="../enums/qualityadaptindication.html">QualityAdaptIndication</a>.</p>
+							<p>统计周期内本地视频质量（基于目标帧率和目标码率）的自适应情况。
+							详见 <a href="../enums/qualityadaptindication.html">QualityAdaptIndication</a>。</p>
 						</div>
 					</div>
 				</section>
@@ -276,14 +215,9 @@
 					<a name="rendereroutputframerate" class="tsd-anchor"></a>
 					<h3>renderer<wbr>Output<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">renderer<wbr>Output<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:739</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The renderer output frame rate (fps) of the local video.</p>
+							<p>本地渲染器的输出帧率，单位为 fps。</p>
 						</div>
 					</div>
 				</section>
@@ -291,15 +225,9 @@
 					<a name="sentbitrate" class="tsd-anchor"></a>
 					<h3>sent<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">sent<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:731</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Bitrate (Kbps) sent in the reported interval, which does not include
-							the bitrate of the re-transmission video after packet loss.</p>
+							<p>实际发送码率 (Kbps)。 （Note: 不包含丢包后重传视频等的发送码率）</p>
 						</div>
 					</div>
 				</section>
@@ -307,15 +235,9 @@
 					<a name="sentframerate" class="tsd-anchor"></a>
 					<h3>sent<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">sent<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:735</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Frame rate (fps) sent in the reported interval, which does not include
-							the frame rate of the re-transmission video after packet loss.</p>
+							<p>实际发送帧率 (fps)。 （Note: 不包含丢包后重传视频等的发送帧率）</p>
 						</div>
 					</div>
 				</section>
@@ -323,31 +245,19 @@
 					<a name="targetbitrate" class="tsd-anchor"></a>
 					<h3>target<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">target<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:745</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The target bitrate (Kbps) of the current encoder.</p>
+							<p>当前编码器的目标编码码率，单位为 Kbps，该码率为 SDK 根据当前网络状况预估的一个值。</p>
 						</div>
-						<p>This value is estimated by the SDK based on the current network
-						conditions.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="targetframerate" class="tsd-anchor"></a>
 					<h3>target<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">target<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:747</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The target frame rate (fps) of the current encoder.</p>
+							<p>当前编码器的目标编码帧率，单位为 fps。</p>
 						</div>
 					</div>
 				</section>
@@ -355,15 +265,9 @@
 					<a name="txpacketlossrate" class="tsd-anchor"></a>
 					<h3>tx<wbr>Packet<wbr>Loss<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>Packet<wbr>Loss<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:789</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The video packet loss rate (%) from the local client to the Agora edge
-							server before applying the anti-packet loss strategies.</p>
+							<p>使用抗丢包技术前，客户端到 Agora 边缘服务器的视频丢包率 (%)。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -455,6 +359,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

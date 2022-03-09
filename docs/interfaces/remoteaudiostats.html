@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Reports the statistics of the remote audio.</p>
+						<p>远端音频统计信息。</p>
 					</div>
 				</div>
 			</section>
@@ -112,14 +112,9 @@
 					<a name="audiolossrate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Loss<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Loss<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1278</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Packet loss rate in the reported interval.</p>
+							<p>统计周期内的远端音频流的丢帧率(%)。</p>
 						</div>
 					</div>
 				</section>
@@ -127,30 +122,20 @@
 					<a name="frozenrate" class="tsd-anchor"></a>
 					<h3>frozen<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">frozen<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1304</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The total audio freeze time as a percentage (%) of the total time
-							when the audio is available.</p>
+							<p>远端用户在加入频道后发生音频卡顿的累计时长占音频总有效时长的百分比 (%)。</p>
 						</div>
+						<p>音频有效时长是指远端用户加入频道后音频未被停止发送或禁用的时长。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="jitterbufferdelay" class="tsd-anchor"></a>
 					<h3>jitter<wbr>Buffer<wbr>Delay</h3>
 					<div class="tsd-signature tsd-kind-icon">jitter<wbr>Buffer<wbr>Delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1276</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Network delay (ms) from the receiver to the jitter buffer.</p>
+							<p>接收端到网络抖动缓冲的网络延迟（毫秒）。</p>
 						</div>
 					</div>
 				</section>
@@ -158,81 +143,14 @@
 					<a name="mosvalue" class="tsd-anchor"></a>
 					<h3>mos<wbr>Value</h3>
 					<div class="tsd-signature tsd-kind-icon">mos<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1398</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The quality of the remote audio stream as determined by the Agora
-								real-time audio MOS (Mean Opinion Score) measurement method in the
-								reported interval. The return value ranges from 0 to 500. Dividing the
-								return value by 100 gets the MOS score, which ranges from 0 to 5. The
-							higher the score, the better the audio quality.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v3.3.1</p>
-								<p>The subjective perception of audio quality corresponding to the Agora
-								real-time audio MOS scores is as follows:</p>
-								<table>
-									<thead>
-										<tr>
-											<th>MOS score</th>
-											<th>Perception of audio quality</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Greater than 4</td>
-											<td>Excellent. The audio sounds clear and smooth.</td>
-										</tr>
-										<tr>
-											<td>From 3.5 to 4</td>
-											<td>Good. The audio has some perceptible impairment, but still
-											sounds clear.</td>
-										</tr>
-										<tr>
-											<td>From 3 to 3.5</td>
-											<td>Fair. The audio freezes occasionally and requires attentive
-											listening.</td>
-										</tr>
-										<tr>
-											<td>From 2.5 to 3</td>
-											<td>Poor. The audio sounds choppy and requires considerable effort
-											to understand.</td>
-										</tr>
-										<tr>
-											<td>From 2 to 2.5</td>
-											<td>Bad. The audio has occasional noise. Consecutive audio dropouts
-												occur, resulting in some information loss. The users can communicate
-											only with difficulty.</td>
-										</tr>
-										<tr>
-											<td>Less than 2</td>
-											<td>Very bad. The audio has persistent noise. Consecutive audio
-												dropouts are frequent, resulting in severe information loss.
-											Communication is nearly impossible.</td>
-										</tr>
-									</tbody>
-								</table>
-							</dd>
-						</dl>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="networktransportdelay" class="tsd-anchor"></a>
 					<h3>network<wbr>Transport<wbr>Delay</h3>
 					<div class="tsd-signature tsd-kind-icon">network<wbr>Transport<wbr>Delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1274</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Network delay (ms) from the sender to the receiver.</p>
+							<p>音频发送端到接收端的网络延迟（毫秒）。</p>
 						</div>
 					</div>
 				</section>
@@ -240,14 +158,9 @@
 					<a name="numchannels" class="tsd-anchor"></a>
 					<h3>num<wbr>Channels</h3>
 					<div class="tsd-signature tsd-kind-icon">num<wbr>Channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1280</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of the channels.</p>
+							<p>声道数。</p>
 						</div>
 					</div>
 				</section>
@@ -255,14 +168,9 @@
 					<a name="publishduration" class="tsd-anchor"></a>
 					<h3>publish<wbr>Duration</h3>
 					<div class="tsd-signature tsd-kind-icon">publish<wbr>Duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1320</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The total publish duration (ms) of the remote audio stream.</p>
+							<p>远端音频流的累计发布时长（毫秒）。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -275,18 +183,12 @@
 					<a name="qoequality" class="tsd-anchor"></a>
 					<h3>qoe<wbr>Quality</h3>
 					<div class="tsd-signature tsd-kind-icon">qoe<wbr>Quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1329</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Quality of experience (QoE) of the local user when receiving a remote
-							audio stream:</p>
+							<p>接收远端音频时，本地用户的主观体验质量：</p>
 							<ul>
-								<li><code>0</code>: QoE of the local user is good.</li>
-								<li><code>1</code>: QoE of the local user is poor.</li>
+								<li><code>0</code>: 主观体验质量较好。</li>
+								<li><code>1</code>: 主观体验质量较差。</li>
 							</ul>
 						</div>
 						<dl class="tsd-comment-tags">
@@ -299,15 +201,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="quality" class="tsd-anchor"></a>
 					<h3>quality</h3>
-					<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1272</li>
-						</ul>
-					</aside>
+					<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <a href="../enums/agoranetworkquality.html" class="tsd-signature-type">AgoraNetworkQuality</a></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Audio quality received by the user. See <a href="../globals.html#agoranetworkquality">AgoraNetworkQuality</a>.</p>
+							<p>远端用户发送的音频流质量，详见 <a href="../enums/agoranetworkquality.html">AgoraNetworkQuality</a>。</p>
 						</div>
 					</div>
 				</section>
@@ -315,23 +212,15 @@
 					<a name="qualitychangedreason" class="tsd-anchor"></a>
 					<h3>quality<wbr>Changed<wbr>Reason</h3>
 					<div class="tsd-signature tsd-kind-icon">quality<wbr>Changed<wbr>Reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1343</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The reason for poor QoE of the local user when receiving a remote audio
-							stream:</p>
+							<p>接收远端音频时，本地用户主观体验质量较差的原因：</p>
 							<ul>
-								<li><code>0</code>: No reason, indicating good QoE of the local user.</li>
-								<li><code>1</code>: The remote user&#39;s network quality is poor.</li>
-								<li><code>2</code>: The local user&#39;s network quality is poor.</li>
-								<li><code>4</code>: The local user&#39;s Wi-Fi or mobile network signal is weak.</li>
-								<li><code>8</code>: The local user enables both Wi-Fi and bluetooth, and their signals
-									interfere with each other. As a result, audio transmission quality is
-								undermined.</li>
+								<li><code>0</code>: 无原因，说明主观体验质量较好。</li>
+								<li><code>1</code>: 远端用户的网络较差。</li>
+								<li><code>2</code>: 本地用户的网络较差。</li>
+								<li><code>4</code>: 本地用户的 Wi-Fi 或者移动数据网络信号弱。</li>
+								<li><code>8</code>: 本地用户同时开启 Wi-Fi 和蓝牙，二者信号互相干扰，导致音频传输质量下降。</li>
 							</ul>
 						</div>
 						<dl class="tsd-comment-tags">
@@ -345,15 +234,9 @@
 					<a name="receivedbitrate" class="tsd-anchor"></a>
 					<h3>received<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">received<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1289</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The average bitrate (Kbps) of the received audio stream in the reported
-							interval.</p>
+							<p>接收流在统计周期内的平均码率（Kbps）。</p>
 						</div>
 					</div>
 				</section>
@@ -361,15 +244,9 @@
 					<a name="receivedsamplerate" class="tsd-anchor"></a>
 					<h3>received<wbr>Sample<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">received<wbr>Sample<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1285</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The sample rate (Hz) of the received audio stream in the reported
-							interval.</p>
+							<p>统计周期内接收到的远端音频采样率（Hz）。</p>
 						</div>
 					</div>
 				</section>
@@ -377,17 +254,9 @@
 					<a name="totalactivetime" class="tsd-anchor"></a>
 					<h3>total<wbr>Active<wbr>Time</h3>
 					<div class="tsd-signature tsd-kind-icon">total<wbr>Active<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1314</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The total time (ms) when the remote user in the <code>0</code> (communication)
-								profile or the remote host in the <code>1</code> (live streaming) profile neither
-								stops sending the audio stream nor
-							disables the audio module after joining the channel.</p>
+							<p>音频有效时长（毫秒），即远端用户/主播加入频道后，既没有停止发送音频流，也没有禁用音频模块的通话时长。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -400,34 +269,21 @@
 					<a name="totalfrozentime" class="tsd-anchor"></a>
 					<h3>total<wbr>Frozen<wbr>Time</h3>
 					<div class="tsd-signature tsd-kind-icon">total<wbr>Frozen<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1299</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The total freeze time (ms) of the remote audio stream after the remote
-							user joins the channel.</p>
+							<p>远端用户在加入频道后发生音频卡顿的累计时长 (ms)。</p>
 						</div>
-						<p>In the reported interval, audio freeze occurs when the audio frame loss
-							rate reaches 4%. Agora uses 2 seconds as an audio piece unit to calculate
-							the audio freeze time. The total audio freeze time = The audio freeze
-						number × 2000 ms.</p>
+						<p>一个统计周期（2 秒）内，音频丢帧率达到 4% 即记为一次音频卡顿。</p>
+						<p>Agora 使用 2 秒为时间切片统计音频卡顿时间，因此音频卡顿时长 = <code>totalFrozenTime</code> = 音频卡顿次数 x 2 x 1000 (ms)。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="uid" class="tsd-anchor"></a>
 					<h3>uid</h3>
 					<div class="tsd-signature tsd-kind-icon">uid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1270</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>User ID of the remote user sending the audio streams.</p>
+							<p>用户 ID，指定是哪个用户/主播的音频流。</p>
 						</div>
 					</div>
 				</section>
@@ -514,6 +370,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

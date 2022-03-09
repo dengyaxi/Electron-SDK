@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Configurations of built-in encryption schemas.</p>
+						<p>配置内置加密模式和密钥。</p>
 					</div>
 				</div>
 			</section>
@@ -86,6 +86,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="encryptionconfig.html#encryptionkdfsalt" class="tsd-kind-icon">encryption<wbr>Kdf<wbr>Salt</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="encryptionconfig.html#encryptionkey" class="tsd-kind-icon">encryption<wbr>Key</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="encryptionconfig.html#encryptionmode" class="tsd-kind-icon">encryption<wbr>Mode</a></li>
 							</ul>
@@ -96,23 +97,35 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="encryptionkey" class="tsd-anchor"></a>
-					<h3>encryption<wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1577</li>
-						</ul>
-					</aside>
+					<a name="encryptionkdfsalt" class="tsd-anchor"></a>
+					<h3>encryption<wbr>Kdf<wbr>Salt</h3>
+					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Kdf<wbr>Salt<span class="tsd-signature-symbol">:</span> <a href="../globals.html#uint8arraybuffer" class="tsd-signature-type">Uint8ArrayBuffer</a></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Encryption key in string type.</p>
+							<p>盐，长度为 32 字节。Agora 推荐你在服务端使用 OpenSSL 生成盐，详见《媒体流加密》。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
-							<dd><p>If you do not set an encryption key or set it as NULL, you
-									cannot use the built-in encryption, and the SDK returns the error code
-								<code>-2</code>.</p>
+							<dd><p>只有在 #ENCRYPTION_MODE 设为 <code>AES_128_GCM2</code> 或 <code>AES_256_GCM2</code> 时，该参数才生效。此时，
+								需确保填入该参数的值不全为 <code>0</code>。</p>
+							</dd>
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="encryptionkey" class="tsd-anchor"></a>
+					<h3>encryption<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>内置加密密钥，字符串类型。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>如果未指定该参数或将该参数设置为空，则无法启用内置加密，且 SDK 会返回错误码 <code>-2</code>。</p>
 							</dd>
 						</dl>
 					</div>
@@ -121,14 +134,9 @@
 					<a name="encryptionmode" class="tsd-anchor"></a>
 					<h3>encryption<wbr>Mode</h3>
 					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/encryption_mode.html" class="tsd-signature-type">ENCRYPTION_MODE</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1569</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Encryption mode. The default encryption mode is <code>AES_128_XTS</code>.</p>
+							<p>内置加密模式，默认为 <code>AES_128_GCM2</code> 加密模式</p>
 						</div>
 					</div>
 				</section>
@@ -149,6 +157,9 @@
 					<li class="current tsd-kind-interface">
 						<a href="encryptionconfig.html" class="tsd-kind-icon">Encryption<wbr>Config</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="encryptionconfig.html#encryptionkdfsalt" class="tsd-kind-icon">encryption<wbr>Kdf<wbr>Salt</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="encryptionconfig.html#encryptionkey" class="tsd-kind-icon">encryption<wbr>Key</a>
 							</li>
@@ -176,6 +187,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

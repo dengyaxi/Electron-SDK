@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>VideoEncoderConfiguration</p>
+						<p>视频编码属性定义。</p>
 					</div>
 				</div>
 			</section>
@@ -106,207 +106,171 @@
 					<a name="bitrate" class="tsd-anchor"></a>
 					<h3>bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:914</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The video encoding bitrate (Kbps).</p>
+							<p>视频编码的码率，单位为 Kbps。</p>
 						</div>
-						<p>Set your bitrate based on the following table. If you set a bitrate
-							beyond the proper range, the SDK automatically sets it to within the
-						range.</p>
-						<p>You can also choose one of the following bitrate options:</p>
+						<p>你可以根据场景需要，参照下表手动设置你想要的码率。若设置的视频码率超出合理范围，SDK 会自动按照合理区间处理码率。</p>
+						<p>你也可以选择如下一种模式进行设置：</p>
 						<ul>
-							<li><code>0</code>: (Recommended) The standard bitrate.<ul>
-									<li>The communication(<code>0</code>) profile: the encoding bitrate equals the base
-									bitrate.</li>
-									<li>The <code>1</code> (live streaming) profile: the encoding bitrate is twice the base
-									bitrate.</li>
+							<li><code>STANDARD_BITRATE (0)</code>：（推荐）标准模式<ul>
+									<li>通信场景码率：与基准码率一致</li>
+									<li>直播场景码率：基准码率的两倍</li>
 								</ul>
 							</li>
-							<li><code>-1</code>: The compatible bitrate.<ul>
-									<li>The communication(<code>0</code>) profile: the encoding bitrate equals the base
-									bitrate.</li>
-									<li>The <code>1</code> (live streaming) profile: the encoding bitrate equals the base
-									bitrate.</li>
+							<li><code>COMPATIBLE_BITRATE (1)</code>：适配模式<ul>
+									<li>通信场景码率：与基准码率一致</li>
+									<li>直播场景码率：与基准码率一致</li>
 								</ul>
 							</li>
 						</ul>
-						<p>The communication(<code>0</code>) profile prioritizes smoothness, while the
-							<code>1</code> (live streaming) profile prioritizes video quality
-							(requiring a higher bitrate). We recommend setting the bitrate mode as
-						<code>0</code> to address this difference.</p>
-						<p>The following table lists the recommended video encoder configurations.</p>
 						<table>
 							<thead>
 								<tr>
-									<th>Resolution</th>
-									<th>Frame Rate (fps)</th>
-									<th>Base Bitrate (Kbps)</th>
+									<th align="left">分辨率 (宽 x 高)</th>
+									<th align="left">帧率 (fps)</th>
+									<th align="left">基准码率 (Kbps)</th>
 								</tr>
 							</thead>
 							<tbody><tr>
-									<td>160 * 120</td>
-									<td>15</td>
-									<td>65</td>
+									<td align="left">160 × 120</td>
+									<td align="left">15</td>
+									<td align="left">65</td>
 								</tr>
 								<tr>
-									<td>120 * 120</td>
-									<td>15</td>
-									<td>50</td>
+									<td align="left">120 × 120</td>
+									<td align="left">15</td>
+									<td align="left">50</td>
 								</tr>
 								<tr>
-									<td>320 * 180</td>
-									<td>15</td>
-									<td>140</td>
+									<td align="left">180 × 180</td>
+									<td align="left">15</td>
+									<td align="left">100</td>
 								</tr>
 								<tr>
-									<td>180 * 180</td>
-									<td>15</td>
-									<td>100</td>
+									<td align="left">240 × 180</td>
+									<td align="left">15</td>
+									<td align="left">120</td>
 								</tr>
 								<tr>
-									<td>240 * 180</td>
-									<td>15</td>
-									<td>120</td>
+									<td align="left">320 × 180</td>
+									<td align="left">15</td>
+									<td align="left">140</td>
 								</tr>
 								<tr>
-									<td>320 * 240</td>
-									<td>15</td>
-									<td>200</td>
+									<td align="left">240 × 240</td>
+									<td align="left">15</td>
+									<td align="left">140</td>
 								</tr>
 								<tr>
-									<td>240 * 240</td>
-									<td>15</td>
-									<td>140</td>
+									<td align="left">320 × 240</td>
+									<td align="left">15</td>
+									<td align="left">200</td>
 								</tr>
 								<tr>
-									<td>424 * 240</td>
-									<td>15</td>
-									<td>220</td>
+									<td align="left">424 × 240</td>
+									<td align="left">15</td>
+									<td align="left">220</td>
 								</tr>
 								<tr>
-									<td>640 * 360</td>
-									<td>15</td>
-									<td>400</td>
+									<td align="left">360 × 360</td>
+									<td align="left">15</td>
+									<td align="left">260</td>
 								</tr>
 								<tr>
-									<td>360 * 360</td>
-									<td>15</td>
-									<td>260</td>
+									<td align="left">360 × 360</td>
+									<td align="left">30</td>
+									<td align="left">400</td>
 								</tr>
 								<tr>
-									<td>640 * 360</td>
-									<td>30</td>
-									<td>600</td>
+									<td align="left">480 × 360</td>
+									<td align="left">15</td>
+									<td align="left">320</td>
 								</tr>
 								<tr>
-									<td>360 * 360</td>
-									<td>30</td>
-									<td>400</td>
+									<td align="left">480 × 360</td>
+									<td align="left">30</td>
+									<td align="left">490</td>
 								</tr>
 								<tr>
-									<td>480 * 360</td>
-									<td>15</td>
-									<td>320</td>
+									<td align="left">640 × 360</td>
+									<td align="left">15</td>
+									<td align="left">400</td>
 								</tr>
 								<tr>
-									<td>480 * 360</td>
-									<td>30</td>
-									<td>490</td>
+									<td align="left">640 × 360</td>
+									<td align="left">30</td>
+									<td align="left">600</td>
 								</tr>
 								<tr>
-									<td>640 * 480</td>
-									<td>15</td>
-									<td>500</td>
+									<td align="left">480 × 480</td>
+									<td align="left">15</td>
+									<td align="left">400</td>
 								</tr>
 								<tr>
-									<td>480 * 480</td>
-									<td>15</td>
-									<td>400</td>
+									<td align="left">480 × 480</td>
+									<td align="left">30</td>
+									<td align="left">600</td>
 								</tr>
 								<tr>
-									<td>640 * 480</td>
-									<td>30</td>
-									<td>750</td>
+									<td align="left">640 × 480</td>
+									<td align="left">10</td>
+									<td align="left">400</td>
 								</tr>
 								<tr>
-									<td>480 * 480</td>
-									<td>30</td>
-									<td>600</td>
+									<td align="left">640 × 480</td>
+									<td align="left">15</td>
+									<td align="left">500</td>
 								</tr>
 								<tr>
-									<td>848 * 480</td>
-									<td>15</td>
-									<td>610</td>
+									<td align="left">640 × 480</td>
+									<td align="left">30</td>
+									<td align="left">750</td>
 								</tr>
 								<tr>
-									<td>848 * 480</td>
-									<td>30</td>
-									<td>930</td>
+									<td align="left">848 × 480</td>
+									<td align="left">15</td>
+									<td align="left">610</td>
 								</tr>
 								<tr>
-									<td>640 * 480</td>
-									<td>10</td>
-									<td>400</td>
+									<td align="left">848 × 480</td>
+									<td align="left">30</td>
+									<td align="left">930</td>
 								</tr>
 								<tr>
-									<td>1280 * 720</td>
-									<td>15</td>
-									<td>1130</td>
+									<td align="left">960 × 720</td>
+									<td align="left">15</td>
+									<td align="left">910</td>
 								</tr>
 								<tr>
-									<td>1280 * 720</td>
-									<td>30</td>
-									<td>1710</td>
+									<td align="left">960 × 720</td>
+									<td align="left">30</td>
+									<td align="left">1380</td>
 								</tr>
 								<tr>
-									<td>960 * 720</td>
-									<td>15</td>
-									<td>910</td>
+									<td align="left">1280 × 720</td>
+									<td align="left">15</td>
+									<td align="left">1130</td>
 								</tr>
 								<tr>
-									<td>960 * 720</td>
-									<td>30</td>
-									<td>1380</td>
+									<td align="left">1280 × 720</td>
+									<td align="left">30</td>
+									<td align="left">1710</td>
 								</tr>
 								<tr>
-									<td>1920 * 1080</td>
-									<td>15</td>
-									<td>2080</td>
+									<td align="left">1920 × 1080</td>
+									<td align="left">15</td>
+									<td align="left">2080</td>
 								</tr>
 								<tr>
-									<td>1920 * 1080</td>
-									<td>30</td>
-									<td>3150</td>
+									<td align="left">1920 × 1080</td>
+									<td align="left">30</td>
+									<td align="left">3150</td>
 								</tr>
 								<tr>
-									<td>1920 * 1080</td>
-									<td>60</td>
-									<td>4780</td>
-								</tr>
-								<tr>
-									<td>2560 * 1440</td>
-									<td>30</td>
-									<td>4850</td>
-								</tr>
-								<tr>
-									<td>2560 * 1440</td>
-									<td>60</td>
-									<td>6500</td>
-								</tr>
-								<tr>
-									<td>3840 * 2160</td>
-									<td>30</td>
-									<td>6500</td>
-								</tr>
-								<tr>
-									<td>3840 * 2160</td>
-									<td>60</td>
-									<td>6500</td>
+									<td align="left">1920 × 1080</td>
+									<td align="left">60</td>
+									<td align="left">4780</td>
 								</tr>
 						</tbody></table>
 					</div>
@@ -315,15 +279,9 @@
 					<a name="degradationpreference" class="tsd-anchor"></a>
 					<h3>degradation<wbr>Preference</h3>
 					<div class="tsd-signature tsd-kind-icon">degradation<wbr>Preference<span class="tsd-signature-symbol">:</span> <a href="../enums/degradationpreference.html" class="tsd-signature-type">DegradationPreference</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:936</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The video encoding degradation preference under limited bandwidth.
-							See <a href="../enums/degradationpreference.html">DegradationPreference</a>.</p>
+							<p>带宽受限时。视频编码的降低偏好。</p>
 						</div>
 					</div>
 				</section>
@@ -331,91 +289,57 @@
 					<a name="framerate" class="tsd-anchor"></a>
 					<h3>frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:846</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The frame rate (fps) of the video.</p>
+							<p>视频编码的帧率（fps）。</p>
 						</div>
-						<p>The default value is 15 fps.</p>
-						<p><strong>Noete</strong>:
-						We do not recommend setting this to a value greater than 30 fps.</p>
+						<p>默认值为 15 ，建议不要超过 30。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="height" class="tsd-anchor"></a>
 					<h3>height</h3>
 					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:837</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Height (pixels) of the video.</p>
+							<p>视频帧在纵轴上的高(px)。视频编码宽 x 高默认为 640 x 360。</p>
 						</div>
-						<p>The default value is 640(width) x 360(hight).</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="minbitrate" class="tsd-anchor"></a>
 					<h3>min<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">min<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:927</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The minimum encoding bitrate (Kbps).</p>
+							<p>最低视频编码码率。单位为 Kbps，默认值为 -1。
+							该参数强制视频编码器输出高质量图片。如果将参数设为高于默认值，在网络状况不佳情况下可能会导致网络丢包，并影响视频播放的流畅度。因此如非对画质有特殊需求，Agora 建议不要修改该参数的值。</p>
 						</div>
-						<p>The default value is 1 kbps.</p>
-						<p>Using a value greater than the default value
-							forces the video encoder to output high-quality images but may cause more
-							packet loss and hence sacrifice the smoothness of the video transmission.
-							That said, unless you have special requirements for image quality,
-						Agora does not recommend changing this value.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="minframerate" class="tsd-anchor"></a>
 					<h3>min<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">min<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:852</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The minimum frame rate of the video.</p>
+							<p>最低视频编码帧率（fps）。</p>
 						</div>
-						<p>The default value is -1.</p>
+						<p>默认值为 -1。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="mirrormode" class="tsd-anchor"></a>
 					<h3>mirror<wbr>Mode</h3>
 					<div class="tsd-signature tsd-kind-icon">mirror<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/videomirrormodetype.html" class="tsd-signature-type">VideoMirrorModeType</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:945</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.0.0</p>
-								<p>Sets the mirror mode of the published local video stream. It only affects
-								the video that the remote user sees. See <a href="../enums/videomirrormodetype.html">VideoMirrorModeType</a></p>
+								<p>本地视频编码镜像模式，仅影响远端用户所见。详见 <a href="../enums/videomirrormodetype.html">VideoMirrorModeType</a></p>
 							</dd>
 							<dt>note</dt>
-							<dd><p>The SDK disables the mirror mode by default.</p>
+							<dd><p>SDK 默认关闭镜像。</p>
 							</dd>
 						</dl>
 					</div>
@@ -424,14 +348,9 @@
 					<a name="orientationmode" class="tsd-anchor"></a>
 					<h3>orientation<wbr>Mode</h3>
 					<div class="tsd-signature tsd-kind-icon">orientation<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/orientationmode.html" class="tsd-signature-type">OrientationMode</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:931</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The orientation mode. See <a href="../enums/orientationmode.html">OrientationMode</a>.</p>
+							<p>视频编码的旋转模式</p>
 						</div>
 					</div>
 				</section>
@@ -439,16 +358,10 @@
 					<a name="width" class="tsd-anchor"></a>
 					<h3>width</h3>
 					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:832</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Width (pixels) of the video.</p>
+							<p>视频帧在横轴上的宽(px)。视频编码宽 x 高默认为 640 x 360。</p>
 						</div>
-						<p>The default value is 640(width) x 360(hight).</p>
 					</div>
 				</section>
 			</section>
@@ -516,6 +429,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

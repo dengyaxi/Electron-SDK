@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Statistics of the channel.</p>
+						<p>通话相关的统计信息。</p>
 					</div>
 				</div>
 			</section>
@@ -120,14 +120,9 @@
 					<a name="cpuappusage" class="tsd-anchor"></a>
 					<h3>cpu<wbr>App<wbr>Usage</h3>
 					<div class="tsd-signature tsd-kind-icon">cpu<wbr>App<wbr>Usage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:680</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Application CPU usage (%).</p>
+							<p>当前应用的 CPU 使用率 (%)。</p>
 						</div>
 					</div>
 				</section>
@@ -135,14 +130,9 @@
 					<a name="cputotalusage" class="tsd-anchor"></a>
 					<h3>cpu<wbr>Total<wbr>Usage</h3>
 					<div class="tsd-signature tsd-kind-icon">cpu<wbr>Total<wbr>Usage<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:682</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>System CPU usage (%).</p>
+							<p>当前系统的 CPU 使用率 (%)。</p>
 						</div>
 					</div>
 				</section>
@@ -150,14 +140,9 @@
 					<a name="duration" class="tsd-anchor"></a>
 					<h3>duration</h3>
 					<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:618</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Call duration (s), represented by an aggregate value.</p>
+							<p>通话时长，单位为秒，累计值。</p>
 						</div>
 					</div>
 				</section>
@@ -165,16 +150,11 @@
 					<a name="gatewayrtt" class="tsd-anchor"></a>
 					<h3>gateway<wbr>Rtt</h3>
 					<div class="tsd-signature tsd-kind-icon">gateway<wbr>Rtt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:688</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.0.0</p>
-								<p>The round-trip time delay from the client to the local router.</p>
+								<p>客户端到本地路由器的往返时延 (ms)</p>
 							</dd>
 						</dl>
 					</div>
@@ -183,14 +163,9 @@
 					<a name="lastmiledelay" class="tsd-anchor"></a>
 					<h3>lastmile<wbr>Delay</h3>
 					<div class="tsd-signature tsd-kind-icon">lastmile<wbr>Delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:668</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Client-server latency.</p>
+							<p>客户端到边缘服务器的网络延迟（毫秒）。</p>
 						</div>
 					</div>
 				</section>
@@ -198,18 +173,12 @@
 					<a name="memoryappusageinkbytes" class="tsd-anchor"></a>
 					<h3>memory<wbr>App<wbr>Usage<wbr>InKbytes</h3>
 					<div class="tsd-signature tsd-kind-icon">memory<wbr>App<wbr>Usage<wbr>InKbytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:715</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.0.0</p>
-								<p>The memory usage of the app (KB).</p>
-								<p>This value is for reference only. Due to system limitations, you may not
-								get the value of this member.</p>
+								<p>当前 App 的内存大小 (KB)</p>
+								<p>该值仅作参考。受系统限制可能无法获取。</p>
 							</dd>
 						</dl>
 					</div>
@@ -218,18 +187,12 @@
 					<a name="memoryappusageratio" class="tsd-anchor"></a>
 					<h3>memory<wbr>App<wbr>Usage<wbr>Ratio</h3>
 					<div class="tsd-signature tsd-kind-icon">memory<wbr>App<wbr>Usage<wbr>Ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:697</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.0.0</p>
-								<p>The memory usage ratio of the app (%).</p>
-								<p>This value is for reference only. Due to system limitations, you may not
-								get the value of this member.</p>
+								<p>当前 App 的内存占比 (%)</p>
+								<p>该值仅作参考。受系统限制可能无法获取。</p>
 							</dd>
 						</dl>
 					</div>
@@ -238,18 +201,12 @@
 					<a name="memorytotalusageratio" class="tsd-anchor"></a>
 					<h3>memory<wbr>Total<wbr>Usage<wbr>Ratio</h3>
 					<div class="tsd-signature tsd-kind-icon">memory<wbr>Total<wbr>Usage<wbr>Ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:706</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.0.0</p>
-								<p>The memory usage ratio of the system (%).</p>
-								<p>This value is for reference only. Due to system limitations, you may not
-								get the value of this member.</p>
+								<p>当前系统的内存占比 (%)</p>
+								<p>值仅作参考。受系统限制可能无法获取。</p>
 							</dd>
 						</dl>
 					</div>
@@ -258,14 +215,9 @@
 					<a name="rxaudiokbitrate" class="tsd-anchor"></a>
 					<h3>rx<wbr>AudioKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>AudioKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:628</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Audio receive bitrate (Kbps), represented by an instantaneous value.</p>
+							<p>音频接收码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -273,33 +225,19 @@
 					<a name="rxaudiokbytes" class="tsd-anchor"></a>
 					<h3>rx<wbr>AudioKBytes</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>AudioKBytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:645</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>Total number of audio bytes received (bytes), represented by an aggregate
-								value.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>接收音频字节数（bytes），累计值。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="rxbytes" class="tsd-anchor"></a>
 					<h3>rx<wbr>Bytes</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>Bytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:622</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Total number of bytes received, represented by an aggregate value.</p>
+							<p>接收字节数（bytes），累计值。</p>
 						</div>
 					</div>
 				</section>
@@ -307,14 +245,9 @@
 					<a name="rxkbitrate" class="tsd-anchor"></a>
 					<h3>rxKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">rxKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:626</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Receive bitrate (Kbps), represented by an instantaneous value.</p>
+							<p>接收码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -322,15 +255,9 @@
 					<a name="rxpacketlossrate" class="tsd-anchor"></a>
 					<h3>rx<wbr>Packet<wbr>Loss<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>Packet<wbr>Loss<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:676</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The packet loss rate (%) from Agora&#39;s edge server to the local client,
-							before using the anti-packet-loss method.</p>
+							<p>使用抗丢包技术前，Agora 边缘服务器到客户端的丢包率(%)。</p>
 						</div>
 					</div>
 				</section>
@@ -338,14 +265,9 @@
 					<a name="rxvideokbitrate" class="tsd-anchor"></a>
 					<h3>rx<wbr>VideoKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>VideoKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:634</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Video receive bitrate (Kbps), represented by an instantaneous value.</p>
+							<p>视频接收码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -353,34 +275,19 @@
 					<a name="rxvideokbytes" class="tsd-anchor"></a>
 					<h3>rx<wbr>VideoKBytes</h3>
 					<div class="tsd-signature tsd-kind-icon">rx<wbr>VideoKBytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:659</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>Total number of video bytes received (bytes), represented by an aggregate
-								value.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>接收视频字节数（bytes），累计值。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="txaudiokbitrate" class="tsd-anchor"></a>
 					<h3>tx<wbr>AudioKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>AudioKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:632</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Audio transmission bitrate (Kbps), represented by an instantaneous
-							value.</p>
+							<p>音频包的发送码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -388,33 +295,19 @@
 					<a name="txaudiokbytes" class="tsd-anchor"></a>
 					<h3>tx<wbr>AudioKBytes</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>AudioKBytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:652</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>Total number of audio bytes sent (bytes), represented by an aggregate
-								value.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>发送音频字节数（bytes），累计值。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="txbytes" class="tsd-anchor"></a>
 					<h3>tx<wbr>Bytes</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>Bytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:620</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Total number of bytes transmitted, represented by an aggregate value.</p>
+							<p>发送字节数（bytes），累计值。</p>
 						</div>
 					</div>
 				</section>
@@ -422,14 +315,9 @@
 					<a name="txkbitrate" class="tsd-anchor"></a>
 					<h3>txKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">txKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:624</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Transmission bitrate (Kbps), represented by an instantaneous value.</p>
+							<p>发送码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -437,15 +325,9 @@
 					<a name="txpacketlossrate" class="tsd-anchor"></a>
 					<h3>tx<wbr>Packet<wbr>Loss<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>Packet<wbr>Loss<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:672</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The packet loss rate (%) from the local client to Agora&#39;s edge server,
-							before using the anti-packet-loss method.</p>
+							<p>使用抗丢包技术前，客户端到 Agora 边缘服务器的丢包率(%)。</p>
 						</div>
 					</div>
 				</section>
@@ -453,15 +335,9 @@
 					<a name="txvideokbitrate" class="tsd-anchor"></a>
 					<h3>tx<wbr>VideoKBit<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>VideoKBit<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:638</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Video transmission bitrate (Kbps), represented by an instantaneous
-							value.</p>
+							<p>视频发送码率（Kbps），瞬时值。</p>
 						</div>
 					</div>
 				</section>
@@ -469,33 +345,19 @@
 					<a name="txvideokbytes" class="tsd-anchor"></a>
 					<h3>tx<wbr>VideoKBytes</h3>
 					<div class="tsd-signature tsd-kind-icon">tx<wbr>VideoKBytes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:666</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>2.9.0</p>
-								<p>Total number of video bytes sent (bytes), represented by an aggregate
-								value.</p>
-							</dd>
-						</dl>
+						<div class="lead">
+							<p>发送视频字节数（bytes），累计值。</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="usercount" class="tsd-anchor"></a>
 					<h3>user<wbr>Count</h3>
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:678</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Number of users in the channel.</p>
+							<p>当前频道内的人数。</p>
 						</div>
 					</div>
 				</section>
@@ -606,6 +468,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The configuration of the log files.</p>
+						<p>Agora SDK 日志文件的配置。</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
@@ -105,57 +105,37 @@
 					<a name="filepath" class="tsd-anchor"></a>
 					<h3>file<wbr>Path</h3>
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2367</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The absolute path of log files.</p>
+							<p>日志文件的完整路径。</p>
 						</div>
-						<p>Ensure that the directory for the log files exists and is writable.
-						You can use this parameter to rename the log files.</p>
+						<p>请确保你指定的目录存在而且可写。你可通过该参数修改日志文件名。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="filesize" class="tsd-anchor"></a>
 					<h3>file<wbr>Size</h3>
 					<div class="tsd-signature tsd-kind-icon">file<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2375</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The size (KB) of a log file.</p>
+							<p>单个日志文件的大小，单位为 KB。默认值为 1024 KB。如果你将 <code>fileSize</code> 设为 1024 KB，SDK 会最多输出总计 5 MB 的日志文件。
+							如果你将 <code>fileSize</code> 设为小于 1024 KB，设置不生效，单个日志文件最大仍为 1024 KB。</p>
 						</div>
-						<p>The default value is 1024 KB. If you set
-							<code>fileSize</code> to 1024 KB, the SDK outputs at most 5 MB log files;
-							if you set it to less than 1024 KB, the setting is invalid, and the
-						maximum size of a log file is still 1024 KB.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="level" class="tsd-anchor"></a>
 					<h3>level</h3>
 					<div class="tsd-signature tsd-kind-icon">level<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2384</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The output log level of the SDK:</p>
+							<p>Agora SDK 的日志输出等级:</p>
 							<ul>
-								<li><code>0x0000</code>: Do not output any log.</li>
-								<li><code>0x0001</code>: (Default) Output logs of the FATAL, ERROR, WARN and INFO
-								level. We recommend setting your log filter as this level.</li>
-								<li><code>0x0002</code>: Output logs of the FATAL, ERROR and WARN level.</li>
-								<li><code>0x0004</code>: Output logs of the FATAL and ERROR level.</li>
-								<li><code>0x0008</code>: Output logs of the FATAL level.</li>
+								<li><code>0x0000</code>: 不输出任何日志。</li>
+								<li><code>0x0001</code>: (默认) 输出 FATAL、ERROR、WARN、INFO 级别的日志。我们推荐你将日志级别设为该等级。</li>
+								<li><code>0x0002</code>: 仅输出 FATAL、ERROR、WARN 级别的日志。</li>
+								<li><code>0x0004</code>: 仅输出 FATAL、ERROR 级别的日志。</li>
+								<li><code>0x0008</code>: 仅输出 FATAL 级别的日志。</li>
 							</ul>
 						</div>
 					</div>
@@ -207,6 +187,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

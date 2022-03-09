@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Local video state error codes.</p>
+						<p>本地视频出错原因</p>
 					</div>
 				</div>
 			</section>
@@ -79,13 +79,19 @@
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_capture_failure" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>FAILURE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_capture_inbackground" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>INBACKGROUND</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_capture_multiple_foreground_apps" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>MULTIPLE_<wbr>FOREGROUND_<wbr>APPS</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_device_busy" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>BUSY</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_device_invalid_id" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>INVALID_<wbr>ID</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_device_not_found" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NOT_<wbr>FOUND</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_device_no_permission" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NO_<wbr>PERMISSION</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_encode_failure" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>ENCODE_<wbr>FAILURE</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_failure" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>FAILURE</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_ok" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>OK</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_closed" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>CLOSED</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_minimized" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>MINIMIZED</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_not_supported" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>NOT_<wbr>SUPPORTED</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_occluded" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>OCCLUDED</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,45 +103,89 @@
 					<a name="local_video_stream_error_capture_failure" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>FAILURE</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2444</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>4: The local video capture fails. Check whether the capturing device
-							is working properly.</p>
+							<p>4: 本地视频采集失败，建议检查采集设备是否正常工作。</p>
 						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_capture_inbackground" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>INBACKGROUND</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>INBACKGROUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;6</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>6:（仅适用于 iOS）应用处于后台。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.3.1</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_capture_multiple_foreground_apps" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>MULTIPLE_<wbr>FOREGROUND_<wbr>APPS</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>MULTIPLE_<wbr>FOREGROUND_<wbr>APPS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;7</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>7:（仅适用于 iOS）应用窗口处于侧拉、分屏、画中画模式。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.3.1</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="local_video_stream_error_device_busy" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>BUSY</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>BUSY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2440</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>3: The local video capturing device is in use.</p>
+							<p>3: 本地视频采集设备正在使用中。</p>
 						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_device_invalid_id" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>INVALID_<wbr>ID</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>INVALID_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;10</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>10: （仅 macOS 和 Windows）SDK 无法在视频设备列表中找到该视频设备。请检查视频设备 ID 是否有效。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.6.1.4</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_device_not_found" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NOT_<wbr>FOUND</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NOT_<wbr>FOUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;8</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>8: 找不到本地视频采集设备。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.2</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="local_video_stream_error_device_no_permission" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NO_<wbr>PERMISSION</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NO_<wbr>PERMISSION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2438</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>2: No permission to use the local video capturing device.</p>
+							<p>2: 没有权限启动本地视频采集设备。</p>
 						</div>
 					</div>
 				</section>
@@ -143,14 +193,9 @@
 					<a name="local_video_stream_error_encode_failure" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>ENCODE_<wbr>FAILURE</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>ENCODE_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;5</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2446</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>5: The local video encoding fails.</p>
+							<p>5: 本地视频编码失败。</p>
 						</div>
 					</div>
 				</section>
@@ -158,14 +203,9 @@
 					<a name="local_video_stream_error_failure" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>FAILURE</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2436</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>1: No specified reason for the local video failure.</p>
+							<p>1: 出错原因不明确。</p>
 						</div>
 					</div>
 				</section>
@@ -173,14 +213,9 @@
 					<a name="local_video_stream_error_ok" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>OK</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>OK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2434</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>0: The local video is normal.</p>
+							<p>0: 本地视频状态正常。</p>
 						</div>
 					</div>
 				</section>
@@ -188,48 +223,67 @@
 					<a name="local_video_stream_error_screen_capture_window_closed" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>CLOSED</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>CLOSED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;12</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2469</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>12: The error code indicates that a window shared by the window symbol
-								has been closed, or a full-screen window
-								shared by the window symbol has exited full-screen mode.
-								After exiting full-screen mode, remote users cannot see the shared
-								window. To prevent remote users from seeing a
-							black screen, Agora recommends that you immediately stop screen sharing.</p>
+							<p>12: 该错误码表示通过窗口 ID 共享的窗口已关闭，或通过窗口 ID 共享的全屏窗口已退出全屏。
+							退出全屏模式后，远端用户将无法看到共享的窗口。为避免远端用户看到黑屏，Agora 建议你立即结束本次共享。</p>
 						</div>
-						<p>Common scenarios for reporting this error code:</p>
+						<p>报告该错误码的常见场景：</p>
 						<ul>
-							<li>When the local user closes the shared window, the SDK reports this
-							error code.</li>
-							<li>The local user shows some slides in full-screen mode first, and then
-								shares the windows of the slides. After
-							the user exits full-screen mode, the SDK reports this error code.</li>
-							<li>The local user watches web video or reads web document in full-screen
-								mode first, and then shares the window of
-								the web video or document. After the user exits full-screen mode, the
-							SDK reports this error code.</li>
+							<li>本地用户关闭共享的窗口时，SDK 会报告该错误码。</li>
+							<li>本地用户先放映幻灯片，然后共享放映中的幻灯片。结束放映时，SDK 会报告该错误码。</li>
+							<li>本地用户先全屏观看网页视频或网页文档，然后共享网页视频或网页文档。结束全屏时，SDK 会报告该错误码。</li>
 						</ul>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.2.0</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="local_video_stream_error_screen_capture_window_minimized" class="tsd-anchor"></a>
 					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>MINIMIZED</h3>
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>MINIMIZED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;11</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2450</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>11: The shared window is minimized when you share a window by the
-							window symbol.</p>
+							<p>11: 调用 <a href="../classes/agorartcengine.html#startscreencapturebywindow">startScreenCaptureByWindow</a> 方法共享窗口时，共享窗口处于最小化的状态。</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.2.0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_screen_capture_window_not_supported" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>NOT_<wbr>SUPPORTED</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>NOT_<wbr>SUPPORTED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;20</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>（仅 Windows）SDK 不支持共享该类型的窗口。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.6.1.4</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="local_video_stream_error_screen_capture_window_occluded" class="tsd-anchor"></a>
+					<h3>LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>OCCLUDED</h3>
+					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>OCCLUDED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;13</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>13:（仅 Windows）待共享的窗口被其他窗口遮挡住，被遮挡住的部分在共享时会被 SDK 涂黑。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.6.1.4</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -253,7 +307,19 @@
 								<a href="local_video_stream_error.html#local_video_stream_error_capture_failure" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>FAILURE</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_capture_inbackground" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>INBACKGROUND</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_capture_multiple_foreground_apps" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>MULTIPLE_<wbr>FOREGROUND_<wbr>APPS</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="local_video_stream_error.html#local_video_stream_error_device_busy" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>BUSY</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_device_invalid_id" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>INVALID_<wbr>ID</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_device_not_found" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NOT_<wbr>FOUND</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="local_video_stream_error.html#local_video_stream_error_device_no_permission" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NO_<wbr>PERMISSION</a>
@@ -272,6 +338,12 @@
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_minimized" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>MINIMIZED</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_not_supported" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>NOT_<wbr>SUPPORTED</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="local_video_stream_error.html#local_video_stream_error_screen_capture_window_occluded" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>OCCLUDED</a>
 							</li>
 						</ul>
 					</li>
@@ -294,6 +366,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Sets the CDN live audio/video transcoding settings.</p>
+						<p>直播转码的相关配置。</p>
 					</div>
 				</div>
 			</section>
@@ -86,22 +86,25 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#advancedfeatures" class="tsd-kind-icon">advanced<wbr>Features</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiobitrate" class="tsd-kind-icon">audio<wbr>Bitrate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiochannels" class="tsd-kind-icon">audio<wbr>Channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiocodecprofile" class="tsd-kind-icon">audio<wbr>Codec<wbr>Profile</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiosamplerate" class="tsd-kind-icon">audio<wbr>Sample<wbr>Rate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#backgroundimage" class="tsd-kind-icon">background<wbr>Image</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#height-1" class="tsd-kind-icon">height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#height" class="tsd-kind-icon">height</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#lowlatency" class="tsd-kind-icon">low<wbr>Latency</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingextrainfo" class="tsd-kind-icon">transcoding<wbr>Extra<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingusers" class="tsd-kind-icon">transcoding<wbr>Users</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#usercount" class="tsd-kind-icon">user<wbr>Count</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videobitrate" class="tsd-kind-icon">video<wbr>Bitrate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodecprofile" class="tsd-kind-icon">video<wbr>Codec<wbr>Profile</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodectype" class="tsd-kind-icon">video<wbr>Codec<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videoframerate" class="tsd-kind-icon">video<wbr>Frame<wbr>Rate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videogop" class="tsd-kind-icon">video<wbr>Gop</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#watermark" class="tsd-kind-icon">watermark</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#width-2" class="tsd-kind-icon">width</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#width" class="tsd-kind-icon">width</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,61 +113,48 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="advancedfeatures" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> advanced<wbr>Features</h3>
+					<div class="tsd-signature tsd-kind-icon">advanced<wbr>Features<span class="tsd-signature-symbol">:</span> <a href="livestreamadvancedfeature.html" class="tsd-signature-type">LiveStreamAdvancedFeature</a><span class="tsd-signature-symbol">[]</span></div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiobitrate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:215</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Bitrate of the CDN live audio output stream. The default value is 48
-							Kbps, and the highest value is 128.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiochannels" class="tsd-anchor"></a>
 					<h3>audio<wbr>Channels</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:211</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Agora&#39;s self-defined audio-channel types.</p>
+							<p>用于旁路直播的输出音频的声道数，取值范围为 [1, 5] 中的整型，默认值为 1。建议取 1 或 2，其余三个选项需要特殊播放器支持：</p>
+							<ul>
+								<li>1：单声道</li>
+								<li>2：双声道</li>
+								<li>3：三声道</li>
+								<li>4：四声道</li>
+								<li>5：五声道</li>
+							</ul>
 						</div>
-						<p>We recommend choosing option 1 or 2.</p>
-						<p>A special player is required if you choose option 3, 4, or 5:</p>
-						<ul>
-							<li>1: (Default) Mono.</li>
-							<li>2: Two-channel stereo.</li>
-							<li>3: Three-channel stereo.</li>
-							<li>4: Four-channel stereo.</li>
-							<li>5: Five-channel stereo.</li>
-						</ul>
 					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="audiocodecprofile" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> audio<wbr>Codec<wbr>Profile</h3>
+					<div class="tsd-signature tsd-kind-icon">audio<wbr>Codec<wbr>Profile<span class="tsd-signature-symbol">:</span> <a href="../enums/audio_codec_profile_type.html" class="tsd-signature-type">AUDIO_CODEC_PROFILE_TYPE</a></div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiosamplerate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Sample<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Sample<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:198</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Self-defined audio-sample rate:</p>
+							<p>用于旁路直播的输出音频的采样率：</p>
 							<ul>
-								<li>AUDIO_SAMPLE_RATE_32000 = 32000 Hz</li>
-								<li>AUDIO_SAMPLE_RATE_44100 = (Default)44100 Hz</li>
-								<li>AUDIO_SAMPLE_RATE_48000 = 48000 Hz</li>
+								<li>AUDIO_SAMPLE_RATE_32000 = 32000</li>
+								<li>AUDIO_SAMPLE_RATE_44100 = 44100（默认）</li>
+								<li>AUDIO_SAMPLE_RATE_48000 = 48000</li>
 							</ul>
 						</div>
 					</div>
@@ -173,175 +163,75 @@
 					<a name="backgroundcolor" class="tsd-anchor"></a>
 					<h3>background<wbr>Color</h3>
 					<div class="tsd-signature tsd-kind-icon">background<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:190</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The background color in RGB hex value. Value only, do not include a #.
-							For example, 0xFFB6C1 (light pink). The default value is 0x000000 (black).</p>
+							<p>用于旁路直播的输出视频的背景色，格式为 RGB 定义下的十六进制整数（不要带 # 号），
+							如 0xFFB6C1 表示浅粉色。默认0x000000，黑色。</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="backgroundimage" class="tsd-anchor"></a>
 					<h3>background<wbr>Image</h3>
-					<div class="tsd-signature tsd-kind-icon">background<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:254</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>since</dt>
-							<dd><p>v3.2.0</p>
-								<p>The background image added to the CDN live publishing stream.</p>
-								<p>Once a background image is added, the audience of the CDN live publishing
-								stream can see the background image.</p>
-							</dd>
-						</dl>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The height (pixel) of the image.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The HTTP or HTTPS address of the image. The length must not
-										exceed 1,024 bytes.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The width (pixel) of the image.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The x coordinate of the image on the output video. With the
-											top-left corner
-											of the output video as the origin, the x coordinate is the horizontal
-											displacement
-										of the top-left corner of the image relative to the origin.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The y coordinate of the image on the output video. With the top-left
-											corner
-											of the output video as the origin, the y coordinate is the vertical
-											displacement
-										of the top-left corner of the image relative to the origin.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
+					<div class="tsd-signature tsd-kind-icon">background<wbr>Image<span class="tsd-signature-symbol">:</span> <a href="rtcimage.html" class="tsd-signature-type">RtcImage</a><span class="tsd-signature-symbol">[]</span></div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="height-1" class="tsd-anchor"></a>
+					<a name="height" class="tsd-anchor"></a>
 					<h3>height</h3>
 					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:148</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Height of the video. The default value is 640.</p>
+							<p>用于旁路直播的输出视频的总高度，默认值为 640，单位为像素。</p>
 						</div>
-						<p>If you push video streams to the CDN, set the value of width x height to
-						at least 64 x 64 (px), or the SDK will adjust it to 64 x 64 (px).</p>
-						<p>If you push audio streams to the CDN, set the value of width x height to
-						0 x 0 (px).</p>
+						<ul>
+							<li>如果推视频流，<code>height</code> 取值范围为 [64,1080]。如果取值低于 64，Agora 服务器会自动
+							调整为 64；如果取值高于 1080，Agora 服务器会自动调整为 1080。</li>
+							<li>如果推音频流，请将 width 和 height 都设为 0。</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="lowlatency" class="tsd-anchor"></a>
 					<h3>low<wbr>Latency</h3>
 					<div class="tsd-signature tsd-kind-icon">low<wbr>Latency<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:171</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Latency mode.</p>
-							<ul>
-								<li>true: Low latency with unassured quality.</li>
-								<li>false: (Default) High latency with assured quality.</li>
-							</ul>
-						</div>
+						<dl class="tsd-comment-tags">
+							<dt>deprecated</dt>
+							<dd><p>从 v2.8.0 起废弃。</p>
+								<p>是否启用低延时模式：</p>
+								<ul>
+									<li>true：低延时，不保证画质</li>
+									<li>false：（默认值）高延时，保证画质</li>
+								</ul>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="transcodingextrainfo" class="tsd-anchor"></a>
 					<h3>transcoding<wbr>Extra<wbr>Info</h3>
 					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Extra<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:224</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The reserved property.</p>
+							<p>预留属性。</p>
 						</div>
-						<p>Extra user-defined information to send SEI for the H.264 or H.265 stream
-						to the CDN streaming client. The maximum length is 4096 bytes.</p>
-						<p>See <a href="https://docs.agora.io/en/faq/sei">SEI-related FAQ</a> for more details.</p>
+						<p>CDN 推流时，用户自定义发送的信息，可用于填充 H.264 或 H.265 流中 SEI 帧内容。最大长度
+						不能超过 4096 字节。</p>
+						<p>详见 <a href="https://docs.agora.io/cn/faq/sei">SEI 帧相关问题</a>。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="transcodingusers" class="tsd-anchor"></a>
 					<h3>transcoding<wbr>Users</h3>
-					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="transcodinguser.html" class="tsd-signature-type">TranscodingUser</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:287</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The TranscodingUsers Array.</p>
-						</div>
-					</div>
+					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Users<span class="tsd-signature-symbol">:</span> <a href="transcodinguser.html" class="tsd-signature-type">TranscodingUser</a><span class="tsd-signature-symbol">[]</span></div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="usercount" class="tsd-anchor"></a>
 					<h3>user<wbr>Count</h3>
 					<div class="tsd-signature tsd-kind-icon">user<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:192</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of users in the live streaming.</p>
+							<p>获取旁路直播中的用户人数</p>
 						</div>
 					</div>
 				</section>
@@ -349,42 +239,36 @@
 					<a name="videobitrate" class="tsd-anchor"></a>
 					<h3>video<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:158</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Bitrate of the CDN live output video stream.
-							The default value is 400 Kbps.</p>
+							<p>用于旁路直播的输出视频的码率，单位为 Kbps，默认值为 400 Kbps。</p>
 						</div>
-						<p>Set this parameter according to the Video Bitrate Table.</p>
-						<p>If you set a bitrate beyond the proper range, the SDK automatically
-						adapts it to a value within the range.</p>
+						<p>用户可以根据码率参考表中的码率值进行设置；如果设置的码率超出合理范围，
+						Agora 服务器会在合理区间内自动调整码率值。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="videocodecprofile" class="tsd-anchor"></a>
 					<h3>video<wbr>Codec<wbr>Profile</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Codec<wbr>Profile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:185</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Self-defined video codec profile.</p>
+							<p>用于旁路直播的输出视频的编解码规格。可以设置为 BASELINE、MAIN 或 HIGH；如果设置其他值，服务端会统一设为默认值 HIGH。</p>
 							<ul>
-								<li>VIDEO_CODEC_PROFILE_BASELINE = 66: Baseline video codec profile.
-								Generally used in video calls on mobile phones.</li>
-								<li>VIDEO_CODEC_PROFILE_MAIN = 77: Main video codec profile.
-									Generally used in mainstream electronics, such as MP4 players, portable
-								video players, PSP, and iPads.</li>
-								<li>VIDEO_CODEC_PROFILE_HIGH = 100: (Default) High video codec profile.
-								Generally used in high-resolution broadcasts or television.</li>
+								<li>VIDEO_CODEC_PROFILE_BASELINE = 66：Baseline 级别的视频编码规格，一般用于视频通话、手机视频等。</li>
+								<li>VIDEO_CODEC_PROFILE_MAIN = 77：Main 级别的视频编码规格，一般用于主流消费类电子产品，如 mp4、便携的视频播放器、PSP 和 iPad 等</li>
+								<li>VIDEO_CODEC_PROFILE_HIGH = 100：（默认）High 级别的视频编码规格，一般用于广播及视频碟片存储，高清电视</li>
 							</ul>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="videocodectype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> video<wbr>Codec<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">video<wbr>Codec<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/video_codec_type_for_stream.html" class="tsd-signature-type">VIDEO_CODEC_TYPE_FOR_STREAM</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>用于旁路直播的输出视频的编解码类型。详见 <a href="../enums/video_codec_type_for_stream.html">VIDEO_CODEC_TYPE_FOR_STREAM</a></p>
 						</div>
 					</div>
 				</section>
@@ -392,114 +276,48 @@
 					<a name="videoframerate" class="tsd-anchor"></a>
 					<h3>video<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:165</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Frame rate (fps) of the CDN live output video stream.
-							The value range is (0, 30]. The default value is 15.</p>
+							<p>用于旁路直播的输出视频的帧率，单位为帧每秒，取值范围为 (0, 30]，
+							默认值为 15 fps。</p>
 						</div>
-						<p><strong>Note</strong>: Agora adjusts all values over 30 to 30.</p>
+						<p>服务器会将将高于 30 的帧率设置改为 30。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="videogop" class="tsd-anchor"></a>
 					<h3>video<wbr>Gop</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Gop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:175</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Video GOP in frames. The default value is 30 fps.</p>
+							<p>用于旁路直播的输出视频的 GOP，单位为帧。默认值为 30 帧</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="watermark" class="tsd-anchor"></a>
 					<h3>watermark</h3>
-					<div class="tsd-signature tsd-kind-icon">watermark<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:226</li>
-						</ul>
-					</aside>
+					<div class="tsd-signature tsd-kind-icon">watermark<span class="tsd-signature-symbol">:</span> <a href="rtcimage.html" class="tsd-signature-type">RtcImage</a><span class="tsd-signature-symbol">[]</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The watermark image added to the CDN live publishing stream.</p>
+							<p>直播视频上的水印图片。</p>
 						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Height of the image on the broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>HTTP/HTTPS URL address of the image on the broadcasting video.</p>
-									</div>
-									<p>The maximum length of this parameter is 1024 bytes.</p>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Width of the image on the broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Horizontal position of the image from the upper left of the
-										broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Vertical position of the image from the upper left of the broadcasting
-										video.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
+						<p>添加后，所有旁路直播的观众都可以看到水印。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="width-2" class="tsd-anchor"></a>
+					<a name="width" class="tsd-anchor"></a>
 					<h3>width</h3>
 					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:138</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Width of the video. The default value is 360.</p>
+							<p>用于旁路直播的输出视频的总宽度，默认值为 360，单位为像素。</p>
 						</div>
-						<p>If you push video streams to the CDN, set the value of width x height to
-						at least 64 x 64 (px), or the SDK will adjust it to 64 x 64 (px).</p>
-						<p>If you push audio streams to the CDN, set the value of width x height to
-						0 x 0 (px).</p>
+						<ul>
+							<li>如果推视频流，<code>width</code> 取值范围为 [64,1920]。如果取值低于 64，Agora 服务器会自动
+							调整为 64；如果取值高于 1920，Agora 服务器会自动调整为 1920。</li>
+							<li>如果推音频流，请将 width 和 height 都设为 0。</li>
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -520,10 +338,16 @@
 						<a href="transcodingconfig.html" class="tsd-kind-icon">Transcoding<wbr>Config</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#advancedfeatures" class="tsd-kind-icon">advanced<wbr>Features</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiobitrate" class="tsd-kind-icon">audio<wbr>Bitrate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiochannels" class="tsd-kind-icon">audio<wbr>Channels</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#audiocodecprofile" class="tsd-kind-icon">audio<wbr>Codec<wbr>Profile</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiosamplerate" class="tsd-kind-icon">audio<wbr>Sample<wbr>Rate</a>
@@ -535,7 +359,7 @@
 								<a href="transcodingconfig.html#backgroundimage" class="tsd-kind-icon">background<wbr>Image</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#height-1" class="tsd-kind-icon">height</a>
+								<a href="transcodingconfig.html#height" class="tsd-kind-icon">height</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#lowlatency" class="tsd-kind-icon">low<wbr>Latency</a>
@@ -556,6 +380,9 @@
 								<a href="transcodingconfig.html#videocodecprofile" class="tsd-kind-icon">video<wbr>Codec<wbr>Profile</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#videocodectype" class="tsd-kind-icon">video<wbr>Codec<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#videoframerate" class="tsd-kind-icon">video<wbr>Frame<wbr>Rate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -565,7 +392,7 @@
 								<a href="transcodingconfig.html#watermark" class="tsd-kind-icon">watermark</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#width-2" class="tsd-kind-icon">width</a>
+								<a href="transcodingconfig.html#width" class="tsd-kind-icon">width</a>
 							</li>
 						</ul>
 					</li>
@@ -588,6 +415,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

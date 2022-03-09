@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The uplink and downlink last-mile network probe test result.</p>
+						<p>上下行 Last-mile 质量探测结果。</p>
 					</div>
 				</div>
 			</section>
@@ -101,15 +101,9 @@
 					<a name="downlinkreport" class="tsd-anchor"></a>
 					<h3>downlink<wbr>Report</h3>
 					<div class="tsd-signature tsd-kind-icon">downlink<wbr>Report<span class="tsd-signature-symbol">:</span> <a href="lastmileprobeonewayresult.html" class="tsd-signature-type">LastmileProbeOneWayResult</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:347</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The downlink last-mile network probe test result.
-							See <a href="lastmileprobeonewayresult.html">LastmileProbeOneWayResult</a>.</p>
+							<p>下行网络质量报告，详见 <a href="lastmileprobeonewayresult.html">LastmileProbeOneWayResult</a>。</p>
 						</div>
 					</div>
 				</section>
@@ -117,14 +111,9 @@
 					<a name="rtt" class="tsd-anchor"></a>
 					<h3>rtt</h3>
 					<div class="tsd-signature tsd-kind-icon">rtt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:349</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The round-trip delay time (ms).</p>
+							<p>往返时延，单位为毫秒。</p>
 						</div>
 					</div>
 				</section>
@@ -132,37 +121,24 @@
 					<a name="state" class="tsd-anchor"></a>
 					<h3>state</h3>
 					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:338</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>States of the last-mile network probe test.</p>
+							<p>Last-mile 质量探测结果的状态，有如下几种：</p>
+							<ul>
+								<li>1：表示本次 Last-mile 质量探测是完整的</li>
+								<li>2：表示本次 Last-mile 质量探测未进行带宽预测，因此结果不完整。一个可能的原因是测试资源暂时受限</li>
+								<li>3：未进行 Last-mile 质量探测。一个可能的原因是网络连接中断</li>
+							</ul>
 						</div>
-						<ul>
-							<li>1: The last-mile network probe test is complete.</li>
-							<li>2: The last-mile network probe test is incomplete and the bandwidth
-							estimation is not available, probably due to limited test resources.</li>
-							<li>3: The last-mile network probe test is not carried out, probably due
-							to poor network conditions.</li>
-						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="uplinkreport" class="tsd-anchor"></a>
 					<h3>uplink<wbr>Report</h3>
 					<div class="tsd-signature tsd-kind-icon">uplink<wbr>Report<span class="tsd-signature-symbol">:</span> <a href="lastmileprobeonewayresult.html" class="tsd-signature-type">LastmileProbeOneWayResult</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:343</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The uplink last-mile network probe test result.
-							See <a href="lastmileprobeonewayresult.html">LastmileProbeOneWayResult</a>.</p>
+							<p>上行网络质量报告，详见 <a href="lastmileprobeonewayresult.html">LastmileProbeOneWayResult</a>。</p>
 						</div>
 					</div>
 				</section>
@@ -216,6 +192,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

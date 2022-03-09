@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Sets the camera capturer preference.</p>
+						<p>摄像头采集偏好。</p>
 					</div>
 				</div>
 			</section>
@@ -93,16 +93,10 @@
 					<a name="capturer_output_preference_auto" class="tsd-anchor"></a>
 					<h3>CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>AUTO</h3>
 					<div class="tsd-signature tsd-kind-icon">CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>AUTO<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1085</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>0: (Default) self-adapts the camera output parameters to the system
-								performance and network conditions to balance CPU consumption and video
-							preview quality.</p>
+							<p>0：（默认）自动调整采集参数。SDK 根据实际的采集设备性能及网络情况，
+							选择合适的摄像头输出参数，在设备性能及视频预览质量之间，维持平衡</p>
 						</div>
 					</div>
 				</section>
@@ -110,15 +104,9 @@
 					<a name="capturer_output_preference_manual" class="tsd-anchor"></a>
 					<h3>CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>MANUAL</h3>
 					<div class="tsd-signature tsd-kind-icon">CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>MANUAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1105</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>3: Allows you to customize the width and height of the video image
-							captured by the local camera.</p>
+							<p>3：允许用户设置本地摄像头采集的视频宽高。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -131,36 +119,24 @@
 					<a name="capturer_output_preference_performance" class="tsd-anchor"></a>
 					<h3>CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>PERFORMANCE</h3>
 					<div class="tsd-signature tsd-kind-icon">CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>PERFORMANCE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1092</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>1: Prioritizes the system performance.</p>
+							<p>1：优先保证设备性能。SDK 根据用户在
+								<a href="../classes/agorartcengine.html#setvideoencoderconfiguration">setVideoEncoderConfiguration</a>
+								中设置编码器的分辨率和帧率，选择最接近的摄像头输出参数，从而保证设备性能。
+							在这种情况下，预览质量接近于编码器的输出质量。</p>
 						</div>
-						<p>The SDK chooses the dimension
-							and frame rate of the local camera capture closest to those set
-						by the <a href="../classes/agorartcengine.html#setvideoencoderconfiguration">setVideoEncoderConfiguration</a> method.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="capturer_output_preference_preview" class="tsd-anchor"></a>
 					<h3>CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>PREVIEW</h3>
 					<div class="tsd-signature tsd-kind-icon">CAPTURER_<wbr>OUTPUT_<wbr>PREFERENCE_<wbr>PREVIEW<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1099</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>2: Prioritizes the local preview quality.</p>
+							<p>2：优先保证视频预览质量。SDK 选择较高的摄像头输出参数，从而提高预览视频的质量。
+							在这种情况下，会消耗更多的 CPU 及内存做视频前处理。</p>
 						</div>
-						<p>The SDK chooses higher camera output parameters to improve the local
-							video preview quality. This option requires extra CPU and RAM usage for
-						video pre-processing.</p>
 					</div>
 				</section>
 			</section>
@@ -213,6 +189,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Events during the RTMP or RTMPS streaming.</p>
+						<p>RTMP/RTMPS 推流时发生的事件。</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>since</dt>
@@ -83,7 +83,10 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="rtmp_streaming_event.html#rtmp_streaming_event_advanced_feature_not_support" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>ADVANCED_<wbr>FEATURE_<wbr>NOT_<wbr>SUPPORT</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="rtmp_streaming_event.html#rtmp_streaming_event_failed_load_image" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>FAILED_<wbr>LOAD_<wbr>IMAGE</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="rtmp_streaming_event.html#rtmp_streaming_event_request_too_often" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>REQUEST_<wbr>TOO_<wbr>OFTEN</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="rtmp_streaming_event.html#rtmp_streaming_event_url_already_in_use" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>URL_<wbr>ALREADY_<wbr>IN_<wbr>USE</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,21 +95,61 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="rtmp_streaming_event_advanced_feature_not_support" class="tsd-anchor"></a>
+					<h3>RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>ADVANCED_<wbr>FEATURE_<wbr>NOT_<wbr>SUPPORT</h3>
+					<div class="tsd-signature tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>ADVANCED_<wbr>FEATURE_<wbr>NOT_<wbr>SUPPORT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>3: 功能不支持。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.6.1.4</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="rtmp_streaming_event_failed_load_image" class="tsd-anchor"></a>
 					<h3>RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>FAILED_<wbr>LOAD_<wbr>IMAGE</h3>
 					<div class="tsd-signature tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>FAILED_<wbr>LOAD_<wbr>IMAGE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1750</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>An error occurs when you add a background image or a watermark image to the RTMP or RTMPS stream.</p>
+							<p>1: RTMP/RTMPS 推流时，添加背景图或水印出错。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.2.0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="rtmp_streaming_event_request_too_often" class="tsd-anchor"></a>
+					<h3>RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>REQUEST_<wbr>TOO_<wbr>OFTEN</h3>
+					<div class="tsd-signature tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>REQUEST_<wbr>TOO_<wbr>OFTEN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>4: 预留参数。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.6.1.4</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="rtmp_streaming_event_url_already_in_use" class="tsd-anchor"></a>
+					<h3>RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>URL_<wbr>ALREADY_<wbr>IN_<wbr>USE</h3>
+					<div class="tsd-signature tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>URL_<wbr>ALREADY_<wbr>IN_<wbr>USE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>2: 该推流 URL 已用于推流。如果你想开始新的推流，请使用新的推流 URL。</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
 							</dd>
 						</dl>
 					</div>
@@ -129,7 +172,16 @@
 						<a href="rtmp_streaming_event.html" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="rtmp_streaming_event.html#rtmp_streaming_event_advanced_feature_not_support" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>ADVANCED_<wbr>FEATURE_<wbr>NOT_<wbr>SUPPORT</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="rtmp_streaming_event.html#rtmp_streaming_event_failed_load_image" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>FAILED_<wbr>LOAD_<wbr>IMAGE</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="rtmp_streaming_event.html#rtmp_streaming_event_request_too_often" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>REQUEST_<wbr>TOO_<wbr>OFTEN</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="rtmp_streaming_event.html#rtmp_streaming_event_url_already_in_use" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT_<wbr>URL_<wbr>ALREADY_<wbr>IN_<wbr>USE</a>
 							</li>
 						</ul>
 					</li>
@@ -152,6 +204,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

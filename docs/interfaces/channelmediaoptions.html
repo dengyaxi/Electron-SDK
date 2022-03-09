@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The channel media options.</p>
+						<p>频道媒体设置选项</p>
 					</div>
 				</div>
 			</section>
@@ -88,6 +88,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmediaoptions.html#autosubscribeaudio" class="tsd-kind-icon">auto<wbr>Subscribe<wbr>Audio</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmediaoptions.html#autosubscribevideo" class="tsd-kind-icon">auto<wbr>Subscribe<wbr>Video</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmediaoptions.html#publishlocalaudio" class="tsd-kind-icon">publish<wbr>Local<wbr>Audio</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmediaoptions.html#publishlocalvideo" class="tsd-kind-icon">publish<wbr>Local<wbr>Video</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,48 +101,73 @@
 					<a name="autosubscribeaudio" class="tsd-anchor"></a>
 					<h3>auto<wbr>Subscribe<wbr>Audio</h3>
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Subscribe<wbr>Audio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2078</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Determines whether to subscribe to audio streams when the user joins the
-							channel:</p>
+							<p>设置加入频道时是否自动订阅音频流：</p>
 							<ul>
-								<li>true: (Default) Subscribe.</li>
-								<li>false: Do not subscribe.</li>
+								<li>true: （默认）订阅</li>
+								<li>false: 不订阅</li>
 							</ul>
 						</div>
-						<p>This member serves a similar function to the
-							<code>muteAllRemoteAudioStreams</code> method. After joining
-							the channel, you can call the <code>muteAllRemoteAudioStreams</code> method to set
-						whether to subscribe to audio streams in the channel.</p>
+						<p>该成员功能与 <a href="../classes/agorartcengine.html#muteallremoteaudiostreams">muteAllRemoteAudioStreams</a> 相同。加入频道后，你可以通过
+						<code>muteAllRemoteAudioStreams</code> 方法重新设置是否订阅频道内的远端音频流。</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="autosubscribevideo" class="tsd-anchor"></a>
 					<h3>auto<wbr>Subscribe<wbr>Video</h3>
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Subscribe<wbr>Video<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:2090</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Determines whether to subscribe to video streams when the user joins the
-							channel:</p>
+							<p>设置加入频道是是否自动订阅视频流：</p>
 							<ul>
-								<li>true: (Default) Subscribe.</li>
-								<li>false: Do not subscribe.</li>
+								<li>true: （默认）订阅</li>
+								<li>false: 不订阅</li>
 							</ul>
 						</div>
-						<p>This member serves a similar function to the
-							<code>muteAllRemoteVideoStreams</code> method. After joining
-							the channel, you can call the <code>muteAllRemoteVideoStreams</code> method to set
-						whether to subscribe to video streams in the channel.</p>
+						<p>该成员功能与 <a href="../classes/agorartcengine.html#muteallremotevideostreams">muteAllRemoteVideoStreams</a> 相同。加入频道后，你可以通过
+						<code>muteAllRemoteVideoStreams</code> 方法重新设置是否订阅频道内的远端视频流。</p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="publishlocalaudio" class="tsd-anchor"></a>
+					<h3>publish<wbr>Local<wbr>Audio</h3>
+					<div class="tsd-signature tsd-kind-icon">publish<wbr>Local<wbr>Audio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>设置是否在频道内发布本地音频流：</p>
+							<ul>
+								<li>true: （默认）发布</li>
+								<li>false: 不发布</li>
+							</ul>
+						</div>
+						<p>该成员功能与 <code>muteLocalAudioStream</code> 相同。加入频道后，你可以通过
+						<code>muteLocalAudioStream</code> 方法重新设置是否在频道内发布本地音频流。</p>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="publishlocalvideo" class="tsd-anchor"></a>
+					<h3>publish<wbr>Local<wbr>Video</h3>
+					<div class="tsd-signature tsd-kind-icon">publish<wbr>Local<wbr>Video<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>设置是否在频道内发布本地视频流：</p>
+							<ul>
+								<li>true: （默认）发布</li>
+								<li>false: 不发布</li>
+							</ul>
+						</div>
+						<p>该成员功能与 <code>muteLocalVideoStream</code> 相同。加入频道后，你可以通过 <code>muteLocalVideStream</code> 方法重新设置是否在频道内发布本地视频流。</p>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -166,6 +193,12 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="channelmediaoptions.html#autosubscribevideo" class="tsd-kind-icon">auto<wbr>Subscribe<wbr>Video</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="channelmediaoptions.html#publishlocalaudio" class="tsd-kind-icon">publish<wbr>Local<wbr>Audio</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="channelmediaoptions.html#publishlocalvideo" class="tsd-kind-icon">publish<wbr>Local<wbr>Video</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -187,6 +220,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
