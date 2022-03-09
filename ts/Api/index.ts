@@ -6006,7 +6006,8 @@ class AgoraRtcEngine extends EventEmitter {
    * 获取系统窗口信息。
    *
    * 该方法获取所有系统（macOS 或 Windows）窗口 ID，以及相关信息。你可以使用获取到的窗口 ID 进行屏幕共享。
-   * @returns {Array} 系统窗口 ID 和相关信息列表
+   * @param callback 回调函数。该回调的入参为 {@link WindowInfo} 数组，返回值为空。
+   * @returns
    */
   /**
    * Gets the window ID when using the video source.
@@ -6024,8 +6025,11 @@ class AgoraRtcEngine extends EventEmitter {
    * 获取屏幕信息。
    *
    * 该方法获取所有的系统（macOS 或 Windows）屏幕 ID，以及相关信息。你可以使用获取到的屏幕 ID 进行屏幕共享。
-   * @returns {Array} 系统屏幕 ID 和相关信息列表。Windows 和 macOS 系统中返回的屏幕 ID（displayId）不同。
-   * 你无需关注返回对象的具体内容，直接使用它进行屏幕共享即可。
+   *
+   * Windows 和 macOS 系统的屏幕 ID（displayId）不同。你无需关注屏幕 ID 的具体内容，直接使用它进行屏幕共享即可。
+   *
+   * @param callback 回调函数。该回调的入参为 {@link DisplayInfo} 数组，返回值为空。
+   * @returns
    */
   /**
    * Gets the display ID when using the video source.
@@ -6040,6 +6044,10 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.getScreenDisplaysInfo();
   }
 
+  /** @zh-cn
+   * @deprecated 该方法已废弃。请改用 {@link getScreenDisplaysInfo}。
+   *
+   */
   /**
    * @deprecated This method is deprecated. Use {@link getScreenDisplaysInfo} instead.
    *
