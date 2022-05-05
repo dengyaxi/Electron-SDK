@@ -143,6 +143,66 @@
 					<a name="mosvalue" class="tsd-anchor"></a>
 					<h3>mos<wbr>Value</h3>
 					<div class="tsd-signature tsd-kind-icon">mos<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<<<<<<< HEAD
+=======
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The quality of the remote audio stream as determined by the Agora
+								real-time audio MOS (Mean Opinion Score) measurement method in the
+								reported interval. The return value ranges from 0 to 500. Dividing the
+								return value by 100 gets the MOS score, which ranges from 0 to 5. The
+							higher the score, the better the audio quality.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.3.1</p>
+								<p>The subjective perception of audio quality corresponding to the Agora
+								real-time audio MOS scores is as follows:</p>
+								<table>
+									<thead>
+										<tr>
+											<th>MOS score</th>
+											<th>Perception of audio quality</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Greater than 4</td>
+											<td>Excellent. The audio sounds clear and smooth.</td>
+										</tr>
+										<tr>
+											<td>From 3.5 to 4</td>
+											<td>Good. The audio has some perceptible impairment, but still
+											sounds clear.</td>
+										</tr>
+										<tr>
+											<td>From 3 to 3.5</td>
+											<td>Fair. The audio freezes occasionally and requires attentive
+											listening.</td>
+										</tr>
+										<tr>
+											<td>From 2.5 to 3</td>
+											<td>Poor. The audio sounds choppy and requires considerable effort
+											to understand.</td>
+										</tr>
+										<tr>
+											<td>From 2 to 2.5</td>
+											<td>Bad. The audio has occasional noise. Consecutive audio dropouts
+												occur, resulting in some information loss. The users can communicate
+											only with difficulty.</td>
+										</tr>
+										<tr>
+											<td>Less than 2</td>
+											<td>Very bad. The audio has persistent noise. Consecutive audio
+												dropouts are frequent, resulting in severe information loss.
+											Communication is nearly impossible.</td>
+										</tr>
+									</tbody>
+								</table>
+							</dd>
+						</dl>
+					</div>
+>>>>>>> doc/3.7.0_wip
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="networktransportdelay" class="tsd-anchor"></a>
@@ -204,7 +264,11 @@
 					<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <a href="../enums/agoranetworkquality.html" class="tsd-signature-type">AgoraNetworkQuality</a></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>远端用户发送的音频流质量，详见 <a href="../enums/agoranetworkquality.html">AgoraNetworkQuality</a>。</p>
+=======
+							<p>Audio quality received by the user. See <a href="../enums/agoranetworkquality.html">AgoraNetworkQuality</a>.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 					</div>
 				</section>

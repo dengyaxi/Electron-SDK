@@ -105,7 +105,11 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>4: 本地视频采集失败，建议检查采集设备是否正常工作。</p>
+=======
+							<p>4: The local video capture fails. Check whether the capturing device is working properly.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 					</div>
 				</section>
@@ -115,11 +119,19 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>INBACKGROUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;6</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>6:（仅适用于 iOS）应用处于后台。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.3.1</p>
+=======
+							<p>6: (iOS only) The application is in the background.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.3.0</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -130,11 +142,19 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>CAPTURE_<wbr>MULTIPLE_<wbr>FOREGROUND_<wbr>APPS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;7</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>7:（仅适用于 iOS）应用窗口处于侧拉、分屏、画中画模式。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.3.1</p>
+=======
+							<p>7: (iOS only) The application is running in Slide Over, Split View, or Picture in Picture mode.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.3.0</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -155,7 +175,12 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>INVALID_<wbr>ID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;10</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>10: （仅 macOS 和 Windows）SDK 无法在视频设备列表中找到该视频设备。请检查视频设备 ID 是否有效。</p>
+=======
+							<p>10: (macOS and Windows only) The SDK cannot find the video device in the video device list. Check whether the ID
+							of the video device is valid.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -170,11 +195,19 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>DEVICE_<wbr>NOT_<wbr>FOUND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;8</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>8: 找不到本地视频采集设备。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.4.2</p>
+=======
+							<p>8: The SDK cannot find the local video capture device.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.0</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -225,14 +258,29 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>CLOSED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;12</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>12: 该错误码表示通过窗口 ID 共享的窗口已关闭，或通过窗口 ID 共享的全屏窗口已退出全屏。
 							退出全屏模式后，远端用户将无法看到共享的窗口。为避免远端用户看到黑屏，Agora 建议你立即结束本次共享。</p>
+=======
+							<p>12: The error code indicates that a window shared by the window ID has been closed, or a full-screen window
+								shared by the window ID has exited full-screen mode.
+								After exiting full-screen mode, remote users cannot see the shared window. To prevent remote users from seeing a
+							black screen, Agora recommends that you immediately stop screen sharing.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 						<p>报告该错误码的常见场景：</p>
 						<ul>
+<<<<<<< HEAD
 							<li>本地用户关闭共享的窗口时，SDK 会报告该错误码。</li>
 							<li>本地用户先放映幻灯片，然后共享放映中的幻灯片。结束放映时，SDK 会报告该错误码。</li>
 							<li>本地用户先全屏观看网页视频或网页文档，然后共享网页视频或网页文档。结束全屏时，SDK 会报告该错误码。</li>
+=======
+							<li>When the local user closes the shared window, the SDK reports this error code.</li>
+							<li>The local user shows some slides in full-screen mode first, and then shares the windows of the slides. After
+							the user exits full-screen mode, the SDK reports this error code.</li>
+							<li>The local user watches web video or reads web document in full-screen mode first, and then shares the window of
+							the web video or document. After the user exits full-screen mode, the SDK reports this error code.</li>
+>>>>>>> doc/3.7.0_wip
 						</ul>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -247,6 +295,7 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>MINIMIZED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;11</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>11: 调用 <a href="../classes/agorartcengine.html#startscreencapturebywindow">startScreenCaptureByWindow</a> 方法共享窗口时，共享窗口处于最小化的状态。</p>
 						</div>
 						<dl class="tsd-comment-tags">
@@ -254,6 +303,12 @@
 							<dd><p>v3.2.0</p>
 							</dd>
 						</dl>
+=======
+							<p>11: The shared window is minimized when you call
+								\ref IRtcEngine::startScreenCaptureByWindowId &quot;startScreenCaptureByWindowId&quot;
+							to share a window.</p>
+						</div>
+>>>>>>> doc/3.7.0_wip
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
@@ -262,11 +317,19 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>NOT_<wbr>SUPPORTED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;20</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>（仅 Windows）SDK 不支持共享该类型的窗口。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.6.1.4</p>
+=======
+							<p>20: (Windows only) The SDK does not support sharing this type of window.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>deprecated</dt>
+							<dd><p>Deprecated from v3.7.0. As of v3.7.0, the SDK no longer throws this error code and automatically adjusts the capture method to capture more types of windows.</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -277,7 +340,12 @@
 					<div class="tsd-signature tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR_<wbr>SCREEN_<wbr>CAPTURE_<wbr>WINDOW_<wbr>OCCLUDED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;13</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>13:（仅 Windows）待共享的窗口被其他窗口遮挡住，被遮挡住的部分在共享时会被 SDK 涂黑。</p>
+=======
+							<p>13: (Windows only) The window being shared is overlapped by another window, so the overlapped area is blacked out by
+							the SDK during window sharing.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>

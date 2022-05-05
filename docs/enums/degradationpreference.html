@@ -67,7 +67,11 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
+<<<<<<< HEAD
 						<p>带宽受限时视频编码的降级偏好。</p>
+=======
+						<p>Video degradation preferences under limited bandwidth.</p>
+>>>>>>> doc/3.7.0_wip
 					</div>
 				</div>
 			</section>
@@ -93,6 +97,7 @@
 					<h3>MAINTAIN_<wbr>BALANCED</h3>
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>BALANCED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
 					<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
 							<dd><p>v3.4.2</p>
@@ -102,6 +107,20 @@
 							</dd>
 							<dt>note</dt>
 							<dd><p>本地发送的视频分辨率可能改变，远端用户需能处理这种情况，详见 <code>videoSizeChanged</code>。</p>
+=======
+						<div class="lead">
+							<p>2: Reduces the video frame rate and video quality simultaneously during
+								video encoding under limited bandwidth. <code>MAINTAIN_BALANCED</code> has a lower
+								reduction than <code>MAINTAIN_QUALITY</code> and <code>MAINTAIN_FRAMERATE</code>, and this
+								preference is suitable for scenarios where both smoothness and video
+							quality are a priority.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>The resolution of the video sent may change, so remote users need
+									to handle this issue.
+								See <code>videoSizeChanged</code>.</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -112,7 +131,14 @@
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>FRAMERATE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>1：带宽受限时，视频编码时优先降低视频质量，维持视频帧率不变。该降级偏好适用于流畅性优先且允许画质降低的场景。</p>
+=======
+							<p>1: Prefers to reduce the video quality while maintaining the video frame
+								rate during video encoding under limited bandwidth. This degradation
+								preference is suitable for scenarios where smoothness is prioritized and
+							video quality is allowed to be reduced.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 					</div>
 				</section>
@@ -122,12 +148,25 @@
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>QUALITY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>0：（默认）带宽受限时，视频编码时优先降低视频帧率，维持视频质量不变。该降级偏好适用于画质优先的场景。</p>
 						</div>
 						<dl class="tsd-comment-tags">
 							<dt>note</dt>
 							<dd><p>通信（<code>COMMUNICATION</code>）场景下，本地发送的视频分辨率可能改变，远端用户需能处理这种情况，
 								详见 <code>videoSizeChanged</code>。</p>
+=======
+							<p>0: (Default) Prefers to reduce the video frame rate while maintaining
+								video quality during video encoding under limited bandwidth. This
+								degradation preference is suitable for scenarios where video quality is
+							prioritized.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>In the <code>COMMUNICATION</code> channel profile, the resolution of the video
+									sent may change, so remote users need to handle this issue.
+								See <code>videoSizeChanged</code>.</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>

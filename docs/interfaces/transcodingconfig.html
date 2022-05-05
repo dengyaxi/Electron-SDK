@@ -97,7 +97,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#lowlatency" class="tsd-kind-icon">low<wbr>Latency</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingextrainfo" class="tsd-kind-icon">transcoding<wbr>Extra<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingusers" class="tsd-kind-icon">transcoding<wbr>Users</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#usercount" class="tsd-kind-icon">user<wbr>Count</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videobitrate" class="tsd-kind-icon">video<wbr>Bitrate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodecprofile" class="tsd-kind-icon">video<wbr>Codec<wbr>Profile</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodectype" class="tsd-kind-icon">video<wbr>Codec<wbr>Type</a></li>
@@ -116,11 +115,34 @@
 					<a name="advancedfeatures" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> advanced<wbr>Features</h3>
 					<div class="tsd-signature tsd-kind-icon">advanced<wbr>Features<span class="tsd-signature-symbol">:</span> <a href="livestreamadvancedfeature.html" class="tsd-signature-type">LiveStreamAdvancedFeature</a><span class="tsd-signature-symbol">[]</span></div>
+<<<<<<< HEAD
+=======
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Advanced features of the RTMP or RTMPS streaming with transcoding. See
+							LiveStreamAdvancedFeature.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.1.0</p>
+							</dd>
+						</dl>
+					</div>
+>>>>>>> doc/3.7.0_wip
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiobitrate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<<<<<<< HEAD
+=======
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Bitrate of the CDN live audio output stream. The default value is 48
+							Kbps, and the highest value is 128.</p>
+						</div>
+					</div>
+>>>>>>> doc/3.7.0_wip
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiochannels" class="tsd-anchor"></a>
@@ -143,6 +165,14 @@
 					<a name="audiocodecprofile" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> audio<wbr>Codec<wbr>Profile</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Codec<wbr>Profile<span class="tsd-signature-symbol">:</span> <a href="../enums/audio_codec_profile_type.html" class="tsd-signature-type">AUDIO_CODEC_PROFILE_TYPE</a></div>
+<<<<<<< HEAD
+=======
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Self-defined audio codec profile: #AUDIO_CODEC_PROFILE_TYPE.</p>
+						</div>
+					</div>
+>>>>>>> doc/3.7.0_wip
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiosamplerate" class="tsd-anchor"></a>
@@ -174,6 +204,19 @@
 					<a name="backgroundimage" class="tsd-anchor"></a>
 					<h3>background<wbr>Image</h3>
 					<div class="tsd-signature tsd-kind-icon">background<wbr>Image<span class="tsd-signature-symbol">:</span> <a href="rtcimage.html" class="tsd-signature-type">RtcImage</a><span class="tsd-signature-symbol">[]</span></div>
+<<<<<<< HEAD
+=======
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.2.0</p>
+								<p>The background image added to the CDN live publishing stream.</p>
+								<p>Once a background image is added, the audience of the CDN live publishing
+								stream can see the background image.</p>
+							</dd>
+						</dl>
+					</div>
+>>>>>>> doc/3.7.0_wip
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="height" class="tsd-anchor"></a>
@@ -183,11 +226,20 @@
 						<div class="lead">
 							<p>用于旁路直播的输出视频的总高度，默认值为 640，单位为像素。</p>
 						</div>
+<<<<<<< HEAD
 						<ul>
 							<li>如果推视频流，<code>height</code> 取值范围为 [64,1080]。如果取值低于 64，Agora 服务器会自动
 							调整为 64；如果取值高于 1080，Agora 服务器会自动调整为 1080。</li>
 							<li>如果推音频流，请将 width 和 height 都设为 0。</li>
 						</ul>
+=======
+						<p>When pushing video streams to the CDN, the value range of <code>height</code> is
+							[64,1080]. If the value is less than 64, Agora server automatically adjusts
+							it to 64; if the value is greater than 1080, Agora server automatically
+						adjusts it to 1080.</p>
+						<p>When pushing audio streams to the CDN, set the value of width x height to
+						0 x 0 (px).</p>
+>>>>>>> doc/3.7.0_wip
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -224,6 +276,7 @@
 					<a name="transcodingusers" class="tsd-anchor"></a>
 					<h3>transcoding<wbr>Users</h3>
 					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Users<span class="tsd-signature-symbol">:</span> <a href="transcodinguser.html" class="tsd-signature-type">TranscodingUser</a><span class="tsd-signature-symbol">[]</span></div>
+<<<<<<< HEAD
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="usercount" class="tsd-anchor"></a>
@@ -236,6 +289,15 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+=======
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The TranscodingUsers Array.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+>>>>>>> doc/3.7.0_wip
 					<a name="videobitrate" class="tsd-anchor"></a>
 					<h3>video<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -268,7 +330,11 @@
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Codec<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/video_codec_type_for_stream.html" class="tsd-signature-type">VIDEO_CODEC_TYPE_FOR_STREAM</a></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>用于旁路直播的输出视频的编解码类型。详见 <a href="../enums/video_codec_type_for_stream.html">VIDEO_CODEC_TYPE_FOR_STREAM</a></p>
+=======
+							<p>The video codec type of the output video stream. See <a href="../enums/video_codec_type_for_stream.html">VIDEO_CODEC_TYPE_FOR_STREAM</a>.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 					</div>
 				</section>
@@ -302,7 +368,10 @@
 						<div class="lead">
 							<p>直播视频上的水印图片。</p>
 						</div>
+<<<<<<< HEAD
 						<p>添加后，所有旁路直播的观众都可以看到水印。</p>
+=======
+>>>>>>> doc/3.7.0_wip
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -313,11 +382,20 @@
 						<div class="lead">
 							<p>用于旁路直播的输出视频的总宽度，默认值为 360，单位为像素。</p>
 						</div>
+<<<<<<< HEAD
 						<ul>
 							<li>如果推视频流，<code>width</code> 取值范围为 [64,1920]。如果取值低于 64，Agora 服务器会自动
 							调整为 64；如果取值高于 1920，Agora 服务器会自动调整为 1920。</li>
 							<li>如果推音频流，请将 width 和 height 都设为 0。</li>
 						</ul>
+=======
+						<p>When pushing video streams to the CDN, the value range of <code>width</code> is
+							[64,1920]. If the value is less than 64, Agora server automatically adjusts
+							it to 64; if the value is greater than 1920, Agora server automatically
+						adjusts it to 1920.</p>
+						<p>When pushing audio streams to the CDN, set the value of width x height to
+						0 x 0 (px).</p>
+>>>>>>> doc/3.7.0_wip
 					</div>
 				</section>
 			</section>
@@ -369,9 +447,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#transcodingusers" class="tsd-kind-icon">transcoding<wbr>Users</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#usercount" class="tsd-kind-icon">user<wbr>Count</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#videobitrate" class="tsd-kind-icon">video<wbr>Bitrate</a>

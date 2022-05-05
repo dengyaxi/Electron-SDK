@@ -99,11 +99,36 @@ export enum VIDEO_CODEC_TYPE {
  * - 1: Host.
  * - 2: Audience.
  */
-export enum ClientRoleType {
+export enum CLIENT_ROLE_TYPE {
   /** 1: Host. A host can both send and receive streams. */
   CLIENT_ROLE_BROADCASTER = 1,
   /** 2: (Default) Audience. An `audience` member can only receive streams. */
   CLIENT_ROLE_AUDIENCE = 2,
+}
+
+/**
+ * The reason for a user role switch failure.
+ *
+ * @since v3.7.0
+ */
+export enum CLIENT_ROLE_CHANGE_FAILED_REASON {
+  /** 1: The number of hosts in the channel is already at the upper limit.
+   *
+   * @note This enumerator is reported only when the support for 128 users is enabled. The maximum number of hosts is based on the actual number of hosts configured when you enable the 128-user feature.
+   */
+  CLIENT_ROLE_CHANGE_FAILED_BY_TOO_MANY_BROADCASTERS = 1,
+
+  /** 2: The request is rejected by the Agora server. Agora recommends you prompt the user to try to switch their user role again.
+   */
+  CLIENT_ROLE_CHANGE_FAILED_BY_NOT_AUTHORIZED = 2,
+
+  /** 3: The request is timed out. Agora recommends you prompt the user to check the network connection and try to switch their user role again.
+   */
+  CLIENT_ROLE_CHANGE_FAILED_BY_REQUEST_TIME_OUT = 3,
+
+  /** 4: The SDK connection fails. You can use `reason` reported in the `connectionStateChanged` callback to troubleshoot the failure.
+   */
+  CLIENT_ROLE_CHANGE_FAILED_BY_CONNECTION_FAILED = 4,
 }
 
 /** @zh-cn
@@ -1048,7 +1073,7 @@ export interface InjectStreamConfig {
    *
    * The default value is 15 fps.
    */
-  videoFrameRate: number;
+  videoFramerate: number;
   /** @zh-cn
    * 添加进入直播的外部视频源 GOP。默认值为 30 帧。
    */
@@ -2781,7 +2806,7 @@ export enum RemoteAudioStateReason {
  * (through the RESTful API), the SDK triggers connectionStateChanged
  * callbacks.
  */
-export enum ConnectionState {
+export enum CONNECTION_STATE_TYPE {
   /** 1: The SDK is disconnected from Agora's edge server.
    - This is the initial state before calling the {@link joinChannel} method.
    - The SDK also enters this state when the application calls the {@link leaveChannel} method.
@@ -2853,8 +2878,10 @@ export enum ConnectionState {
  * - 11: SDK reconnects for setting proxy server.
  * - 12: Network status change for renew token.
  * - 13: Client IP Address changed.
+ * - 19: The user joins the same channel from different devices using the same user ID.
+ * - 20: The number of hosts in the channel is already at the upper limit.
  */
-export enum ConnectionChangeReason {
+export enum CONNECTION_CHANGED_REASON_TYPE {
   /** 0: The SDK is connecting to Agora's edge server. */
   CONNECTION_CHANGED_CONNECTING = 0,
   /** 1: The SDK has joined the channel successfully. */
@@ -2897,6 +2924,18 @@ export enum ConnectionChangeReason {
   CONNECTION_CHANGED_CLIENT_IP_ADDRESS_CHANGED = 13,
   /** 14: Timeout for the keep-alive of the connection between the SDK and Agora's edge server. The connection state changes to CONNECTION_STATE_RECONNECTING(4). */
   CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT = 14,
+  /** 19: Join the same channel from different devices using the same user ID.
+   *
+   * @since v3.7.0
+   */
+  CONNECTION_CHANGED_SAME_UID_LOGIN = 19,
+  /** 20: The number of hosts in the channel is already at the upper limit.
+   *
+   * @note This enumerator is reported only when the support for 128 users is enabled. The maximum number of hosts is based on the actual number of hosts configured when you enable the 128-user feature.
+   *
+   * @since v3.7.0
+   */
+  CONNECTION_CHANGED_TOO_MANY_BROADCASTERS = 20,
 }
 
 /** @zh-cn
@@ -4733,8 +4772,6 @@ export interface ClientRoleOptions {
  */
 /** The cloud proxy type.
  *
- * @since v3.3.1
- *
  * The cloud proxy type.
  * - 0: Do not use the cloud proxy.
  * - 1: The cloud proxy for the UDP protocol.
@@ -4742,17 +4779,20 @@ export interface ClientRoleOptions {
  *
  */
 export enum CLOUD_PROXY_TYPE {
-  /** 0: Do not use the cloud proxy.
+  /** 0: The automatic mode. In this mode, the SDK attempts a direct connection to SD-RTN™ and automatically
+   * switches to TLS 443 if the attempt fails. As of v3.7.0, the SDK has this mode enabled by default.
    */
   NONE_PROXY = 0,
-  /** 1: The cloud proxy for the UDP protocol.
+  /** 1: The cloud proxy for the UDP protocol, that is, the Force UDP cloud proxy mode.
+   * In this mode, the SDK always transmits data over UDP.
    */
   UDP_PROXY = 1,
-  /// @cond
-  /** 2: The cloud proxy for the TCP (encrypted) protocol.
+  /** 2: The cloud proxy for the TCP (encryption) protocol, that is, the Force TCP cloud proxy mode.
+   * In this mode, the SDK always transmits data over TLS 443.
+   *
+   * @since v3.7.0
    */
   TCP_PROXY = 2,
-  /// @endcond
 }
 /** @zh-cn
  * Agora SDK 日志文件的配置。
@@ -5356,35 +5396,83 @@ export enum NETWORK_TYPE {
 }
 
 export interface DisplayId {
+  /**
+   * The screen ID.
+   */
   id: number;
+  /**
+   * The x coordinate (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
+   */
   x?: number;
+  /**
+   * The y coordinate (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
+   */
   y?: number;
+  /**
+   * The width (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
+   */
   width?: number;
+  /**
+   * The height (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
+   */
   height?: number;
 }
 
 export interface DisplayInfo {
+  /**
+   * See {@link DisplayId}.
+   */
   displayId: DisplayId;
+  /**
+   * The height (px) of the screen.
+   */
   height: number;
+  /**
+   * The width (px) of the screen.
+   */
   width: number;
+  /**
+   * The screenshot buffer.
+   */
   image: Uint8Array;
+  /**
+   * @deprecated
+   */
   isActive: boolean;
+  /**
+   * @deprecated
+   */
   isBuiltin: boolean;
+  /**
+   * Whether the screen is the main screen.
+   */
   isMain: boolean;
 }
 
 export interface WindowInfo {
+  /** The ID of the current process. */
   currentProcessId: number;
+  /** The height (px) of the window. */
   height: number;
+  /** The buffer of the window's screenshot. */
   image: Uint8Array;
+  /** The name of the window. */
   name: string;
+  /** @deprecated */
   originHeight: number;
+  /** @deprecated */
   originWidth: number;
+  /** The app to which the window belongs. */
   ownerName: string;
+  /** The ID of the process running in the window. */
   processId: number;
+  /** The width (px) of the window. */
   width: number;
+  /** The unique identifier of the window. */
   windowId: number;
+  /** The x coordinate (px) of the window. */
   x: number;
+  /** The y coordinate (px) of the window. */
   y: number;
 }
 /** @zh-cn
@@ -5415,7 +5503,13 @@ export enum AUDIO_RECORDING_QUALITY_TYPE {
   /** 2: High quality. For example, the size of an AAC file with a sample rate
    * of 32,000 Hz and a 10-minute recording is approximately 3.75 MB.
    */
-    AUDIO_RECORDING_QUALITY_HIGH = 2,
+  AUDIO_RECORDING_QUALITY_HIGH = 2,
+  /** 3: Ultra high quality. For example, the size of an AAC file with a sample rate
+   * of 32,000 Hz and a 10-minute recording is approximately 7.5 MB.
+   *
+   * @since v3.7.0
+   */
+  AUDIO_RECORDING_QUALITY_ULTRA_HIGH = 3,
 }
 
 /** @zh-cn
@@ -5547,6 +5641,19 @@ export interface AudioRecordingConfiguration {
    * {@link AUDIO_RECORDING_QUALITY_HIGH}.
    */
   recordingSampleRate: number;
+  /**
+   * @since v3.7.0
+   *
+   * The recorded audio channel. The following values are supported:
+   * - `1`: (Default) Mono channel.
+   * - `2`: Dual channel.
+   *
+   * @note The actual recorded audio channel is related to the audio channel that you capture.
+   * If the captured audio is mono and `recordingChannel` is 2, the recorded audio is the dual-channel data that is copied from mono data, not stereo.
+   * If the captured audio is dual channel and `recordingChannel` is 1, the recorded audio is the mono data that is mixed by dual-channel data.
+   * The integration scheme also affects the final recorded audio channel. Therefore, to record in stereo, contact technical support for assistance.
+   */
+  recordingChannel: number;
 }
 
 /** @zh-cn
@@ -5697,7 +5804,10 @@ export interface VirtualBackgroundSource {
    *
    * @since v3.4.5
    */
-  /** The type of the custom background image.
+  /** The type of the custom background image:
+   * - 1: (Default) The background image is a solid color.
+   * - 2: The background image is a file in PNG or JPG format.
+   * - 3: The background image is blurred.
    *
    * @since v3.4.5
    */
@@ -5924,7 +6034,7 @@ export interface NodeRtcEngine {
    * @ignore
    */
   setClientRoleWithOptions(
-    role: ClientRoleType,
+    role: CLIENT_ROLE_TYPE,
     options: ClientRoleOptions
   ): number;
   /**
@@ -7714,6 +7824,9 @@ export interface NodeRtcEngine {
     enabled: boolean,
     options: LowLightEnhanceOptions
   ): number;
+  /**
+   * @ignore
+   */
   setVideoDenoiserOptions(
     enabled: boolean,
     options: VideoDenoiserOptions
@@ -7726,6 +7839,10 @@ export interface NodeRtcEngine {
   setLocalAccessPoint(
     localAccessPointConfiguration: LocalAccessPointConfiguration
   ): number;
+
+  videoSourceSetLocalAccessPoint(
+    localAccessPointConfiguration: LocalAccessPointConfiguration
+  ): number;
   /** @zh-cn
   * @ignore
   */
@@ -7733,6 +7850,20 @@ export interface NodeRtcEngine {
    * @ignore
    */
   startEchoTestWithConfig(config: EchoTestConfiguration): number;
+
+  //3.7.0
+  /**
+   * @ignore
+   */
+  setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number;
+  enableLocalVoicePitchCallback(interval: number): number;
+  enableWirelessAccelerate(enabled: boolean): number;
+  enableContentInspect(enabled: boolean, config: ContentInspectConfig): number;
+  enableSpatialAudio(enabled: boolean): number;
+  setRemoteUserSpatialAudioParams(
+    uid: number,
+    spatial_audio_params?: SpatialAudioParams
+  ): number;
 }
 /** @zh-cn
  * @ignore
@@ -7826,7 +7957,7 @@ export interface NodeRtcChannel {
   /**
    * @ignore
    */
-  setClientRole(clientRole: ClientRoleType): number;
+  setClientRole(clientRole: CLIENT_ROLE_TYPE): number;
 
   /** @zh-cn
    * @ignore
@@ -7835,7 +7966,7 @@ export interface NodeRtcChannel {
    * @ignore
    */
   setClientRoleWithOptions(
-    role: ClientRoleType,
+    role: CLIENT_ROLE_TYPE,
     options: ClientRoleOptions
   ): number;
 
@@ -8166,66 +8297,100 @@ export interface BeautyOptions {
 }
 
 export enum LOW_LIGHT_ENHANCE_MODE {
-  /** low light enhancement is applied automatically when neccessary. */
+  /** 0: (Default) Automatic mode. The SDK automatically enables or disables the low-light enhancement feature according to the ambient light to compensate for the lighting level or prevent overexposure, as necessary. */
   LOW_LIGHT_ENHANCE_AUTO = 0,
-  /** low light enhancement is applied manually. */
+  /** 1: Manual mode. Users need to enable or disable the low-light enhancement feature manually. */
   LOW_LIGHT_ENHANCE_MANUAL,
 }
 
 export enum LOW_LIGHT_ENHANCE_LEVEL {
-  /** low light enhancement is applied without reducing frame rate. */
+  /** 0: (Default) Promotes video quality during low-light enhancement. It processes the brightness, details, and noise of the video image. The performance consumption is moderate, the processing speed is moderate, and the overall video quality is optimal. */
   LOW_LIGHT_ENHANCE_LEVEL_HIGH_QUALITY = 0,
-  /** High-quality low light enhancement is applied, at the cost of possibly reduced frame rate and higher cpu usage. */
+  /** 1: Promotes performance during low-light enhancement. It processes the brightness and details of the video image. The processing speed is faster. */
   LOW_LIGHT_ENHANCE_LEVEL_FAST,
 }
 
-/** lowlight enhancement options.
+/** The low-light enhancement options.
+ *
+ * @since v3.7.0
  */
 export interface LowLightEnhanceOptions {
-  /** lowlight enhancement mode.
+  /** The low-light enhancement mode:
+   * - 0: (Default) Automatic mode. The SDK automatically enables or disables the low-light enhancement feature according to the ambient light to compensate for the lighting level or prevent overexposure, as necessary.
+   * - 1: Manual mode. Users need to enable or disable the low-light enhancement feature manually.
    */
   mode: LOW_LIGHT_ENHANCE_MODE;
 
-  /** lowlight enhancement level.
+  /** The low-light enhancement level:
+   * - 0: (Default) Promotes video quality during low-light enhancement. It processes the brightness, details, and noise of the video image. The performance consumption is moderate, the processing speed is moderate, and the overall video quality is optimal.
+   * - 1: Promotes performance during low-light enhancement. It processes the brightness and details of the video image. The processing speed is faster.
    */
   level: LOW_LIGHT_ENHANCE_LEVEL;
 }
 
-/** video noise reduction mode
+/** The video noise reduction mode.
  */
 export enum VIDEO_DENOISER_MODE {
-  /** video noise reduction is applied automatically when neccessary. */
+  /** 0: (Default) Automatic mode. The SDK automatically enables or disables the video noise reduction feature according to the ambient light. */
   VIDEO_DENOISER_AUTO = 0,
-  /** video noise reduction is applied manually. */
+  /** 1: Manual mode. Users need to enable or disable the video noise reduction feature manually. */
   VIDEO_DENOISER_MANUAL,
 }
 
 export enum VIDEO_DENOISER_LEVEL {
-  /** Video noise reduction is applied for the default scene  */
+  /**
+   * 0: (Default) Promotes video quality during video noise reduction. `HIGH_QUALITY` balances performance consumption and video noise reduction quality.
+   * The performance consumption is moderate, the video noise reduction speed is moderate, and the overall video quality is optimal.
+   */
   VIDEO_DENOISER_LEVEL_HIGH_QUALITY = 0,
-  /** Video noise reduction is applied for the fixed-camera scene to save the cpu usage */
+  /**
+   * 1: Promotes reducing performance consumption during video noise reduction. `FAST` prioritizes reducing performance consumption over video noise reduction quality.
+   * The performance consumption is lower, and the video noise reduction speed is faster. To avoid a noticeable shadowing effect (shadows trailing behind moving objects) in the processed video, Agora recommends that you use `FAST` when the camera is fixed.
+   */
   VIDEO_DENOISER_LEVEL_FAST,
-  /** Video noise reduction is applied for the high noisy scene to further denoise the video. */
+  /**
+   * 2: Enhanced video noise reduction. `STRENGTH` prioritizes video noise reduction quality over reducing performance consumption.
+   * The performance consumption is higher, the video noise reduction speed is slower, and the video noise reduction quality is better.
+   * If `HIGH_QUALITY` is not enough for your video noise reduction needs, you can use `STRENGTH`.
+   */
   VIDEO_DENOISER_LEVEL_STRENGTH,
 }
+/**
+ * The video noise reduction options.
+ *
+ * @since v3.7.0
+ */
 export interface VideoDenoiserOptions {
-  /** video noise reduction mode.
+  /** The video noise reduction mode:
+   * - 0: (Default) Automatic mode. The SDK automatically enables or disables the video noise reduction feature according to the ambient light.
+   * - 1: Manual mode. Users need to enable or disable the video noise reduction feature manually.
    */
   mode: VIDEO_DENOISER_MODE;
 
-  /** video noise reduction level.
+  /** The video noise reduction level:
+   * - 0: (Default) Promotes video quality during video noise reduction. `HIGH_QUALITY` balances performance consumption and video noise reduction quality.
+   * The performance consumption is moderate, the video noise reduction speed is moderate, and the overall video quality is optimal.
+   * - 1: Promotes reducing performance consumption during video noise reduction. `FAST` prioritizes reducing performance consumption over video noise reduction quality.
+   * The performance consumption is lower, and the video noise reduction speed is faster. To avoid a noticeable shadowing effect (shadows trailing behind moving objects) in the processed video, Agora recommends that you use `FAST` when the camera is fixed.
+   * - 2: Enhanced video noise reduction. `STRENGTH` prioritizes video noise reduction quality over reducing performance consumption.
+   * The performance consumption is higher, the video noise reduction speed is slower, and the video noise reduction quality is better.
+   * If `HIGH_QUALITY` is not enough for your video noise reduction needs, you can use `STRENGTH`.
    */
   level: VIDEO_DENOISER_LEVEL;
 }
 
-/** color enhancement options.
+/** The color enhancement options.
+ *
+ * @since v3.7.0
  */
 export interface ColorEnhanceOptions {
-  /** Color enhance strength. The value ranges between 0 (original) and 1.
+  /** The level of color enhancement. The value range is [0.0,1.0]. `0.0` is the default value, which means no color enhancement is applied to the video. The higher the value, the higher the level of color enhancement.
    */
   strengthLevel: number;
 
-  /** Skin protect level. The value ranges between 0 (original) and 1.
+  /** The level of skin tone protection. The value range is [0.0,1.0]. `0.0` means no skin tone protection. The higher the value, the higher the level of skin tone protection.
+   * The default value is `1.0`. When the level of color enhancement is higher, the portrait skin tone can be significantly distorted, so you need to set the level of skin tone protection; when the level of skin tone protection is higher, the color enhancement effect can be slightly reduced.
+   * Therefore, to get the best color enhancement effect, Agora recommends that you adjust `strengthLevel` and `skinProtectLevel` to get the most appropriate values.
    */
   skinProtectLevel: number;
 }
@@ -8239,20 +8404,6 @@ export enum LOCAL_PROXY_MODE {
   LocalOnly = 1,
 }
 
-export interface UploadServerInfo {
-  serverDomain:string;
-
-  serverPath:string;
-
-  serverPort: number;
-
-  serverHttps: boolean;
-}
-export interface AdvancedConfigInfo {
-  // log upload server
-
-  logUploadServer: UploadServerInfo;
-}
 export interface LocalAccessPointConfiguration {
   /** local access point ip address list.
    */
@@ -8260,21 +8411,24 @@ export interface LocalAccessPointConfiguration {
   /** local access point domain list.
    */
   domainList: string[];
-  /** the number of local access point domain.
-   */
-  domainListSize: number;
   /** certificate domain name installed on specific local access point. pass "" means using sni domain on specific local access point
    */
   verifyDomainName: string;
   /** local proxy connection mode, connectivity first or local only.
    */
   mode: LOCAL_PROXY_MODE;
-  advancedConfig: AdvancedConfigInfo;
 }
-
-/**Audio Device Test.different volume Type*/
+/**
+ * The volume type.
+ *
+ * @since v3.7.0
+ */
 export enum AudioDeviceTestVolumeType {
+  /** 0: The volume of the audio capturing device.
+   */
   AudioTestRecordingVolume = 0,
+  /** 1: The volume of the audio playback device.
+   */
   AudioTestPlaybackVolume = 1,
 }
 
@@ -8282,6 +8436,10 @@ export enum AudioDeviceTestVolumeType {
  * 音视频通话回路测试的配置。
  *
  * @since v3.6.1.4
+/**
+ * The configuration of the audio and video call loop test.
+ *
+ * @since v3.5.2
  */
 export interface EchoTestConfiguration {
   /** @zh-cn
@@ -8329,4 +8487,144 @@ export interface EchoTestConfiguration {
    * perform audio and video call loop tests on different devices.
    */
   channelId: string;
+}
+
+/**
+ * The screen sharing scenario.
+ *
+ * @since v3.7.0
+ */
+export enum SCREEN_SCENARIO_TYPE {
+  /** 1: (Default) Document. This scenario prioritizes the video quality of screen sharing and reduces the latency of the shared video for the receiver. If you share documents, slides, and tables, you can set this scenario.
+   */
+  SCREEN_SCENARIO_DOCUMENT = 1,
+  /** 2: Game. This scenario prioritizes the smoothness of screen sharing. If you share games, you can set this scenario.
+   */
+  SCREEN_SCENARIO_GAMING = 2,
+  /** 3: Video. This scenario prioritizes the smoothness of screen sharing. If you share movies or live videos, you can set this scenario.
+   */
+  SCREEN_SCENARIO_VIDEO = 3,
+  /** 4: Remote control. This scenario prioritizes the video quality of screen sharing and reduces the latency of the shared video for the receiver. If you share the device desktop being remotely controlled, you can set this scenario.
+   */
+  SCREEN_SCENARIO_RDC = 4,
+}
+
+export interface ContentInspectModule {
+  /**
+   * The content inspect module type.
+   * the module type can be 0 to 31.
+   * kContentInspectInvalid(0)
+   * kContentInspectModeration(1)
+   * kContentInspectSupervise(2)
+   */
+  type: number;
+  /**The content inspect frequency, default is 0 second.
+   * the frequency <= 0 is invalid.
+   */
+  interval: number;
+}
+export interface ContentInspectConfig {
+  /** The extra information, max length of extraInfo is 1024.
+   *  The extra information will send to server with content(image).
+   */
+  extraInfo: number;
+  /**The content inspect modules, max length of modules is 32.
+   * the content(snapshot of send video stream, image) can be used to max of 32 types functions.
+   */
+  modules: ContentInspectModule[];
+}
+
+export enum WLACC_MESSAGE_REASON {
+  /** WIFI signal is weak.*/
+  WLACC_MESSAGE_REASON_WEAK_SIGNAL = 0,
+  /** Channel congestion.*/
+  WLACC_MESSAGE_REASON_CHANNEL_CONGESTION = 1,
+}
+export enum WLACC_SUGGEST_ACTION {
+  /** Please get close to AP.*/
+  WLACC_SUGGEST_ACTION_CLOSE_TO_WIFI = 0,
+  /** The user is advised to connect to the prompted SSID.*/
+  WLACC_SUGGEST_ACTION_CONNECT_SSID = 1,
+  /** The user is advised to check whether the AP supports 5G band and enable 5G band (the aciton link is attached), or purchases an AP that supports 5G. AP does not support 5G band.*/
+  WLACC_SUGGEST_ACTION_CHECK_5G = 2,
+  /** The user is advised to change the SSID of the 2.4G or 5G band (the aciton link is attached). The SSID of the 2.4G band AP is the same as that of the 5G band.*/
+  WLACC_SUGGEST_ACTION_MODIFY_SSID = 3,
+}
+
+export interface WlAccStats {
+  /** End-to-end delay optimization percentage.*/
+  e2eDelayPercent: number;
+  /** Frozen Ratio optimization percentage.*/
+  frozenRatioPercent: number;
+  /** Loss Rate optimization percentage.*/
+  lossRatePercent: number;
+}
+
+export enum CONTENT_INSPECT_RESULT {
+  CONTENT_INSPECT_NEUTRAL = 1,
+  CONTENT_INSPECT_SEXY = 2,
+  CONTENT_INSPECT_PORN = 3,
+}
+
+/**
+ * The proxy type.
+ *
+ * @since v3.7.0
+ */
+export enum PROXY_TYPE {
+  /** 0: Reserved for future use.
+   */
+  NONE_PROXY_TYPE = 0,
+  /** 1: The cloud proxy for the UDP protocol, that is, the Force UDP cloud proxy mode. In this mode, the SDK always transmits data over UDP.
+   */
+  UDP_PROXY_TYPE = 1,
+  /** 2: The cloud proxy for the TCP (encryption) protocol, that is, the Force TCP cloud proxy mode. In this mode, the SDK always transmits data over TLS 443.
+   */
+  TCP_PROXY_TYPE = 2,
+  /** 3: Reserved for future use.
+   */
+  LOCAL_PROXY_TYPE = 3,
+  /** 4: The automatic mode. In this mode, the SDK attempts a direct connection to SD-RTN™ and automatically switches to TLS 443 if the attempt fails.
+   */
+  TCP_PROXY_AUTO_FALLBACK_TYPE = 4,
+}
+
+export interface SpatialAudioParams {
+  /**
+   * The azimuthal angle in degrees of the remote user relative to the local user in the spherical coordinate system (taking the position of the local user as its origin). The value range is [0,360], as defined by the following main directions:
+   * - `0`: (Default) 0 degrees, which means the remote user is directly in front of the local user.
+   * - `90`: 90 degrees, which means the remote user is directly to the left of the local user.
+   * - `180`: 180 degrees, which means the remote user is directly behind the local user.
+   * - `270`: 270 degrees, which means the remote user is directly to the right of the local user.
+   */
+  speaker_azimuth: number;
+  /**
+   * The elevation angle in degrees of the remote user relative to the local user in the spherical coordinate system (taking the position of the local user as its origin). The value range is [-90,90], as defined by the following main directions:
+   * - `0`: (Default) 0 degrees, which means the remote user is at the same horizontal level as the local user.
+   * - `-90`: -90 degrees, which means the remote user is directly above the local user.
+   * - `90`: 90 degrees, which means the remote user is directly below the local user.
+   */
+  speaker_elevation: number;
+  /**
+   * The distance in meters of the remote user relative to the local user in the spherical coordinate system (taking the position of the local user as its origin). The value range is [1,50]. The default value is 1 meter.
+   */
+  speaker_distance: number;
+  /**
+   * The orientation in degrees of the remote user's head relative to the local user's head in a spherical coordinate system (taking the position of the local user as its origin). The value range is [0,180], as defined by the following main directions:
+   * - `0`: (Default) 0 degrees, which means the remote user's head and the local user's head face the same direction.
+   * - `180`: 180 degrees, which means the remote user's head and the local user's head face opposite directions.
+   */
+  speaker_orientation: number;
+  /**
+   * Whether to enable audio blurring:
+   * - true: Enable blurring.
+   * - false: (Default) Disables blurring.
+   */
+  enable_blur: boolean;
+  /**
+   * Whether to enable air absorption. This function simulates the energy attenuation of audio when the audio transmits in the air:
+   * - true: (Default) Enables air absorption.
+   * - false: Disable air absorption.
+   */
+  enable_air_absorb: boolean;
 }

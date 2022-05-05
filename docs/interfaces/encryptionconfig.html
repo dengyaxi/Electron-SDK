@@ -101,6 +101,7 @@
 					<h3>encryption<wbr>Kdf<wbr>Salt</h3>
 					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Kdf<wbr>Salt<span class="tsd-signature-symbol">:</span> <a href="../globals.html#uint8arraybuffer" class="tsd-signature-type">Uint8ArrayBuffer</a></div>
 					<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 						<div class="lead">
 							<p>盐，长度为 32 字节。Agora 推荐你在服务端使用 OpenSSL 生成盐，详见《媒体流加密》。</p>
 						</div>
@@ -111,6 +112,19 @@
 							</dd>
 							<dt>since</dt>
 							<dd><p>v3.4.5</p>
+=======
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+								<p>The salt with the length of 32 bytes. Agora recommends using OpenSSL to
+								generate the salt on your server.</p>
+								<p>For details, see <em>Media Stream Encryption</em>.</p>
+							</dd>
+							<dt>note</dt>
+							<dd><p>This parameter is only valid when you set the encryption mode as
+									<code>AES_128_GCM2</code> or <code>AES_256_GCM2</code>. In this case, ensure that this parameter
+								is not <code>0</code>.</p>
+>>>>>>> doc/3.7.0_wip
 							</dd>
 						</dl>
 					</div>
@@ -136,7 +150,11 @@
 					<div class="tsd-signature tsd-kind-icon">encryption<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/encryption_mode.html" class="tsd-signature-type">ENCRYPTION_MODE</a></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
+<<<<<<< HEAD
 							<p>内置加密模式，默认为 <code>AES_128_GCM2</code> 加密模式</p>
+=======
+							<p>Encryption mode. The default encryption mode is <code>AES_128_GCM2</code>.</p>
+>>>>>>> doc/3.7.0_wip
 						</div>
 					</div>
 				</section>

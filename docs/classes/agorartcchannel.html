@@ -115,7 +115,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#enableencryption" class="tsd-kind-icon">enable<wbr>Encryption</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#getcallid" class="tsd-kind-icon">get<wbr>Call<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#getconnectionstate" class="tsd-kind-icon">get<wbr>Connection<wbr>State</a></li>
+<<<<<<< HEAD
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#initeventhandler" class="tsd-kind-icon">init<wbr>Event<wbr>Handler</a></li>
+=======
+>>>>>>> doc/3.7.0_wip
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#joinchannel" class="tsd-kind-icon">join<wbr>Channel</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#joinchannelwithuseraccount" class="tsd-kind-icon">join<wbr>Channel<wbr>With<wbr>User<wbr>Account</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="agorartcchannel.html#leavechannel" class="tsd-kind-icon">leave<wbr>Channel</a></li>
@@ -211,10 +214,18 @@
 									</dd>
 									<dt>note</dt>
 									<dd><ul>
+<<<<<<< HEAD
 											<li>该方法仅使用于直播场景下的主播。</li>
 											<li>调用该方法前，请确保已开通旁路推流的功能，详见《旁路推流》文档的 “前提条件”。</li>
 											<li>请确保在成功加入频道后再调用该接口。</li>
 											<li>该方法每次只能增加一路媒体流地址。若需输入多路流，则需多次调用该方法。</li>
+=======
+											<li>Only the host in the <code>1</code> (live streaming) profile can call this method.</li>
+											<li>Ensure that you enable the Media Push service before using this
+											function. See <em>Prerequisites</em> in the <em>Media Push</em> guide.</li>
+											<li>This method applies to the <code>1</code> (live streaming) profile only.</li>
+											<li>You can inject only one media stream into the channel at the same time.</li>
+>>>>>>> doc/3.7.0_wip
 										</ul>
 									</dd>
 								</dl>
@@ -240,12 +251,25 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<ul>
+<<<<<<< HEAD
 								<li>0：方法调用成功</li>
 								<li>&lt; 0：方法调用失败<ul>
 										<li><code>2</code>: 输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的。</li>
 										<li><code>7</code>: 引擎没有初始化。请确认调用该方法前已创建 <code>AgoraRtcChannel</code> 对象并完成初始化。</li>
 										<li><code>4</code>: 频道非直播场景。请调用 <a href="agorartcengine.html#setchannelprofile">setChannelProfile</a> 并将频道设置为直播场景再调用该方法。</li>
 										<li><code>3</code>: 用户没有加入频道。</li>
+=======
+								<li>0: Success</li>
+								<li>&lt; 0: Failure<ul>
+										<li>ERR_INVALID_ARGUMENT (2): The injected URL does not exist. Call this
+										method again to inject the stream and ensure that the URL is valid.</li>
+										<li>ERR_NOT_READY (3): The user is not in the channel.</li>
+										<li>ERR_NOT_SUPPORTED (4): The channel profile is not live streaming.
+											Call the <a href="agorartcengine.html#setchannelprofile">setChannelProfile</a> method and set the channel profile to
+										live streaming before calling this method.</li>
+										<li>ERR_NOT_INITIALIZED (7): The SDK is not initialized. Ensure that the
+										<code>AgoraRtcChannel</code> object is initialized before calling this method.</li>
+>>>>>>> doc/3.7.0_wip
 									</ul>
 								</li>
 							</ul>
@@ -264,6 +288,7 @@
 								<div class="lead">
 									<p>增加旁路推流地址。</p>
 								</div>
+<<<<<<< HEAD
 								<p>调用该方法后，SDK 会在本地触发 streamPublished 回调，报告增加旁路推流地址的状态。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
@@ -271,6 +296,22 @@
 											<li>该方法仅适用于直播场景下的主播，请在加入频道后调用该方法。</li>
 											<li>确保已开通旁路推流的功能，详见《旁路推流》的 “前提条件”。</li>
 											<li>该方法每次只能增加一路旁路推流地址。若需推送多路流，则需多次调用该方法。</li>
+=======
+								<p>In the <code>1</code> (live streaming) profile, the host can call this method to
+									publish the local stream to a specified CDN URL address, which is called
+								&quot;Media Push.&quot;</p>
+								<p>During Media Push, the SDK triggers the
+								<code>rtmpStreamingStateChanged</code> callback is any streaming state changes.</p>
+								<dl class="tsd-comment-tags">
+									<dt>note</dt>
+									<dd><ul>
+											<li>Only the host in the <code>1</code> (live streaming) profile can call this method.</li>
+											<li>Call this method after the host joins the channel.</li>
+											<li>Ensure that you enable the Media Push service before using this
+											function. See <em>Prerequisites</em> in the <em>Media Push</em> guide.</li>
+											<li>This method adds only one stream RTMP URL address each time it is
+											called.</li>
+>>>>>>> doc/3.7.0_wip
 										</ul>
 									</dd>
 								</dl>
@@ -464,8 +505,13 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<ul>
+<<<<<<< HEAD
 								<li>返回数据流 ID，创建数据流成功。</li>
 								<li>&lt; 0: 创建数据流失败。</li>
+=======
+								<li>Returns the ID of the created data stream, if this method call succeeds.</li>
+								<li>&lt; 0: Fails to create the data stream.</li>
+>>>>>>> doc/3.7.0_wip
 							</ul>
 						</li>
 					</ul>
@@ -550,7 +596,11 @@
 					<a name="getconnectionstate" class="tsd-anchor"></a>
 					<h3>get<wbr>Connection<wbr>State</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+<<<<<<< HEAD
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Connection<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/connectionstate.html" class="tsd-signature-type">ConnectionState</a></li>
+=======
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Connection<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/connection_state_type.html" class="tsd-signature-type">CONNECTION_STATE_TYPE</a></li>
+>>>>>>> doc/3.7.0_wip
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -559,6 +609,7 @@
 									<p>获取当前网络连接状态。</p>
 								</div>
 							</div>
+<<<<<<< HEAD
 							<h4 class="tsd-returns-title">Returns <a href="../enums/connectionstate.html" class="tsd-signature-type">ConnectionState</a></h4>
 							<p>connect 网络连接状态</p>
 						</li>
@@ -573,6 +624,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+=======
+							<h4 class="tsd-returns-title">Returns <a href="../enums/connection_state_type.html" class="tsd-signature-type">CONNECTION_STATE_TYPE</a></h4>
+							<p>Connect states. See {@link ConnectionState}.</p>
+>>>>>>> doc/3.7.0_wip
 						</li>
 					</ul>
 				</section>
@@ -747,6 +802,7 @@
 						</li>
 					</ul>
 				</section>
+<<<<<<< HEAD
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="muteallremoteaudiostreams" class="tsd-anchor"></a>
 					<h3>mute<wbr>All<wbr>Remote<wbr>Audio<wbr>Streams</h3>
@@ -833,6 +889,8 @@
 						</li>
 					</ul>
 				</section>
+=======
+>>>>>>> doc/3.7.0_wip
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="mutelocalaudiostream" class="tsd-anchor"></a>
 					<h3>mute<wbr>Local<wbr>Audio<wbr>Stream</h3>
@@ -935,6 +993,122 @@
 								<li>0: 方法调用成功</li>
 								<li>&lt; 0: 方法调用失败<ul>
 										<li><code>-5 (ERR_REFUSED)</code>: 调用被拒绝。</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="mutelocalaudiostream" class="tsd-anchor"></a>
+					<h3>mute<wbr>Local<wbr>Audio<wbr>Stream</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">mute<wbr>Local<wbr>Audio<wbr>Stream<span class="tsd-signature-symbol">(</span>mute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stops or resumes publishing the local audio stream.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>v3.4.5</p>
+										<p>This method only sets the publishing state of the audio stream in the
+										channel of IChannel.</p>
+										<p>A successful method call triggers the <code>remoteAudioStateChanged</code>
+										callback on the remote client.</p>
+										<p>You can only publish the local stream in one channel at a time. If you
+											create multiple channels, ensure that you only call
+											<code>rtcChannel.muteLocalAudioStream(false)</code> in one channel;
+										otherwise, the method call fails, and the SDK returns <code>-5 (ERR_REFUSED)</code>.</p>
+									</dd>
+									<dt>note</dt>
+									<dd><ul>
+											<li>This method does not change the usage state of the audio-capturing device.</li>
+											<li>Whether this method call takes effect is affected by the
+												<a href="agorartcchannel.html#joinchannel">joinChannel</a> and <a href="agorartcchannel.html#setclientrole">setClientRole</a> methods.
+											For details, see <em>Set the Publishing State</em>.</li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mute: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Sets whether to stop publishing the local audio stream.</p>
+										<ul>
+											<li>true: Stop publishing the local audio stream.</li>
+											<li>false: Resume publishing the local audio stream.</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<ul>
+								<li>0: Success.</li>
+								<li>&lt; 0: Failure.<ul>
+										<li><code>-5 (ERR_REFUSED)</code>: The request is rejected.</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="mutelocalvideostream" class="tsd-anchor"></a>
+					<h3>mute<wbr>Local<wbr>Video<wbr>Stream</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">mute<wbr>Local<wbr>Video<wbr>Stream<span class="tsd-signature-symbol">(</span>mute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stops or resumes publishing the local video stream.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>v3.4.5</p>
+										<p>This method only sets the publishing state of the video stream in the
+										channel of IChannel.</p>
+										<p>A successful method call triggers the <code>remoteVideoStateChanged</code>
+										callback on the remote client.</p>
+										<p>You can only publish the local stream in one channel at a time. If you
+											create multiple channels, ensure that you only call
+											<code>rtcChannel.muteLocalVideoStream(false)</code> in one channel;
+										otherwise, the method call fails, and the SDK returns <code>-5 (ERR_REFUSED)</code>.</p>
+									</dd>
+									<dt>note</dt>
+									<dd><ul>
+											<li>This method does not change the usage state of the video-capturing device.</li>
+											<li>Whether this method call takes effect is affected by the
+												<a href="agorartcchannel.html#joinchannel">joinChannel</a> and <a href="agorartcchannel.html#setclientrole">setClientRole</a> methods.
+											For details, see <em>Set the Publishing State</em>.</li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mute: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Sets whether to stop publishing the local video stream.</p>
+										<ul>
+											<li>true: Stop publishing the local video stream.</li>
+											<li>false: Resume publishing the local video stream.</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<ul>
+								<li>0: Success.</li>
+								<li>&lt; 0: Failure.<ul>
+										<li><code>-5 (ERR_REFUSED)</code>: The request is rejected.</li>
 									</ul>
 								</li>
 							</ul>
@@ -1105,7 +1279,11 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"videoPublishStateChanged"</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"audioSubscribeStateChanged"</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"videoSubscribeStateChanged"</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+<<<<<<< HEAD
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"agoraVideoRawData"</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+=======
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"firstRemoteVideoFrame"</span>, cb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+>>>>>>> doc/3.7.0_wip
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1368,13 +1546,18 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+<<<<<<< HEAD
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldRole<span class="tsd-signature-symbol">: </span><a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a>, newRole<span class="tsd-signature-symbol">: </span><a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+=======
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>oldRole<span class="tsd-signature-symbol">: </span><a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a>, newRole<span class="tsd-signature-symbol">: </span><a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+>>>>>>> doc/3.7.0_wip
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
+<<<<<<< HEAD
 															<h5>oldRole: <a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>切换前的角色</p>
@@ -1384,6 +1567,17 @@
 															<h5>newRole: <a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>切换后的角色</p>
+=======
+															<h5>oldRole: <a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The old role, see {@link ClientRoleType}</p>
+															</div>
+														</li>
+														<li>
+															<h5>newRole: <a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The new role, see {@link ClientRoleType}</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -1692,14 +1886,28 @@
 														<li>
 															<h5>txquality: <a href="../enums/agoranetworkquality.html" class="tsd-signature-type">AgoraNetworkQuality</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>该用户的上行网络质量，基于上行发送码率、上行丢包率、平均往返时延和网络
 																抖动计算。</p>
+=======
+																<p>Uplink transmission quality rating of the user in
+																	terms of
+																	the transmission bitrate, packet loss rate, average RTT (Round-Trip Time),
+																and jitter of the uplink network. See <a href="../enums/agoranetworkquality.html">AgoraNetworkQuality</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
 															<h5>rxquality: <a href="../enums/agoranetworkquality.html" class="tsd-signature-type">AgoraNetworkQuality</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>该用户的下行网络质量，基于下行网络的丢包率、平均往返延时和网络抖动计算。</p>
+=======
+																<p>Downlink network quality rating of the user in terms
+																	of the
+																	packet loss rate, average RTT, and jitter of the downlink network.
+																See <a href="../enums/agoranetworkquality.html">AgoraNetworkQuality</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -1737,7 +1945,12 @@
 														<li>
 															<h5>stats: <a href="../interfaces/remotevideostats.html" class="tsd-signature-type">RemoteVideoStats</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>远端视频流统计信息</p>
+=======
+																<p>Statistics of the received remote video streams. See
+																<a href="../enums/remotevideostate.html">RemoteVideoState</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -1820,13 +2033,23 @@
 														<li>
 															<h5>state: <a href="../enums/remoteaudiostate.html" class="tsd-signature-type">RemoteAudioState</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>远端音频流状态码</p>
+=======
+																<p>State of the remote audio:
+																<a href="../enums/remoteaudiostate.html">RemoteAudioState</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
 															<h5>reason: <a href="../enums/remoteaudiostatereason.html" class="tsd-signature-type">RemoteAudioStateReason</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>远端音频流状态改变的原因码</p>
+=======
+																<p>The reason of the remote audio state change:
+																<a href="../enums/remoteaudiostatereason.html">RemoteAudioStateReason</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
@@ -2090,13 +2313,23 @@
 														<li>
 															<h5>state: <a href="../enums/remotevideostate.html" class="tsd-signature-type">RemoteVideoState</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>远端视频流状态</p>
+=======
+																<p>State of the remote video.
+																See <a href="../enums/remotevideostate.html">RemoteVideoState</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
 															<h5>reason: <a href="../enums/remotevideostatereason.html" class="tsd-signature-type">RemoteVideoStateReason</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>远端视频流状态改变的具体原因</p>
+=======
+																<p>The reason of the remote video state change.
+																See <a href="../enums/remotevideostatereason.html">RemoteVideoStateReason</a></p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
@@ -2164,6 +2397,99 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+<<<<<<< HEAD
+=======
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>evt: <span class="tsd-signature-type">"snapshotTaken"</span></h5>
+								</li>
+								<li>
+									<h5>cb: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>channel<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, uid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, errCode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>channel: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>uid: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>filePath: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>width: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>height: <span class="tsd-signature-type">number</span></h5>
+														</li>
+														<li>
+															<h5>errCode: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reports the result of an audio device test.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>v3.7.0</p>
+										<p>After successfully calling <a href="agorartcengine.html#startaudiodeviceloopbacktest">startAudioDeviceLoopbackTest</a> to start an audio device test,
+										the SDK triggers the <code>audioDeviceTestVolumeIndication</code> callback at the set time interval to report the volume information of the audio device tested.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>evt: <span class="tsd-signature-type">"audioDeviceTestVolumeIndication"</span></h5>
+								</li>
+								<li>
+									<h5>cb: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>volumeType<span class="tsd-signature-symbol">: </span><a href="../enums/audiodevicetestvolumetype.html" class="tsd-signature-type">AudioDeviceTestVolumeType</a>, volume<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>volumeType: <a href="../enums/audiodevicetestvolumetype.html" class="tsd-signature-type">AudioDeviceTestVolumeType</a></h5>
+														</li>
+														<li>
+															<h5>volume: <span class="tsd-signature-type">number</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+>>>>>>> doc/3.7.0_wip
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>视频截图结果回调。</p>
@@ -2339,13 +2665,21 @@
 														<li>
 															<h5>state: <a href="../enums/channelmediarelaystate.html" class="tsd-signature-type">ChannelMediaRelayState</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>跨频道媒体流转发状态码</p>
+=======
+																<p>The state code. See <a href="../enums/channelmediarelaystate.html">ChannelMediaRelayState</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 														<li>
 															<h5>code: <a href="../enums/channelmediarelayerror.html" class="tsd-signature-type">ChannelMediaRelayError</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>跨频道媒体流转发出错的错误码</p>
+=======
+																<p>The error code. See <a href="../enums/channelmediarelayerror.html">ChannelMediaRelayError</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -2384,7 +2718,11 @@
 														<li>
 															<h5>event: <a href="../enums/channelmediarelayevent.html" class="tsd-signature-type">ChannelMediaRelayEvent</a></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>跨频道媒体流转发事件码</p>
+=======
+																<p>The event code. See <a href="../enums/channelmediarelayevent.html">ChannelMediaRelayEvent</a>.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -2461,11 +2799,20 @@
 								<div class="lead">
 									<p>旁路推流状态发生改变回调。</p>
 								</div>
+<<<<<<< HEAD
 								<p>该回调返回本地用户调用 <a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> 或 <a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a>
 								方法的结果。</p>
 								<p>旁路推流状态发生改变时，SDK 会触发该回调，并在回调中明确状态发生改变的 URL 地址及
 									当前推流状态。该回调方便推流用户了解当前的推流状态；推流出错时，你可以通过返回的错误码
 								了解出错的原因，方便排查问题。</p>
+=======
+								<p>The SDK triggers this callback to report the result of the local user
+									calling the <a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> and <a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a>
+								method.</p>
+								<p>This callback indicates the state of Media Push. When exceptions
+									occur, you can troubleshoot issues by referring to the detailed error
+								descriptions in the <code>code</code> parameter.</p>
+>>>>>>> doc/3.7.0_wip
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2492,6 +2839,7 @@
 														<li>
 															<h5>state: <span class="tsd-signature-type">number</span></h5>
 															<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 																<p>推流状态：</p>
 																<ul>
 																	<li><code>0</code>: 推流未开始或已结束。成功调用 <a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a> 后会返回该状态。</li>
@@ -2506,6 +2854,31 @@
 																	</li>
 																	<li><code>4</code>: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用
 																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> 重新尝试推流。</li>
+=======
+																<p>Media Push state:</p>
+																<ul>
+																	<li><code>0</code>: Media Push has not started or has ended. This state is also
+																		triggered after you remove an RTMP address from the CDN by calling
+																	<a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a>.</li>
+																	<li><code>1</code>: The SDK is connecting to Agora&#39;s streaming server and the RTMP
+																		server. This state is triggered after you call the
+																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> method.</li>
+																	<li><code>2</code>: Media Push publishes. The SDK successfully publishes the
+																	Media Push stream and returns this state.</li>
+																	<li><code>3</code>: Media Push is recovering. When exceptions occur to the CDN,
+																		or the streaming is interrupted, the SDK tries to resume Media Push
+																		and returns this state.<ul>
+																			<li>If the SDK successfully resumes the streaming, <code>2</code> returns.</li>
+																			<li>If the streaming does not resume within 60 seconds or server errors
+																				occur, <code>4</code> returns. You can also reconnect to the server by calling the
+																				<a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a> and then <a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a>
+																			method.</li>
+																		</ul>
+																	</li>
+																	<li><code>4</code>: Media Push fails. See the <code>code</code> parameter for the
+																		detailed error information. You can also call the
+																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> method to publish Media Push again.</li>
+>>>>>>> doc/3.7.0_wip
 																</ul>
 															</div>
 														</li>
@@ -2514,6 +2887,7 @@
 															<div class="tsd-comment tsd-typography">
 																<p>推流错误码：</p>
 																<ul>
+<<<<<<< HEAD
 																	<li><code>0</code>: 推流成功。</li>
 																	<li><code>1</code>: 参数无效。请检查输入参数是否正确。</li>
 																	<li><code>2</code>: 推流已加密，不能推流。</li>
@@ -2525,6 +2899,26 @@
 																	<li><code>8</code>: 主播操作不属于自己的流。例如更新其他主播的流参数、停止其他主播的流。请检查 App 逻辑。</li>
 																	<li><code>9</code>: 服务器未找到这个流。</li>
 																	<li><code>10</code>: 推流地址格式有错误。请检查推流地址格式是否正确。</li>
+=======
+																	<li><code>0</code>: Media Push publishes successfully.</li>
+																	<li><code>1</code>: Invalid argument used.</li>
+																	<li><code>2</code>: The RTMP streams is encrypted and cannot be published.</li>
+																	<li><code>3</code>: Timeout for Media Push. Call the
+																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> to publish the stream again.</li>
+																	<li><code>4</code>: An error occurs in Agora&#39;s streaming server. Call the
+																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> to publish the stream again.</li>
+																	<li><code>5</code>: An error occurs in the RTMP server.</li>
+																	<li><code>6</code>: Media Push publishes too frequently.</li>
+																	<li><code>7</code>: The host publishes more than 10 URLs. Delete the unnecessary URLs
+																	before adding new ones.</li>
+																	<li><code>8</code>: The host manipulates other hosts&#39; URLs. Check your app
+																	logic.</li>
+																	<li><code>9</code>: Agora&#39;s server fails to find the RTMP stream.</li>
+																	<li><code>10</code>: The format of the stream&#39;s URL address is not supported. Check
+																	whether the URL format is correct.</li>
+																	<li><code>100</code>: The streaming has been stopped normally. After you call
+																	<a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a> to stop streaming, the SDK returns this value.</li>
+>>>>>>> doc/3.7.0_wip
 																</ul>
 															</div>
 														</li>
@@ -2709,13 +3103,18 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+<<<<<<< HEAD
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../enums/connectionstate.html" class="tsd-signature-type">ConnectionState</a>, reason<span class="tsd-signature-symbol">: </span><a href="../enums/connectionchangereason.html" class="tsd-signature-type">ConnectionChangeReason</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+=======
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../enums/connection_state_type.html" class="tsd-signature-type">CONNECTION_STATE_TYPE</a>, reason<span class="tsd-signature-symbol">: </span><a href="../enums/connection_changed_reason_type.html" class="tsd-signature-type">CONNECTION_CHANGED_REASON_TYPE</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+>>>>>>> doc/3.7.0_wip
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
+<<<<<<< HEAD
 															<h5>state: <a href="../enums/connectionstate.html" class="tsd-signature-type">ConnectionState</a></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>当前的网络连接状态</p>
@@ -2725,6 +3124,17 @@
 															<h5>reason: <a href="../enums/connectionchangereason.html" class="tsd-signature-type">ConnectionChangeReason</a></h5>
 															<div class="tsd-comment tsd-typography">
 																<p>引起当前网络连接状态发生改变的原因</p>
+=======
+															<h5>state: <a href="../enums/connection_state_type.html" class="tsd-signature-type">CONNECTION_STATE_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The connection state, see {@link ConnectionState}.</p>
+															</div>
+														</li>
+														<li>
+															<h5>reason: <a href="../enums/connection_changed_reason_type.html" class="tsd-signature-type">CONNECTION_CHANGED_REASON_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>The connection reason, see {@link ConnectionState}.</p>
+>>>>>>> doc/3.7.0_wip
 															</div>
 														</li>
 													</ul>
@@ -2970,22 +3380,45 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+<<<<<<< HEAD
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>evt: <span class="tsd-signature-type">"agoraVideoRawData"</span></h5>
+=======
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Occurs when the first remote video frame is rendered.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>since</dt>
+									<dd><p>v3.7.0</p>
+										<p>The SDK triggers this callback when the first frame of the remote video is displayed in the user&#39;s video window. The application can get the time elapsed from a user joining the channel until the first video frame is displayed.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>evt: <span class="tsd-signature-type">"firstRemoteVideoFrame"</span></h5>
+>>>>>>> doc/3.7.0_wip
 								</li>
 								<li>
 									<h5>cb: <span class="tsd-signature-type">function</span></h5>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+<<<<<<< HEAD
 												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>info<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+=======
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>uid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, elapsed<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+>>>>>>> doc/3.7.0_wip
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
+<<<<<<< HEAD
 														<li>
 															<h5>info: <span class="tsd-signature-type">object</span></h5>
 															<ul class="tsd-parameters">
@@ -3011,6 +3444,31 @@
 																	<h5>ydata<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Uint8Array</span></h5>
 																</li>
 															</ul>
+=======
+														<li>
+															<h5>uid: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>User ID of the remote user sending the video stream.</p>
+															</div>
+														</li>
+														<li>
+															<h5>width: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>Width (px) of the video frame.</p>
+															</div>
+														</li>
+														<li>
+															<h5>height: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>Height (px) of the video stream.</p>
+															</div>
+														</li>
+														<li>
+															<h5>elapsed: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>Time elapsed (ms) from the local user calling the <a href="agorartcchannel.html#joinchannel">joinChannel</a> method until the SDK triggers this callback.</p>
+															</div>
+>>>>>>> doc/3.7.0_wip
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -3038,6 +3496,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
+<<<<<<< HEAD
 									<dd><p>该方法自 v3.4.5 起废弃，请改用 <a href="agorartcchannel.html#mutelocalaudiostream">muteLocalAudioStream</a>(false)
 										或 <a href="agorartcchannel.html#mutelocalvideostream">muteLocalVideoStream</a>(false)。</p>
 										<p>该方法的调用需满足以下要求，否则 SDK 会返回错误码 <code>ERR_REFUSED (5)</code>:</p>
@@ -3046,6 +3505,21 @@
 											<li>直播场景下，该方法仅适用于角色为主播的用户。你可以调用该 <code>AgoraRtcChannel</code> 类下的
 											<a href="agorartcchannel.html#setclientrole">setClientRole</a> 设置用户角色。</li>
 											<li>SDK 只支持用户同一时间在一个频道发布一路音视频流。详情请参考高阶指南<em>多频道管理</em>。</li>
+=======
+									<dd><p>This method is deprecated as of v3.4.5. Use
+											<a href="agorartcchannel.html#mutelocalaudiostream">muteLocalAudioStream</a>(false) or <a href="agorartcchannel.html#mutelocalvideostream">muteLocalVideoStream</a>(false)
+										instead.</p>
+										<p>You must keep the following restrictions in mind when calling this method.
+										Otherwise, the SDK returns the <code>ERR_REFUSED (5)</code>:</p>
+										<ul>
+											<li>This method publishes one stream only to the channel corresponding to
+											the current <code>AgoraRtcChannel</code> object.</li>
+											<li>In a live streaming channel, only a host can call this method.
+												To switch the client role, call <a href="agorartcchannel.html#setclientrole">setClientRole</a> of the current
+											<code>AgoraRtcChannel</code> object.</li>
+											<li>You can publish a stream to only one channel at a time. For details on
+											joining multiple channels, see the advanced guide <em>Join Multiple Channels</em></li>
+>>>>>>> doc/3.7.0_wip
 										</ul>
 									</dd>
 								</dl>
@@ -3098,8 +3572,17 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<ul>
+<<<<<<< HEAD
 								<li>0：方法调用成功</li>
 								<li>&lt; 0：方法调用失败</li>
+=======
+								<li>0: Success.</li>
+								<li>&lt; 0: Failure.<ul>
+										<li><code>ERR_NOT_INITIALIZED (7)</code>: The SDK is not initialized before calling
+										this method.</li>
+									</ul>
+								</li>
+>>>>>>> doc/3.7.0_wip
 							</ul>
 						</li>
 					</ul>
@@ -3152,7 +3635,14 @@
 								<div class="lead">
 									<p>删除旁路推流地址。</p>
 								</div>
+<<<<<<< HEAD
 								<p>调用该方法后，SDK 会在本地触发 <code>streamUnpublished</code> 回调，报告删除旁路推流地址的状态。</p>
+=======
+								<p>This method removes the RTMP URL address (added by
+								<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a>) and stops Media Push.</p>
+								<p>This method call triggers the <code>rtmpStreamingStateChanged</code> callback to
+								report the state of removing the URL address.</p>
+>>>>>>> doc/3.7.0_wip
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><ul>
@@ -3297,7 +3787,11 @@
 					<a name="setclientrole" class="tsd-anchor"></a>
 					<h3>set<wbr>Client<wbr>Role</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+<<<<<<< HEAD
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Client<wbr>Role<span class="tsd-signature-symbol">(</span>role<span class="tsd-signature-symbol">: </span><a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+=======
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Client<wbr>Role<span class="tsd-signature-symbol">(</span>role<span class="tsd-signature-symbol">: </span><a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+>>>>>>> doc/3.7.0_wip
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -3312,7 +3806,11 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
+<<<<<<< HEAD
 									<h5>role: <a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a></h5>
+=======
+									<h5>role: <a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a></h5>
+>>>>>>> doc/3.7.0_wip
 									<div class="tsd-comment tsd-typography">
 										<p>用户角色：</p>
 										<ul>
@@ -3334,7 +3832,11 @@
 					<a name="setclientrolewithoptions" class="tsd-anchor"></a>
 					<h3>set<wbr>Client<wbr>Role<wbr>With<wbr>Options</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+<<<<<<< HEAD
 						<li class="tsd-signature tsd-kind-icon">set<wbr>Client<wbr>Role<wbr>With<wbr>Options<span class="tsd-signature-symbol">(</span>role<span class="tsd-signature-symbol">: </span><a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/clientroleoptions.html" class="tsd-signature-type">ClientRoleOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+=======
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Client<wbr>Role<wbr>With<wbr>Options<span class="tsd-signature-symbol">(</span>role<span class="tsd-signature-symbol">: </span><a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/clientroleoptions.html" class="tsd-signature-type">ClientRoleOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+>>>>>>> doc/3.7.0_wip
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -3368,7 +3870,11 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
+<<<<<<< HEAD
 									<h5>role: <a href="../enums/clientroletype.html" class="tsd-signature-type">ClientRoleType</a></h5>
+=======
+									<h5>role: <a href="../enums/client_role_type.html" class="tsd-signature-type">CLIENT_ROLE_TYPE</a></h5>
+>>>>>>> doc/3.7.0_wip
 									<div class="tsd-comment tsd-typography">
 										<p>直播场景中的用户角色。</p>
 									</div>
@@ -3545,7 +4051,16 @@
 										同一频道内的所有用户应设置相同的密码。当用户离开频道时，该频道的密码会自动清除。如果未指定密码或将密码设置为空，则无法激活加密功能。</p>
 									</dd>
 									<dt>note</dt>
+<<<<<<< HEAD
 									<dd><p>为保证最佳传输效果，请确保加密后的数据大小不超过原始数据大小 + 16 字节。16 字节是 AES 通用加密模式下最大填充块大小。</p>
+=======
+									<dd><ul>
+											<li>Do not use this method for the Media Push function.</li>
+											<li>For optimal transmission, ensure that the encrypted data size does not
+												exceed the original data size + 16 bytes. 16 bytes is the maximum padding
+											size for AES encryption.</li>
+										</ul>
+>>>>>>> doc/3.7.0_wip
 									</dd>
 								</dl>
 							</div>
@@ -3582,9 +4097,18 @@
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><ul>
+<<<<<<< HEAD
 											<li>该方法只适用于直播场景下的主播。</li>
 											<li>请确保已开通 CDN 旁路推流的功能，详见《旁路推流》文档的 “前提条件”。</li>
 											<li>首次调用 <a href="agorartcchannel.html#setlivetranscoding">setLiveTranscoding</a> 方法设置 <code>transcoding</code> 时，不会触发该回调。</li>
+=======
+											<li>Only the host in the Live-broadcast porfile can call this method.</li>
+											<li>Ensure that you enable the Media Push service before using
+											this function. See <em>Prerequisites</em> in the <em>Media Push</em> guide.</li>
+											<li>If you call the <a href="agorartcchannel.html#setlivetranscoding">setLiveTranscoding</a> method to set the
+												LiveTranscoding class for the first time, the SDK does not trigger the
+											transcodingUpdated callback.</li>
+>>>>>>> doc/3.7.0_wip
 										</ul>
 									</dd>
 								</dl>
@@ -3594,7 +4118,12 @@
 								<li>
 									<h5>transcoding: <a href="../interfaces/transcodingconfig.html" class="tsd-signature-type">TranscodingConfig</a></h5>
 									<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 										<p>旁路推流转码合图相关设置</p>
+=======
+										<p>The transcoding setting for the audio and video streams
+										during Media Push. See {@link LiveTranscoding}</p>
+>>>>>>> doc/3.7.0_wip
 									</div>
 								</li>
 							</ul>
@@ -3660,11 +4189,15 @@
 								<li>
 									<h5>streamType: <a href="../enums/streamtype.html" class="tsd-signature-type">StreamType</a></h5>
 									<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 										<p>设置视频流的类型：</p>
 										<ul>
 											<li>0：视频大流，即高分辨、高码率的视频流</li>
 											<li>1：视频小流，即低分辨、低码率的视频流</li>
 										</ul>
+=======
+										<p>The video-stream type. See <a href="../enums/streamtype.html">StreamType</a></p>
+>>>>>>> doc/3.7.0_wip
 									</div>
 								</li>
 							</ul>
@@ -3684,6 +4217,24 @@
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
+<<<<<<< HEAD
+=======
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prioritizes a remote user&#39;s stream.</p>
+								</div>
+								<p>Use this method with the
+								<a href="agorartcengine.html#setremotesubscribefallbackoption">setRemoteSubscribeFallbackOption</a> method.</p>
+								<p>If the fallback function is enabled for a subscribed stream, the SDK
+								ensures the high-priority user gets the best possible stream quality.</p>
+								<dl class="tsd-comment-tags">
+									<dt>note</dt>
+									<dd><p>The Agora SDK supports setting <code>serPriority</code> as high for one user
+										only.</p>
+									</dd>
+								</dl>
+							</div>
+>>>>>>> doc/3.7.0_wip
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -3726,7 +4277,11 @@
 								<li>
 									<h5>streamType: <a href="../enums/streamtype.html" class="tsd-signature-type">StreamType</a></h5>
 									<div class="tsd-comment tsd-typography">
+<<<<<<< HEAD
 										<p>视频流类型</p>
+=======
+										<p>The video-stream type. See <a href="../enums/streamtype.html">StreamType</a></p>
+>>>>>>> doc/3.7.0_wip
 									</div>
 								</li>
 							</ul>
@@ -3866,9 +4421,17 @@
 								中的错误码 <code>0</code>，则表示已停止转发媒体流。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
+<<<<<<< HEAD
 									<dd><p>如果该方法调用不成功，SDK 会触发 <code>channelMediaRelayState</code> 回调，并报告
 											<a href="../enums/channelmediarelayerror.html">ChannelMediaRelayError</a> 中的错误码  <code>2</code> 或 <code>8</code>。你可以调用
 										<a href="agorartcchannel.html#leavechannel">leaveChannel</a> 方法离开频道，跨频道媒体流转发会自动停止。</p>
+=======
+									<dd><p>If the method call fails, the SDK triggers the
+											channelMediaRelayState callback with the error code <code>2</code> and <code>8</code> in
+											<a href="../enums/channelmediarelayerror.html">ChannelMediaRelayError</a>. You can leave the channel by calling
+											the <a href="agorartcchannel.html#leavechannel">leaveChannel</a> method, and
+										the media stream relay automatically stops.</p>
+>>>>>>> doc/3.7.0_wip
 									</dd>
 								</dl>
 							</div>
@@ -3915,10 +4478,18 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
+<<<<<<< HEAD
 									<dd><p>该方法自 v3.4.5 起废弃，请改用 <a href="agorartcchannel.html#mutelocalaudiostream">muteLocalAudioStream</a>(true)
 										或 <a href="agorartcchannel.html#mutelocalvideostream">muteLocalVideoStream</a>(true)。</p>
 										<p>请确保你想要 <code>unpublish</code> 音视频流的频道 <code>channel</code>，与当前正在 <a href="agorartcchannel.html#publish">publish</a> 音
 										视频流的频道 <code>channel</code> 一致，否则 SDK 会返回 <code>ERR_REFUSED (5)</code>。</p>
+=======
+									<dd><p>This method is deprecated as of v3.4.5. Use
+											<a href="agorartcchannel.html#mutelocalaudiostream">muteLocalAudioStream</a>(true) or <a href="agorartcchannel.html#mutelocalvideostream">muteLocalVideoStream</a>(true)
+										instead.</p>
+										<p>If you call this method in a channel where you are not publishing streams,
+										the SDK returns #ERR_REFUSED (5).</p>
+>>>>>>> doc/3.7.0_wip
 									</dd>
 								</dl>
 							</div>
@@ -4022,9 +4593,12 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="agorartcchannel.html#getconnectionstate" class="tsd-kind-icon">get<wbr>Connection<wbr>State</a>
 							</li>
+<<<<<<< HEAD
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="agorartcchannel.html#initeventhandler" class="tsd-kind-icon">init<wbr>Event<wbr>Handler</a>
 							</li>
+=======
+>>>>>>> doc/3.7.0_wip
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="agorartcchannel.html#joinchannel" class="tsd-kind-icon">join<wbr>Channel</a>
 							</li>
