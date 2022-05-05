@@ -9563,6 +9563,50 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.startAudioRecordingWithConfig(config);
   }
 
+  /** @zh-cn
+   * 开启/关闭虚拟背景。
+   *
+   * 自 v3.4.5 支持 macOS 和 Windows 平台，自 v3.5.0 支持 Android 和 iOS 平台。
+   *
+   * 开启虚拟背景功能后，你可以使用自定义的背景图替代本地用户原来的背景图。替换后，频道内所有用户都能看到自定义的背景图。
+   * 你可以从 `virtualBackgroundSourceEnabled` 回调了解虚拟
+   * 背景是否成功开启和相应的出错原因。
+   *
+   * @note
+   * - 调用该方法前，请确保你已经将如下动态库集成到项目中：
+   *  - Android: `libagora_segmentation_extension.so`
+   *  - iOS/macOS: `AgoraVideoSegmentationExtension.xcframework`
+   *  - Windows: `libagora_segmentation_extension.dll`
+   * - 请在 {@link enableVideo} 后调用该方法。
+   * - 该功能对设备性能要求较高，Agora 推荐你在如下设备上使用：
+   *  - Android：搭载如下芯片的设备：
+   *    - 骁龙 700 系列 750G 及以上
+   *    - 骁龙 800 系列 835 及以上
+   *    - 天玑 700 系列 720 及以上
+   *    - 麒麟 800 系列 810 及以上
+   *    - 麒麟 900 系列 980 及以上
+   *  - iOS：搭载 A9 及以上芯片的如下设备：
+   *    - iPhone 6S 及以上
+   *    - iPad Air 第三代及以上
+   *    - iPad 第五代及以上
+   *    - iPad Pro 第一代及以上
+   *    - iPad mini 第五代及以上
+   *  - macOS 和 Windows：CPU 为 i5 及更好的设备
+   * - Agora 建议你在满足如下条件的场景中使用该功能：
+   *  - 使用高清摄像设备、摄像环境光照均匀。
+   *  - 摄像画面中，物件较少，用户的人像为半身人像且基本无遮挡，背景色较单一且与用户着装颜色不同。
+   * - 虚拟背景功能不支持 Texture 格式视频和来自 Push 自采集的视频。
+   *
+   * @param enabled 设置是否开启虚拟背景：
+   * - true: 开启。
+   * - false: 关闭。
+   * @param backgroundSource 自定义的背景图。详见 VirtualBackgroundSource 。Note: 为将自定义背景图的分辨率与 SDK 的视频采集分辨率适配，
+   * SDK 会在保证自定义背景图内容不变形的前提下，对自定义背景图进行缩放和裁剪。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /**
    * Enables/Disables the virtual background. (beta function)
    *
@@ -10243,7 +10287,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - true: 是。SDK 返回屏幕和窗口信息。
    * - false: 否。SDK 仅返回窗口信息。
    *
-   * @return IScreenCaptureSourceList
+   * @return Array of ScreenCaptureSource objects
    */
   /**
    * Gets a list of shareable screens and windows.
@@ -10287,6 +10331,31 @@ class AgoraRtcEngine extends EventEmitter {
   }
 
   // 3.6.0.2
+  /** @zh-cn
+   * 设置暗光增强功能。
+   *
+   * @since v3.7.0
+   *
+   * 暗光增强功能可以在光线亮度偏低（如背光、阴天、暗场景）和亮度不均匀的环境下自适应调整视频画面的亮度值，恢复或凸显图像的细节信息，最终提升视频图像的整体视觉效果。
+   *
+   * 你可以调用该方法开启暗光增强功能并设置暗光增强的效果。
+   *
+   * @note
+   * - 调用该方法前，请确保你已经将如下动态库集成到项目中：
+   *  - macOS: `AgoraVideoSegmentationExtension.xcframework`
+   *  - Windows: `libagora_segmentation_extension.dll`
+   * - 请在 {@link enableVideo} 后调用该方法。
+   * - 暗光增强对设备性能有一定要求。开启暗光增强后，如果设备出现严重发烫等问题，Agora 推荐你将暗光增强等级修改为消耗性能较少的等级或关闭暗光增强功能。
+   *
+   * @param enabled 是否开启暗光增强功能：
+   * - true: 开启。
+   * - false:（默认）关闭。
+   * @param options 暗光增强选项，用于设置暗光增强的效果。详见 {@link LowLightEnhanceOptions} 。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /**
    * Sets low-light enhancement.
    *
@@ -10318,6 +10387,31 @@ class AgoraRtcEngine extends EventEmitter {
   ): number {
     return this.rtcEngine.setLowlightEnhanceOptions(enabled, options);
   }
+  /** @zh-cn
+   * 设置视频降噪功能。
+   *
+   * @since v3.7.0
+   *
+   * 采光不足的环境和低端视频采集设备会使视频图像含有明显的噪声，影响视频画质。在实时互动场景下，视频噪声还会在编码过程中占用码流资源并降低编码效率。
+   *
+   * 你可以调用该方法开启视频降噪功能并设置视频降噪的效果。
+   *
+   * @note
+   * - 调用该方法前，请确保你已经将如下动态库集成到项目中：
+   *  - macOS: `AgoraVideoSegmentationExtension.xcframework`
+   *  - Windows: `libagora_segmentation_extension.dll`
+   * - 请在 {@link enableVideo} 后调用该方法。
+   * - 视频降噪对设备性能有一定要求。开启视频降噪后，如果设备出现严重发烫等问题，Agora 推荐你将视频降噪等级修改为消耗性能较少的等级或关闭视频降噪功能。
+   *
+   * @param enabled 是否开启视频降噪功能：
+   * - true: 开启。
+   * - false:（默认）关闭。
+   * @param options 视频降噪选项，用于设置视频降噪的效果。详见 {@link VideoDenoiserOptions}。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /**
    * Sets video noise reduction.
    *
@@ -10349,6 +10443,31 @@ class AgoraRtcEngine extends EventEmitter {
   ): number {
     return this.rtcEngine.setVideoDenoiserOptions(enabled, options);
   }
+  /** @zh-cn
+   * 设置色彩增强功能。
+   *
+   * @since v3.7.0
+   *
+   * 摄像头采集到的视频画面可能存在色彩失真的现象。色彩增强功能可以通过智能调节饱和度和对比度等视频特性，提升视频色彩丰富度和色彩还原度，最终使视频画面更生动。
+   *
+   * 你可以调用该方法开启色彩增强功能并设置色彩增强的效果。
+   *
+   * @note
+   * - 调用该方法前，请确保你已经将如下动态库集成到项目中：
+   *  - macOS: `AgoraVideoSegmentationExtension.xcframework`
+   *  - Windows: `libagora_segmentation_extension.dll`
+   * - 请在 {@link enableVideo} 后调用该方法。
+   * - 色彩增强对设备性能有一定要求。开启色彩增强后，如果设备出现严重发烫等问题，Agora 推荐你将色彩增强等级修改为消耗性能较少的等级或关闭色彩增强功能。
+   *
+   * @param enabled 是否开启色彩增强功能：
+   * - true: 开启。
+   * - false:（默认）关闭。
+   * @param options 色彩增强选项，用于设置色彩增强的效果。详见 {@link ColorEnhanceOptions} 。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /**
    * Sets color enhancement.
    *
@@ -10394,6 +10513,21 @@ class AgoraRtcEngine extends EventEmitter {
   }
 
   //3.7.0
+  /** @zh-cn
+   * 设置屏幕共享的场景。
+   *
+   * @since v3.7.0
+   *
+   * 开启屏幕共享或窗口共享时，你可以调用该方法设置屏幕共享的场景，SDK 会根据你设置的场景调整共享画质和体验。
+   *
+   * @note 该方法仅适用于 macOS 和 Windows。
+   *
+   * @param screenScenario 屏幕共享的场景，详见 {@link SCREEN_SCENARIO_TYPE} 。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /**
    * Sets the screen sharing scenario.
    *
@@ -10413,6 +10547,23 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.setScreenCaptureScenario(screenScenario);
   }
 
+  /** @zh-cn
+   * 开启本地语音音调回调。
+   *
+   * @since v3.7.0
+   *
+   * 该方法允许 SDK 定期向 app 报告本地用户的语音音调。开启本地音频采集并调用该方法后，SDK 会按设置的时间间隔触发 `localVoicePitchInHz` 回调。
+   *
+   * @note 该方法在加入频道前后均可调用。
+   *
+   * @param interval 设置 SDK 触发 `localVoicePitchInHz` 回调的时间间隔：
+   * - ≤ 0: 关闭 `localVoicePitchInHz` 回调。
+   * - &gt; 0: SDK 触发 `localVoicePitchInHz` 回调的时间间隔，单位为毫秒。取值需大于等于 10 毫秒，如果小于 10 毫秒，SDK 会自动调整为 10 毫秒。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /** Enables reporting the voice pitch of the local user.
    *
    * @since v3.7.0
@@ -10433,6 +10584,29 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.enableLocalVoicePitchCallback(interval);
   }
 
+  /** @zh-cn
+   * 开启或关闭 Wi-Fi 加速功能。
+   *
+   * @since v3.7.0
+   *
+   * 自该版本起，SDK 默认开启 Wi-Fi 加速功能。当 SDK 发现集成加速插件的 Wi-Fi 路由器后，该功能才会生效，使路由器合理分配 Wi-Fi 频谱资源，以降低丢包率和时延，从而减少音视频卡顿。
+   *
+   * 当路由器提供加速服务后，SDK 会周期性触发 `wlAccStats` 回调，报告 Wi-Fi 连接优化数据，并在 Wi-Fi 连接质量不佳时触发 `wlAccMessage` 回调，报告 Wi-Fi 连接质量不佳的原因和改善 Wi-Fi 连接的操作建议。
+   *
+   * @note
+   * - Wi-Fi 加速功能默认开启，但必须与集成加速插件的路由器配合使用才能生效，详见[哪些 Wi-Fi 路由器可支持加速功能](https://docs.agora.io/cn/Interactive%20Broadcast/faq/wifi_routers)。如果 Wi-Fi 路由器不支持加速功能，系统性能不会受损。
+   * - 加速功能生效后，路由器的 app 会显示加速效果和被加速 app 的名称。如果你不想在路由器的 app 中展示被加速 app 的名称，请调用 `enableWirelessAccelerate(false)` 关闭加速功能。
+   * - 请在加入频道前或离开频道后调用该方法。
+   * - Agora 提供的 Wi-Fi 加速功能除应用于音视频流，还可以应用于其他第三方业务流，如私有信令、课件、RTMP 协议等。如有需要，请联系 sales@agora.io。
+   *
+   * @param enabled 设置是否开启 Wi-Fi 加速功能：
+   * - true: 开启。
+   * - false: 关闭。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /** @ignore
    * Turn WIFI acceleration on or off.
 
@@ -10451,6 +10625,31 @@ class AgoraRtcEngine extends EventEmitter {
   enableWirelessAccelerate(enabled: boolean): number {
     return this.rtcEngine.enableWirelessAccelerate(enabled);
   }
+  /** @zh-cn
+   * 开启/关闭端云融合视频内容审核。
+   *
+   * @since v3.7.0
+   *
+   * 开启视频内容审核后，SDK 会根据你在 ContentInspectConfig 中设置的内容审核模块类型和频率对本地用户发送的视频进行截图、审核和上传。审核完成后，Agora 内容审核服务器会以 HTTPS 请求的形式，向你的服务器发送审核结果，并将所有截图发送至你指定的第三方云存储。
+   *
+   * 如果你将 ContentInspectConfig 中的 `type` 设置为 `kContentInspectModeration`，即鉴黄，审核完成后，SDK 会触发 `contentInspectResult` 回调，报告鉴黄结果。
+   *
+   * @note 调用该方法前，请确保满足以下要求：
+   * - [提交工单](https://docs.agora.io/cn/AgoraPlatform/ticket)开通 Agora 端云融合视频内容审核服务。详见[开通视频鉴黄服务](https://docs.agora.io/cn/content-moderation/content_moderation_enable)。
+   * - 已将如下动态库集成到项目中：
+   *    - Android：`libagora_ci_extension.so`
+   *    - iOS/macOS：`AgoraCIExtension.xcframework`
+   *    - Windows：`libagora_ci_extension.dll`
+   *
+   * @param enabled 设置是否开启内容审核：
+   * - true: 开启。
+   * - false: 关闭。
+   * @param config 内容审核配置。详见 ContentInspectConfig 。
+   *
+   * @return
+   * - 0: 方法调用成功
+   * - < 0: 方法调用失败
+   */
   /** @ignore
    *
    * @param enabled
@@ -12854,6 +13053,17 @@ on(
   ): this;
 
   //3.7.0
+  /** @zh-cn
+   * 报告本地用户的语音音调。
+   *
+   * @since v3.7.0
+   *
+   * 开启本地音频采集并调用 {@link enableLocalVoicePitchCallback} 后，SDK 会按 `enableLocalVoicePitchCallback` 中设置的时间间隔触发本回调，报告本地用户的语音音调。
+   *
+   * @note 启用该功能后，如果用户关闭了本地音频采集，例如，调用了 {@link enableLocalAudio}`(false)`，SDK 会停止发送本回调。
+   *
+   * @param pitchInHz 本地用户的语音音调，单位为 Hz。
+   */
   /**
    * Reports the voice pitch of the local user.
    *
@@ -12870,6 +13080,16 @@ on(
     cb: (localVoicePitchInHz: number) => void
   ): this;
 
+  /** @zh-cn
+   * 直播场景下切换用户角色失败回调。
+   *
+   * @since v3.7.0
+   *
+   * 直播场景下，本地用户加入频道后调用 {@link setClientRole} 切换用户角色失败时，SDK 会触发该回调，报告切换失败的原因和当前的用户角色。
+   *
+   * @param cb.reason 切换用户角色失败的原因。详见 {@link CLIENT_ROLE_CHANGE_FAILED_REASON} 。
+   * @param cb.currentRole 当前的用户角色。详见 {@link CLIENT_ROLE_TYPE} 。
+   */
   /** Occurs when the user role switch fails in the interactive live streaming.
    *
    * @since v3.7.0
@@ -12887,18 +13107,49 @@ on(
     ) => void
   ): this;
 
+  /** @zh-cn
+   * 报告 Wi-Fi 连接质量不佳的原因和改善 Wi-Fi 连接的操作建议。
+   *
+   * @since v3.7.0
+   *
+   * 调用 {@link enableWirelessAccelerate} (true) 开启 Wi-Fi 加速功能后，当 Wi-Fi 连接质量不佳时，SDK 会触发该回调，报告 Wi-Fi 连接质量不佳的原因和改善 Wi-Fi 连接的操作建议。
+   *
+   * @note Agora 强烈建议你在 app 中展示将该回调报告的 `action` 和 `wlAccMsg`，提示用户采取网络优化措施，以获得更好的音视频体验。
+   *
+   * @param cb.reason Wi-Fi 连接质量不佳的原因。详见 {@link WLACC_MESSAGE_REASON} 。
+   * @param cb.action 改善 Wi-Fi 连接质量的操作建议。详见 {@link WLACC_SUGGEST_ACTION} 。
+   */
   /** @private */
   on(
     evt: 'wlAccMessage',
     cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION) => void
   ): this;
 
+  /** @zh-cn
+   * 报告 Wi-Fi 加速效果。
+   *
+   * @since v3.7.0
+   *
+   * 调用 {@link enableWirelessAccelerate} (true) 开启 Wi-Fi 加速功能后，SDK 每隔两秒触发一次该回调，报告当前的 Wi-Fi 加速效果和自加入频道后平均的 Wi-Fi 加速效果。Wi-Fi 加速效果用端到端延时、丢包率和音视频卡顿率三个指标下降的百分比来衡量。
+   *
+   * @param cb.currentStats 当前的 Wi-Fi 加速效果。详见 {@link WlAccStats} 。
+   * @param cb.averageStats 自加入频道后平均的 Wi-Fi 加速效果。详见 {@link WlAccStats} 。
+   */
   /** @private */
   on(
     evt: 'wlAccStats',
     cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
   ): this;
 
+  /** @zh-cn
+   * 鉴黄审核结果回调。
+   *
+   * @since v3.7.0
+   *
+   * 设置 ContentInspectConfig 中的 `type` 为 `kContentInspectModeration` 并调用 {@link enableContentInspect} 开启鉴黄后，SDK 会触发 `contentInspectResult` 回调，报告鉴黄结果。
+   *
+   * @param cb.result 鉴黄结果。详见 {@link CONTENT_INSPECT_RESULT} 。
+   */
  /**
   * @private
   * Reports result of Content Inspect
@@ -12908,6 +13159,21 @@ on(
     cb: (result: CONTENT_INSPECT_RESULT) => void
   ): this;
 
+  /** @zh-cn
+   * 代理连接状态回调。
+   *
+   * @since v3.7.0
+   *
+   * 通过该回调你可以监听 SDK 连接代理的状态。例如，当用户调用 {@link setCloudProxy} 设置代理并成功加入频道后，
+   * SDK 会触发该回调报告用户 ID、连接的代理类型和从调用 {@link joinChannel} 到触发该回调经过的时间等。
+   *
+   * @param channel 频道名称。
+   * @param uid 用户 ID。
+   * @param proxyType 连接上的代理类型。详见 {@link PROXY_TYPE} 。
+   * @param localProxyIp 预留参数，暂不支持。
+   * @param elapsed 从调用 `joinChannel` 到 SDK 触发该回调的经过的时间（毫秒）。
+   *
+   */
   /**
    * Reports the proxy connection state.
    *
@@ -15741,6 +16007,17 @@ declare interface AgoraRtcChannel {
     ) => void
   ): this;
 
+  /** @zh-cn
+   * 音频设备测试回调。
+   *
+   * @since v3.7.0
+   *
+   * 成功调用 {@link startAudioDeviceLoopbackTest} 方法开启音频设备测试后，
+   * SDK 会按设置的时间间隔触发 `audioDeviceTestVolumeIndication` 回调，报告被测试音频设备的音量信息。
+   *
+   * @param volumeType 音量类型。详见 {@link AudioDeviceTestVolumeType}。
+   * @param volume 音量大小，范围为 [0,255]。
+   */
   /**
    * Reports the result of an audio device test.
    * @since v3.7.0
@@ -15884,6 +16161,8 @@ declare interface AgoraRtcChannel {
    * {@link addPublishStreamUrl}，再调用 {@link removePublishStreamUrl} 尝试重连。
    * - `4`: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用
    * {@link addPublishStreamUrl} 重新尝试推流。
+   * - `5`: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
+   * 当你调用 `remove` 或 `stop` 方法正常结束推流时，SDK 会依次报告推流状态为 `DISCONNECTING`、`IDLE`。
    * @param cb.code 推流错误码：
    * - `0`: 推流成功。
    * - `1`: 参数无效。请检查输入参数是否正确。
@@ -15896,6 +16175,10 @@ declare interface AgoraRtcChannel {
    * - `8`: 主播操作不属于自己的流。例如更新其他主播的流参数、停止其他主播的流。请检查 App 逻辑。
    * - `9`: 服务器未找到这个流。
    * - `10`: 推流地址格式有错误。请检查推流地址格式是否正确。
+   * - `11`: 用户角色不是主播，该用户无法使用推流功能。请检查你的应用代码逻辑。
+   * - `13`: 非转码推流情况下，调用了 `updateRtmpTranscoding` 或 `setLiveTranscoding` 方法更新转码属性。请检查你的应用代码逻辑。
+   * - `14`: 主播的网络出错。
+   * - `15`: 你的 App ID 没有使用 Agora 推流服务的权限。请参考[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)开启推流服务。
    */
   /**
    * Occurs when the state of Media Push changes.

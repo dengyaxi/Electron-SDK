@@ -106,26 +106,45 @@ export enum CLIENT_ROLE_TYPE {
   CLIENT_ROLE_AUDIENCE = 2,
 }
 
+/** @zh-cn
+ * 切换用户角色失败的原因。
+ *
+ * @since v3.7.0
+ */
 /**
  * The reason for a user role switch failure.
  *
  * @since v3.7.0
  */
 export enum CLIENT_ROLE_CHANGE_FAILED_REASON {
+  /** @zh-cn
+   * 1: 频道内主播人数达到上限。
+   *
+   * @note 该枚举仅在开启 128 人功能后报告。主播人数的上限根据开启 128 人功能时实际配置的人数而定。
+   */
   /** 1: The number of hosts in the channel is already at the upper limit.
    *
    * @note This enumerator is reported only when the support for 128 users is enabled. The maximum number of hosts is based on the actual number of hosts configured when you enable the 128-user feature.
    */
   CLIENT_ROLE_CHANGE_FAILED_BY_TOO_MANY_BROADCASTERS = 1,
 
+  /** @zh-cn
+   * 2：请求被服务端拒绝。建议提示用户重新尝试切换用户角色。
+   */
   /** 2: The request is rejected by the Agora server. Agora recommends you prompt the user to try to switch their user role again.
    */
   CLIENT_ROLE_CHANGE_FAILED_BY_NOT_AUTHORIZED = 2,
 
+  /** @zh-cn
+   * 3：请求超时。建议提示用户检查网络连接状况后重新尝试切换用户角色。
+   */
   /** 3: The request is timed out. Agora recommends you prompt the user to check the network connection and try to switch their user role again.
    */
   CLIENT_ROLE_CHANGE_FAILED_BY_REQUEST_TIME_OUT = 3,
 
+  /** @zh-cn
+   * 4：网络连接断开。可根据 `connectionStateChanged` 报告的 `reason`，排查网络连接失败的具体原因。
+   */
   /** 4: The SDK connection fails. You can use `reason` reported in the `connectionStateChanged` callback to troubleshoot the failure.
    */
   CLIENT_ROLE_CHANGE_FAILED_BY_CONNECTION_FAILED = 4,
@@ -2857,6 +2876,9 @@ export enum CONNECTION_STATE_TYPE {
  * - 11：由于设置了代理服务器，SDK 尝试重连
  * - 12：更新 Token 引起网络连接状态改变
  * - 13：客户端 IP 地址变更，可能是由于网络类型，或网络运营商的 IP 或端口发生改变引起
+ * - 19: 使用相同的 UID 从不同的设备加入同一频道
+ * - 20: 频道内主播人数已达上限
+ *   @note 该枚举仅在开启 128 人功能后报告。主播人数的上限根据开启 128 人功能时实际配置的人数而定。
  */
 /**
  * Reasons for a connection state change.
@@ -4764,29 +4786,28 @@ export interface ClientRoleOptions {
 /** @zh-cn
  *
  * @since v3.3.1
- *
- * 云代理类型:
- * - 0: 不使用云代理。
- * - 1: UDP 协议的云代理。
- * - 2: 预留。
  */
 /** The cloud proxy type.
  *
- * The cloud proxy type.
- * - 0: Do not use the cloud proxy.
- * - 1: The cloud proxy for the UDP protocol.
- * - 2: Reserved type.
- *
  */
 export enum CLOUD_PROXY_TYPE {
-  /** 0: The automatic mode. In this mode, the SDK attempts a direct connection to SD-RTN™ and automatically
-   * switches to TLS 443 if the attempt fails. As of v3.7.0, the SDK has this mode enabled by default.
+  /** @zh-cn
+   * 0: 自动模式。在该模式下，SDK 优先连接 SD-RTN™，如果连接失败，自动切换到 TLS 443。
+   * 自 v3.7.0 起，SDK 默认开启该模式。
    */
   NONE_PROXY = 0,
+  /** @zh-cn
+   * 1: UDP 协议的云代理，即 Force UDP 云代理模式。在该模式下，SDK 始终通过 UDP 协议传输数据。
+   */
   /** 1: The cloud proxy for the UDP protocol, that is, the Force UDP cloud proxy mode.
    * In this mode, the SDK always transmits data over UDP.
    */
   UDP_PROXY = 1,
+  /** @zh-cn
+   * 2: TCP（加密）协议的云代理，即 Force TCP 云代理模式。在该模式下，SDK 始终通过 TLS 443 传输数据。
+   *
+   * @since v3.7.0
+   */
   /** 2: The cloud proxy for the TCP (encryption) protocol, that is, the Force TCP cloud proxy mode.
    * In this mode, the SDK always transmits data over TLS 443.
    *
@@ -5066,9 +5087,9 @@ export enum LOCAL_VIDEO_STREAM_ERROR {
      */
     LOCAL_VIDEO_STREAM_ERROR_SCREEN_CAPTURE_WINDOW_OCCLUDED = 13,
     /** @zh-cn
-     * （仅 Windows）SDK 不支持共享该类型的窗口。
+     * （仅 Windows）SDK 不支持共享该类型的窗口。请提示用户当前类型的窗口不支持共享。
      *
-     * @since v3.6.1.4
+     * @deprecated 自 v3.7.0 起，SDK 不再抛出此错误码，而是自动调整采集方式来采集更多的窗口类型。
      */
     /** @ignore */
     LOCAL_VIDEO_STREAM_ERROR_SCREEN_CAPTURE_WINDOW_NOT_SUPPORTED = 20,
@@ -5396,22 +5417,37 @@ export enum NETWORK_TYPE {
 }
 
 export interface DisplayId {
+  /** @zh-cn
+   * 屏幕 ID
+   */
   /**
    * The screen ID.
    */
   id: number;
+  /** @zh-cn
+   * 屏幕的 x 坐标。调用 {@link getScreenDisplaysInfo} 时有值。
+   */
   /**
    * The x coordinate (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
    */
   x?: number;
+  /** @zh-cn
+   * 屏幕的 y 坐标。调用 {@link getScreenDisplaysInfo} 时有值。
+   */
   /**
    * The y coordinate (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
    */
   y?: number;
+  /** @zh-cn
+   * 屏幕的宽。调用 {@link getScreenDisplaysInfo} 时有值。
+   */
   /**
    * The width (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
    */
   width?: number;
+  /** @zh-cn
+   * 屏幕的高。调用 {@link getScreenDisplaysInfo} 时有值。
+   */
   /**
    * The height (px) of the screen. Available if you call {@link getScreenDisplaysInfo}.
    */
@@ -5419,30 +5455,51 @@ export interface DisplayId {
 }
 
 export interface DisplayInfo {
+  /** @zh-cn
+   * 详见 {@link DisplayId}
+   */
   /**
    * See {@link DisplayId}.
    */
   displayId: DisplayId;
+  /** @zh-cn
+   * 屏幕的高
+   */
   /**
    * The height (px) of the screen.
    */
   height: number;
+  /** @zh-cn
+   * 屏幕的宽
+   */
   /**
    * The width (px) of the screen.
    */
   width: number;
+  /** @zh-cn
+   * 屏幕的截图 buffer
+   */
   /**
    * The screenshot buffer.
    */
   image: Uint8Array;
+  /** @zh-cn
+   * @deprecated
+   */
   /**
    * @deprecated
    */
   isActive: boolean;
+  /** @zh-cn
+   * @deprecated
+   */
   /**
    * @deprecated
    */
   isBuiltin: boolean;
+  /** @zh-cn
+   * 是否为主屏幕
+   */
   /**
    * Whether the screen is the main screen.
    */
@@ -5450,28 +5507,63 @@ export interface DisplayInfo {
 }
 
 export interface WindowInfo {
+  /** @zh-cn
+   * 当前进程的 ID */
   /** The ID of the current process. */
   currentProcessId: number;
+  /** @zh-cn
+   * 窗口的高
+   */
   /** The height (px) of the window. */
   height: number;
+  /** @zh-cn
+   * 窗口的截图 buffer
+   */
   /** The buffer of the window's screenshot. */
   image: Uint8Array;
+  /** @zh-cn
+   * 窗口名称
+   */
   /** The name of the window. */
   name: string;
+  /** @zh-cn
+   * @deprecated
+   */
   /** @deprecated */
   originHeight: number;
+  /** @zh-cn
+   * @deprecated
+   */
   /** @deprecated */
   originWidth: number;
+  /** @zh-cn
+   * 窗口所属的 app
+   */
   /** The app to which the window belongs. */
   ownerName: string;
+  /** @zh-cn
+   * 窗口的进程 ID
+   */
   /** The ID of the process running in the window. */
   processId: number;
+  /** @zh-cn
+   * 窗口的宽
+   */
   /** The width (px) of the window. */
   width: number;
+  /** @zh-cn
+   * 窗口 ID
+   */
   /** The unique identifier of the window. */
   windowId: number;
+  /** @zh-cn
+   * 窗口的 x 坐标
+   */
   /** The x coordinate (px) of the window. */
   x: number;
+  /** @zh-cn
+   * 窗口的 y 坐标
+   */
   /** The y coordinate (px) of the window. */
   y: number;
 }
@@ -5504,6 +5596,11 @@ export enum AUDIO_RECORDING_QUALITY_TYPE {
    * of 32,000 Hz and a 10-minute recording is approximately 3.75 MB.
    */
   AUDIO_RECORDING_QUALITY_HIGH = 2,
+  /** @zh-cn
+   * 3: 超高音质。例如，采样率为 32000 Hz，录音时长为 10 分钟的 AAC 文件大小约为 7.5 M。
+   *
+   * @since v3.7.0
+   */
   /** 3: Ultra high quality. For example, the size of an AAC file with a sample rate
    * of 32,000 Hz and a 10-minute recording is approximately 7.5 MB.
    *
@@ -5641,6 +5738,16 @@ export interface AudioRecordingConfiguration {
    * {@link AUDIO_RECORDING_QUALITY_HIGH}.
    */
   recordingSampleRate: number;
+  /** @zh-cn
+   * @since v3.7.0
+   *
+   * 录制的音频声道。支持如下取值：
+   * - `1`:（默认）单声道。
+   * - `2`: 双声道。
+   *
+   * @note 实际录制的音频声道与你采集的音频声道有关：如果采集的音频为单声道，`recordingChannel` 为 `2`，
+   * 则录制的音频为经过单声道数据拷贝后的双声道数据，而不是立体声。如果采集的音频为双声道，`recordingChannel` 为 `1`，则录制的音频为经过双声道数据混合后的单声道数据。此外，集成方案也会影响最终录制的音频声道。因此，如果你希望录制立体声，请联系技术支持协助。
+   */
   /**
    * @since v3.7.0
    *
@@ -5801,6 +5908,9 @@ export enum AUDIO_FILE_INFO_ERROR {
 export interface VirtualBackgroundSource {
   /** @zh-cn
    * 自定义的背景图类型。
+   * - 1: （默认）背景图为纯色。
+   * - 2: 背景图为 PNG、JPG 格式的图片。
+   * - 3: 背景图为虚化处理后的背景图。
    *
    * @since v3.4.5
    */
@@ -8297,30 +8407,54 @@ export interface BeautyOptions {
 }
 
 export enum LOW_LIGHT_ENHANCE_MODE {
+  /** @zh-cn
+   * 0:（默认）自动模式。SDK 会根据环境光亮度自动开启或关闭暗光增强功能，以适时补光和防止过曝。 */
   /** 0: (Default) Automatic mode. The SDK automatically enables or disables the low-light enhancement feature according to the ambient light to compensate for the lighting level or prevent overexposure, as necessary. */
   LOW_LIGHT_ENHANCE_AUTO = 0,
+  /** @zh-cn
+   * 1: 手动模式。用户需手动开启或关闭暗光增强功能。 */
   /** 1: Manual mode. Users need to enable or disable the low-light enhancement feature manually. */
   LOW_LIGHT_ENHANCE_MANUAL,
 }
 
 export enum LOW_LIGHT_ENHANCE_LEVEL {
+  /** @zh-cn
+   * 0:（默认）优先画质的暗光增强，会处理视频图像的亮度、细节、噪声，消耗的性能适中，处理速度适中，综合画质最优。
+   */
   /** 0: (Default) Promotes video quality during low-light enhancement. It processes the brightness, details, and noise of the video image. The performance consumption is moderate, the processing speed is moderate, and the overall video quality is optimal. */
   LOW_LIGHT_ENHANCE_LEVEL_HIGH_QUALITY = 0,
+  /** @zh-cn
+   * 1: 优先性能的暗光增强，会处理视频图像的亮度、细节，消耗的性能较少，处理速度较快。
+   */
   /** 1: Promotes performance during low-light enhancement. It processes the brightness and details of the video image. The processing speed is faster. */
   LOW_LIGHT_ENHANCE_LEVEL_FAST,
 }
 
+/** @zh-cn
+ * 暗光增强选项
+ *
+ * @since v3.7.0
+ */
 /** The low-light enhancement options.
  *
  * @since v3.7.0
  */
 export interface LowLightEnhanceOptions {
+  /** @zh-cn
+   * 暗光增强模式:
+   * - 0:（默认）自动模式。SDK 会根据环境光亮度自动开启或关闭暗光增强功能，以适时补光和防止过曝。
+   * - 1: 手动模式。用户需手动开启或关闭暗光增强功能。
+   */
   /** The low-light enhancement mode:
    * - 0: (Default) Automatic mode. The SDK automatically enables or disables the low-light enhancement feature according to the ambient light to compensate for the lighting level or prevent overexposure, as necessary.
    * - 1: Manual mode. Users need to enable or disable the low-light enhancement feature manually.
    */
   mode: LOW_LIGHT_ENHANCE_MODE;
-
+  /** @zh-cn
+   * 暗光增强等级:
+   * - 0:（默认）优先画质的暗光增强，会处理视频图像的亮度、细节、噪声，消耗的性能适中，处理速度适中，综合画质最优。
+   * - 1: 优先性能的暗光增强，会处理视频图像的亮度、细节，消耗的性能较少，处理速度较快。
+   */
   /** The low-light enhancement level:
    * - 0: (Default) Promotes video quality during low-light enhancement. It processes the brightness, details, and noise of the video image. The performance consumption is moderate, the processing speed is moderate, and the overall video quality is optimal.
    * - 1: Promotes performance during low-light enhancement. It processes the brightness and details of the video image. The processing speed is faster.
@@ -8328,26 +8462,46 @@ export interface LowLightEnhanceOptions {
   level: LOW_LIGHT_ENHANCE_LEVEL;
 }
 
+/** @zh-cn
+ * 视频降噪模式，详见 #VIDEO_DENOISER_MODE 。
+ *
+ * @since v3.7.0
+ */
 /** The video noise reduction mode.
  */
 export enum VIDEO_DENOISER_MODE {
+  /** @zh-cn
+   * 0:（默认）自动模式。SDK 会根据环境光亮度自动开启或关闭视频降噪功能。*/
   /** 0: (Default) Automatic mode. The SDK automatically enables or disables the video noise reduction feature according to the ambient light. */
   VIDEO_DENOISER_AUTO = 0,
+  /** @zh-cn
+   * 1: 手动模式。用户需手动开启或关闭视频降噪功能。 */
   /** 1: Manual mode. Users need to enable or disable the video noise reduction feature manually. */
   VIDEO_DENOISER_MANUAL,
 }
 
+/** @zh-cn
+ * 视频降噪等级。
+ *
+ * @since v3.7.0
+ */
 export enum VIDEO_DENOISER_LEVEL {
+  /** @zh-cn
+   * 0:（默认）优先画质的视频降噪。`HIGH_QUALITY` 是在性能消耗和视频降噪效果中取平衡的等级。性能消耗适中，视频降噪速度适中，综合画质最优。 */
   /**
    * 0: (Default) Promotes video quality during video noise reduction. `HIGH_QUALITY` balances performance consumption and video noise reduction quality.
    * The performance consumption is moderate, the video noise reduction speed is moderate, and the overall video quality is optimal.
    */
   VIDEO_DENOISER_LEVEL_HIGH_QUALITY = 0,
+  /** @zh-cn
+   * 1: 优先性能的视频降噪。`FAST` 是在性能消耗和视频降噪效果中侧重于节省性能的等级。性能消耗较少，视频降噪速度较快。为避免处理后的视频有明显的拖影效果，Agora 推荐你在摄像头固定的情况下使用 `FAST`。 */
   /**
    * 1: Promotes reducing performance consumption during video noise reduction. `FAST` prioritizes reducing performance consumption over video noise reduction quality.
    * The performance consumption is lower, and the video noise reduction speed is faster. To avoid a noticeable shadowing effect (shadows trailing behind moving objects) in the processed video, Agora recommends that you use `FAST` when the camera is fixed.
    */
   VIDEO_DENOISER_LEVEL_FAST,
+  /** @zh-cn
+   * 2: 强效的视频降噪。`STRENGTH` 是在性能消耗和视频降噪效果中侧重于视频降噪效果的等级。性能消耗较多，视频降噪速度较慢，视频降噪效果较好。如果 `HIGH_QUALITY` 不能满足你的视频降噪需求，你可以使用 `STRENGTH`。 */
   /**
    * 2: Enhanced video noise reduction. `STRENGTH` prioritizes video noise reduction quality over reducing performance consumption.
    * The performance consumption is higher, the video noise reduction speed is slower, and the video noise reduction quality is better.
@@ -8355,18 +8509,36 @@ export enum VIDEO_DENOISER_LEVEL {
    */
   VIDEO_DENOISER_LEVEL_STRENGTH,
 }
+/** @zh-cn
+ * 视频降噪选项
+ *
+ * @since v3.7.0
+ */
 /**
  * The video noise reduction options.
  *
  * @since v3.7.0
  */
 export interface VideoDenoiserOptions {
+  /** @zh-cn
+   * 视频降噪模式：
+   * - 0：（默认）自动模式。SDK 会根据环境光亮度自动开启或关闭视频降噪功能。
+   * - 1：手动模式。用户需手动开启或关闭视频降噪功能。
+   */
   /** The video noise reduction mode:
    * - 0: (Default) Automatic mode. The SDK automatically enables or disables the video noise reduction feature according to the ambient light.
    * - 1: Manual mode. Users need to enable or disable the video noise reduction feature manually.
    */
   mode: VIDEO_DENOISER_MODE;
 
+  /** @zh-cn
+   * 视频降噪等级:
+   * - 0:（默认）优先画质的视频降噪。`HIGH_QUALITY` 是在性能消耗和视频降噪效果中取平衡的等级。性能消耗适中，视频降噪速度适中，综合画质最优。
+   * - 1: 优先性能的视频降噪。`FAST` 是在性能消耗和视频降噪效果中侧重于节省性能的等级。性能消耗较少，视频降噪速度较快。为避免处理后的视频有明显的拖影效果，Agora 推荐你在摄像头固定的情况下使用 `FAST`。
+   * - 2: 强效的视频降噪。`STRENGTH` 是在性能消耗和视频降噪效果中侧重于视频降噪效果的等级。性能消耗较多，视频降噪速度较慢，视频降噪效果较好。如果 `HIGH_QUALITY` 不能满足你的视频降噪需求，你可以使用 `STRENGTH`。
+   *
+   * @since v3.7.0
+   */
   /** The video noise reduction level:
    * - 0: (Default) Promotes video quality during video noise reduction. `HIGH_QUALITY` balances performance consumption and video noise reduction quality.
    * The performance consumption is moderate, the video noise reduction speed is moderate, and the overall video quality is optimal.
@@ -8379,15 +8551,27 @@ export interface VideoDenoiserOptions {
   level: VIDEO_DENOISER_LEVEL;
 }
 
+/** @zh-cn
+ * 色彩增强选项
+ *
+ * @since v3.7.0
+ */
 /** The color enhancement options.
  *
  * @since v3.7.0
  */
 export interface ColorEnhanceOptions {
+  /** @zh-cn
+   * 色彩增强程度。取值范围为 [0.0,1.0]。`0.0` 为默认值，表示不对视频进行色彩增强。取值越大，色彩增强的程度越大。
+   */
   /** The level of color enhancement. The value range is [0.0,1.0]. `0.0` is the default value, which means no color enhancement is applied to the video. The higher the value, the higher the level of color enhancement.
    */
   strengthLevel: number;
 
+  /** @zh-cn
+   * 肤色保护程度。取值范围为 [0.0,1.0]。`0.0` 表示不对肤色进行保护。取值越大，肤色保护的程度越大。默认值为 `1.0`。色彩增强程度较大时，人像肤色会明显失真，你需要设置肤色保护程度；肤色保护程度较大时，色彩增强效果会略微降低。
+   * 因此，为获取最佳的色彩增强效果，Agora 建议你调节 `strengthLevel` 和 `skinProtectLevel` 以获取最合适的取值。
+   */
   /** The level of skin tone protection. The value range is [0.0,1.0]. `0.0` means no skin tone protection. The higher the value, the higher the level of skin tone protection.
    * The default value is `1.0`. When the level of color enhancement is higher, the portrait skin tone can be significantly distorted, so you need to set the level of skin tone protection; when the level of skin tone protection is higher, the color enhancement effect can be slightly reduced.
    * Therefore, to get the best color enhancement effect, Agora recommends that you adjust `strengthLevel` and `skinProtectLevel` to get the most appropriate values.
@@ -8418,15 +8602,26 @@ export interface LocalAccessPointConfiguration {
    */
   mode: LOCAL_PROXY_MODE;
 }
+/** @zh-cn
+ * 音量类型。
+ *
+ * @since v3.7.0
+ */
 /**
  * The volume type.
  *
  * @since v3.7.0
  */
 export enum AudioDeviceTestVolumeType {
+  /** @zh-cn
+   * 0: 音频采集设备的音量。
+   */
   /** 0: The volume of the audio capturing device.
    */
   AudioTestRecordingVolume = 0,
+  /** @zh-cn
+   * 1: 音频播放的音量。
+   */
   /** 1: The volume of the audio playback device.
    */
   AudioTestPlaybackVolume = 1,
@@ -8489,27 +8684,56 @@ export interface EchoTestConfiguration {
   channelId: string;
 }
 
+/** @zh-cn
+ * 屏幕共享的场景
+ *
+ * @since v3.7.0
+ */
 /**
  * The screen sharing scenario.
  *
  * @since v3.7.0
  */
 export enum SCREEN_SCENARIO_TYPE {
+  /** @zh-cn
+   * 1:（默认）文档。该场景下，优先保障共享的画质，并降低了接收端看到共享视频的延时。如果你共享文档、幻灯片、表格，可以设置该场景。
+   */
   /** 1: (Default) Document. This scenario prioritizes the video quality of screen sharing and reduces the latency of the shared video for the receiver. If you share documents, slides, and tables, you can set this scenario.
    */
   SCREEN_SCENARIO_DOCUMENT = 1,
+  /** @zh-cn
+   * 2: 游戏。该场景下，优先保障共享的流畅性。如果你共享游戏，可以设置该场景。
+   */
   /** 2: Game. This scenario prioritizes the smoothness of screen sharing. If you share games, you can set this scenario.
    */
   SCREEN_SCENARIO_GAMING = 2,
+  /** @zh-cn
+   * 3: 视频。该场景下，优先保障共享的流畅性。如果你共享电影、视频直播，可以设置该场景。
+   */
   /** 3: Video. This scenario prioritizes the smoothness of screen sharing. If you share movies or live videos, you can set this scenario.
    */
   SCREEN_SCENARIO_VIDEO = 3,
+  /** @zh-cn
+   * 4: 远程控制。该场景下，优先保障共享的画质，并降低了接收端看到共享视频的延时。如果你共享被远程控制的设备桌面，可以设置该场景。
+   */
   /** 4: Remote control. This scenario prioritizes the video quality of screen sharing and reduces the latency of the shared video for the receiver. If you share the device desktop being remotely controlled, you can set this scenario.
    */
   SCREEN_SCENARIO_RDC = 4,
 }
 
+/** @zh-cn
+ * ContentInspectModule 结构体，用于配置内容审核模块的类型和频率。
+ *
+ * @since v3.7.0
+ */
 export interface ContentInspectModule {
+  /**
+   * @zh-cn
+   * 内容审核模块的类型:
+   * - kContentInspectInvalid(0): （默认）该功能模块无实际功能。请不要将 `type` 设为该值。
+   * - kContentInspectModeration(1): 鉴黄。SDK 会对本地用户发送的视频进行截图、鉴黄，并将截图和审核结果上传。详见[鉴黄产品概述](https://docs.agora.io/cn/content-moderation/content_moderation_overview)。
+   * - kContentInspectSupervise(2): 截图。SDK 会对视频流进行截图并上传。
+   */
   /**
    * The content inspect module type.
    * the module type can be 0 to 31.
@@ -8518,72 +8742,161 @@ export interface ContentInspectModule {
    * kContentInspectSupervise(2)
    */
   type: number;
+  /** @zh-cn
+   * 内容审核的间隔，单位为秒，取值必须大于 0。默认值为 0，表示不进行内容审核。
+   *
+   * 推荐值为 10 秒，你也可以根据业务需求自行调整。
+   */
   /**The content inspect frequency, default is 0 second.
    * the frequency <= 0 is invalid.
    */
   interval: number;
 }
+/** @zh-cn
+ * 内容审核配置。
+ *
+ * @since v3.7.0
+ */
 export interface ContentInspectConfig {
+  /** @zh-cn
+   * 附加信息，最大长度为 1024 字节。
+   *
+   * SDK 会将附加信息和截图一起上传至 Agora 内容审核服务器；审核完成后，Agora 内容审核服务器会将附加信息随审核结果一起发送给你的服务器。
+   */
   /** The extra information, max length of extraInfo is 1024.
    *  The extra information will send to server with content(image).
    */
   extraInfo: number;
+  /** @zh-cn
+   * 内容审核模块。详见 ContentInspectModule 。
+   *
+   * 最多支持配置 32 个 `ContentInspectModule` 实例，`MAX_CONTENT_INSPECT_MODULE_COUNT` 的取值范围为 [1,32] 中的整数。
+   */
   /**The content inspect modules, max length of modules is 32.
    * the content(snapshot of send video stream, image) can be used to max of 32 types functions.
    */
   modules: ContentInspectModule[];
 }
 
+/** @zh-cn
+ * Wi-Fi 连接质量不佳的原因。
+ *
+ * @since v3.7.0
+ */
 export enum WLACC_MESSAGE_REASON {
+  /** @zh-cn
+   * 0: Wi-Fi 信号弱。 */
   /** WIFI signal is weak.*/
   WLACC_MESSAGE_REASON_WEAK_SIGNAL = 0,
+  /** @zh-cn
+   * 1: 网络拥塞。 */
   /** Channel congestion.*/
   WLACC_MESSAGE_REASON_CHANNEL_CONGESTION = 1,
 }
+/** @zh-cn
+ * 改善 Wi-Fi 连接质量的操作建议。
+ *
+ * @since v3.7.0
+ */
 export enum WLACC_SUGGEST_ACTION {
+  /** @zh-cn
+   * 0: 由于路由器接收到的 Wi-Fi 信号弱，请用户靠近路由器。 */
   /** Please get close to AP.*/
   WLACC_SUGGEST_ACTION_CLOSE_TO_WIFI = 0,
+  /** @zh-cn
+   * 1: 请用户连接到指定的无线网络。无线网络名称（SSID）详见 `wlAccMsg` 参数。 */
   /** The user is advised to connect to the prompted SSID.*/
   WLACC_SUGGEST_ACTION_CONNECT_SSID = 1,
+  /** @zh-cn
+   * 2: 当前路由器不支持 5G 频道。请用户检查路由器是否支持并开启了 5G 频道，或更换支持 5G 频道的路由器。开启 5G 频道的步骤详见 `wlAccMsg` 参数。
+   */
   /** The user is advised to check whether the AP supports 5G band and enable 5G band (the aciton link is attached), or purchases an AP that supports 5G. AP does not support 5G band.*/
   WLACC_SUGGEST_ACTION_CHECK_5G = 2,
+  /** @zh-cn
+   * 3: 2.4G 频段和 5G 频道的网络名称（SSID）相同。请用户修改 2.4G 频段或 5G 频道的网络名称。修改步骤详见 `wlAccMsg` 参数。
+   */
   /** The user is advised to change the SSID of the 2.4G or 5G band (the aciton link is attached). The SSID of the 2.4G band AP is the same as that of the 5G band.*/
   WLACC_SUGGEST_ACTION_MODIFY_SSID = 3,
 }
 
+/** @zh-cn
+ * Wi-Fi 加速效果。
+ *
+ * @since v3.7.0
+ */
 export interface WlAccStats {
+  /** @zh-cn
+   * 端到端延时下降百分比。 */
   /** End-to-end delay optimization percentage.*/
   e2eDelayPercent: number;
+  /** @zh-cn
+   * 音视频卡顿率下降百分比。 */
   /** Frozen Ratio optimization percentage.*/
   frozenRatioPercent: number;
+  /** @zh-cn
+   * 丢包率下降百分比。*/
   /** Loss Rate optimization percentage.*/
   lossRatePercent: number;
 }
 
+/** @zh-cn
+ * 鉴黄结果。
+ *
+ * @since v3.7.0
+ */
 export enum CONTENT_INSPECT_RESULT {
+  /** @zh-cn
+   * 1: 正常图片。
+   */
   CONTENT_INSPECT_NEUTRAL = 1,
+  /** @zh-cn
+   * 2: 性感图片。
+   */
   CONTENT_INSPECT_SEXY = 2,
+  /** @zh-cn
+   * 3: 色情图片。
+   */
   CONTENT_INSPECT_PORN = 3,
 }
 
+/** @zh-cn
+ * 代理类型。
+ *
+ * @since v3.7.0
+ */
 /**
  * The proxy type.
  *
  * @since v3.7.0
  */
 export enum PROXY_TYPE {
+  /** @zh-cn
+   * 0: 预留参数，暂不支持。
+   */
   /** 0: Reserved for future use.
    */
   NONE_PROXY_TYPE = 0,
+  /** @zh-cn
+   * 1: UDP 协议的云代理，即 Force UDP 云代理模式。在该模式下，SDK 始终通过 UDP 协议传输数据。
+   */
   /** 1: The cloud proxy for the UDP protocol, that is, the Force UDP cloud proxy mode. In this mode, the SDK always transmits data over UDP.
    */
   UDP_PROXY_TYPE = 1,
+  /** @zh-cn
+   * 2: TCP（加密）协议的云代理，即 Force TCP 云代理模式。在该模式下，SDK 始终通过 TLS 443 传输数据。
+   */
   /** 2: The cloud proxy for the TCP (encryption) protocol, that is, the Force TCP cloud proxy mode. In this mode, the SDK always transmits data over TLS 443.
    */
   TCP_PROXY_TYPE = 2,
+  /** @zh-cn
+   * 3: 预留参数，暂不支持。
+   */
   /** 3: Reserved for future use.
    */
   LOCAL_PROXY_TYPE = 3,
+  /** @zh-cn
+   * 4: 自动模式。在该模式下，SDK 优先连接 SD-RTN™，如果连接失败，自动切换为 TLS 443。
+   */
   /** 4: The automatic mode. In this mode, the SDK attempts a direct connection to SD-RTN™ and automatically switches to TLS 443 if the attempt fails.
    */
   TCP_PROXY_AUTO_FALLBACK_TYPE = 4,
