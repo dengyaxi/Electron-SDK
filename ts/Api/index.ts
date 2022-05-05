@@ -8501,7 +8501,7 @@ declare interface AgoraRtcEngine {
    */
   on(
     evt: 'localVoicePitchInHz',
-    cb: (localVoicePitchInHz: number) => void
+    cb: (pitchInHz: number) => void
   ): this;
 
   /** Occurs when the user role switch fails in the interactive live streaming.
@@ -8709,13 +8709,6 @@ class AgoraRtcChannel extends EventEmitter {
     this.rtcChannel.onEvent('activeSpeaker', (uid: number) => {
       fire('activeSpeaker', uid);
     });
-
-    this.rtcChannel.onEvent(
-      'firstRemoteVideoFrame',
-      (uid: number, width: number, height: number, elapsed: number) => {
-        fire('firstRemoteVideoFrame', uid, width, height, elapsed);
-      }
-    );
 
     this.rtcChannel.onEvent(
       'firstRemoteAudioDecoded',
