@@ -86,22 +86,24 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#advancedfeatures" class="tsd-kind-icon">advanced<wbr>Features</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiobitrate" class="tsd-kind-icon">audio<wbr>Bitrate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiochannels" class="tsd-kind-icon">audio<wbr>Channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiocodecprofile" class="tsd-kind-icon">audio<wbr>Codec<wbr>Profile</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#audiosamplerate" class="tsd-kind-icon">audio<wbr>Sample<wbr>Rate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#backgroundcolor" class="tsd-kind-icon">background<wbr>Color</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#backgroundimage" class="tsd-kind-icon">background<wbr>Image</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#height-1" class="tsd-kind-icon">height</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#height" class="tsd-kind-icon">height</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#lowlatency" class="tsd-kind-icon">low<wbr>Latency</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingextrainfo" class="tsd-kind-icon">transcoding<wbr>Extra<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#transcodingusers" class="tsd-kind-icon">transcoding<wbr>Users</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#usercount" class="tsd-kind-icon">user<wbr>Count</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videobitrate" class="tsd-kind-icon">video<wbr>Bitrate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodecprofile" class="tsd-kind-icon">video<wbr>Codec<wbr>Profile</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videocodectype" class="tsd-kind-icon">video<wbr>Codec<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videoframerate" class="tsd-kind-icon">video<wbr>Frame<wbr>Rate</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#videogop" class="tsd-kind-icon">video<wbr>Gop</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#watermark" class="tsd-kind-icon">watermark</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#width-2" class="tsd-kind-icon">width</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="transcodingconfig.html#width" class="tsd-kind-icon">width</a></li>
 							</ul>
 						</section>
 					</div>
@@ -110,14 +112,25 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="advancedfeatures" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> advanced<wbr>Features</h3>
+					<div class="tsd-signature tsd-kind-icon">advanced<wbr>Features<span class="tsd-signature-symbol">:</span> <a href="livestreamadvancedfeature.html" class="tsd-signature-type">LiveStreamAdvancedFeature</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Advanced features of the RTMP or RTMPS streaming with transcoding. See
+							LiveStreamAdvancedFeature.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.1.0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiobitrate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:215</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Bitrate of the CDN live audio output stream. The default value is 48
@@ -129,11 +142,6 @@
 					<a name="audiochannels" class="tsd-anchor"></a>
 					<h3>audio<wbr>Channels</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:211</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Agora&#39;s self-defined audio-channel types.</p>
@@ -150,14 +158,19 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="audiocodecprofile" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> audio<wbr>Codec<wbr>Profile</h3>
+					<div class="tsd-signature tsd-kind-icon">audio<wbr>Codec<wbr>Profile<span class="tsd-signature-symbol">:</span> <a href="../enums/audio_codec_profile_type.html" class="tsd-signature-type">AUDIO_CODEC_PROFILE_TYPE</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Self-defined audio codec profile: #AUDIO_CODEC_PROFILE_TYPE.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="audiosamplerate" class="tsd-anchor"></a>
 					<h3>audio<wbr>Sample<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">audio<wbr>Sample<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:198</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Self-defined audio-sample rate:</p>
@@ -173,11 +186,6 @@
 					<a name="backgroundcolor" class="tsd-anchor"></a>
 					<h3>background<wbr>Color</h3>
 					<div class="tsd-signature tsd-kind-icon">background<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:190</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The background color in RGB hex value. Value only, do not include a #.
@@ -188,12 +196,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="backgroundimage" class="tsd-anchor"></a>
 					<h3>background<wbr>Image</h3>
-					<div class="tsd-signature tsd-kind-icon">background<wbr>Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:254</li>
-						</ul>
-					</aside>
+					<div class="tsd-signature tsd-kind-icon">background<wbr>Image<span class="tsd-signature-symbol">:</span> <a href="rtcimage.html" class="tsd-signature-type">RtcImage</a><span class="tsd-signature-symbol">[]</span></div>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>since</dt>
@@ -204,77 +207,20 @@
 							</dd>
 						</dl>
 					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The height (pixel) of the image.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The HTTP or HTTPS address of the image. The length must not
-										exceed 1,024 bytes.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The width (pixel) of the image.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The x coordinate of the image on the output video. With the
-											top-left corner
-											of the output video as the origin, the x coordinate is the horizontal
-											displacement
-										of the top-left corner of the image relative to the origin.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>The y coordinate of the image on the output video. With the top-left
-											corner
-											of the output video as the origin, the y coordinate is the vertical
-											displacement
-										of the top-left corner of the image relative to the origin.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="height-1" class="tsd-anchor"></a>
+					<a name="height" class="tsd-anchor"></a>
 					<h3>height</h3>
 					<div class="tsd-signature tsd-kind-icon">height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:148</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Height of the video. The default value is 640.</p>
 						</div>
-						<p>If you push video streams to the CDN, set the value of width x height to
-						at least 64 x 64 (px), or the SDK will adjust it to 64 x 64 (px).</p>
-						<p>If you push audio streams to the CDN, set the value of width x height to
+						<p>When pushing video streams to the CDN, the value range of <code>height</code> is
+							[64,1080]. If the value is less than 64, Agora server automatically adjusts
+							it to 64; if the value is greater than 1080, Agora server automatically
+						adjusts it to 1080.</p>
+						<p>When pushing audio streams to the CDN, set the value of width x height to
 						0 x 0 (px).</p>
 					</div>
 				</section>
@@ -282,11 +228,6 @@
 					<a name="lowlatency" class="tsd-anchor"></a>
 					<h3>low<wbr>Latency</h3>
 					<div class="tsd-signature tsd-kind-icon">low<wbr>Latency<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:171</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Latency mode.</p>
@@ -301,11 +242,6 @@
 					<a name="transcodingextrainfo" class="tsd-anchor"></a>
 					<h3>transcoding<wbr>Extra<wbr>Info</h3>
 					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Extra<wbr>Info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:224</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The reserved property.</p>
@@ -318,12 +254,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="transcodingusers" class="tsd-anchor"></a>
 					<h3>transcoding<wbr>Users</h3>
-					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="transcodinguser.html" class="tsd-signature-type">TranscodingUser</a><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:287</li>
-						</ul>
-					</aside>
+					<div class="tsd-signature tsd-kind-icon">transcoding<wbr>Users<span class="tsd-signature-symbol">:</span> <a href="transcodinguser.html" class="tsd-signature-type">TranscodingUser</a><span class="tsd-signature-symbol">[]</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The TranscodingUsers Array.</p>
@@ -331,29 +262,9 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="usercount" class="tsd-anchor"></a>
-					<h3>user<wbr>Count</h3>
-					<div class="tsd-signature tsd-kind-icon">user<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:192</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The number of users in the live streaming.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="videobitrate" class="tsd-anchor"></a>
 					<h3>video<wbr>Bitrate</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Bitrate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:158</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Bitrate of the CDN live output video stream.
@@ -368,11 +279,6 @@
 					<a name="videocodecprofile" class="tsd-anchor"></a>
 					<h3>video<wbr>Codec<wbr>Profile</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Codec<wbr>Profile<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:185</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Self-defined video codec profile.</p>
@@ -389,14 +295,19 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="videocodectype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> video<wbr>Codec<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">video<wbr>Codec<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/video_codec_type_for_stream.html" class="tsd-signature-type">VIDEO_CODEC_TYPE_FOR_STREAM</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The video codec type of the output video stream. See <a href="../enums/video_codec_type_for_stream.html">VIDEO_CODEC_TYPE_FOR_STREAM</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="videoframerate" class="tsd-anchor"></a>
 					<h3>video<wbr>Frame<wbr>Rate</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:165</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Frame rate (fps) of the CDN live output video stream.
@@ -409,11 +320,6 @@
 					<a name="videogop" class="tsd-anchor"></a>
 					<h3>video<wbr>Gop</h3>
 					<div class="tsd-signature tsd-kind-icon">video<wbr>Gop<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:175</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Video GOP in frames. The default value is 30 fps.</p>
@@ -423,82 +329,26 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="watermark" class="tsd-anchor"></a>
 					<h3>watermark</h3>
-					<div class="tsd-signature tsd-kind-icon">watermark<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:226</li>
-						</ul>
-					</aside>
+					<div class="tsd-signature tsd-kind-icon">watermark<span class="tsd-signature-symbol">:</span> <a href="rtcimage.html" class="tsd-signature-type">RtcImage</a><span class="tsd-signature-symbol">[]</span></div>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The watermark image added to the CDN live publishing stream.</p>
 						</div>
 					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Height of the image on the broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>HTTP/HTTPS URL address of the image on the broadcasting video.</p>
-									</div>
-									<p>The maximum length of this parameter is 1024 bytes.</p>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Width of the image on the broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Horizontal position of the image from the upper left of the
-										broadcasting video.</p>
-									</div>
-								</div>
-							</li>
-							<li class="tsd-parameter">
-								<h5>y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
-								<div class="tsd-comment tsd-typography">
-									<div class="lead">
-										<p>Vertical position of the image from the upper left of the broadcasting
-										video.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="width-2" class="tsd-anchor"></a>
+					<a name="width" class="tsd-anchor"></a>
 					<h3>width</h3>
 					<div class="tsd-signature tsd-kind-icon">width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:138</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Width of the video. The default value is 360.</p>
 						</div>
-						<p>If you push video streams to the CDN, set the value of width x height to
-						at least 64 x 64 (px), or the SDK will adjust it to 64 x 64 (px).</p>
-						<p>If you push audio streams to the CDN, set the value of width x height to
+						<p>When pushing video streams to the CDN, the value range of <code>width</code> is
+							[64,1920]. If the value is less than 64, Agora server automatically adjusts
+							it to 64; if the value is greater than 1920, Agora server automatically
+						adjusts it to 1920.</p>
+						<p>When pushing audio streams to the CDN, set the value of width x height to
 						0 x 0 (px).</p>
 					</div>
 				</section>
@@ -520,10 +370,16 @@
 						<a href="transcodingconfig.html" class="tsd-kind-icon">Transcoding<wbr>Config</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#advancedfeatures" class="tsd-kind-icon">advanced<wbr>Features</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiobitrate" class="tsd-kind-icon">audio<wbr>Bitrate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiochannels" class="tsd-kind-icon">audio<wbr>Channels</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#audiocodecprofile" class="tsd-kind-icon">audio<wbr>Codec<wbr>Profile</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#audiosamplerate" class="tsd-kind-icon">audio<wbr>Sample<wbr>Rate</a>
@@ -535,7 +391,7 @@
 								<a href="transcodingconfig.html#backgroundimage" class="tsd-kind-icon">background<wbr>Image</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#height-1" class="tsd-kind-icon">height</a>
+								<a href="transcodingconfig.html#height" class="tsd-kind-icon">height</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#lowlatency" class="tsd-kind-icon">low<wbr>Latency</a>
@@ -547,13 +403,13 @@
 								<a href="transcodingconfig.html#transcodingusers" class="tsd-kind-icon">transcoding<wbr>Users</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#usercount" class="tsd-kind-icon">user<wbr>Count</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#videobitrate" class="tsd-kind-icon">video<wbr>Bitrate</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#videocodecprofile" class="tsd-kind-icon">video<wbr>Codec<wbr>Profile</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="transcodingconfig.html#videocodectype" class="tsd-kind-icon">video<wbr>Codec<wbr>Type</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="transcodingconfig.html#videoframerate" class="tsd-kind-icon">video<wbr>Frame<wbr>Rate</a>
@@ -565,7 +421,7 @@
 								<a href="transcodingconfig.html#watermark" class="tsd-kind-icon">watermark</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="transcodingconfig.html#width-2" class="tsd-kind-icon">width</a>
+								<a href="transcodingconfig.html#width" class="tsd-kind-icon">width</a>
 							</li>
 						</ul>
 					</li>
@@ -588,6 +444,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

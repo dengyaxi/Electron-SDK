@@ -67,7 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>The video encoding degradation preference under limited bandwidth.</p>
+						<p>Video degradation preferences under limited bandwidth.</p>
 					</div>
 				</div>
 			</section>
@@ -92,30 +92,33 @@
 					<a name="maintain_balanced" class="tsd-anchor"></a>
 					<h3>MAINTAIN_<wbr>BALANCED</h3>
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>BALANCED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:976</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>2: (For future use) Maintain a balance between the frame rate and video
-							quality.</p>
+							<p>2: Reduces the video frame rate and video quality simultaneously during
+								video encoding under limited bandwidth. <code>MAINTAIN_BALANCED</code> has a lower
+								reduction than <code>MAINTAIN_QUALITY</code> and <code>MAINTAIN_FRAMERATE</code>, and this
+								preference is suitable for scenarios where both smoothness and video
+							quality are a priority.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>The resolution of the video sent may change, so remote users need
+									to handle this issue.
+								See <code>videoSizeChanged</code>.</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="maintain_framerate" class="tsd-anchor"></a>
 					<h3>MAINTAIN_<wbr>FRAMERATE</h3>
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>FRAMERATE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:972</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>1: Degrade the video quality in order to maintain the frame rate.</p>
+							<p>1: Prefers to reduce the video quality while maintaining the video frame
+								rate during video encoding under limited bandwidth. This degradation
+								preference is suitable for scenarios where smoothness is prioritized and
+							video quality is allowed to be reduced.</p>
 						</div>
 					</div>
 				</section>
@@ -123,16 +126,20 @@
 					<a name="maintain_quality" class="tsd-anchor"></a>
 					<h3>MAINTAIN_<wbr>QUALITY</h3>
 					<div class="tsd-signature tsd-kind-icon">MAINTAIN_<wbr>QUALITY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:970</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>0: (Default) Degrade the frame rate in order to maintain the video
-							quality.</p>
+							<p>0: (Default) Prefers to reduce the video frame rate while maintaining
+								video quality during video encoding under limited bandwidth. This
+								degradation preference is suitable for scenarios where video quality is
+							prioritized.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>In the <code>COMMUNICATION</code> channel profile, the resolution of the video
+									sent may change, so remote users need to handle this issue.
+								See <code>videoSizeChanged</code>.</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -182,6 +189,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

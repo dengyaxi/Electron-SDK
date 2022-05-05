@@ -64,15 +64,21 @@
 			<div class="tsd-panel tsd-typography">
 				<p>This Agora Electron SDK is developed upon the Native SDK for macOS and the Native SDK for Windows, with the Node.js C++ plug-in units. The Electron SDK supports all the functions of the Agora Native SDK. Agora provides ensured quality of experience (QoE) for worldwide Internet-based voice and video communications through a virtual global network optimized on all platforms.</p>
 				<ul>
-					<li>The <a href="classes/agorartcengine.html">AgoraRtcEngine</a> class provides the main methods that can be invoked by your application.</li>
+					<li><p>The <a href="classes/agorartcengine.html">AgoraRtcEngine</a> class provides the main methods that can be invoked by your application.</p>
+					</li>
 					<li><p>The <a href="classes/agorartcengine.html#on">AgoraRtcEngine.on</a> listens to events during runtime.</p>
 					</li>
 					<li><p>The <a href="classes/agorartcchannel.html">AgoraRtcChannel</a> class provides methods that enable real-time communications in a specified channel. By creating multiple AgoraRtcChannel objects, the user can join multiple channels.</p>
 					</li>
-					<li>The <a href="classes/agorartcchannel.html#on">AgoraRtcChannel.on</a> listens to events and statistics of a specified channel.</li>
+					<li><p>The <a href="classes/agorartcchannel.html#on">AgoraRtcChannel.on</a> listens to events and statistics of a specified channel.</p>
+					</li>
 				</ul>
-				<h2 id="methods">Methods</h2>
-				<h3 id="channel-management">Channel management</h3>
+				<a href="#methods" id="methods" style="color: inherit; text-decoration: none;">
+					<h2>Methods</h2>
+				</a>
+				<a href="#channel-management" id="channel-management" style="color: inherit; text-decoration: none;">
+					<h3>Channel management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -133,7 +139,9 @@
 							<td>Stops monitoring the events during <code>AgoraRtcEngine</code> runtime.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-management">Audio management</h3>
+				<a href="#audio-management" id="audio-management" style="color: inherit; text-decoration: none;">
+					<h3>Audio management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -155,7 +163,11 @@
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#adjustrecordingsignalvolume">adjustRecordingSignalVolume</a></td>
-							<td>Adjusts the recording volume.</td>
+							<td>Adjusts the volume of the signal captured by the microphone.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#adjustloopbackrecordingsignalvolume">adjustLoopbackRecordingSignalVolume</a></td>
+							<td>Adjusts the volume of the signal captured by the sound card.</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#adjustplaybacksignalvolume">adjustPlaybackSignalVolume</a></td>
@@ -186,7 +198,9 @@
 							<td>Sets whether to receive all remote audio streams by default.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="video-management">Video management</h3>
+				<a href="#video-management" id="video-management" style="color: inherit; text-decoration: none;">
+					<h3>Video management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -247,7 +261,9 @@
 							<td>Sets whether to receive all remote video streams by default.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="video-sink">Video sink</h3>
+				<a href="#video-sink" id="video-sink" style="color: inherit; text-decoration: none;">
+					<h3>Video sink</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -288,7 +304,9 @@
 							<td>Removes the rendered video with high frame rate.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="video-pre-process-and-post-process">Video pre-process and post-process</h3>
+				<a href="#video-pre-process-and-post-process" id="video-pre-process-and-post-process" style="color: inherit; text-decoration: none;">
+					<h3>Video pre-process and post-process</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -300,8 +318,26 @@
 							<td><a href="classes/agorartcengine.html#setbeautyeffectoptions">setBeautyEffectOptions</a></td>
 							<td>Sets the image enhancement options.</td>
 						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#enablevirtualbackground">enableVirtualBackground</a></td>
+							<td>Enables/Disables the virtual background. (beta function)</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#setvideodenoiseroptions">setVideoDenoiserOptions</a></td>
+							<td>Sets video noise reduction.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#setlowlightenhanceoptions">setLowlightEnhanceOptions</a></td>
+							<td>Sets low-light enhancement.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#setcolorenhanceoptions">setColorEnhanceOptions</a></td>
+							<td>Sets color enhancement.</td>
+						</tr>
 				</tbody></table>
-				<h3 id="multiple-channels-management">Multiple channels management</h3>
+				<a href="#multiple-channels-management" id="multiple-channels-management" style="color: inherit; text-decoration: none;">
+					<h3>Multiple channels management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -322,11 +358,13 @@
 							<td>Provides callbacks that report events and statistics in a specified channel.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="screen-sharing">Screen sharing</h3>
+				<a href="#screen-sharing-a-namescreen-sharea" id="screen-sharing-a-namescreen-sharea" style="color: inherit; text-decoration: none;">
+					<h3>Screen sharing <a name="screen-share"></a></h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
-							<th>Method</th>
+							<th>Common methods</th>
 							<th>Description</th>
 						</tr>
 					</thead>
@@ -337,6 +375,22 @@
 						<tr>
 							<td><a href="classes/agorartcengine.html#getscreenwindowsinfo">getScreenWindowsInfo</a></td>
 							<td>Gets the window ID.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#getscreencapturesources">getScreenCaptureSources</a></td>
+							<td>Gets a list of shareable screens and windows (for macOS and Windows only).</td>
+						</tr>
+				</tbody></table>
+				<table>
+					<thead>
+						<tr>
+							<th>Methods for the main process</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="classes/agorartcengine.html#startscreencapturebydisplayid">startScreenCaptureByDisplayId</a></td>
+							<td>Shares the whole or part of a screen by specifying the display ID (for macOS and Windows only).</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#startscreencapturebyscreen">startScreenCaptureByScreen</a></td>
@@ -359,11 +413,65 @@
 							<td>Sets the content hint for screen sharing.</td>
 						</tr>
 						<tr>
+							<td><a href="classes/agorartcengine.html#setscreencapturescenario">setScreenCaptureScenario</a></td>
+							<td>Sets the screen sharing scenario (for macOS and Windows only).</td>
+						</tr>
+						<tr>
 							<td><a href="classes/agorartcengine.html#updatescreencaptureregion">updateScreenCaptureRegion</a></td>
 							<td>Updates the screen sharing region.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-file-playback-and-mixing">Audio file playback and mixing</h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Methods for the second instance</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="classes/agorartcengine.html#videosourcestartscreencapturebyscreen">videoSourceStartScreenCaptureByScreen</a></td>
+							<td>Shares the whole or part of a screen by specifying the screen rect when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourcestartscreencapturebywindow">videoSourceStartScreenCaptureByWindow</a></td>
+							<td>Shares the whole or part of a window by specifying the window ID when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourcesetvideoprofile">videoSourceSetVideoProfile</a></td>
+							<td>Sets the video profile for the video captured by the camera device.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#stopscreencapture2">stopScreenCapture2</a></td>
+							<td>Stops the screen sharing when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#startscreencapturepreview">startScreenCapturePreview</a></td>
+							<td>Starts the local video preview when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#stopscreencapturepreview">stopScreenCapturePreview</a></td>
+							<td>Stops the local video preview when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourceupdatescreencaptureregion">videoSourceUpdateScreenCaptureRegion</a></td>
+							<td>Updates the screen sharing region when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourceupdatescreencaptureparameters">videoSourceUpdateScreenCaptureParameters</a></td>
+							<td>Updates the screen sharing parameters when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourcesetscreencapturecontenthint">videoSourceSetScreenCaptureContentHint</a></td>
+							<td>Sets the content hint when using the video source.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#videosourceenabledualstreammode">videoSourceEnableDualStreamMode</a></td>
+							<td>Enables the dual stream mode when using the video source.</td>
+						</tr>
+				</tbody></table>
+				<a href="#audio-file-playback-and-mixing" id="audio-file-playback-and-mixing" style="color: inherit; text-decoration: none;">
+					<h3>Audio file playback and mixing</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -412,10 +520,6 @@
 							<td>Retrieves the audio mixing volume for publishing.</td>
 						</tr>
 						<tr>
-							<td><a href="classes/agorartcengine.html#getaudiomixingduration">getAudioMixingDuration</a></td>
-							<td>Gets the duration (ms) of the music file.</td>
-						</tr>
-						<tr>
 							<td><a href="classes/agorartcengine.html#getaudiomixingcurrentposition">getAudioMixingCurrentPosition</a></td>
 							<td>Gets the playback position (ms) of the music file.</td>
 						</tr>
@@ -423,8 +527,26 @@
 							<td><a href="classes/agorartcengine.html#setaudiomixingposition">setAudioMixingPosition</a></td>
 							<td>Sets the playback position of the music file.</td>
 						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#getaudiotrackcount">getAudioTrackCount</a></td>
+							<td>Gets the audio track index of the current music file (for Android, iOS, and Windows only).</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#selectaudiotrack">selectAudioTrack</a></td>
+							<td>Specifies the playback track of the current music file (for Android, iOS, and Windows only).</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#setaudiomixingplaybackspeed">setAudioMixingPlaybackSpeed</a></td>
+							<td>Sets the playback speed of the current music file.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#setaudiomixingdualmonomode">setAudioMixingDualMonoMode</a></td>
+							<td>Sets the channel mode of the current music file.</td>
+						</tr>
 				</tbody></table>
-				<h3 id="audio-effect-playback">Audio effect playback</h3>
+				<a href="#audio-effect-playback" id="audio-effect-playback" style="color: inherit; text-decoration: none;">
+					<h3>Audio effect playback</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -476,8 +598,37 @@
 							<td><a href="classes/agorartcengine.html#resumealleffects">resumeAllEffects</a></td>
 							<td>Resumes playing all audio effects.</td>
 						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#geteffectduration">getEffectDuration</a></td>
+							<td>Gets the duration of the audio effect file.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#seteffectposition">setEffectPosition</a></td>
+							<td>Sets the playback position of an audio effect file.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#geteffectcurrentposition">getEffectCurrentPosition</a></td>
+							<td>Gets the playback position of the audio effect file.</td>
+						</tr>
 				</tbody></table>
-				<h3 id="voice-effect">Voice Effect</h3>
+				<a href="#audio-file-information" id="audio-file-information" style="color: inherit; text-decoration: none;">
+					<h3>Audio file information</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Method</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="classes/agorartcengine.html#getaudiofileinfo">getAudioFileInfo</a></td>
+							<td>Gets the information of a specified audio file.</td>
+						</tr>
+				</tbody></table>
+				<a href="#voice-effect" id="voice-effect" style="color: inherit; text-decoration: none;">
+					<h3>Voice Effect</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -488,6 +639,10 @@
 					<tbody><tr>
 							<td><a href="classes/agorartcengine.html#setlocalvoicepitch">setLocalVoicePitch</a></td>
 							<td>Changes the voice pitch of the local speaker.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#enablelocalvoicepitchcallback">enableLocalVoicePitchCallback</a></td>
+							<td>Enables reporting the voice pitch of the local user.</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#setlocalvoiceequalization">setLocalVoiceEqualization</a></td>
@@ -518,7 +673,9 @@
 							<td>Sets an SDK preset voice conversion effect.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="sound-position-indication">Sound position indication</h3>
+				<a href="#sound-position-indication" id="sound-position-indication" style="color: inherit; text-decoration: none;">
+					<h3>Sound position indication</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -535,7 +692,9 @@
 							<td>Sets the sound position and gain of a remote user.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="cdn-publisher">CDN publisher</h3>
+				<a href="#media-push" id="media-push" style="color: inherit; text-decoration: none;">
+					<h3>Media Push</h3>
+				</a>
 				<blockquote>
 					<p>This group of methods apply to Live Streaming only.</p>
 				</blockquote>
@@ -547,6 +706,22 @@
 						</tr>
 					</thead>
 					<tbody><tr>
+							<td><a href="classes/agorartcengine.html#startrtmpstreamwithouttranscoding">startRtmpStreamWithoutTranscoding</a></td>
+							<td>Starts pushing media streams to a CDN without transcoding.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#startrtmpstreamwithtranscoding">startRtmpStreamWithTranscoding</a></td>
+							<td>Starts pushing media streams to a CDN and sets the transcoding configuration.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#updatertmptranscoding">updateRtmpTranscoding</a></td>
+							<td>Updates the transcoding configuration.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#stoprtmpstream">stopRtmpStream</a></td>
+							<td>Stops pushing media streams to a CDN.</td>
+						</tr>
+						<tr>
 							<td><a href="classes/agorartcengine.html#setlivetranscoding">setLiveTranscoding</a></td>
 							<td>Sets the video layout and audio for CDN live.</td>
 						</tr>
@@ -559,7 +734,9 @@
 							<td>Removes a CDN stream address.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="channel-media-relay">Channel Media Relay</h3>
+				<a href="#channel-media-relay" id="channel-media-relay" style="color: inherit; text-decoration: none;">
+					<h3>Channel Media Relay</h3>
+				</a>
 				<blockquote>
 					<p>This group of methods apply to Live Streaming only.</p>
 				</blockquote>
@@ -579,11 +756,21 @@
 							<td>Updates the channels for media stream relay.</td>
 						</tr>
 						<tr>
+							<td><a href="classes/agorartcengine.html#pauseallchannelmediarelay">pauseAllChannelMediaRelay</a></td>
+							<td>Pauses the media stream relay to all destination channels.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#resumeallchannelmediarelay">resumeAllChannelMediaRelay</a></td>
+							<td>Resumes the media stream relay to all destination channels.</td>
+						</tr>
+						<tr>
 							<td><a href="classes/agorartcengine.html#stopchannelmediarelay">stopChannelMediaRelay</a></td>
 							<td>Stops the media stream relay.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-volume-indication">Audio volume indication</h3>
+				<a href="#audio-volume-indication" id="audio-volume-indication" style="color: inherit; text-decoration: none;">
+					<h3>Audio volume indication</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -596,7 +783,9 @@
 							<td>Reports on which users are speaking and the speakers&#39; volume.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="dual-video-stream-mode">Dual video stream mode</h3>
+				<a href="#dual-video-stream-mode" id="dual-video-stream-mode" style="color: inherit; text-decoration: none;">
+					<h3>Dual video stream mode</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -617,7 +806,9 @@
 							<td>Sets the default video-stream type for the video received by the local user when the remote user sends dual streams.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="stream-fallback">Stream fallback</h3>
+				<a href="#stream-fallback" id="stream-fallback" style="color: inherit; text-decoration: none;">
+					<h3>Stream fallback</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -638,7 +829,9 @@
 							<td>Prioritizes a remote user&#39;s stream.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="pre-call-network-test">Pre-call network test</h3>
+				<a href="#pre-call-network-test" id="pre-call-network-test" style="color: inherit; text-decoration: none;">
+					<h3>Pre-call network test</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -649,6 +842,10 @@
 					<tbody><tr>
 							<td><a href="classes/agorartcengine.html#startechotestwithinterval">startEchoTestWithInterval</a></td>
 							<td>Starts an audio call test.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#startechotestwithconfig">startEchoTestWithConfig</a></td>
+							<td>Starts an audio and video call loop test.</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#stopechotest">stopEchoTest</a></td>
@@ -671,7 +868,9 @@
 							<td>Stops the last-mile network probe test.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="media-metadata">Media Metadata</h3>
+				<a href="#media-metadata" id="media-metadata" style="color: inherit; text-decoration: none;">
+					<h3>Media Metadata</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -696,7 +895,9 @@
 							<td>Sends the media metadata.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="watermark">Watermark</h3>
+				<a href="#watermark" id="watermark" style="color: inherit; text-decoration: none;">
+					<h3>Watermark</h3>
+				</a>
 				<blockquote>
 					<p>This group of methods apply to Live Streaming only.</p>
 				</blockquote>
@@ -716,7 +917,24 @@
 							<td>Removes the watermark image.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="encryption">Encryption</h3>
+				<a href="#video-snapshot" id="video-snapshot" style="color: inherit; text-decoration: none;">
+					<h3>Video snapshot</h3>
+				</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Method</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td><a href="classes/agorartcengine.html#takesnapshot">takeSnapshot</a></td>
+							<td>Takes a snapshot of a video stream.</td>
+						</tr>
+				</tbody></table>
+				<a href="#encryption" id="encryption" style="color: inherit; text-decoration: none;">
+					<h3>Encryption</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -729,7 +947,9 @@
 							<td>Enables/Disables the built-in encryption.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-recorder">Audio recorder</h3>
+				<a href="#audio-recorder" id="audio-recorder" style="color: inherit; text-decoration: none;">
+					<h3>Audio recorder</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -738,7 +958,7 @@
 						</tr>
 					</thead>
 					<tbody><tr>
-							<td><a href="classes/agorartcengine.html#startaudiorecording">startAudioRecording</a></td>
+							<td><a href="classes/agorartcengine.html#startaudiorecordingwithconfig">startAudioRecordingWithConfig</a></td>
 							<td>Starts an audio recording on the client.</td>
 						</tr>
 						<tr>
@@ -746,7 +966,9 @@
 							<td>Stops an audio recording on the client.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-playback-device-management">Audio playback device management</h3>
+				<a href="#audio-playback-device-management" id="audio-playback-device-management" style="color: inherit; text-decoration: none;">
+					<h3>Audio playback device management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -769,6 +991,14 @@
 						<tr>
 							<td><a href="classes/agorartcengine.html#getcurrentaudioplaybackdevice">getCurrentAudioPlaybackDevice</a></td>
 							<td>Gets the current audio playback device.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#getdefaultaudioplaybackdevices">getDefaultAudioPlaybackDevices</a></td>
+							<td>Gets the default audio playback device of the system.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#followsystemplaybackdevice">followSystemPlaybackDevice</a></td>
+							<td>Sets the audio playback device used by the SDK to follow the system default audio playback device.</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#setaudioplaybackdevicemute">setAudioPlaybackDeviceMute</a></td>
@@ -803,7 +1033,9 @@
 							<td>Stops the audio device loopback test.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="audio-recording-device-management">Audio recording device management</h3>
+				<a href="#audio-recording-device-management" id="audio-recording-device-management" style="color: inherit; text-decoration: none;">
+					<h3>Audio recording device management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -826,6 +1058,14 @@
 						<tr>
 							<td><a href="classes/agorartcengine.html#getcurrentaudiorecordingdevice">getCurrentAudioRecordingDevice</a></td>
 							<td>Gets the current audio recording device.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#getdefaultaudiorecordingdevices">getDefaultAudioRecordingDevices</a></td>
+							<td>Gets the default audio recording device of the system.</td>
+						</tr>
+						<tr>
+							<td><a href="classes/agorartcengine.html#followsystemrecordingdevice">followSystemRecordingDevice</a></td>
+							<td>Sets the audio recording device used by the SDK to follow the system default audio recording device.</td>
 						</tr>
 						<tr>
 							<td><a href="classes/agorartcengine.html#setaudiorecordingdevicemute">setAudioRecordingDeviceMute</a></td>
@@ -860,7 +1100,9 @@
 							<td>Stops the audio device loopback test.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="video-device-management">Video device management</h3>
+				<a href="#video-device-management" id="video-device-management" style="color: inherit; text-decoration: none;">
+					<h3>Video device management</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -889,7 +1131,9 @@
 							<td>Stops the video playback device test.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="stream-message">Stream message</h3>
+				<a href="#stream-message" id="stream-message" style="color: inherit; text-decoration: none;">
+					<h3>Stream message</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -906,7 +1150,9 @@
 							<td>Sends data stream messages.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="miscellaneous-audio-control">Miscellaneous audio control</h3>
+				<a href="#miscellaneous-audio-control" id="miscellaneous-audio-control" style="color: inherit; text-decoration: none;">
+					<h3>Miscellaneous audio control</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -919,7 +1165,9 @@
 							<td>Enables loopback recording.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="miscellaneous-video-control">Miscellaneous video control</h3>
+				<a href="#miscellaneous-video-control" id="miscellaneous-video-control" style="color: inherit; text-decoration: none;">
+					<h3>Miscellaneous video control</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -932,7 +1180,9 @@
 							<td>Sets the camera capturer configuration.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="miscellaneous-methods">Miscellaneous methods</h3>
+				<a href="#miscellaneous-methods" id="miscellaneous-methods" style="color: inherit; text-decoration: none;">
+					<h3>Miscellaneous methods</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -973,7 +1223,9 @@
 							<td>Gets the warning or error description.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="customized-methods">Customized methods</h3>
+				<a href="#customized-methods" id="customized-methods" style="color: inherit; text-decoration: none;">
+					<h3>Customized methods</h3>
+				</a>
 				<table>
 					<thead>
 						<tr>
@@ -986,8 +1238,10 @@
 							<td>Provides the technical preview functionalities or special customizations by configuring the SDK with JSON options.</td>
 						</tr>
 				</tbody></table>
-				<h3 id="methods-for-the-second-instance">Methods for the second instance</h3>
-				<p>Agora Electron SDK provides the methods for the second instance <code>videoSource</code> to screen sharing.</p>
+				<a href="#other-methods-for-the-second-instance" id="other-methods-for-the-second-instance" style="color: inherit; text-decoration: none;">
+					<h3>Other methods for the second instance</h3>
+				</a>
+				<p>Agora Electron SDK provides the second instance <code>videoSource</code> for screen sharing. For methods related to screen sharing, see <a href="#screen-share">Screen sharing</a>.</p>
 				<table>
 					<thead>
 						<tr>
@@ -1040,59 +1294,13 @@
 							<td>Enables/Disables the built-in encryption.</td>
 						</tr>
 						<tr>
-							<td><a href="classes/agorartcengine.html#getscreendisplaysinfo">getScreenDisplaysInfo</a></td>
-							<td>Gets the display ID.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#getscreenwindowsinfo">getScreenWindowsInfo</a></td>
-							<td>Gets the window ID.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourcestartscreencapturebyscreen">videoSourceStartScreenCaptureByScreen</a></td>
-							<td>Shares the whole or part of a screen by specifying the screen rect when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourcestartscreencapturebywindow">videoSourceStartScreenCaptureByWindow</a></td>
-							<td>Shares the whole or part of a window by specifying the window ID when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourcesetvideoprofile">videoSourceSetVideoProfile</a></td>
-							<td>Sets the video profile when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#stopscreencapture2">stopScreenCapture2</a></td>
-							<td>Stops the screen sharing when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#startscreencapturepreview">startScreenCapturePreview</a></td>
-							<td>Starts the local video preview when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#stopscreencapturepreview">stopScreenCapturePreview</a></td>
-							<td>Stops the local video preview when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourceupdatescreencaptureregion">videoSourceUpdateScreenCaptureRegion</a></td>
-							<td>Updates the screen sharing region when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourceupdatescreencaptureparameters">videoSourceUpdateScreenCaptureParameters</a></td>
-							<td>Updates the screen sharing parameters when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourcesetscreencapturecontenthint">videoSourceSetScreenCaptureContentHint</a></td>
-							<td>Sets the content hint when using the video source.</td>
-						</tr>
-						<tr>
-							<td><a href="classes/agorartcengine.html#videosourceenabledualstreammode">videoSourceEnableDualStreamMode</a></td>
-							<td>Enables the dual stream mode when using the video source.</td>
-						</tr>
-						<tr>
 							<td><a href="classes/agorartcengine.html#videosourcesetparameters">videoSourceSetParameters</a></td>
 							<td>Provides the technical preview functionalities or special customizations by configuring the SDK with JSON options when using the video source.</td>
 						</tr>
 				</tbody></table>
-				<h2 id="agorartcengine-on">AgoraRtcEngine.on</h2>
+				<a href="#agorartcengineon" id="agorartcengineon" style="color: inherit; text-decoration: none;">
+					<h2>AgoraRtcEngine.on</h2>
+				</a>
 				<p>Agora Electron SDK use the <a href="classes/agorartcengine.html#on">AgoraRtcEngine.on</a> listens to the events above:</p>
 				<table>
 					<thead>
@@ -1255,7 +1463,7 @@
 						</tr>
 						<tr>
 							<td><code>rtmpStreamingStateChanged</code></td>
-							<td>Occurs when the state of the RTMP or RTMPS streaming changes.</td>
+							<td>Occurs when the state of Media Push changes.</td>
 						</tr>
 						<tr>
 							<td><code>transcodingUpdated</code></td>
@@ -1263,7 +1471,7 @@
 						</tr>
 						<tr>
 							<td><code>rtmpStreamingEvent</code></td>
-							<td>Reports events during the RTMP or RTMPS streaming.</td>
+							<td>Reports events during Media Push.</td>
 						</tr>
 						<tr>
 							<td><code>audioDeviceVolumeChanged</code></td>
@@ -1300,6 +1508,14 @@
 						<tr>
 							<td><code>videoSubscribeStateChanged</code></td>
 							<td>Occurs when the audio subscribing state changes.</td>
+						</tr>
+						<tr>
+							<td><code>audioDeviceStateChanged</code></td>
+							<td>Occurs when the audio device state changes.</td>
+						</tr>
+						<tr>
+							<td><code>videoDeviceStateChanged</code></td>
+							<td>Occurs when the video device state changes.</td>
 						</tr>
 						<tr>
 							<td><code>cameraFocusAreaChanged</code></td>
@@ -1369,9 +1585,23 @@
 							<td><code>videoSourceLocalAudioStateChanged</code></td>
 							<td>Occurs when the local audio state changes. (The second instance)</td>
 						</tr>
+						<tr>
+							<td><code>requestAudioFileInfo</code></td>
+							<td>Reports the information of an audio file.</td>
+						</tr>
+						<tr>
+							<td><code>channelMediaRelayEvent</code></td>
+							<td>Reports events during the media stream relay.</td>
+						</tr>
+						<tr>
+							<td><code>snapshotTaken</code></td>
+							<td>Reports the result of taking a video snapshot.</td>
+						</tr>
 				</tbody></table>
 				<p><a name = "warn"></a></p>
-				<h2 id="warning-codes">Warning codes</h2>
+				<a href="#warning-codes" id="warning-codes" style="color: inherit; text-decoration: none;">
+					<h2>Warning codes</h2>
+				</a>
 				<p>Warning codes occur when the SDK encounters an error that might be recovered automatically. These are only notifications, and can generally be ignored.</p>
 				<table>
 					<thead>
@@ -1522,7 +1752,9 @@
 						</tr>
 				</tbody></table>
 				<p><a name = "error"></a></p>
-				<h2 id="error-codes">Error codes</h2>
+				<a href="#error-codes" id="error-codes" style="color: inherit; text-decoration: none;">
+					<h2>Error codes</h2>
+				</a>
 				<p>Error codes occur when the SDK encounters an error that cannot be recovered automatically without any application intervention. For example, the SDK returns an error if it fails to turn on the camera, and reminds the user not to use the camera.</p>
 				<table>
 					<thead>
@@ -1693,7 +1925,7 @@
 						</tr>
 						<tr>
 							<td><code>-130</code></td>
-							<td>Encryption is enabled when the user calls the <code>addPublishStreamUrl</code> method (CDN live streaming does not support encrypted streams).</td>
+							<td>Encryption is enabled when the user calls the <code>addPublishStreamUrl</code> method (Media Push does not support encrypted streams).</td>
 						</tr>
 						<tr>
 							<td><code>-134</code></td>
@@ -1722,6 +1954,10 @@
 						<tr>
 							<td><code>-156</code></td>
 							<td>The format of the RTMP stream URL is not supported. <br/>Check whether the URL format is correct.</td>
+						</tr>
+						<tr>
+							<td><code>-160</code></td>
+							<td>The client is already recording audio. To start a new recording, call <code>stopAudioRecording</code> to stop the current recording first, and then call <code>startAudioRecording</code>.</td>
 						</tr>
 						<tr>
 							<td><code>-1001</code></td>
@@ -1833,19 +2069,19 @@
 						</tr>
 						<tr>
 							<td><code>-1311</code></td>
-							<td>Audio device module: Insufficient system memory or poor device performance.<br/>Solutions: reboot the device or replace the device.</td>
+							<td>Audio device module: Insufficient system memory or poor device performance.<br/>Solutions: Reboot the device or replace the device.</td>
 						</tr>
 						<tr>
 							<td><code>-1314</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</li></td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</li></td>
 						</tr>
 						<tr>
 							<td><code>-1319</code></td>
-							<td>Audio device module: Insufficient system memory or poor device performance. <br/>Solutions: reboot the device or replace the device.</td>
+							<td>Audio device module: Insufficient system memory or poor device performance. <br/>Solutions: Reboot the device or replace the device.</td>
 						</tr>
 						<tr>
 							<td><code>-1320</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Replace the device.</li></td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Replace the device.</li></td>
 						</tr>
 						<tr>
 							<td><code>-1322</code></td>
@@ -1857,31 +2093,31 @@
 						</tr>
 						<tr>
 							<td><code>-1351</code></td>
-							<td>Audio device module: An audio driver abnormality or a compatibility issue occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</li></td>
+							<td>Audio device module: An audio driver abnormality or a compatibility issue occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</li></td>
 						</tr>
 						<tr>
 							<td><code>-1353</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</li></td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</li></td>
 						</tr>
 						<tr>
 							<td><code>-1354</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</td>
 						</tr>
 						<tr>
 							<td><code>-1355</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</td>
 						</tr>
 						<tr>
 							<td><code>-1356</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</td>
 						</tr>
 						<tr>
 							<td><code>-1357</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</td>
 						</tr>
 						<tr>
 							<td><code>-1358</code></td>
-							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>reboot the device.</li><li>Upgrade your audio card driver.</td>
+							<td>Audio device module: An audio driver abnormality occurs. <br/>Solutions:<li>Disable and then re-enable the audio device.</li><li>Reboot the device.</li><li>Upgrade your audio card driver.</td>
 						</tr>
 						<tr>
 							<td><code>-1359</code></td>
@@ -1932,16 +2168,73 @@
 						<a href="enums/audience_latency_level_type.html" class="tsd-kind-icon">AUDIENCE_<wbr>LATENCY_<wbr>LEVEL_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/audio_codec_profile_type.html" class="tsd-kind-icon">AUDIO_<wbr>CODEC_<wbr>PROFILE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/audio_effect_preset.html" class="tsd-kind-icon">AUDIO_<wbr>EFFECT_<wbr>PRESET</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audio_file_info_error.html" class="tsd-kind-icon">AUDIO_<wbr>FILE_<wbr>INFO_<wbr>ERROR</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audio_mixing_dual_mono_mode.html" class="tsd-kind-icon">AUDIO_<wbr>MIXING_<wbr>DUAL_<wbr>MONO_<wbr>MODE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audio_recording_position.html" class="tsd-kind-icon">AUDIO_<wbr>RECORDING_<wbr>POSITION</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audio_recording_quality_type.html" class="tsd-kind-icon">AUDIO_<wbr>RECORDING_<wbr>QUALITY_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audio_route_type.html" class="tsd-kind-icon">AUDIO_<wbr>ROUTE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/agoranetworkquality.html" class="tsd-kind-icon">Agora<wbr>Network<wbr>Quality</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/audiodevicetestvolumetype.html" class="tsd-kind-icon">Audio<wbr>Device<wbr>Test<wbr>Volume<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/audioreverbpreset.html" class="tsd-kind-icon">Audio<wbr>Reverb<wbr>Preset</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/background_blur_degree.html" class="tsd-kind-icon">BACKGROUND_<wbr>BLUR_<wbr>DEGREE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/background_source_type.html" class="tsd-kind-icon">BACKGROUND_<wbr>SOURCE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/capture_brightness_level_type.html" class="tsd-kind-icon">CAPTURE_<wbr>BRIGHTNESS_<wbr>LEVEL_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/client_role_change_failed_reason.html" class="tsd-kind-icon">CLIENT_<wbr>ROLE_<wbr>CHANGE_<wbr>FAILED_<wbr>REASON</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/client_role_type.html" class="tsd-kind-icon">CLIENT_<wbr>ROLE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/cloud_proxy_type.html" class="tsd-kind-icon">CLOUD_<wbr>PROXY_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/connection_changed_reason_type.html" class="tsd-kind-icon">CONNECTION_<wbr>CHANGED_<wbr>REASON_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/connection_state_type.html" class="tsd-kind-icon">CONNECTION_<wbr>STATE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/content_inspect_result.html" class="tsd-kind-icon">CONTENT_<wbr>INSPECT_<wbr>RESULT</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/captureoutpreference.html" class="tsd-kind-icon">Capture<wbr>Out<wbr>Preference</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/channelmediarelayerror.html" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/channelmediarelayevent.html" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/channelmediarelaystate.html" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/degradationpreference.html" class="tsd-kind-icon">Degradation<wbr>Preference</a>
@@ -1950,10 +2243,19 @@
 						<a href="enums/encryption_mode.html" class="tsd-kind-icon">ENCRYPTION_<wbr>MODE</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/filt_window_error.html" class="tsd-kind-icon">FILT_<wbr>WINDOW_<wbr>ERROR</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-is-not-exported">
+						<a href="enums/lightening_contrast_level.html" class="tsd-kind-icon">LIGHTENING_<wbr>CONTRAST_<wbr>LEVEL</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/local_audio_stream_error.html" class="tsd-kind-icon">LOCAL_<wbr>AUDIO_<wbr>STREAM_<wbr>ERROR</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/local_audio_stream_state.html" class="tsd-kind-icon">LOCAL_<wbr>AUDIO_<wbr>STREAM_<wbr>STATE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/local_proxy_mode.html" class="tsd-kind-icon">LOCAL_<wbr>PROXY_<wbr>MODE</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/local_video_stream_error.html" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>ERROR</a>
@@ -1962,7 +2264,22 @@
 						<a href="enums/local_video_stream_state.html" class="tsd-kind-icon">LOCAL_<wbr>VIDEO_<wbr>STREAM_<wbr>STATE</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/low_light_enhance_level.html" class="tsd-kind-icon">LOW_<wbr>LIGHT_<wbr>ENHANCE_<wbr>LEVEL</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/low_light_enhance_mode.html" class="tsd-kind-icon">LOW_<wbr>LIGHT_<wbr>ENHANCE_<wbr>MODE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/mediadevicetype.html" class="tsd-kind-icon">Media<wbr>Device<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/network_type.html" class="tsd-kind-icon">NETWORK_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/orientationmode.html" class="tsd-kind-icon">Orientation<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/proxy_type.html" class="tsd-kind-icon">PROXY_<wbr>TYPE</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/priority.html" class="tsd-kind-icon">Priority</a>
@@ -1974,7 +2291,46 @@
 						<a href="enums/rtmp_streaming_event.html" class="tsd-kind-icon">RTMP_<wbr>STREAMING_<wbr>EVENT</a>
 					</li>
 					<li class=" tsd-kind-enum">
+						<a href="enums/remoteaudiostate.html" class="tsd-kind-icon">Remote<wbr>Audio<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/remoteaudiostatereason.html" class="tsd-kind-icon">Remote<wbr>Audio<wbr>State<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/remotevideostate.html" class="tsd-kind-icon">Remote<wbr>Video<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/remotevideostatereason.html" class="tsd-kind-icon">Remote<wbr>Video<wbr>State<wbr>Reason</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/screen_scenario_type.html" class="tsd-kind-icon">SCREEN_<wbr>SCENARIO_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/stream_publish_state.html" class="tsd-kind-icon">STREAM_<wbr>PUBLISH_<wbr>STATE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/stream_subscribe_state.html" class="tsd-kind-icon">STREAM_<wbr>SUBSCRIBE_<wbr>STATE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/streamtype.html" class="tsd-kind-icon">Stream<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/video_codec_type.html" class="tsd-kind-icon">VIDEO_<wbr>CODEC_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/video_codec_type_for_stream.html" class="tsd-kind-icon">VIDEO_<wbr>CODEC_<wbr>TYPE_<wbr>FOR_<wbr>STREAM</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/video_denoiser_level.html" class="tsd-kind-icon">VIDEO_<wbr>DENOISER_<wbr>LEVEL</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/video_denoiser_mode.html" class="tsd-kind-icon">VIDEO_<wbr>DENOISER_<wbr>MODE</a>
+					</li>
+					<li class=" tsd-kind-enum">
 						<a href="enums/video_profile_type.html" class="tsd-kind-icon">VIDEO_<wbr>PROFILE_<wbr>TYPE</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/virtual_background_source_state_reason.html" class="tsd-kind-icon">VIRTUAL_<wbr>BACKGROUND_<wbr>SOURCE_<wbr>STATE_<wbr>REASON</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/voice_beautifier_preset.html" class="tsd-kind-icon">VOICE_<wbr>BEAUTIFIER_<wbr>PRESET</a>
@@ -1991,11 +2347,26 @@
 					<li class=" tsd-kind-enum">
 						<a href="enums/voicechangerpreset.html" class="tsd-kind-icon">Voice<wbr>Changer<wbr>Preset</a>
 					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/wlacc_message_reason.html" class="tsd-kind-icon">WLACC_<wbr>MESSAGE_<wbr>REASON</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/wlacc_suggest_action.html" class="tsd-kind-icon">WLACC_<wbr>SUGGEST_<wbr>ACTION</a>
+					</li>
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="classes/agorartcchannel.html" class="tsd-kind-icon">Agora<wbr>Rtc<wbr>Channel</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="classes/agorartcengine.html" class="tsd-kind-icon">Agora<wbr>Rtc<wbr>Engine</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/audiofileinfo.html" class="tsd-kind-icon">Audio<wbr>File<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/audiorecordingconfiguration.html" class="tsd-kind-icon">Audio<wbr>Recording<wbr>Configuration</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/beautyoptions.html" class="tsd-kind-icon">Beauty<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/cameracapturerconfiguration.html" class="tsd-kind-icon">Camera<wbr>Capturer<wbr>Configuration</a>
@@ -2016,7 +2387,25 @@
 						<a href="interfaces/clientroleoptions.html" class="tsd-kind-icon">Client<wbr>Role<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/colorenhanceoptions.html" class="tsd-kind-icon">Color<wbr>Enhance<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/contentinspectconfig.html" class="tsd-kind-icon">Content<wbr>Inspect<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/contentinspectmodule.html" class="tsd-kind-icon">Content<wbr>Inspect<wbr>Module</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/datastreamconfig.html" class="tsd-kind-icon">Data<wbr>Stream<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/displayid.html" class="tsd-kind-icon">Display<wbr>Id</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/displayinfo.html" class="tsd-kind-icon">Display<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/echotestconfiguration.html" class="tsd-kind-icon">Echo<wbr>Test<wbr>Configuration</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/encryptionconfig.html" class="tsd-kind-icon">Encryption<wbr>Config</a>
@@ -2034,6 +2423,12 @@
 						<a href="interfaces/lastmileproberesult.html" class="tsd-kind-icon">Lastmile<wbr>Probe<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/livestreamadvancedfeature.html" class="tsd-kind-icon">Live<wbr>Stream<wbr>Advanced<wbr>Feature</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/localaccesspointconfiguration.html" class="tsd-kind-icon">Local<wbr>Access<wbr>Point<wbr>Configuration</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/localaudiostats.html" class="tsd-kind-icon">Local<wbr>Audio<wbr>Stats</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -2041,6 +2436,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/logconfig.html" class="tsd-kind-icon">Log<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/lowlightenhanceoptions.html" class="tsd-kind-icon">Low<wbr>Light<wbr>Enhance<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/metadata.html" class="tsd-kind-icon">Metadata</a>
@@ -2064,7 +2462,19 @@
 						<a href="interfaces/rendereroptions.html" class="tsd-kind-icon">Renderer<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/rtcimage.html" class="tsd-kind-icon">Rtc<wbr>Image</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/rtcstats.html" class="tsd-kind-icon">Rtc<wbr>Stats</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/size.html" class="tsd-kind-icon">SIZE</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/screencaptureinfo.html" class="tsd-kind-icon">Screen<wbr>Capture<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/spatialaudioparams.html" class="tsd-kind-icon">Spatial<wbr>Audio<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/transcodingconfig.html" class="tsd-kind-icon">Transcoding<wbr>Config</a>
@@ -2076,76 +2486,37 @@
 						<a href="interfaces/userinfo.html" class="tsd-kind-icon">User<wbr>Info</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/videodenoiseroptions.html" class="tsd-kind-icon">Video<wbr>Denoiser<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/videoencoderconfiguration.html" class="tsd-kind-icon">Video<wbr>Encoder<wbr>Configuration</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/virtualbackgroundsource.html" class="tsd-kind-icon">Virtual<wbr>Background<wbr>Source</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/watermarkoptions.html" class="tsd-kind-icon">Watermark<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/windowinfo.html" class="tsd-kind-icon">Window<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/wlaccstats.html" class="tsd-kind-icon">Wl<wbr>Acc<wbr>Stats</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#area_code" class="tsd-kind-icon">AREA_<wbr>CODE</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#audio_route_type" class="tsd-kind-icon">AUDIO_<wbr>ROUTE_<wbr>TYPE</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#agoranetworkquality" class="tsd-kind-icon">Agora<wbr>Network<wbr>Quality</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#cloud_proxy_type" class="tsd-kind-icon">CLOUD_<wbr>PROXY_<wbr>TYPE</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#capturerect" class="tsd-kind-icon">Capture<wbr>Rect</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#channelmediarelayerror" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#channelmediarelayevent" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#channelmediarelaystate" class="tsd-kind-icon">Channel<wbr>Media<wbr>Relay<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#clientroletype" class="tsd-kind-icon">Client<wbr>Role<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#connectionchangereason" class="tsd-kind-icon">Connection<wbr>Change<wbr>Reason</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#connectionstate" class="tsd-kind-icon">Connection<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#macscreensymbol" class="tsd-kind-icon">Mac<wbr>Screen<wbr>Symbol</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#mediadevicetype" class="tsd-kind-icon">Media<wbr>Device<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remoteaudiostate" class="tsd-kind-icon">Remote<wbr>Audio<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remoteaudiostatereason" class="tsd-kind-icon">Remote<wbr>Audio<wbr>State<wbr>Reason</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remotevideostate" class="tsd-kind-icon">Remote<wbr>Video<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remotevideostatereason" class="tsd-kind-icon">Remote<wbr>Video<wbr>State<wbr>Reason</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#stream_publish_state" class="tsd-kind-icon">STREAM_<wbr>PUBLISH_<wbr>STATE</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#stream_subscribe_state" class="tsd-kind-icon">STREAM_<wbr>SUBSCRIBE_<wbr>STATE</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#screensymbol" class="tsd-kind-icon">Screen<wbr>Symbol</a>
 					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#streamtype" class="tsd-kind-icon">Stream<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#video_codec_type" class="tsd-kind-icon">VIDEO_<wbr>CODEC_<wbr>TYPE</a>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="globals.html#uint8arraybuffer" class="tsd-kind-icon">Uint8<wbr>Array<wbr>Buffer</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#windowsscreensymbol" class="tsd-kind-icon">Windows<wbr>Screen<wbr>Symbol</a>
@@ -2170,6 +2541,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

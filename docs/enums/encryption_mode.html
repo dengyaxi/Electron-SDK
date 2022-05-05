@@ -67,7 +67,9 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Encryption mode.</p>
+						<p>Encryption mode. Agora recommends using either the <code>AES_128_GCM2</code> or
+							<code>AES_256_GCM2</code> encryption mode, both of which support adding a salt and
+						are more secure.</p>
 					</div>
 				</div>
 			</section>
@@ -80,8 +82,10 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_128_ecb" class="tsd-kind-icon">AES_<wbr>128_<wbr>ECB</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_128_gcm" class="tsd-kind-icon">AES_<wbr>128_<wbr>GCM</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_128_gcm2" class="tsd-kind-icon">AES_<wbr>128_<wbr>GCM2</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_128_xts" class="tsd-kind-icon">AES_<wbr>128_<wbr>XTS</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_256_gcm" class="tsd-kind-icon">AES_<wbr>256_<wbr>GCM</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_256_gcm2" class="tsd-kind-icon">AES_<wbr>256_<wbr>GCM2</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#aes_256_xts" class="tsd-kind-icon">AES_<wbr>256_<wbr>XTS</a></li>
 								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="encryption_mode.html#sm4_128_ecb" class="tsd-kind-icon">SM4_<wbr>128_<wbr>ECB</a></li>
 							</ul>
@@ -95,11 +99,6 @@
 					<a name="aes_128_ecb" class="tsd-anchor"></a>
 					<h3>AES_<wbr>128_<wbr>ECB</h3>
 					<div class="tsd-signature tsd-kind-icon">AES_<wbr>128_<wbr>ECB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1544</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>2: 128-bit AES encryption, ECB mode.</p>
@@ -110,11 +109,6 @@
 					<a name="aes_128_gcm" class="tsd-anchor"></a>
 					<h3>AES_<wbr>128_<wbr>GCM</h3>
 					<div class="tsd-signature tsd-kind-icon">AES_<wbr>128_<wbr>GCM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;5</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1555</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>5: 128-bit AES encryption, GCM mode.</p>
@@ -127,17 +121,28 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="aes_128_gcm2" class="tsd-anchor"></a>
+					<h3>AES_<wbr>128_<wbr>GCM2</h3>
+					<div class="tsd-signature tsd-kind-icon">AES_<wbr>128_<wbr>GCM2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;7</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>7: (Default) 128-bit AES encryption, GCM mode. This mode requires
+							you to set the salt (<code>encryptionKdfSalt</code>).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="aes_128_xts" class="tsd-anchor"></a>
 					<h3>AES_<wbr>128_<wbr>XTS</h3>
 					<div class="tsd-signature tsd-kind-icon">AES_<wbr>128_<wbr>XTS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1541</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>1: (Default) 128-bit AES encryption, XTS mode.</p>
+							<p>1: 128-bit AES encryption, XTS mode.</p>
 						</div>
 					</div>
 				</section>
@@ -145,11 +150,6 @@
 					<a name="aes_256_gcm" class="tsd-anchor"></a>
 					<h3>AES_<wbr>256_<wbr>GCM</h3>
 					<div class="tsd-signature tsd-kind-icon">AES_<wbr>256_<wbr>GCM<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;6</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1560</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>6: 256-bit AES encryption, GCM mode.</p>
@@ -162,14 +162,25 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="aes_256_gcm2" class="tsd-anchor"></a>
+					<h3>AES_<wbr>256_<wbr>GCM2</h3>
+					<div class="tsd-signature tsd-kind-icon">AES_<wbr>256_<wbr>GCM2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;8</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>8: 256-bit AES encryption, GCM mode. This mode requires
+							you to set the salt (<code>encryptionKdfSalt</code>).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>since</dt>
+							<dd><p>v3.4.5</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
 					<a name="aes_256_xts" class="tsd-anchor"></a>
 					<h3>AES_<wbr>256_<wbr>XTS</h3>
 					<div class="tsd-signature tsd-kind-icon">AES_<wbr>256_<wbr>XTS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;3</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1547</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>3: 256-bit AES encryption, XTS mode.</p>
@@ -180,14 +191,9 @@
 					<a name="sm4_128_ecb" class="tsd-anchor"></a>
 					<h3>SM4_<wbr>128_<wbr>ECB</h3>
 					<div class="tsd-signature tsd-kind-icon">SM4_<wbr>128_<wbr>ECB<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> =&nbsp;4</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in native_type.ts:1550</li>
-						</ul>
-					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>4: Reserved property.</p>
+							<p>4: 128-bit SM4 encryption, ECB mode.</p>
 						</div>
 					</div>
 				</section>
@@ -215,10 +221,16 @@
 								<a href="encryption_mode.html#aes_128_gcm" class="tsd-kind-icon">AES_<wbr>128_<wbr>GCM</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="encryption_mode.html#aes_128_gcm2" class="tsd-kind-icon">AES_<wbr>128_<wbr>GCM2</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="encryption_mode.html#aes_128_xts" class="tsd-kind-icon">AES_<wbr>128_<wbr>XTS</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="encryption_mode.html#aes_256_gcm" class="tsd-kind-icon">AES_<wbr>256_<wbr>GCM</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="encryption_mode.html#aes_256_gcm2" class="tsd-kind-icon">AES_<wbr>256_<wbr>GCM2</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
 								<a href="encryption_mode.html#aes_256_xts" class="tsd-kind-icon">AES_<wbr>256_<wbr>XTS</a>
@@ -247,6 +259,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
