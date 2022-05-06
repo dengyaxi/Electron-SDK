@@ -4744,10 +4744,25 @@ export interface NodeRtcEngine {
    * @ignore
    */
   setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number;
+  /**
+   * @ignore
+   */
   enableLocalVoicePitchCallback(interval: number): number;
+  /**
+   * @ignore
+   */
   enableWirelessAccelerate(enabled: boolean): number;
+  /**
+   * @ignore
+   */
   enableContentInspect(enabled: boolean, config: ContentInspectConfig): number;
+  /**
+   * @ignore
+   */
   enableSpatialAudio(enabled: boolean): number;
+  /**
+   * @ignore
+   */
   setRemoteUserSpatialAudioParams(
     uid: number,
     spatial_audio_params?: SpatialAudioParams
