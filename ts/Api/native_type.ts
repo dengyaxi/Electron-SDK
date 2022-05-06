@@ -1051,6 +1051,8 @@ export enum AudioReverbPreset {
   CAPTURE_BRIGHTNESS_LEVEL_DARK = 2,
 }
 /** @zh-cn
+ * @ignore
+ *
  * 外部导入音视频流定义。
  */
 /**
@@ -6009,7 +6011,7 @@ export interface NodeRtcEngine {
   /**
    * @ignore
    */
-  getConnectionState(): ConnectionState;
+  getConnectionState(): CONNECTION_STATE_TYPE;
   /** @zh-cn
    * @ignore
    */
@@ -6133,7 +6135,7 @@ export interface NodeRtcEngine {
   /**
    * @ignore
    */
-  setClientRole(role: ClientRoleType): number;
+  setClientRole(role: CLIENT_ROLE_TYPE): number;
   /** @zh-cn
    * @ignore
    */
@@ -7962,14 +7964,32 @@ export interface NodeRtcEngine {
   startEchoTestWithConfig(config: EchoTestConfiguration): number;
 
   //3.7.0
+  /** @zh-cn
+   * @ignore
+   */
   /**
    * @ignore
    */
   setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number;
+  /** @zh-cn
+   * @ignore
+   */
   enableLocalVoicePitchCallback(interval: number): number;
+  /** @zh-cn
+   * @ignore
+   */
   enableWirelessAccelerate(enabled: boolean): number;
+  /** @zh-cn
+   * @ignore
+   */
   enableContentInspect(enabled: boolean, config: ContentInspectConfig): number;
+  /** @zh-cn
+   * @ignore
+   */
   enableSpatialAudio(enabled: boolean): number;
+  /** @zh-cn
+   * @ignore
+   */
   setRemoteUserSpatialAudioParams(
     uid: number,
     spatial_audio_params?: SpatialAudioParams
@@ -8263,7 +8283,7 @@ export interface NodeRtcChannel {
   /**
    * @ignore
    */
-  getConnectionState(): ConnectionState;
+  getConnectionState(): CONNECTION_STATE_TYPE;
   /** @zh-cn
    * @ignore
    */

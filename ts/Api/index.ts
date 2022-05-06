@@ -1641,7 +1641,6 @@ class AgoraRtcEngine extends EventEmitter {
    * - 若想开始下一次通话，必须先调用该方法结束本次通话。
    * - 不管当前是否在通话中，都可以调用该方法，没有副作用。
    * - 如果你调用该方法后立即调用 {@link release} 方法，SDK 将无法触发 `leaveChannel` 回调。
-   * - 如果你在输入在线媒体流的过程中调用了该方法， SDK 将自动调用 {@link removeInjectStreamUrl} 方法。
    *
    * @returns {number}
    * - 0：方法调用成功
@@ -7457,6 +7456,8 @@ class AgoraRtcEngine extends EventEmitter {
   // STREAM INJECTION
   // ===========================================================================
   /** @zh-cn
+   * @ignore
+   *
    * 输入在线媒体流。
    *
    * 该方法适用于 Native SDK v2.4.1 及之后的版本。
@@ -7550,6 +7551,8 @@ class AgoraRtcEngine extends EventEmitter {
   }
 
   /** @zh-cn
+   * @ignore
+   *
    * 删除输入的在线媒体流。
    *
    * 成功删除后，会触发 `removeStream` 回调，其中 `uid` 为 `666`
@@ -11380,7 +11383,6 @@ on(
    * - 远端用户/主播调用 {@link joinChannel} 方法加入频道
    * - 远端用户加入频道后调用 {@link setClientRole} 将用户角色改变为主播
    * - 远端用户/主播网络中断后重新加入频道
-   * - 主播通过调用 {@link addInjectStreamUrl} 方法成功导入在线媒体流
    *
    * @note 直播场景下
    * - 主播间能相互收到新主播加入频道的回调，并能获得该主播的 `uid`
@@ -14687,35 +14689,8 @@ class AgoraRtcChannel extends EventEmitter {
     return this.rtcChannel.setLiveTranscoding(transcoding);
   }
   /** @zh-cn
-   * 导入在线媒体流。
+   * @ignore
    *
-   * 该方法适用于 Native SDK v2.4.1 及之后的版本。
-   *
-   * 该方法通过在服务端拉取一路视频流并发送到频道中，将正在播出的视频导入到正在进行的直播中。
-   * 可主要应用于赛事直播、多人看视频互动等直播场景。
-   *
-   * 调用该方法后，SDK 会在本地触发 `streamInjectStatus` 回调，报告导入在线媒体流的状态。
-   * 成功导入媒体流后，该音视频流会出现在频道中，频道内所有用户都会收到 `userJoined` 回调，其中 `uid` 为 666。
-   *
-   * @note
-   * - 该方法仅使用于直播。
-   * - 调用该方法前，请确保已开通旁路推流的功能，详见[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)。
-   * - 请确保在成功加入频道后再调用该接口。
-   * - 该方法每次只能增加一路媒体流地址。若需拉多路流，则需多次调用该方法。
-   *
-   * @param url 添加到直播中的媒体流 URL 地址，支持 RTMP， HLS， FLV 协议传输。
-   * - 支持的 FLV 音频编码格式：AAC
-   * - 支持的 FLV 视频编码格式：H264 (AVC)
-   * @param config 外部导入的媒体流的配置。
-   * @returns {number}
-   * - 0：方法调用成功
-   * - < 0：方法调用失败
-   *  - `2`: 输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的。
-   *  - `7`: 引擎没有初始化。请确认调用该方法前已创建 `AgoraRtcEngine` 对象并完成初始化。
-   *  - `4`: 频道非直播场景。请调用 {@link setChannelProfile} 并将频道设置为直播场景再调用该方法。
-   *  - `3`: 用户没有加入频道。
-   */
-  /** @zh-cn
    * 输入在线媒体流。
    *
    * 该方法适用于 Native SDK v2.4.1 及之后的版本。
@@ -14796,6 +14771,8 @@ class AgoraRtcChannel extends EventEmitter {
     return this.rtcChannel.addInjectStreamUrl(url, config);
   }
   /** @zh-cn
+   * @ignore
+   *
    * 删除输入的在线媒体流。
    *
    * 成功删除后，会触发 `removeStream` 回调，其中 `uid` 为 `666`
@@ -15065,7 +15042,6 @@ class AgoraRtcChannel extends EventEmitter {
    * - 若想开始下一次通话，必须先调用该方法结束本次通话。
    * - 不管当前是否在通话中，都可以调用该方法，没有副作用。
    * - 如果你调用该方法后立即调用 {@link release} 方法，SDK 将无法触发 `leaveChannel` 回调。
-   * - 如果你在输入在线媒体流的过程中调用了该方法， SDK 将自动调用 {@link removeInjectStreamUrl} 方法。
    *
    * @returns {number}
    * - 0：方法调用成功
@@ -15558,7 +15534,6 @@ declare interface AgoraRtcChannel {
    * - 远端用户/主播调用 {@link joinChannel} 方法加入频道
    * - 远端用户加入频道后调用 {@link setClientRole} 将用户角色改变为主播
    * - 远端用户/主播网络中断后重新加入频道
-   * - 主播通过调用 {@link addInjectStreamUrl} 方法成功导入在线媒体流
    *
    * @note 直播场景下
    * - 主播间能相互收到新主播加入频道的回调，并能获得该主播的 `uid`
@@ -16256,6 +16231,8 @@ declare interface AgoraRtcChannel {
    */
   on(evt: 'transcodingUpdated', cb: () => void): this;
   /** @zh-cn
+   * @private
+   *
    * 输入在线媒体流状态回调。
    *
    * @warning 客户端输入在线媒体流功能即将停服。如果你尚未集成该功能，Agora 建议你不要使用。详见《部分服务下架计划》。
