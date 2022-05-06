@@ -15955,8 +15955,8 @@ declare interface AgoraRtcChannel {
    * 成功调用 {@link startAudioDeviceLoopbackTest} 方法开启音频设备测试后，
    * SDK 会按设置的时间间隔触发 `audioDeviceTestVolumeIndication` 回调，报告被测试音频设备的音量信息。
    *
-   * @param volumeType 音量类型。详见 {@link AudioDeviceTestVolumeType}。
-   * @param volume 音量大小，范围为 [0,255]。
+   * @param cb.volumeType 音量类型。详见 {@link AudioDeviceTestVolumeType}。
+   * @param cb.volume 音量大小，范围为 [0,255]。
    */
   /**
    * Reports the result of an audio device test.
@@ -15965,8 +15965,8 @@ declare interface AgoraRtcChannel {
    * After successfully calling {@link startAudioDeviceLoopbackTest} to start an audio device test,
    * the SDK triggers the `audioDeviceTestVolumeIndication` callback at the set time interval to report the volume information of the audio device tested.
    *
-   * @param volumeType The volume type. See {@link AudioDeviceTestVolumeType}.
-   * @param volume The volume, in the range of [0,255].
+   * @param cb.volumeType The volume type. See {@link AudioDeviceTestVolumeType}.
+   * @param cb.volume The volume, in the range of [0,255].
    */
   on(
     evt: 'audioDeviceTestVolumeIndication',
@@ -16202,7 +16202,6 @@ declare interface AgoraRtcChannel {
    */
   on(evt: 'transcodingUpdated', cb: () => void): this;
   /** @zh-cn
-   * @private
    *
    * 输入在线媒体流状态回调。
    *
@@ -16248,10 +16247,10 @@ declare interface AgoraRtcChannel {
    *  - 10: The external video stream is corrupted.
    *
    */
-  on(
-    evt: 'streamInjectedStatus',
-    cb: (url: string, uid: number, status: number) => void
-  ): this;
+  //on(
+  //  evt: 'streamInjectedStatus',
+  //  cb: (url: string, uid: number, status: number) => void
+  //): this;
   /** @zh-cn
    * 远端订阅流已回退为音频流回调。
    *
