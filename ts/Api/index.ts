@@ -8100,10 +8100,10 @@ declare interface AgoraRtcEngine {
    *  - 10: The external video stream is corrupted.
    *
    */
-  on(
-    evt: 'streamInjectStatus',
-    cb: (url: string, uid: number, status: number) => void
-  ): this;
+  //on(
+  //  evt: 'streamInjectStatus',
+  //  cb: (url: string, uid: number, status: number) => void
+  //): this;
   /** Occurs when the locally published media stream falls back to an
    * audio-only stream due to poor network conditions or switches back
    * to the video after the network conditions improve.
@@ -8522,26 +8522,25 @@ declare interface AgoraRtcEngine {
     ) => void
   ): this;
 
-  /** @private */
-  on(
-    evt: 'wlAccMessage',
-    cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION, wlAccMsg: string) => void
-  ): this;
-
-  /** @private */
-  on(
-    evt: 'wlAccStats',
-    cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
-  ): this;
+// Hide in 3.7.0
+//  on(
+//    evt: 'wlAccMessage',
+//    cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION, wlAccMsg: string) => void
+//  ): this;
+//
+//
+//  on(
+//    evt: 'wlAccStats',
+//    cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
+//  ): this;
 
  /**
-  * @private
   * Reports result of Content Inspect
- */
-  on(
-    evt: 'contentInspectResult',
-    cb: (result: CONTENT_INSPECT_RESULT) => void
-  ): this;
+  */
+//  on(
+//    evt: 'contentInspectResult',
+//    cb: (result: CONTENT_INSPECT_RESULT) => void
+//  ): this;
 
   /**
    * Reports the proxy connection state.
@@ -10350,8 +10349,8 @@ declare interface AgoraRtcChannel {
    * After successfully calling {@link startAudioDeviceLoopbackTest} to start an audio device test,
    * the SDK triggers the `audioDeviceTestVolumeIndication` callback at the set time interval to report the volume information of the audio device tested.
    *
-   * @param volumeType The volume type. See {@link AudioDeviceTestVolumeType}.
-   * @param volume The volume, in the range of [0,255].
+   * @param cb.volumeType The volume type. See {@link AudioDeviceTestVolumeType}.
+   * @param cb.volume The volume, in the range of [0,255].
    */
   on(
     evt: 'audioDeviceTestVolumeIndication',
