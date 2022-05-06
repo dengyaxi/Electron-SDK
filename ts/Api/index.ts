@@ -12425,10 +12425,10 @@ on(
    *  - 10: The external video stream is corrupted.
    *
    */
-  on(
-    evt: 'streamInjectStatus',
-    cb: (url: string, uid: number, status: number) => void
-  ): this;
+  //on(
+  //  evt: 'streamInjectStatus',
+  //  cb: (url: string, uid: number, status: number) => void
+  //): this;
   /** @zh-cn
    * 本地发布流已回退为音频流回调。
    *
@@ -13126,7 +13126,7 @@ on(
    * - 当 `action` 为 `WLACC_SUGGEST_ACTION_CHECK_5G`，该参数的值为开启路由器 5G 频道的操作步骤的链接。
    * - 当 `action` 为 `WLACC_SUGGEST_ACTION_MODIFY_SSID`，该参数的值为修改网络名称（SSID）的操作步骤的链接。
    */
-  /** @private */
+  /** Hide in 3.7.0 */
   on(
     evt: 'wlAccMessage',
     cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION, wlAccMsg: string) => void
@@ -13142,7 +13142,7 @@ on(
    * @param cb.currentStats 当前的 Wi-Fi 加速效果。详见 {@link WlAccStats} 。
    * @param cb.averageStats 自加入频道后平均的 Wi-Fi 加速效果。详见 {@link WlAccStats} 。
    */
-  /** @private */
+  /** Hide in 3.7.0 */
   on(
     evt: 'wlAccStats',
     cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
@@ -13158,13 +13158,12 @@ on(
    * @param cb.result 鉴黄结果。详见 {@link CONTENT_INSPECT_RESULT} 。
    */
  /**
-  * @private
   * Reports result of Content Inspect
- */
-  on(
-    evt: 'contentInspectResult',
-    cb: (result: CONTENT_INSPECT_RESULT) => void
-  ): this;
+  */
+//  on(
+//    evt: 'contentInspectResult',
+//    cb: (result: CONTENT_INSPECT_RESULT) => void
+//  ): this;
 
   /** @zh-cn
    * 代理连接状态回调。
