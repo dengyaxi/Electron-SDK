@@ -2849,9 +2849,6 @@ export interface ClientRoleOptions {
  * @since v3.3.1
  *
  * The cloud proxy type.
- * - 0: Do not use the cloud proxy.
- * - 1: The cloud proxy for the UDP protocol.
- * - 2: Reserved type.
  *
  */
 export enum CLOUD_PROXY_TYPE {
@@ -5205,7 +5202,7 @@ export enum SCREEN_SCENARIO_TYPE {
    */
   SCREEN_SCENARIO_RDC = 4,
 }
-
+/** @ignore */
 export interface ContentInspectModule {
   /**
    * The content inspect module type.
@@ -5220,6 +5217,7 @@ export interface ContentInspectModule {
    */
   interval: number;
 }
+/** @ignore */
 export interface ContentInspectConfig {
   /** The extra information, max length of extraInfo is 1024.
    *  The extra information will send to server with content(image).
@@ -5230,13 +5228,14 @@ export interface ContentInspectConfig {
    */
   modules: ContentInspectModule[];
 }
-
+/** @ignore */
 export enum WLACC_MESSAGE_REASON {
   /** WIFI signal is weak.*/
   WLACC_MESSAGE_REASON_WEAK_SIGNAL = 0,
   /** Channel congestion.*/
   WLACC_MESSAGE_REASON_CHANNEL_CONGESTION = 1,
 }
+/** @ignore */
 export enum WLACC_SUGGEST_ACTION {
   /** Please get close to AP.*/
   WLACC_SUGGEST_ACTION_CLOSE_TO_WIFI = 0,
@@ -5247,7 +5246,7 @@ export enum WLACC_SUGGEST_ACTION {
   /** The user is advised to change the SSID of the 2.4G or 5G band (the aciton link is attached). The SSID of the 2.4G band AP is the same as that of the 5G band.*/
   WLACC_SUGGEST_ACTION_MODIFY_SSID = 3,
 }
-
+/** @ignore */
 export interface WlAccStats {
   /** End-to-end delay optimization percentage.*/
   e2eDelayPercent: number;
@@ -5256,7 +5255,7 @@ export interface WlAccStats {
   /** Loss Rate optimization percentage.*/
   lossRatePercent: number;
 }
-
+/** @ignore */
 export enum CONTENT_INSPECT_RESULT {
   CONTENT_INSPECT_NEUTRAL = 1,
   CONTENT_INSPECT_SEXY = 2,

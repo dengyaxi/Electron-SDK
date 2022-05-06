@@ -8497,7 +8497,7 @@ declare interface AgoraRtcEngine {
    *
    * @note After this callback is enabled, if the user disables the local audio capture, for example, by calling {@link enableLocalAudio}`(false)`, the SDK immediately stops sending the `localVoicePitchInHz` callback.
    *
-   * @param cb.localVoicePitchInHz The voice pitch (Hz) of the local user.
+   * @param cb.pitchInHz The voice pitch (Hz) of the local user.
    */
   on(
     evt: 'localVoicePitchInHz',
