@@ -12272,10 +12272,9 @@ on(
    *  - 如成功恢复推流，则进入状态 `2`。
    *  - 如服务器出错或 60 秒内未成功恢复，则进入状态 `4`。如果觉得 60 秒太长，也可以主动调用
    * {@link addPublishStreamUrl}，再调用 {@link removePublishStreamUrl} 尝试重连。
-   * - `4`: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用
+   * - `4`: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用 {@link addPublishStreamUrl} 重新尝试推流。
    * - `5`: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
    * 当你调用 `remove` 或 `stop` 方法正常结束推流时，SDK 会依次报告推流状态为 `DISCONNECTING`、`IDLE`。
-   * {@link addPublishStreamUrl} 重新尝试推流。
    * @param cb.code 推流错误码：
    * - `0`: 推流成功。
    * - `1`: 参数无效。请检查输入参数是否正确。
@@ -13065,7 +13064,7 @@ on(
    *
    * @note 启用该功能后，如果用户关闭了本地音频采集，例如，调用了 {@link enableLocalAudio}`(false)`，SDK 会停止发送本回调。
    *
-   * @param pitchInHz 本地用户的语音音调，单位为 Hz。
+   * @param cb.pitchInHz 本地用户的语音音调，单位为 Hz。
    */
   /**
    * Reports the voice pitch of the local user.
@@ -13121,6 +13120,11 @@ on(
    *
    * @param cb.reason Wi-Fi 连接质量不佳的原因。详见 {@link WLACC_MESSAGE_REASON} 。
    * @param cb.action 改善 Wi-Fi 连接质量的操作建议。详见 {@link WLACC_SUGGEST_ACTION} 。
+   * @param cb.wlAccMsg 根据 `action` 的值提供的详细帮助信息：
+   * - 当 `action` 为 `WLACC_SUGGEST_ACTION_CLOSE_TO_WIFI`，该参数的值为 `NULL`。
+   * - 当 `action` 为 `WLACC_SUGGEST_ACTION_CONNECT_SSID`，该参数的值为推荐用户连接的网络名称（SSID）。
+   * - 当 `action` 为 `WLACC_SUGGEST_ACTION_CHECK_5G`，该参数的值为开启路由器 5G 频道的操作步骤的链接。
+   * - 当 `action` 为 `WLACC_SUGGEST_ACTION_MODIFY_SSID`，该参数的值为修改网络名称（SSID）的操作步骤的链接。
    */
   /** @private */
   on(
@@ -16436,6 +16440,16 @@ declare interface AgoraRtcChannel {
     ) => void
   ): this;
 
+  /** @zh-cn
+   * 已显示首帧远端视频回调。
+   *
+   * 第一帧远端视频显示在视图上时，触发此调用。 App 可在此调用中获知出图时间（elapsed）。
+   *
+   * @param cb.uid 用户 ID，指定是哪个用户的视频流。
+   * @param cb.width 视频流宽（px）。
+   * @param cb.height 视频流高（px）。
+   * @param cb.elapsed 从本地调用 {@link joinChannel} 到发生此事件过去的时间（毫秒)。
+   */
   /** Occurs when the first remote video frame is rendered.
    *
    * @since v3.7.0

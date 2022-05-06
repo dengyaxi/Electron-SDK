@@ -272,6 +272,12 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 |------------------------------------------------------------------------------|------------|
 | {@link AgoraRtcEngine.takeSnapshot takeSnapshot}             | 获取视频截图。 |
 
+### 内容审核
+
+| 方法                                                                           | 描述         |
+|------------------------------------------------------------------------------|------------|
+| {@link AgoraRtcEngine.enableContentInspect enableContentInspect}            | 开启/关闭端云融合视频内容审核。 |
+
 ### 加密
 
 | 方法                                                         | 描述                         |
@@ -340,6 +346,12 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 | ---------------------------------------------------------- | ---------- |
 | {@link AgoraRtcEngine.createDataStreamWithConfig createDataStreamWithConfig}   | 创建数据流 |
 | {@link AgoraRtcEngine.sendStreamMessage sendStreamMessage} | 发送数据流 |
+
+### Wi-Fi 加速
+
+| 方法                                                                                                        | 描述     |
+|-----------------------------------------------------------------------------------------------------------|--------|
+| {@link AgoraRtcEngine.enableWirelessAccelerate enableWirelessAccelerate} |开启或关闭 Wi-Fi 加速功能。 |
 
 ### 其他音频控制
 
