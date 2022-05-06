@@ -7974,20 +7974,35 @@ export interface NodeRtcEngine {
   /** @zh-cn
    * @ignore
    */
+  /**
+   * @ignore
+   */
   enableLocalVoicePitchCallback(interval: number): number;
   /** @zh-cn
+   * @ignore
+   */
+  /**
    * @ignore
    */
   enableWirelessAccelerate(enabled: boolean): number;
   /** @zh-cn
    * @ignore
    */
+  /**
+   * @ignore
+   */
   enableContentInspect(enabled: boolean, config: ContentInspectConfig): number;
   /** @zh-cn
    * @ignore
    */
+  /**
+   * @ignore
+   */
   enableSpatialAudio(enabled: boolean): number;
   /** @zh-cn
+   * @ignore
+   */
+  /**
    * @ignore
    */
   setRemoteUserSpatialAudioParams(

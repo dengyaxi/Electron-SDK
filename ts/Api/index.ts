@@ -15799,39 +15799,6 @@ declare interface AgoraRtcChannel {
    */
    on(evt: 'activeSpeaker', cb: (uid: number) => void): this;
   /** @zh-cn
-   * @depreacted 该回调已废弃，请改用 `remoteVideoStateChanged`。
-   *
-   * 已显示首帧远端视频回调。
-   *
-   * 第一帧远端视频显示在视图上时，触发此调用。
-   *
-   * @param cb.uid 用户 ID，指定是哪个用户的视频流
-   *
-   * @param cb.width 视频流宽（px）
-   *
-   * @param cb.height 视频流高（px）
-   *
-   * @param cb.elapsed 从本地调用 {@link joinChannel} 到发生此事件过去的时间（毫秒)
-   */
-  /** @deprecated This callback is deprecated, please use
-   * `remoteVideoStateChanged` instead.
-   *
-   * Occurs when the first remote video frame is rendered.
-   *
-   * The SDK triggers this callback when the first frame of the remote video
-   * is displayed in the user's video window.
-   *
-   * @param cb.uid User ID of the remote user sending the video stream.
-   * @param cb.width Width (pixels) of the video frame.
-   * @param cb.height Height (pixels) of the video stream.
-   * @param cb.elapsed Time elapsed (ms) from the local user calling the
-   * {@link joinChannel} method until the SDK triggers this callback.
-   */
-  on(
-    evt: 'firstRemoteVideoFrame',
-    cb: (uid: number, width: number, height: number, elapsed: number) => void
-  ): this;
-  /** @zh-cn
    * @deprecated 该回调已废弃，请改用 `remoteAudioStateChanged`。
    *
    * 已解码远端音频首帧的回调
