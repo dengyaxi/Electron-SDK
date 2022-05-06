@@ -8100,10 +8100,10 @@ declare interface AgoraRtcEngine {
    *  - 10: The external video stream is corrupted.
    *
    */
-  //on(
-  //  evt: 'streamInjectStatus',
-  //  cb: (url: string, uid: number, status: number) => void
-  //): this;
+  on(
+    evt: 'streamInjectStatus',
+    cb: (url: string, uid: number, status: number) => void
+  ): this;
   /** Occurs when the locally published media stream falls back to an
    * audio-only stream due to poor network conditions or switches back
    * to the video after the network conditions improve.
