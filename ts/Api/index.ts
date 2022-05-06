@@ -983,9 +983,10 @@ class AgoraRtcEngine extends EventEmitter {
 
     this.rtcEngine.onEvent('wlAccMessage', function(
       reason: WLACC_MESSAGE_REASON,
-      action: WLACC_SUGGEST_ACTION
+      action: WLACC_SUGGEST_ACTION,
+      wlAccMsg: string
     ) {
-      fire('wlAccMessage', reason, action);
+      fire('wlAccMessage', reason, action, wlAccMsg);
     });
     this.rtcEngine.onEvent('wlAccStats', function(
       currentStats: WlAccStats,
@@ -13073,11 +13074,11 @@ on(
    *
    * @note After this callback is enabled, if the user disables the local audio capture, for example, by calling {@link enableLocalAudio}`(false)`, the SDK immediately stops sending the `localVoicePitchInHz` callback.
    *
-   * @param cb.localVoicePitchInHz The voice pitch (Hz) of the local user.
+   * @param cb.pitchInHz The voice pitch (Hz) of the local user.
    */
   on(
     evt: 'localVoicePitchInHz',
-    cb: (localVoicePitchInHz: number) => void
+    cb: (pitchInHz: number) => void
   ): this;
 
   /** @zh-cn
@@ -13122,7 +13123,7 @@ on(
   /** @private */
   on(
     evt: 'wlAccMessage',
-    cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION) => void
+    cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION, wlAccMsg: string) => void
   ): this;
 
   /** @zh-cn
@@ -13345,13 +13346,6 @@ class AgoraRtcChannel extends EventEmitter {
     this.rtcChannel.onEvent('activeSpeaker', (uid: number) => {
       fire('activeSpeaker', uid);
     });
-
-    this.rtcChannel.onEvent(
-      'firstRemoteVideoFrame',
-      (uid: number, width: number, height: number, elapsed: number) => {
-        fire('firstRemoteVideoFrame', uid, width, height, elapsed);
-      }
-    );
 
     this.rtcChannel.onEvent(
       'firstRemoteAudioDecoded',

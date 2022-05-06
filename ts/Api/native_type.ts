@@ -4785,7 +4785,7 @@ export interface ClientRoleOptions {
 };
 /** @zh-cn
  *
- * @since v3.3.1
+ * 云代理类型。
  */
 /** The cloud proxy type.
  *
@@ -8726,6 +8726,7 @@ export enum SCREEN_SCENARIO_TYPE {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export interface ContentInspectModule {
   /**
    * @zh-cn
@@ -8757,6 +8758,7 @@ export interface ContentInspectModule {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export interface ContentInspectConfig {
   /** @zh-cn
    * 附加信息，最大长度为 1024 字节。
@@ -8766,7 +8768,7 @@ export interface ContentInspectConfig {
   /** The extra information, max length of extraInfo is 1024.
    *  The extra information will send to server with content(image).
    */
-  extraInfo: number;
+  extraInfo: string;
   /** @zh-cn
    * 内容审核模块。详见 ContentInspectModule 。
    *
@@ -8783,6 +8785,7 @@ export interface ContentInspectConfig {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export enum WLACC_MESSAGE_REASON {
   /** @zh-cn
    * 0: Wi-Fi 信号弱。 */
@@ -8798,6 +8801,7 @@ export enum WLACC_MESSAGE_REASON {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export enum WLACC_SUGGEST_ACTION {
   /** @zh-cn
    * 0: 由于路由器接收到的 Wi-Fi 信号弱，请用户靠近路由器。 */
@@ -8824,6 +8828,7 @@ export enum WLACC_SUGGEST_ACTION {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export interface WlAccStats {
   /** @zh-cn
    * 端到端延时下降百分比。 */
@@ -8844,6 +8849,7 @@ export interface WlAccStats {
  *
  * @since v3.7.0
  */
+/** @ignore */
 export enum CONTENT_INSPECT_RESULT {
   /** @zh-cn
    * 1: 正常图片。
