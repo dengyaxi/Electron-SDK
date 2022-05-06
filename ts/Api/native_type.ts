@@ -2880,7 +2880,7 @@ export enum CONNECTION_STATE_TYPE {
  * - 13：客户端 IP 地址变更，可能是由于网络类型，或网络运营商的 IP 或端口发生改变引起
  * - 19: 使用相同的 UID 从不同的设备加入同一频道
  * - 20: 频道内主播人数已达上限
- *   @note 该枚举仅在开启 128 人功能后报告。主播人数的上限根据开启 128 人功能时实际配置的人数而定。
+ *    **Note:** 该枚举仅在开启 128 人功能后报告。主播人数的上限根据开启 128 人功能时实际配置的人数而定。
  */
 /**
  * Reasons for a connection state change.
@@ -8483,7 +8483,7 @@ export interface LowLightEnhanceOptions {
 }
 
 /** @zh-cn
- * 视频降噪模式，详见 #VIDEO_DENOISER_MODE 。
+ * 视频降噪模式 。
  *
  * @since v3.7.0
  */
