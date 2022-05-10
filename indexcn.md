@@ -81,10 +81,10 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 | 方法                                                         | 描述             |
 | ------------------------------------------------------------ | ---------------- |
 | {@link AgoraRtcEngine.setBeautyEffectOptions setBeautyEffectOptions} | 设置美颜设置选项 |
-| {@link AgoraRtcEngine.enableVirtualBackground enableVirtualBackground} | 开启/关闭虚拟背景（beta 功能） |
-| {@link AgoraRtcEngine.setVideoDenoiserOptions setVideoDenoiserOptions} |设置视频降噪功能。|
-| {@link AgoraRtcEngine.setLowlightEnhanceOptions setLowlightEnhanceOptions} |设置暗光增强功能。|
-| {@link AgoraRtcEngine.setColorEnhanceOptions setColorEnhanceOptions} |设置色彩增强功能。|
+| {@link AgoraRtcEngine.enableVirtualBackground enableVirtualBackground} | 开启/关闭虚拟背景|
+| {@link AgoraRtcEngine.setVideoDenoiserOptions setVideoDenoiserOptions} |设置视频降噪功能|
+| {@link AgoraRtcEngine.setLowlightEnhanceOptions setLowlightEnhanceOptions} |设置暗光增强功能|
+| {@link AgoraRtcEngine.setColorEnhanceOptions setColorEnhanceOptions} |设置色彩增强功能|
 
 ### 多频道管理
 
