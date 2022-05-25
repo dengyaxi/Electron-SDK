@@ -7224,7 +7224,7 @@ declare interface AgoraRtcEngine {
    *
    * **Note**:
    *
-   * If you have called the {@link enableDualStream} method, the
+   * If you have called the {@link enableDualStreamMode} method, the
    * localVideoStats callback reports the statistics of the high-video
    * stream (high bitrate, and high-resolution video stream).
    *
