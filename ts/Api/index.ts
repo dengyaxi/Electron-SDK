@@ -4442,7 +4442,7 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.videoSourceStopPreview();
   }
 
-  /**
+  /** @ignore
    * Enables the dual-stream mode for the video source.
    * @param {boolean} enable Whether or not to enable the dual-stream mode:
    * - true: Enables the dual-stream mode.
@@ -7840,12 +7840,6 @@ declare interface AgoraRtcEngine {
    * The SDK triggers this callback once every two seconds for each
    * user/host. If there are multiple users/hosts in the channel, the SDK
    * triggers this callback as many times.
-   *
-   * @note
-   * If you have called the {@link videoSourceEnableDualStreamMode}
-   * method, this callback
-   * reports the statistics of the high-video
-   * stream (high bitrate, and high-resolution video stream).
    *
    * @param cb.stats Statistics of the local video stream.
    */

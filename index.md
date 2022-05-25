@@ -123,7 +123,6 @@ This Agora Electron SDK is developed upon the Native SDK for macOS and the Nativ
 | {@link AgoraRtcEngine.videoSourceUpdateScreenCaptureRegion videoSourceUpdateScreenCaptureRegion} | Updates the screen sharing region when using the video source.|
 | {@link AgoraRtcEngine.videoSourceUpdateScreenCaptureParameters videoSourceUpdateScreenCaptureParameters} |  Updates the screen sharing parameters when using the video source.     |
 | {@link AgoraRtcEngine.videoSourceSetScreenCaptureContentHint videoSourceSetScreenCaptureContentHint} | Sets the content hint when using the video source.        |
-| {@link AgoraRtcEngine.videoSourceEnableDualStreamMode videoSourceEnableDualStreamMode}     |  Enables the dual stream mode when using the video source.    |
 
 ### Audio file playback and mixing
 
