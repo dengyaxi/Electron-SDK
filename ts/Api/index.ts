@@ -6329,6 +6329,8 @@ class AgoraRtcEngine extends EventEmitter {
   }
 
   /** @zh-cn
+   * @ignore
+   *
    * 双实例方法：对屏幕共享流开启双流模式。
    * @param {boolean} enable 是否开始双流模式：
    * - true：开启双流模式
@@ -6337,7 +6339,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 0：方法调用成功
    * - < 0：方法调用失败
    */
-  /**
+  /** @ignore
    * Enables the dual-stream mode for the video source.
    * @param {boolean} enable Whether or not to enable the dual-stream mode:
    * - true: Enables the dual-stream mode.
@@ -10873,7 +10875,7 @@ on(evt: 'leaveChannel', cb: (stats: RtcStats) => void): this;
    *
    * **Note**:
    *
-   * If you have called the {@link enableDualStream} method, the
+   * If you have called the {@link enableDualStreamMode} method, the
    * localVideoStats callback reports the statistics of the high-video
    * stream (high bitrate, and high-resolution video stream).
    *
@@ -11982,12 +11984,6 @@ on(
    * user/host. If there are multiple users/hosts in the channel, the SDK
    * triggers this callback as many times.
    *
-   * @note
-   * If you have called the {@link videoSourceEnableDualStreamMode}
-   * method, this callback
-   * reports the statistics of the high-video
-   * stream (high bitrate, and high-resolution video stream).
-   *
    * @param cb.stats Statistics of the local video stream.
    */
    on(
@@ -12379,6 +12375,7 @@ on(
    */
   on(evt: 'transcodingUpdated', cb: () => void): this;
   /** @zh-cn
+   * @internal
    * 导入在线媒体流状态回调。
    *
    * 该回调表明向直播导入的外部视频流的状态。
