@@ -3774,6 +3774,11 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>API 方法已执行回调。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -3792,9 +3797,15 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>api: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>SDK 所调用的 API。</p>
+															</div>
 														</li>
 														<li>
 															<h5>err: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>方法调用失败时返回的错误码。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -3807,6 +3818,11 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>发生警告回调。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -3825,9 +3841,15 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>warn: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>警告码。</p>
+															</div>
 														</li>
 														<li>
 															<h5>msg: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>警告信息。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -3840,6 +3862,11 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>发生错误回调。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -3858,9 +3885,15 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>err: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>错误码。</p>
+															</div>
 														</li>
 														<li>
 															<h5>msg: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>错误信息。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -3873,6 +3906,11 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>用户加入频道回调。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -3891,12 +3929,21 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>channel: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>频道名。</p>
+															</div>
 														</li>
 														<li>
 															<h5>uid: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>加入频道用户的用户 ID。</p>
+															</div>
 														</li>
 														<li>
 															<h5>elapsed: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>从调用 <a href="agorartcengine.html#joinchannel">joinChannel</a> 方法到触发该回调所经过的时间。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -5098,6 +5145,12 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>已接收到远端视频并完成解码回调。</p>
+								</div>
+								<p>SDK 收到第一帧远端视频流并解码成功时，触发此调用。</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -5116,15 +5169,27 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>uid: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>用户 ID，指定是哪个用户的视频流。</p>
+															</div>
 														</li>
 														<li>
 															<h5>width: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>视频流宽（px）。</p>
+															</div>
 														</li>
 														<li>
 															<h5>height: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>视频流高（px）。</p>
+															</div>
 														</li>
 														<li>
 															<h5>elapsed: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>从本地调用 <a href="agorartcengine.html#joinchannel">joinChannel</a> 开始到该回调触发的延迟（毫秒)。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -8313,18 +8378,33 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>channel: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>频道名称。</p>
+															</div>
 														</li>
 														<li>
 															<h5>uid: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>用户 ID。</p>
+															</div>
 														</li>
 														<li>
 															<h5>proxyType: <a href="../enums/proxy_type.html" class="tsd-signature-type">PROXY_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>连接上的代理类型。详见 <a href="../enums/proxy_type.html">PROXY_TYPE</a> 。</p>
+															</div>
 														</li>
 														<li>
 															<h5>localProxyIp: <span class="tsd-signature-type">string</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>预留参数，暂不支持。</p>
+															</div>
 														</li>
 														<li>
 															<h5>elapsed: <span class="tsd-signature-type">number</span></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>从调用 <code>joinChannel</code> 到 SDK 触发该回调的经过的时间（毫秒）。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -8337,6 +8417,11 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>预留接口，暂不支持。</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -8344,6 +8429,8 @@
 								</li>
 								<li>
 									<h5>cb: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal">

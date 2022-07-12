@@ -2559,11 +2559,18 @@ export interface RemoteAudioStats {
 }
 /** @zh-cn
  * 远端视频状态：
- * - 0 远端视频默认初始状态。
- * - 1 本地用户已接收远端视频首包。
- * - 2 远端视频流正在解码，正常播放。
- * - 3 远端视频流卡顿。
- * - 4 远端视频流播放失败。
+ * - 0：远端视频默认初始状态。在 `REMOTE_VIDEO_STATE_REASON_LOCAL_MUTED (3)`、
+ * `REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED (5)` 或
+ * `REMOTE_VIDEO_STATE_REASON_REMOTE_OFFLINE (7)` 的情况下，会报告该状态。
+ * - 1：本地用户已接收远端视频首包。
+ * - 2：远端视频流正在解码，正常播放。在 `REMOTE_VIDEO_STATE_REASON_NETWORK_RECOVERY (2)`、
+ * `REMOTE_VIDEO_STATE_REASON_LOCAL_UNMUTED (4)`、
+ * `REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED (6)` 或
+ * `REMOTE_VIDEO_STATE_REASON_AUDIO_FALLBACK_RECOVERY (9) `的情况下，
+ * 会报告该状态。
+ * - 3：远端视频流卡顿。在 `REMOTE_VIDEO_STATE_REASON_NETWORK_CONGESTION (1)` 或
+ * `REMOTE_VIDEO_STATE_REASON_AUDIO_FALLBACK (8)` 的情况下，会报告该状态。
+ * - 4：远端视频流播放失败。在 `REMOTE_VIDEO_STATE_REASON_INTERNAL (0)` 的情况下，会报告该状态。
  */
 /**
  * State of the remote video:

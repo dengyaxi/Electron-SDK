@@ -10681,25 +10681,52 @@ class AgoraRtcEngine extends EventEmitter {
 }
 /** The AgoraRtcEngine interface. */
 declare interface AgoraRtcEngine {
+  /** @zh-cn
+   * API 方法已执行回调。
+   *
+   * @param cb.api SDK 所调用的 API。
+   *
+   * @param cb.err 方法调用失败时返回的错误码。
+   */
   /**
    * Occurs when an API method is executed.
    *
-   * `api`: The method executed by the SDK.
+   * @param cb.api The method executed by the SDK.
    *
-   * `err`: Error code that the SDK returns when the method call fails.
+   * @param cb.err Error code that the SDK returns when the method call fails.
    */
   on(evt: 'apiCallExecuted', cb: (api: string, err: number) => void): this;
+  /** @zh-cn
+   * 发生警告回调。
+   *
+   * @param cb.warn 警告码。
+   * @param cb.msg 警告信息。
+   */
   /**
    * Reports a warning during SDK runtime.
    * @param cb.warn Warning code.
    * @param cb.msg The warning message.
    */
   on(evt: 'warning', cb: (warn: number, msg: string) => void): this;
+  /** @zh-cn
+   * 发生错误回调。
+   *
+   * @param cb.err 错误码。
+   * @param cb.msg 错误信息。
+   */
   /** Reports an error during SDK runtime.
    * @param cb.err Error code.
    * @param cb.msg The error message.
    */
   on(evt: 'error', cb: (err: number, msg: string) => void): this;
+  /** @zh-cn
+   * 用户加入频道回调。
+   *
+   * @param cb.channel 频道名。
+   * @param cb.uid 加入频道用户的用户 ID。
+   * @param cb.elapsed 从调用 {@link joinChannel} 方法到触发该回调所经过的时间。
+   *
+   */
   /** Occurs when a user joins a specified channel.
    * @param cb.channel The channel name.
    * @param cb.uid User ID of the user joining the channel.
@@ -11361,13 +11388,24 @@ on(
     evt: 'firstRemoteVideoFrame',
     cb: (uid: number, width: number, height: number, elapsed: number) => void
   ): this;
+  /** @zh-cn
+   *
+   * 已接收到远端视频并完成解码回调。
+   *
+   * SDK 收到第一帧远端视频流并解码成功时，触发此调用。
+   *
+   * @param cb.uid 用户 ID，指定是哪个用户的视频流。
+   * @param cb.width 视频流宽（px）。
+   * @param cb.height 视频流高（px）。
+   * @param cb.elapsed 从本地调用 {@link joinChannel} 开始到该回调触发的延迟（毫秒)。
+   */
   /** Occurs when the first remote video frame is decoded.
    * The SDK triggers this callback when the first frame of the remote video
    * is decoded.
-   * - uid: User ID of the remote user sending the video stream.
-   * - width: Width (pixels) of the video frame.
-   * - height: Height (pixels) of the video stream.
-   * - elapsed: Time elapsed (ms) from the local user calling the
+   * @param cb.uid User ID of the remote user sending the video stream.
+   * @param cb.width Width (pixels) of the video frame.
+   * @param cb.height Height (pixels) of the video stream.
+   * @param cb.elapsed Time elapsed (ms) from the local user calling the
    * {@link joinChannel} method until the SDK triggers this callback.
    */
   on(
@@ -12535,6 +12573,12 @@ on(
       reason: CONNECTION_CHANGED_REASON_TYPE
     ) => void
   ): this;
+  /** @zh-cn
+   * 本地网络类型发生改变回调。
+   *
+   * 当连接中断时，该回调能辨别引起中断的原因是网络切换还是网络条件不好。
+   * @param cb.type 网络类型，详见 {@link NETWORK_TYPE}。
+   */
   /**
    * Occurs when the local network type changes.
    *
@@ -13145,7 +13189,7 @@ on(
     cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
   ): this;
 
-  /** @zh-cn
+  /**
    * 鉴黄审核结果回调。
    *
    * @since v3.7.0
@@ -13170,11 +13214,11 @@ on(
    * 通过该回调你可以监听 SDK 连接代理的状态。例如，当用户调用 {@link setCloudProxy} 设置代理并成功加入频道后，
    * SDK 会触发该回调报告用户 ID、连接的代理类型和从调用 {@link joinChannel} 到触发该回调经过的时间等。
    *
-   * @param channel 频道名称。
-   * @param uid 用户 ID。
-   * @param proxyType 连接上的代理类型。详见 {@link PROXY_TYPE} 。
-   * @param localProxyIp 预留参数，暂不支持。
-   * @param elapsed 从调用 `joinChannel` 到 SDK 触发该回调的经过的时间（毫秒）。
+   * @param cb.channel 频道名称。
+   * @param cb.uid 用户 ID。
+   * @param cb.proxyType 连接上的代理类型。详见 {@link PROXY_TYPE} 。
+   * @param cb.localProxyIp 预留参数，暂不支持。
+   * @param cb.elapsed 从调用 `joinChannel` 到 SDK 触发该回调的经过的时间（毫秒）。
    *
    */
   /**
@@ -13203,6 +13247,12 @@ on(
     ) => void
   ): this;
 
+  /** @zh-cn
+   * 预留接口，暂不支持。
+   *
+   * @param evt
+   * @param cb
+   */
   on(
     evt: 'agoraVideoRawData',
     cb: (info: {
