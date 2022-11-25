@@ -275,7 +275,7 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 
 | 方法                                                                           | 描述         |
 |------------------------------------------------------------------------------|------------|
-| {@link AgoraRtcEngine.enableContentInspect enableContentInspect}            | 开启/关闭端云融合视频内容审核。 |
+| {@link AgoraRtcEngine.enableContentInspect enableContentInspect}            | 开启/关闭视频截图上传。 |
 
 ### 加密
 

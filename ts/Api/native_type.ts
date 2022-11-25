@@ -8764,17 +8764,16 @@ export enum SCREEN_SCENARIO_TYPE {
 }
 
 /** @zh-cn
- * ContentInspectModule 结构体，用于配置内容审核模块的类型和频率。
+ * ContentInspectModule 结构体，用于配置视频截图模块的类型和频率。
  *
  * @since v3.7.0
  */
 /** @ignore */
 export interface ContentInspectModule {
-  /**
-   * @zh-cn
-   * 内容审核模块的类型:
+  /** @zh-cn
+   * 视频截图模块的类型:
    * - kContentInspectInvalid(0): （默认）该功能模块无实际功能。请不要将 `type` 设为该值。
-   * - kContentInspectModeration(1): 鉴黄。SDK 会对本地用户发送的视频进行截图、鉴黄，并将截图和审核结果上传。详见[鉴黄产品概述](https://docs.agora.io/cn/content-moderation/content_moderation_overview)。
+   * - kContentInspectModeration(1): 预留参数。
    * - kContentInspectSupervise(2): 截图。SDK 会对视频流进行截图并上传。
    */
   /**
@@ -8786,7 +8785,7 @@ export interface ContentInspectModule {
    */
   type: number;
   /** @zh-cn
-   * 内容审核的间隔，单位为秒，取值必须大于 0。默认值为 0，表示不进行内容审核。
+   * 截图上传的间隔，单位为秒，取值必须大于 0。默认值为 0，表示不进行截图上传。
    *
    * 推荐值为 10 秒，你也可以根据业务需求自行调整。
    */
@@ -8796,7 +8795,7 @@ export interface ContentInspectModule {
   interval: number;
 }
 /** @zh-cn
- * 内容审核配置。
+ * 视频截图上传配置。
  *
  * @since v3.7.0
  */
@@ -8805,14 +8804,14 @@ export interface ContentInspectConfig {
   /** @zh-cn
    * 附加信息，最大长度为 1024 字节。
    *
-   * SDK 会将附加信息和截图一起上传至 Agora 内容审核服务器；审核完成后，Agora 内容审核服务器会将附加信息随审核结果一起发送给你的服务器。
+   * SDK 会将附加信息和截图一起上传至 Agora 服务器；截图完成后，Agora 服务器会将附加信息随审核结果一起发送给你的服务器。
    */
   /** The extra information, max length of extraInfo is 1024.
    *  The extra information will send to server with content(image).
    */
   extraInfo: string;
   /** @zh-cn
-   * 内容审核模块。详见 ContentInspectModule 。
+   * 截图上传模块。详见 ContentInspectModule 。
    *
    * 最多支持配置 32 个 `ContentInspectModule` 实例，`MAX_CONTENT_INSPECT_MODULE_COUNT` 的取值范围为 [1,32] 中的整数。
    */
@@ -8887,6 +8886,8 @@ export interface WlAccStats {
 }
 
 /** @zh-cn
+ * @ignore
+ *
  * 鉴黄结果。
  *
  * @since v3.7.0

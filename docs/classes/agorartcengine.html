@@ -1349,18 +1349,18 @@
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>开启/关闭端云融合视频内容审核。</p>
+									<p>开启/关闭视频截图上传。</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>v3.7.0</p>
-										<p>开启视频内容审核后，SDK 会根据你在 ContentInspectConfig 中设置的内容审核模块类型和频率对本地用户发送的视频进行截图、审核和上传。审核完成后，Agora 内容审核服务器会以 HTTPS 请求的形式，向你的服务器发送审核结果，并将所有截图发送至你指定的第三方云存储。</p>
-										<p>如果你将 ContentInspectConfig 中的 <code>type</code> 设置为 <code>kContentInspectModeration</code>，即鉴黄，审核完成后，SDK 会触发 <code>contentInspectResult</code> 回调，报告鉴黄结果。</p>
+										<p>开启视频截图上传后，SDK 会根据你在 ContentInspectConfig 中设置的模块类型和频率对本地用户发送的视频进行截图和上传。截图完成后，Agora 服务器会以 HTTPS 请求的形式向你的服务器发送通知，并将所有截图发送至你指定的第三方云存储。</p>
+										<p>相比 <a href="agorartcengine.html#takesnapshot">takeSnapshot</a> 方法，本方法可以按照你设置的截图频率进行周期性截图，并将截图发送至你指定的第三方云存储。</p>
 									</dd>
 									<dt>note</dt>
 									<dd><p>调用该方法前，请确保满足以下要求：</p>
 										<ul>
-											<li><a href="https://docs.agora.io/cn/AgoraPlatform/ticket">提交工单</a>开通 Agora 端云融合视频内容审核服务。详见<a href="https://docs.agora.io/cn/content-moderation/content_moderation_enable">开通视频鉴黄服务</a>。</li>
+											<li><a href="https://docs.agora.io/cn/AgoraPlatform/ticket">提交工单</a>开通 Agora 视频截图上传服务。</li>
 											<li>已将如下动态库集成到项目中：<ul>
 													<li>Android：<code>libagora_ci_extension.so</code></li>
 													<li>iOS/macOS：<code>AgoraCIExtension.xcframework</code></li>
@@ -1376,7 +1376,7 @@
 								<li>
 									<h5>enabled: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>设置是否开启内容审核：</p>
+										<p>设置是否开启视频截图上传：</p>
 										<ul>
 											<li>true: 开启。</li>
 											<li>false: 关闭。</li>
@@ -1386,7 +1386,7 @@
 								<li>
 									<h5>config: <a href="../interfaces/contentinspectconfig.html" class="tsd-signature-type">ContentInspectConfig</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>内容审核配置。详见 ContentInspectConfig 。</p>
+										<p>视频截图上传配置。详见 ContentInspectConfig 。</p>
 									</div>
 								</li>
 							</ul>
@@ -7178,6 +7178,12 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 						<li class="tsd-description">
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>本地网络类型发生改变回调。</p>
+								</div>
+								<p>当连接中断时，该回调能辨别引起中断的原因是网络切换还是网络条件不好。</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -7196,6 +7202,9 @@
 													<ul class="tsd-parameters">
 														<li>
 															<h5>type: <a href="../enums/network_type.html" class="tsd-signature-type">NETWORK_TYPE</a></h5>
+															<div class="tsd-comment tsd-typography">
+																<p>网络类型，详见 <a href="../enums/network_type.html">NETWORK_TYPE</a>。</p>
+															</div>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -13745,6 +13754,7 @@
 										<p>该方法用于对指定用户的视频流进行截图，生成一张 JPG 格式的图片，并保存至指定的路径。</p>
 										<p>该方法是异步操作，调用返回时 SDK 并没有真正获取截图。成功调用该方法后，SDK 会触发
 										<code>snapshotTaken</code> 回调报告截图是否成功和获取截图的详情。</p>
+										<p>相比 <a href="agorartcengine.html#enablecontentinspect">enableContentInspect</a> 方法，本方法是即时截图，截图会保存在你指定的本地路径。</p>
 									</dd>
 									<dt>note</dt>
 									<dd><ul>

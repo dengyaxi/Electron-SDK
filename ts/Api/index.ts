@@ -9979,6 +9979,8 @@ class AgoraRtcEngine extends EventEmitter {
    * 该方法是异步操作，调用返回时 SDK 并没有真正获取截图。成功调用该方法后，SDK 会触发
    * `snapshotTaken` 回调报告截图是否成功和获取截图的详情。
    *
+   * 相比 {@link enableContentInspect} 方法，本方法是即时截图，截图会保存在你指定的本地路径。
+   *
    * @note
    * - 该方法需要在加入频道后调用。
    * - 如果用户的视频经过前处理，例如，添加了水印或美颜，生成的截图会包含前处理效果。
@@ -10632,25 +10634,25 @@ class AgoraRtcEngine extends EventEmitter {
     return this.rtcEngine.enableWirelessAccelerate(enabled);
   }
   /** @zh-cn
-   * 开启/关闭端云融合视频内容审核。
+   * 开启/关闭视频截图上传。
    *
    * @since v3.7.0
    *
-   * 开启视频内容审核后，SDK 会根据你在 ContentInspectConfig 中设置的内容审核模块类型和频率对本地用户发送的视频进行截图、审核和上传。审核完成后，Agora 内容审核服务器会以 HTTPS 请求的形式，向你的服务器发送审核结果，并将所有截图发送至你指定的第三方云存储。
+   * 开启视频截图上传后，SDK 会根据你在 ContentInspectConfig 中设置的模块类型和频率对本地用户发送的视频进行截图和上传。截图完成后，Agora 服务器会以 HTTPS 请求的形式向你的服务器发送通知，并将所有截图发送至你指定的第三方云存储。
    *
-   * 如果你将 ContentInspectConfig 中的 `type` 设置为 `kContentInspectModeration`，即鉴黄，审核完成后，SDK 会触发 `contentInspectResult` 回调，报告鉴黄结果。
+   * 相比 {@link takeSnapshot} 方法，本方法可以按照你设置的截图频率进行周期性截图，并将截图发送至你指定的第三方云存储。
    *
    * @note 调用该方法前，请确保满足以下要求：
-   * - [提交工单](https://docs.agora.io/cn/AgoraPlatform/ticket)开通 Agora 端云融合视频内容审核服务。详见[开通视频鉴黄服务](https://docs.agora.io/cn/content-moderation/content_moderation_enable)。
+   * - [提交工单](https://docs.agora.io/cn/AgoraPlatform/ticket)开通 Agora 视频截图上传服务。
    * - 已将如下动态库集成到项目中：
    *    - Android：`libagora_ci_extension.so`
    *    - iOS/macOS：`AgoraCIExtension.xcframework`
    *    - Windows：`libagora_ci_extension.dll`
    *
-   * @param enabled 设置是否开启内容审核：
+   * @param enabled 设置是否开启视频截图上传：
    * - true: 开启。
    * - false: 关闭。
-   * @param config 内容审核配置。详见 ContentInspectConfig 。
+   * @param config 视频截图上传配置。详见 ContentInspectConfig 。
    *
    * @return
    * - 0: 方法调用成功
