@@ -1,5 +1,7 @@
 import { PluginInfo } from './plugin';
 
+export type UInt8ArrayBuffer = ArrayBufferLike;
+
 export interface RendererOptions {
   append: boolean;
 }
@@ -3778,14 +3780,6 @@ export interface NodeRtcEngine {
   /**
    * @ignore
    */
-  pauseAudio(): number;
-  /**
-   * @ignore
-   */
-  resumeAudio(): number;
-  /**
-   * @ignore
-   */
   setLogFile(filepath: string): number;
   /**
    * @ignore
@@ -4744,6 +4738,11 @@ export interface NodeRtcEngine {
    * @ignore
    */
   setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number;
+
+  /**
+   * @ignore
+   */
+  videoSourceSetScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number;
   /**
    * @ignore
    */
@@ -4766,6 +4765,10 @@ export interface NodeRtcEngine {
   setRemoteUserSpatialAudioParams(
     uid: number,
     spatial_audio_params?: SpatialAudioParams
+  ): number;
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
   ): number;
 }
 /**
@@ -4984,6 +4987,10 @@ export interface NodeRtcChannel {
 
   muteLocalAudioStream(mute: boolean): number;
   muteLocalVideoStream(mute: boolean): number;
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number
 }
 
 /** Audio codec profile types. The default value is LC_ACC. */

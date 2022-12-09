@@ -88,6 +88,7 @@ import {
   AUDIO_RECORDING_QUALITY_TYPE,
   AUDIO_RECORDING_POSITION,
   SpatialAudioParams,
+  UInt8ArrayBuffer,
 } from './native_type';
 import { EventEmitter } from 'events';
 import { deprecate, config, Config } from '../Utils';
@@ -2860,30 +2861,6 @@ class AgoraRtcEngine extends EventEmitter {
    */
   muteRemoteVideoStream(uid: number, mute: boolean): number {
     return this.rtcEngine.muteRemoteVideoStream(uid, mute);
-  }
-
-  /**
-   * @deprecated This method is deprecated. Use {@link disableAudio} instead.
-   * Disables the audio function in the channel.
-   * @return
-   * - 0: Success.
-   * - < 0: Failure.
-   */
-  pauseAudio() {
-    deprecate('disableAudio');
-    return this.rtcEngine.pauseAudio();
-  }
-
-  /**
-   * @deprecated  This method is deprecated. Use {@link enableAudio} instead.
-   * Resumes the audio function in the channel.
-   * @return
-   * - 0: Success.
-   * - < 0: Failure.
-   */
-  resumeAudio() {
-    deprecate('enableAudio');
-    return this.rtcEngine.resumeAudio();
   }
 
   /**
@@ -7023,6 +7000,9 @@ class AgoraRtcEngine extends EventEmitter {
   setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number {
     return this.rtcEngine.setScreenCaptureScenario(screenScenario);
   }
+  videoSourceSetScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number {
+    return this.rtcEngine.videoSourceSetScreenCaptureScenario(screenScenario);
+  }
 
   /** Enables reporting the voice pitch of the local user.
    *
@@ -7083,6 +7063,12 @@ class AgoraRtcEngine extends EventEmitter {
       uid,
       spatial_audio_params
     );
+  }
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number {
+    return this.rtcEngine.sendStreamMessageWithArrayBuffer(streamId, buffer);
   }
 }
 /** The AgoraRtcEngine interface. */
@@ -8516,21 +8502,19 @@ declare interface AgoraRtcEngine {
     ) => void
   ): this;
 
-// Hide in 3.7.0
+/**  Hide in 3.7.0 */
 //  on(
 //    evt: 'wlAccMessage',
 //    cb: (reason: WLACC_MESSAGE_REASON, action: WLACC_SUGGEST_ACTION, wlAccMsg: string) => void
 //  ): this;
 //
-//
+/**  Hide in 3.7.0 */
 //  on(
 //    evt: 'wlAccStats',
 //    cb: (currentStats: WlAccStats, averageStats: WlAccStats) => void
 //  ): this;
 
- /**
-  * Reports result of Content Inspect
-  */
+/**  Hide in 3.7.0 */
 //  on(
 //    evt: 'contentInspectResult',
 //    cb: (result: CONTENT_INSPECT_RESULT) => void
@@ -10037,6 +10021,12 @@ class AgoraRtcChannel extends EventEmitter {
    */
   muteLocalVideoStream(mute: boolean): number {
     return this.rtcChannel.muteLocalVideoStream(mute);
+  }
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number {
+    return this.rtcChannel.sendStreamMessageWithArrayBuffer(streamId, buffer);
   }
 }
 
