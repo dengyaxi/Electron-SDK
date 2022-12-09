@@ -213,6 +213,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#sendcustomreportmessage" class="tsd-kind-icon">send<wbr>Custom<wbr>Report<wbr>Message</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#sendmetadata" class="tsd-kind-icon">send<wbr>Metadata</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#sendstreammessage" class="tsd-kind-icon">send<wbr>Stream<wbr>Message</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#sendstreammessagewitharraybuffer" class="tsd-kind-icon">send<wbr>Stream<wbr>Message<wbr>With<wbr>Array<wbr>Buffer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#setavsyncsource" class="tsd-kind-icon">setAVSync<wbr>Source</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#setaddonlogfile" class="tsd-kind-icon">set<wbr>Addon<wbr>Log<wbr>File</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="agorartcengine.html#setaudioeffectparameters" class="tsd-kind-icon">set<wbr>Audio<wbr>Effect<wbr>Parameters</a></li>
@@ -4761,7 +4762,7 @@
 																<ul>
 																	<li>macOS：<ul>
 																			<li>0: 设备就绪</li>
-																			<li>8: 设备被拔出</li>
+																			<li>1: 设备被拔出</li>
 																		</ul>
 																	</li>
 																	<li>Windows：<ul>
@@ -5364,10 +5365,10 @@
 															<div class="tsd-comment tsd-typography">
 																<p>离线原因</p>
 																<ul>
-																	<li>用户主动离开</li>
-																	<li>因过长时间收不到对方数据包，超时掉线。注意：由于 SDK 使用的是不可靠通道，也有可能对方
+																	<li>0：用户主动离开</li>
+																	<li>1：因过长时间收不到对方数据包，超时掉线。注意：由于 SDK 使用的是不可靠通道，也有可能对方
 																	主动离开本方没收到对方离开消息而误判为超时掉线</li>
-																	<li>（直播场景下）用户身份从主播切换为观众</li>
+																	<li>2：（直播场景下）用户身份从主播切换为观众</li>
 																</ul>
 															</div>
 														</li>
@@ -9348,6 +9349,27 @@
 								<li>0：方法调用成功</li>
 								<li>&lt; 0：方法调用失败</li>
 							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sendstreammessagewitharraybuffer" class="tsd-anchor"></a>
+					<h3>send<wbr>Stream<wbr>Message<wbr>With<wbr>Array<wbr>Buffer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>Stream<wbr>Message<wbr>With<wbr>Array<wbr>Buffer<span class="tsd-signature-symbol">(</span>streamId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, buffer<span class="tsd-signature-symbol">: </span><a href="../globals.html#uint8arraybuffer" class="tsd-signature-type">UInt8ArrayBuffer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>streamId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>buffer: <a href="../globals.html#uint8arraybuffer" class="tsd-signature-type">UInt8ArrayBuffer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -15406,6 +15428,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="agorartcengine.html#sendstreammessage" class="tsd-kind-icon">send<wbr>Stream<wbr>Message</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="agorartcengine.html#sendstreammessagewitharraybuffer" class="tsd-kind-icon">send<wbr>Stream<wbr>Message<wbr>With<wbr>Array<wbr>Buffer</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="agorartcengine.html#setavsyncsource" class="tsd-kind-icon">setAVSync<wbr>Source</a>
