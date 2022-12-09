@@ -88,6 +88,7 @@ import {
   AUDIO_RECORDING_QUALITY_TYPE,
   AUDIO_RECORDING_POSITION,
   SpatialAudioParams,
+  UInt8ArrayBuffer,
 } from './native_type';
 import { EventEmitter } from 'events';
 import { deprecate, config, Config } from '../Utils';
@@ -10554,6 +10555,9 @@ class AgoraRtcEngine extends EventEmitter {
   setScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number {
     return this.rtcEngine.setScreenCaptureScenario(screenScenario);
   }
+  // videoSourceSetScreenCaptureScenario(screenScenario: SCREEN_SCENARIO_TYPE): number {
+  //   return this.rtcEngine.videoSourceSetScreenCaptureScenario(screenScenario);
+  // }
 
   /** @zh-cn
    * 开启本地语音音调回调。
@@ -10679,6 +10683,12 @@ class AgoraRtcEngine extends EventEmitter {
       uid,
       spatial_audio_params
     );
+  }
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number {
+    return this.rtcEngine.sendStreamMessageWithArrayBuffer(streamId, buffer);
   }
 }
 /** The AgoraRtcEngine interface. */
@@ -11157,7 +11167,7 @@ on(
    * @param cb.deviceState 设备状态：
    * - macOS：
    *  - 0: 设备就绪
-   *  - 8: 设备被拔出
+   *  - 1: 设备被拔出
    * - Windows：
    *  - 0：设备就绪
    *  - 1：设备正在使用
@@ -11511,10 +11521,10 @@ on(
    * @param cb.uid 主播 ID
    *
    * @param cb.reason 离线原因
-   *  - 用户主动离开
-   *  - 因过长时间收不到对方数据包，超时掉线。注意：由于 SDK 使用的是不可靠通道，也有可能对方
+   *  - 0：用户主动离开
+   *  - 1：因过长时间收不到对方数据包，超时掉线。注意：由于 SDK 使用的是不可靠通道，也有可能对方
    * 主动离开本方没收到对方离开消息而误判为超时掉线
-   *  - （直播场景下）用户身份从主播切换为观众
+   *  - 2：（直播场景下）用户身份从主播切换为观众
    *
    */
   /** Occurs when a remote user (Communication)/host (Live streaming) leaves
@@ -13201,6 +13211,7 @@ on(
    * @param cb.result 鉴黄结果。详见 {@link CONTENT_INSPECT_RESULT} 。
    */
  /**
+  * Hide in 3.7.0
   * Reports result of Content Inspect
   */
 //  on(
@@ -15471,6 +15482,12 @@ class AgoraRtcChannel extends EventEmitter {
    */
   muteLocalVideoStream(mute: boolean): number {
     return this.rtcChannel.muteLocalVideoStream(mute);
+  }
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number {
+    return this.rtcChannel.sendStreamMessageWithArrayBuffer(streamId, buffer);
   }
 }
 

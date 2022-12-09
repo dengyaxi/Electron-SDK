@@ -1,5 +1,7 @@
 import { PluginInfo } from './plugin';
 
+export type UInt8ArrayBuffer = ArrayBufferLike;
+
 export interface RendererOptions {
   append: boolean;
 }
@@ -2146,12 +2148,12 @@ export type CaptureRect = Rectangle;
  */
 export interface CaptureParam {
   /** @zh-cn
-   * 屏幕共享区域的宽。
+   * 屏幕共享区域编码后的宽。
    */
   /** Width (pixels) of the video. */
   width: number; // Width (pixels) of the video
   /** @zh-cn
-   * 屏幕共享区域的高。
+   * 屏幕共享区域编码后的高。
    */
   /** Height (pixels) of the video. */
   height: number; // Height (pixels) of the video
@@ -5636,14 +5638,14 @@ export enum BACKGROUND_SOURCE_TYPE {
    */
   BACKGROUND_COLOR = 1,
   /** @zh-cn
-   * 背景图为 PNG、JPG 格式的图片。
+   * 2：背景图为 PNG、JPG 格式的图片。
    */
   /**
    * The background image is a file in PNG or JPG format.
    */
   BACKGROUND_IMG,
   /** @zh-cn
-   * 背景图为虚化处理后的背景图。
+   * 3：背景图为虚化处理后的背景图。
    *
    * @since v3.6.1.4
    */
@@ -5792,7 +5794,7 @@ export enum BACKGROUND_BLUR_DEGREE {
    */
   BLUR_DEGREE_LOW = 1,
   /** @zh-cn
-   * 自定义背景图的虚化程度为中。用户较难看清背景。
+   * 2：自定义背景图的虚化程度为中。用户较难看清背景。
    */
   /**
    * The degree of blurring applied to the custom background image is medium.
@@ -5800,7 +5802,7 @@ export enum BACKGROUND_BLUR_DEGREE {
    */
   BLUR_DEGREE_MEDIUM,
   /** @zh-cn
-   *（默认）自定义背景图的虚化程度为高。用户很难看清背景。
+   * 3：（默认）自定义背景图的虚化程度为高。用户很难看清背景。
    */
   /**
    * (Default) The degree of blurring applied to the custom background image is high.
@@ -5965,7 +5967,10 @@ export interface VirtualBackgroundSource {
   /** @zh-cn
    * @since v3.6.1.4
    *
-   * 自定义背景图的虚化程度。详见 BACKGROUND_BLUR_DEGREE
+   * 自定义背景图的虚化程度：
+   * - 1: 自定义背景图的虚化程度为低。用户差不多能看清背景。
+   * - 2：自定义背景图的虚化程度为中。用户较难看清背景。
+   * - 3：（默认）自定义背景图的虚化程度为高。用户很难看清背景。
    *
    * @note 该参数仅在自定义背景图类型为 `BACKGROUND_BLUR` 时生效。
    */
@@ -8016,6 +8021,10 @@ export interface NodeRtcEngine {
     uid: number,
     spatial_audio_params?: SpatialAudioParams
   ): number;
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number;
 }
 /** @zh-cn
  * @ignore
@@ -8351,6 +8360,10 @@ export interface NodeRtcChannel {
 
   muteLocalAudioStream(mute: boolean): number;
   muteLocalVideoStream(mute: boolean): number;
+  sendStreamMessageWithArrayBuffer(
+    streamId: number,
+    buffer: UInt8ArrayBuffer
+  ): number
 }
 /** @zh-cn
  * 用于旁路推流的输出音频的编解码规格，默认为 LC-AAC。
