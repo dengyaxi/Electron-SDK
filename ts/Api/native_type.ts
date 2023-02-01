@@ -3321,11 +3321,11 @@ export enum BACKGROUND_SOURCE_TYPE {
    */
   BACKGROUND_COLOR = 1,
   /**
-   * The background image is a file in PNG or JPG format.
+   * 2: The background image is a file in PNG or JPG format.
    */
   BACKGROUND_IMG,
   /**
-   * The background image is blurred.
+   * 3: The background image is blurred.
    *
    * @since v3.6.1.4
    */

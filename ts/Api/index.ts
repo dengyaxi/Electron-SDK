@@ -7351,7 +7351,7 @@ declare interface AgoraRtcEngine {
    * @param cb.deviceState The device state:
    * - macOS:
    *  - 0: The device is added.
-   *  - 1: The device is removed.
+   *  - 1: The device is unplugged.
    * - Windows:
    *  - 1: The device is idle.
    *  - 2: The device is disabled.
@@ -7548,12 +7548,12 @@ declare interface AgoraRtcEngine {
    * @param cb.uid ID of the user or host who leaves the channel or goes
    * offline.
    * @param cb.reason Reason why the user goes offline:
-   *  - The user left the current channel.
-   *  - The SDK timed out and the user dropped offline because no data packet
+   *  - 0: The user left the current channel.
+   *  - 1: The SDK timed out and the user dropped offline because no data packet
    * was received within a certain period of time. If a user quits the call
    * and the message is not passed to the SDK (due to an unreliable channel),
    * the SDK assumes the user dropped offline.
-   *  - (Live streaming only.) The client role switched from the host to the
+   *  - 2: (Live streaming only.) The client role switched from the host to the
    * audience.
    */
   on(evt: 'userOffline', cb: (uid: number, reason: number) => void): this;
@@ -10127,12 +10127,12 @@ declare interface AgoraRtcChannel {
    * @param cb.uid ID of the user or host who leaves the channel or goes
    * offline.
    * @param cb.reason Reason why the user goes offline:
-   *  - The user left the current channel.
-   *  - The SDK timed out and the user dropped offline because no data packet
+   *  - 0: The user left the current channel.
+   *  - 1: The SDK timed out and the user dropped offline because no data packet
    * was received within a certain period of time. If a user quits the call
    * and the message is not passed to the SDK (due to an unreliable channel),
    * the SDK assumes the user dropped offline.
-   *  - (Live streaming only.) The client role switched from the host to the
+   *  - 2: (Live streaming only.) The client role switched from the host to the
    * audience.
    */
   on(evt: 'userOffline', cb: (uid: number, reason: number) => void): this;
