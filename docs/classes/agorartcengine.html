@@ -557,7 +557,7 @@
 											<li>如果待添加的 PNG 图片的尺寸与你在本方法中设置的尺寸不一致，SDK 会对 PNG 图片进行缩放或裁剪，以与设置相符。</li>
 											<li>如果你已经使用 <a href="agorartcengine.html#startpreview">startPreview</a> 开启本地视频预览，那么本方法的 <code>visibleInPreview</code> 可设置水印在预览时是否可见。</li>
 											<li>如果你已设置本地视频为镜像模式，那么此处的本地水印也为镜像。为避免本地用户看本地视频时的水印也被镜像，
-											Agora 建议你不要对本地视频同时使用镜像和水印功能，请在应用层实现本地水印功能。</li>
+											建议你不要对本地视频同时使用镜像和水印功能，请在应用层实现本地水印功能。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -1167,7 +1167,7 @@
 									<dd><ul>
 											<li><p>该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 后仍然有效。</p>
 											</li>
-											<li><p>该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：</p>
+											<li><p>该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：</p>
 												<ul>
 													<li><a href="agorartcengine.html#enablelocalaudio">enableLocalAudio</a>：是否启动麦克风采集并创建本地音频流</li>
 													<li><a href="agorartcengine.html#mutelocalaudiostream">muteLocalAudioStream</a>：是否发布本地音频流</li>
@@ -1232,7 +1232,7 @@
 									<dd><ul>
 											<li><p>该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 后仍然有效。</p>
 											</li>
-											<li><p>该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制视频模块：</p>
+											<li><p>该方法重置整个引擎，响应速度较慢，因此声网建议使用如下方法来控制视频模块：</p>
 												<ul>
 													<li><a href="agorartcengine.html#enablelocalvideo">enableLocalVideo</a>：是否启动摄像头采集并创建本地视频流</li>
 													<li><a href="agorartcengine.html#mutelocalvideostream">muteLocalVideoStream</a>：是否发布本地视频流</li>
@@ -1269,7 +1269,7 @@
 									<dd><ul>
 											<li><p>该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 后仍然有效。</p>
 											</li>
-											<li><p>该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：</p>
+											<li><p>该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：</p>
 												<ul>
 													<li><a href="agorartcengine.html#enablelocalaudio">enableLocalAudio</a>：是否启动麦克风采集并创建本地音频流</li>
 													<li><a href="agorartcengine.html#mutelocalaudiostream">muteLocalAudioStream</a>：是否发布本地音频流</li>
@@ -1361,7 +1361,7 @@
 									<dt>note</dt>
 									<dd><p>调用该方法前，请确保满足以下要求：</p>
 										<ul>
-											<li><a href="https://docs.agora.io/cn/AgoraPlatform/ticket">提交工单</a>开通 Agora 视频截图上传服务。</li>
+											<li><a href="https://docs.agora.io/cn/AgoraPlatform/ticket">提交工单</a>开通声网视频截图上传服务。</li>
 											<li>已将如下动态库集成到项目中：<ul>
 													<li>Android：<code>libagora_ci_extension.so</code></li>
 													<li>iOS/macOS：<code>AgoraCIExtension.xcframework</code></li>
@@ -1428,7 +1428,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><ul>
-											<li>该方法需要动态加载动态库，所以 Agora 推荐在加入频道前调用该方法。</li>
+											<li>该方法需要动态加载动态库，所以推荐在加入频道前调用该方法。</li>
 											<li>该方法对人声的处理效果最佳，Agora 不推荐调用该方法处理含音乐的音频数据。</li>
 										</ul>
 									</dd>
@@ -1749,7 +1749,7 @@
 											<li>如果用户使用虚拟声卡，如 Soundflower，可以将虚拟声卡名称 <code>&quot;soundflower&quot;</code>
 												作为参数传入，SDK 会找到对应的虚拟声卡设备，并开始采集。<strong>Note</strong>: macOS 系统默认声卡
 												不支持采集功能，如需开启此功能需要 App 自己启用一个虚拟声卡，并将该虚拟声卡的名字
-											作为 <code>deviceName</code> 传入 SDK。 Agora 测试并推荐 soundflower 作为虚拟声卡。</li>
+											作为 <code>deviceName</code> 传入 SDK。声网测试并推荐 soundflower 作为虚拟声卡。</li>
 										</ul>
 									</div>
 								</li>
@@ -1839,7 +1839,7 @@
 									<dd><ul>
 											<li><p>该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 后仍然有效。</p>
 											</li>
-											<li><p>该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制视频模块：</p>
+											<li><p>该方法重置整个引擎，响应速度较慢，因此声网建议使用如下方法来控制视频模块：</p>
 												<ul>
 													<li><a href="agorartcengine.html#enablelocalvideo">enableLocalVideo</a>：是否启动摄像头采集并创建本地视频流</li>
 													<li><a href="agorartcengine.html#mutelocalvideostream">muteLocalVideoStream</a>：是否发布本地视频流</li>
@@ -1905,7 +1905,7 @@
 													<li>macOS 和 Windows：CPU 为 i5 及更好的设备</li>
 												</ul>
 											</li>
-											<li>Agora 建议你在满足如下条件的场景中使用该功能：<ul>
+											<li>建议你在满足如下条件的场景中使用该功能：<ul>
 													<li>使用高清摄像设备、摄像环境光照均匀。</li>
 													<li>摄像画面中，物件较少，用户的人像为半身人像且基本无遮挡，背景色较单一且与用户着装颜色不同。</li>
 												</ul>
@@ -1956,7 +1956,7 @@
 									<dt>deprecated</dt>
 									<dd><p>该方法已废弃。自 Native SDK v3.0.0 及之后，SDK 自动开启与 Web SDK 的互通，无需调用该方法开启。</p>
 										<p>打开与 Web SDK 的互通（仅在直播下适用）。</p>
-										<p>该方法打开或关闭与 Agora Web SDK 的互通。该方法仅在直播场景下适用，通信场景下默认互通是打开的。</p>
+										<p>该方法打开或关闭与 RTC Web SDK 的互通。该方法仅在直播场景下适用，通信场景下默认互通是打开的。</p>
 										<p>如果有用户通过 Web SDK 加入频道，请确保调用该方法，否则 Web 端用户看 Native 端的画面会是黑屏。</p>
 									</dd>
 								</dl>
@@ -1966,7 +1966,7 @@
 								<li>
 									<h5>enable: <span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>是否打开与 Agora Web SDK 的互通：</p>
+										<p>是否打开与 RTC Web SDK 的互通：</p>
 										<ul>
 											<li>true：打开互通</li>
 											<li>false：关闭互通（默认）</li>
@@ -2005,7 +2005,7 @@
 											<li>Wi-Fi 加速功能默认开启，但必须与集成加速插件的路由器配合使用才能生效，详见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/faq/wifi_routers">哪些 Wi-Fi 路由器可支持加速功能</a>。如果 Wi-Fi 路由器不支持加速功能，系统性能不会受损。</li>
 											<li>加速功能生效后，路由器的 app 会显示加速效果和被加速 app 的名称。如果你不想在路由器的 app 中展示被加速 app 的名称，请调用 <code>enableWirelessAccelerate(false)</code> 关闭加速功能。</li>
 											<li>请在加入频道前或离开频道后调用该方法。</li>
-											<li>Agora 提供的 Wi-Fi 加速功能除应用于音视频流，还可以应用于其他第三方业务流，如私有信令、课件、RTMP 协议等。如有需要，请联系 <a href="mailto:sales@agora.io">sales@agora.io</a>。</li>
+											<li>声网提供的 Wi-Fi 加速功能除应用于音视频流，还可以应用于其他第三方业务流，如私有信令、课件、RTMP 协议等。如有需要，请联系 <a href="mailto:sales@agora.io">sales@agora.io</a>。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -2130,7 +2130,7 @@
 									<dt>note</dt>
 									<dd><ul>
 											<li>该方法需要在加入频道后调用。</li>
-											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">Agora RTC SDK 支持播放哪些格式的音频文件</a>。</li>
+											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">声网 RTC SDK 支持播放哪些格式的音频文件</a>。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -2409,7 +2409,7 @@
 											<li>你需要在调用 <a href="agorartcengine.html#startaudiomixing">startAudioMixing</a> 并
 											收到 <code>audioMixingStateChanged (710)</code> 回调后调用该方法。</li>
 											<li>该方法仅适用于 Android、iOS 和 Windows。</li>
-											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">Agora RTC SDK 支持播放哪些格式的音频文件</a>。</li>
+											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">声网 RTC SDK 支持播放哪些格式的音频文件</a>。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -3134,20 +3134,20 @@
 								<li>
 									<h5>appid: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Agora 为 App 开发者签发的 App ID，每个项目都应该有一个独一无二的 App ID</p>
+										<p>声网为 App 开发者签发的 App ID，每个项目都应该有一个独一无二的 App ID</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> areaCode: <a href="../globals.html#area_code" class="tsd-signature-type">AREA_CODE</a><span class="tsd-signature-symbol"> =&nbsp;4294967295</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>服务器的访问区域。该功能为高级设置，适用于有访问安全限制的场景。支持的区域详见 <a href="../globals.html#area_code">AREA_CODE</a>
-										指定访问区域后，Agora SDK 会连接指定区域内的 Agora 服务器。注解：仅支持指定单个访问区域。</p>
+										指定访问区域后，SDK 会连接指定区域内的声网服务器。注解：仅支持指定单个访问区域。</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> logConfig: <a href="../interfaces/logconfig.html" class="tsd-signature-type">LogConfig</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Agora SDK 日志文件配置。默认情况下，SDK 会生成 <code>agorasdk.log</code>、<code>agorasdk_1.log</code>、<code>agorasdk_2.log</code>、<code>agorasdk_3.log</code>、<code>agorasdk_4.log</code> 这 5 个日志文件。
+										<p>SDK 日志文件配置。默认情况下，SDK 会生成 <code>agorasdk.log</code>、<code>agorasdk_1.log</code>、<code>agorasdk_2.log</code>、<code>agorasdk_3.log</code>、<code>agorasdk_4.log</code> 这 5 个日志文件。
 											每个文件的默认大小为 1024 KB。日志文件为 UTF-8 编码。最新的日志永远写在 <code>agorasdk.log</code> 中。<code>agorasdk.log</code> 写满后，SDK 会从 1-4
 										中删除修改时间最早的一个文件，然后将 <code>agorasdk.log</code> 重命名为该文件，并建立新的 <code>agorasdk.log</code> 写入最新的日志。</p>
 									</div>
@@ -3177,7 +3177,7 @@
 								如果已在通话中，用户必须调用 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 退出当前通话，才能进入下一个频道。</p>
 								<p>成功调用该方法加入频道后，本地会触发 <code>joinedChannel</code> 回调；
 								通信场景下的用户和直播场景下的主播加入频道后，远端会触发 <code>userJoined</code> 回调。</p>
-								<p>在网络状况不理想的情况下，客户端可能会与 Agora 的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 <code>rejoinedChannel</code> 回调。</p>
+								<p>在网络状况不理想的情况下，客户端可能会与声网的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 <code>rejoinedChannel</code> 回调。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><p>请确保用于生成 Token 的 App ID 和调用 <a href="agorartcengine.html#initialize">initialize</a> 时传入的 App ID 一致。</p>
@@ -3267,7 +3267,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><p>为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。
-										如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
+										如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
 									</dd>
 								</dl>
 							</div>
@@ -4792,7 +4792,7 @@
 								<div class="lead">
 									<p>通话中每个用户的网络上下行 last mile 质量报告回调。</p>
 								</div>
-								<p>该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。</p>
+								<p>该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到声网边缘服务器的网络状态。</p>
 								<p>该回调每 2 秒触发一次。如果远端有多个用户，该回调每 2 秒会被触发多次。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -4846,7 +4846,7 @@
 								<div class="lead">
 									<p>通话前网络上下行 last mile 质量报告回调。</p>
 								</div>
-								<p>该回调描述本地用户在加入频道前的 last mile 网络探测的结果，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。</p>
+								<p>该回调描述本地用户在加入频道前的 last mile 网络探测的结果，其中 last mile 是指设备到声网边缘服务器的网络状态。</p>
 								<p>在调用 <a href="agorartcengine.html#enablelastmiletest">enableLastmileTest</a> 之后，该回调函数每 2 秒触发一次。如果远端有多个用户/主播，该回调每 2 秒会被触发多次。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -5500,7 +5500,7 @@
 										<p>该回调是由远端用户调用 <a href="agorartcengine.html#enablevideo">enableVideo</a> 或 <a href="agorartcengine.html#disablevideo">disableVideo</a> 方法开启或关闭视频模块触发的。</p>
 									</dd>
 									<dt>note</dt>
-									<dd><p>Agora 视频模块指视频处理过程，而不是 SDK 中的模块实物。发送视频流时，视频模块指视频采集、前处理、编码等处理过程；接收视频流时，视频模块指视频解码、后处理、渲染/播放等处理过程。</p>
+									<dd><p>声网视频模块指视频处理过程，而不是 SDK 中的模块实物。发送视频流时，视频模块指视频采集、前处理、编码等处理过程；接收视频流时，视频模块指视频解码、后处理、渲染/播放等处理过程。</p>
 									</dd>
 								</dl>
 							</div>
@@ -6908,7 +6908,7 @@
 																<p>推流状态：</p>
 																<ul>
 																	<li><code>0</code>: 推流未开始或已结束。成功调用 <a href="agorartcengine.html#removepublishstreamurl">removePublishStreamUrl</a> 后会返回该状态。</li>
-																	<li><code>1</code>: 正在连接 Agora 推流服务器和 RTMP 服务器。调用 <a href="agorartcengine.html#addpublishstreamurl">addPublishStreamUrl</a>
+																	<li><code>1</code>: 正在连接声网推流服务器和 RTMP 服务器。调用 <a href="agorartcengine.html#addpublishstreamurl">addPublishStreamUrl</a>
 																	后会返回该状态。</li>
 																	<li><code>2</code>: 推流正在进行。成功推流后，会返回该状态。</li>
 																	<li><code>3</code>: 正在恢复推流。当 CDN 出现异常，或推流短暂中断时，SDK 会自动尝试恢复推流，并返回该状态。<ul>
@@ -6918,7 +6918,7 @@
 																		</ul>
 																	</li>
 																	<li><code>4</code>: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用 <a href="agorartcengine.html#addpublishstreamurl">addPublishStreamUrl</a> 重新尝试推流。</li>
-																	<li><code>5</code>: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
+																	<li><code>5</code>: SDK 正在与声网推流服务器和 CDN 服务器断开连接。
 																	当你调用 <code>remove</code> 或 <code>stop</code> 方法正常结束推流时，SDK 会依次报告推流状态为 <code>DISCONNECTING</code>、<code>IDLE</code>。</li>
 																</ul>
 															</div>
@@ -6942,7 +6942,7 @@
 																	<li><code>11</code>: 用户角色不是主播，该用户无法使用推流功能。请检查你的应用代码逻辑。</li>
 																	<li><code>13</code>: 非转码推流情况下，调用了 <code>updateRtmpTranscoding</code> 或 <code>setLiveTranscoding</code> 方法更新转码属性。请检查你的应用代码逻辑。</li>
 																	<li><code>14</code>: 主播的网络出错。</li>
-																	<li><code>15</code>: 你的 App ID 没有使用 Agora 推流服务的权限。请参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>开启推流服务。</li>
+																	<li><code>15</code>: 你的 App ID 没有使用声网推流服务的权限。请参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>开启推流服务。</li>
 																	<li><code>100</code>: 推流已正常结束。当你调用 <a href="agorartcengine.html#removepublishstreamurl">removePublishStreamUrl</a> 结束推流后，SDK 会返回该值。</li>
 																</ul>
 															</div>
@@ -8253,7 +8253,7 @@
 										<p>调用 <a href="agorartcengine.html#enablewirelessaccelerate">enableWirelessAccelerate</a> (true) 开启 Wi-Fi 加速功能后，当 Wi-Fi 连接质量不佳时，SDK 会触发该回调，报告 Wi-Fi 连接质量不佳的原因和改善 Wi-Fi 连接的操作建议。</p>
 									</dd>
 									<dt>note</dt>
-									<dd><p>Agora 强烈建议你在 app 中展示将该回调报告的 <code>action</code> 和 <code>wlAccMsg</code>，提示用户采取网络优化措施，以获得更好的音视频体验。</p>
+									<dd><p>声网强烈建议你在 app 中展示将该回调报告的 <code>action</code> 和 <code>wlAccMsg</code>，提示用户采取网络优化措施，以获得更好的音视频体验。</p>
 									</dd>
 								</dl>
 							</div>
@@ -8828,7 +8828,7 @@
 									<li>直接调用 <a href="agorartcengine.html#joinchannelwithuseraccount">joinChannelWithUserAccount</a> 方法加入频道。</li>
 								</ul>
 								<p>两种方式的区别在于，提前调用 <a href="agorartcengine.html#registerlocaluseraccount">registerLocalUserAccount</a>，可以缩短使用 <a href="agorartcengine.html#joinchannelwithuseraccount">joinChannelWithUserAccount</a> 进入频道的时间。</p>
-								<p>为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
+								<p>为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><ul>
@@ -8843,7 +8843,7 @@
 								<li>
 									<h5>appId: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>你的项目在 Agora Console 注册的 App ID</p>
+										<p>你的项目在声网控制台注册的 App ID</p>
 									</div>
 								</li>
 								<li>
@@ -9206,7 +9206,7 @@
 											<li>你需要在调用 <a href="agorartcengine.html#startaudiomixing">startAudioMixing</a> 并
 											收到 <code>audioMixingStateChanged (710)</code> 回调后调用该方法。</li>
 											<li>该方法仅适用于 Android、iOS 和 Windows。</li>
-											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">Agora RTC SDK 支持播放哪些格式的音频文件</a>。</li>
+											<li>该方法支持的音频文件格式见 <a href="https://docs.agora.io/cn/faq/audio_format">声网 RTC SDK 支持播放哪些格式的音频文件</a>。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -9472,7 +9472,7 @@
 												</ul>
 											</li>
 											<li>电音音效：PITCH_CORRECTION。为获取更好的人声效果，
-											Agora 建议你在使用该枚举前将 <a href="agorartcengine.html#setaudioprofile">setAudioProfile</a> 的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
+											建议你在使用该枚举前将 <a href="agorartcengine.html#setaudioprofile">setAudioProfile</a> 的 <code>profile</code> 参数设置为 <code>4</code> 或 <code>5</code>。</li>
 										</ul>
 									</div>
 								</li>
@@ -10110,7 +10110,7 @@
 								<div class="lead">
 									<p>设置频道场景。</p>
 								</div>
-								<p>Agora 会根据你的 app 使用场景进行不同的优化。</p>
+								<p>声网会根据你的 app 使用场景进行不同的优化。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><ul>
@@ -10247,7 +10247,7 @@
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>设置 Agora 云代理服务。</p>
+									<p>设置声网云代理服务。</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
@@ -10259,7 +10259,7 @@
 									</dd>
 									<dt>note</dt>
 									<dd><ul>
-											<li>Agora 推荐你在频道外调用该方法。</li>
+											<li>推荐你在频道外调用该方法。</li>
 											<li>使用 UDP 协议的云代理时，旁路推流 和跨频道媒体流转发功能不可用。</li>
 										</ul>
 									</dd>
@@ -10558,7 +10558,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>depercated</dt>
 									<dd><p>该方法自 v3.2.0 起废弃。请改用 <a href="agorartcengine.html#enableencryption">enableEncryption</a> 方法。</p>
-										<p>Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
+										<p>RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
 										<p>同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。</p>
 									</dd>
 									<dt>note</dt>
@@ -10912,7 +10912,7 @@
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
-									<dd><p>Agora SDK 提供一个使用更为简便的接口 <a href="agorartcengine.html#setlocalvoicereverbpreset">setLocalVoiceReverbPreset</a>，该
+									<dd><p>SDK 提供一个使用更为简便的接口 <a href="agorartcengine.html#setlocalvoicereverbpreset">setLocalVoiceReverbPreset</a>，该
 										方法通过一系列内置参数的调整，直接实现流行、R&amp;B、摇滚、嘻哈等预置的混响效果。</p>
 									</dd>
 								</dl>
@@ -11035,7 +11035,7 @@
 						<li class="tsd-description">
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>设置 Agora SDK 输出的单个日志文件大小。</p>
+									<p>设置 SDK 输出的单个日志文件大小。</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
@@ -11396,7 +11396,7 @@
 									<dt>note</dt>
 									<dd><ul>
 											<li>该方法仅适用于直播场景。</li>
-											<li>目前 Agora SDK 仅允许将<strong>一名</strong>远端用户设为高优先级。</li>
+											<li>目前 SDK 仅允许将<strong>一名</strong>远端用户设为高优先级。</li>
 										</ul>
 									</dd>
 								</dl>
@@ -11587,7 +11587,7 @@
 								<div class="lead">
 									<p>设置屏幕共享内容类型。</p>
 								</div>
-								<p>设置屏幕共享的内容类型。Agora SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
+								<p>设置屏幕共享的内容类型。SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
 								如果不调用该方法，SDK 会将屏幕共享的内容默认为 CONTENT_HINT_NONE ，即无指定的内容类型。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -11747,7 +11747,7 @@
 									<p>设置视频编码属性。</p>
 								</div>
 								<p>该方法设置视频编码属性。每个属性对应一套视频参数，如分辨率、帧率、码率、视频方向等。 所有设置的参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。</p>
-								<p>如果用户加入频道后不需要重新设置视频编码属性，则 Agora 建议在 <a href="agorartcengine.html#enablevideo">enableVideo</a> 前调用该方法，可以加快首帧出图的时间。</p>
+								<p>如果用户加入频道后不需要重新设置视频编码属性，则声网建议在 <a href="agorartcengine.html#enablevideo">enableVideo</a> 前调用该方法，可以加快首帧出图的时间。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -11780,7 +11780,7 @@
 									<dd><p>该方法已废弃。请改用 <a href="agorartcengine.html#setvideoencoderconfiguration">setVideoEncoderConfiguration</a></p>
 										<p>设置视频属性。</p>
 										<p>每个属性对应一套视频参数，如分辨率、帧率、码率等。 当设备的摄像头不支持指定的分辨率时，
-										Agora SDK 会自动选择一个合适的摄像头分辨率，但是编码分辨率仍然用 <code>setVideoProfile</code> 指定的。</p>
+										SDK 会自动选择一个合适的摄像头分辨率，但是编码分辨率仍然用 <code>setVideoProfile</code> 指定的。</p>
 									</dd>
 								</dl>
 							</div>
@@ -12474,7 +12474,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
 									<dd><p>自 v3.4.2 废弃。请改用 <a href="agorartcengine.html#startaudiorecordingwithconfig">startAudioRecordingWithConfig</a> 方法。</p>
-										<p>Agora SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内所有用户的音频，
+										<p>SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内所有用户的音频，
 										并得到一个包含所有用户声音的录音文件。录音文件格式可以为:</p>
 										<ul>
 											<li>.wav: 文件大，音质保真度较高。</li>
@@ -12567,7 +12567,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>since</dt>
 									<dd><p>v3.4.2</p>
-										<p>Agora SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内用户的音频，并得到一个录音文件。录音文件格式可以为:</p>
+										<p>SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内用户的音频，并得到一个录音文件。录音文件格式可以为:</p>
 										<ul>
 											<li>WAV：音质保真度较高，文件较大。例如，采样率为 32000 Hz，录音时长为 10 分钟的文件大小约为 73 M。</li>
 											<li>AAC：音质保真度较低，文件较小。例如，采样率为 32000 Hz，录音音质为 <a href="../enums/audio_recording_quality_type.html#audio_recording_quality_medium">AUDIO_RECORDING_QUALITY_MEDIUM</a>，录音时长为 10 分钟的文件大小约为 2 M。</li>
@@ -14105,7 +14105,7 @@
 									<dd><ul>
 											<li><p>该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 <a href="agorartcengine.html#leavechannel">leaveChannel</a> 后仍然有效。</p>
 											</li>
-											<li><p>该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：</p>
+											<li><p>该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：</p>
 												<ul>
 													<li><a href="agorartcengine.html#enablelocalaudio">enableLocalAudio</a>：是否启动麦克风采集并创建本地音频流</li>
 													<li><a href="agorartcengine.html#mutelocalaudiostream">muteLocalAudioStream</a>：是否发布本地音频流</li>
@@ -14213,7 +14213,7 @@
 											<li>如果用户使用虚拟声卡，如 Soundflower，可以将虚拟声卡名称 <code>&quot;soundflower&quot;</code>
 												作为参数传入，SDK 会找到对应的虚拟声卡设备，并开始采集。<strong>Note</strong>: macOS 系统默认声卡
 												不支持采集功能，如需开启此功能需要 App 自己启用一个虚拟声卡，并将该虚拟声卡的名字
-											作为 <code>deviceName</code> 传入 SDK。 Agora 测试并推荐 soundflower 作为虚拟声卡。</li>
+											作为 <code>deviceName</code> 传入 SDK。声网测试并推荐 soundflower 作为虚拟声卡。</li>
 										</ul>
 									</div>
 								</li>
@@ -14284,7 +14284,7 @@
 								<li>
 									<h5>appId: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>你在 Agora Console 创建项目的 APP ID</p>
+										<p>你在声网控制台创建项目的 APP ID</p>
 									</div>
 								</li>
 								<li>
@@ -14328,7 +14328,7 @@
 									<div class="tsd-comment tsd-typography">
 										<p>在 App 服务器端生成的用于鉴权的 Token：</p>
 										<ul>
-											<li>安全要求不高：你可以填入在 Agora Console 获取到的临时 Token。详见<a href="https://docs.agora.io/cn/Video/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">获取临时 Token</a></li>
+											<li>安全要求不高：你可以填入在声网控制台获取到的临时 Token。详见<a href="https://docs.agora.io/cn/Video/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">获取临时 Token</a></li>
 											<li>安全要求高：将值设为在 App 服务端生成的正式 Token。详见<a href="https://docs.agora.io/cn/Video/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E6%AD%A3%E5%BC%8F-token">获取 Token</a></li>
 										</ul>
 									</div>
@@ -14588,7 +14588,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
 									<dd><p>该方法自 v3.2.0 废弃，请改用 <a href="agorartcengine.html#videosourceenableencryption">videoSourceEnableEncryption</a>。</p>
-										<p>Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
+										<p>RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
 										<p>同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。</p>
 									</dd>
 									<dt>note</dt>
@@ -14764,7 +14764,7 @@
 								<div class="lead">
 									<p>双实例方法：设置共享屏幕的内容类型。</p>
 								</div>
-								<p>Agora SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
+								<p>SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
 								如果不调用该方法，SDK 会将屏幕共享的内容默认为 <code>CONTENT_HINT_NONE (0)</code>，即无指定的内容类型。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>

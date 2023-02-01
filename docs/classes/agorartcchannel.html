@@ -527,7 +527,7 @@
 								如果已在通话中，用户必须调用 <a href="agorartcchannel.html#leavechannel">leaveChannel</a> 退出当前通话，才能进入下一个频道。</p>
 								<p>成功调用该方法加入频道后，本地会触发 <code>joinChannelSuccess</code> 回调；
 								通信场景下的用户和直播场景下的主播加入频道后，远端会触发 <code>userJoined</code> 回调。</p>
-								<p>在网络状况不理想的情况下，客户端可能会与 Agora 的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 <code>rejoinChannelSuccess</code> 回调。</p>
+								<p>在网络状况不理想的情况下，客户端可能会与声网的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 <code>rejoinChannelSuccess</code> 回调。</p>
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><p>请确保用于生成 Token 的 App ID 和调用 <a href="agorartcengine.html#initialize">initialize</a> 时传入的 App ID 一致。</p>
@@ -604,7 +604,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>note</dt>
 									<dd><p>为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。
-										如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
+										如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。</p>
 									</dd>
 								</dl>
 							</div>
@@ -1594,7 +1594,7 @@
 								<div class="lead">
 									<p>通话中每个用户的网络上下行 last mile 质量报告回调。</p>
 								</div>
-								<p>该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。</p>
+								<p>该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到声网边缘服务器的网络状态。</p>
 								<p>该回调每 2 秒触发一次。如果远端有多个用户，该回调每 2 秒会被触发多次。</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2384,7 +2384,7 @@
 																<p>推流状态：</p>
 																<ul>
 																	<li><code>0</code>: 推流未开始或已结束。成功调用 <a href="agorartcchannel.html#removepublishstreamurl">removePublishStreamUrl</a> 后会返回该状态。</li>
-																	<li><code>1</code>: 正在连接 Agora 推流服务器和 RTMP 服务器。调用 <a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a>
+																	<li><code>1</code>: 正在连接声网推流服务器和 RTMP 服务器。调用 <a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a>
 																	后会返回该状态。</li>
 																	<li><code>2</code>: 推流正在进行。成功推流后，会返回该状态。</li>
 																	<li><code>3</code>: 正在恢复推流。当 CDN 出现异常，或推流短暂中断时，SDK 会自动尝试恢复推流，并返回该状态。<ul>
@@ -2395,7 +2395,7 @@
 																	</li>
 																	<li><code>4</code>: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用
 																	<a href="agorartcchannel.html#addpublishstreamurl">addPublishStreamUrl</a> 重新尝试推流。</li>
-																	<li><code>5</code>: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
+																	<li><code>5</code>: SDK 正在与声网推流服务器和 CDN 服务器断开连接。
 																	当你调用 <code>remove</code> 或 <code>stop</code> 方法正常结束推流时，SDK 会依次报告推流状态为 <code>DISCONNECTING</code>、<code>IDLE</code>。</li>
 																</ul>
 															</div>
@@ -2419,7 +2419,7 @@
 																	<li><code>11</code>: 用户角色不是主播，该用户无法使用推流功能。请检查你的应用代码逻辑。</li>
 																	<li><code>13</code>: 非转码推流情况下，调用了 <code>updateRtmpTranscoding</code> 或 <code>setLiveTranscoding</code> 方法更新转码属性。请检查你的应用代码逻辑。</li>
 																	<li><code>14</code>: 主播的网络出错。</li>
-																	<li><code>15</code>: 你的 App ID 没有使用 Agora 推流服务的权限。请参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>开启推流服务。</li>
+																	<li><code>15</code>: 你的 App ID 没有使用声网推流服务的权限。请参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6">前提条件</a>开启推流服务。</li>
 																</ul>
 															</div>
 														</li>
@@ -3312,7 +3312,7 @@
 								<dl class="tsd-comment-tags">
 									<dt>deprecated</dt>
 									<dd><p>该方法自 v3.2.0 废弃，请改用 <a href="agorartcchannel.html#enableencryption">enableEncryption</a>。
-										Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
+										RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。</p>
 										<p>同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。</p>
 									</dd>
 									<dt>note</dt>

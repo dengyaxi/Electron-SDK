@@ -1,4 +1,4 @@
-Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用 Node.js C++ 插件开发，是一个为 Electron 平台用户服务的开源 SDK。 通过声网全球部署的虚拟网络，提供可以灵活搭配的 API 组合，在各平台提供质量可靠的实时音视频通信。
+声网 RTC Electron SDK 基于 RTC SDK for macOS 和 RTC SDK for Windows，使用 Node.js C++ 插件开发，是一个为 Electron 平台用户服务的开源 SDK。 通过声网全球部署的虚拟网络，提供可以灵活搭配的 API 组合，在各平台提供质量可靠的实时音视频通信。
 
 * {@link AgoraRtcEngine} 类包含应用程序调用的主要方法。
 * {@link AgoraRtcEngine.on} 用于向应用程序发送事件回调通知。
@@ -368,7 +368,7 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 
 | 方法                                                         | 描述               |
 | ------------------------------------------------------------ | ------------------ |
-| {@link AgoraRtcEngine.setCloudProxy setCloudProxy} | 设置 Agora 云代理服务  |
+| {@link AgoraRtcEngine.setCloudProxy setCloudProxy} | 设置云代理服务  |
 | {@link AgoraRtcEngine.enableDeepLearningDenoise enableDeepLearningDenoise} | 开启/关闭 AI 降噪模式 |
 | {@link AgoraRtcEngine.sendCustomReportMessage sendCustomReportMessage}  | 自定义数据上报  |
 | {@link AgoraRtcEngine.getCallId getCallId}                   | 获取通话 ID        |
@@ -385,7 +385,7 @@ Agora Electron SDK 基于 Agora SDK for macOS 和 Agora SDK for Windows，使用
 
 ### 双实例方法
 
-Agora Electron SDK 提供双实例的实现方法。第二个实例用以屏幕共享。下表列出双实例独有的方法，其中屏幕共享相关方法详见[屏幕共享](#screen-share)。
+声网 RTC Electron SDKK 提供双实例的实现方法。第二个实例用以屏幕共享。下表列出双实例独有的方法，其中屏幕共享相关方法详见[屏幕共享](#screen-share)。
 
 | 方法                                                         | 描述                        |
 | ------------------------------------------------------------ | --------------------------- |
@@ -405,7 +405,7 @@ Agora Electron SDK 提供双实例的实现方法。第二个实例用以屏幕�
 
 ## 事件类
 
-Agora Electron SDK 通过 {@link AgoraRtcEngine.on} 方法监听上述方法触发的事件。
+声网 RTC Electron SDK 通过 {@link AgoraRtcEngine.on} 方法监听上述方法触发的事件。
 
 | 事件                             | 描述                                     |
 | -------------------------------- | ---------------------------------------- |
@@ -487,7 +487,7 @@ Agora Electron SDK 通过 {@link AgoraRtcEngine.on} 方法监听上述方法触�
 <a name = "warn"></a>
 ## 警告码
 
-警告代码意味着 Agora Electron SDK 遇到问题，但有可能恢复，警告代码仅起告知作用，一般情况下应用程序可以忽略警告代码。
+警告代码意味着声网 RTC Electron SDK 遇到问题，但有可能恢复，警告代码仅起告知作用，一般情况下应用程序可以忽略警告代码。
 
 | 警告码 | 描述                                                         |
 | ------ | ------------------------------------------------------------ |
@@ -531,7 +531,7 @@ Agora Electron SDK 通过 {@link AgoraRtcEngine.on} 方法监听上述方法触�
 <a name = "error"></a>
 ## 错误码
 
-错误代码意味着 Agora Electron SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
+错误代码意味着声网 RTC Electron SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
 
 | 错误码 | 描述                                                         |
 | ------ | ------------------------------------------------------------ |
@@ -559,7 +559,7 @@ Agora Electron SDK 通过 {@link AgoraRtcEngine.on} 方法监听上述方法触�
 | `-101`    | 不是有效的 App ID。<br/>请更换有效的 App ID 重新加入频道。   |
 | `-102`    | 不是有效的频道名。<br/>请更换有效的频道名重新加入频道。      |
 | `-103`    | 无法获取当前指定区域的服务器资源。请在调用 {@link AgoraRtcEngine.initialize initialize} 方法时尝试指定其他区域。       |
-| `-109`    | **DEPRECATED** 请改用 `ConnectionChangeReason` 中的 `9`。<br/>当前使用的 Token 过期，不再有效。一般有以下原因：<br/><li>Token 授权时间戳无效：Token 授权时间戳为 Token 生成时的时间戳，自 1970 年 1 月 1 日开始到当前时间的描述。授权该 Token 在生成后的 24 小时内可以访问 Agora 服务。如果 24 小时内没有访问，则该 Token 无法再使用。需要重新在服务端申请生成 Token。</li><li>Token 服务到期时间戳已过期：用户设置的服务到期时间戳小于当前时间戳，无法继续使用 Agora 服务（比如正在进行的通话会被强制终止）；设置服务到期时间并不意味着 Token 失效，而仅仅用于限制用户使用当前服务的时间。需要重新在服务端申请生成 Token。 </li> |
+| `-109`    | **DEPRECATED** 请改用 `ConnectionChangeReason` 中的 `9`。<br/>当前使用的 Token 过期，不再有效。一般有以下原因：<br/><li>Token 授权时间戳无效：Token 授权时间戳为 Token 生成时的时间戳，自 1970 年 1 月 1 日开始到当前时间的描述。授权该 Token 在生成后的 24 小时内可以访问声网服务。如果 24 小时内没有访问，则该 Token 无法再使用。需要重新在服务端申请生成 Token。</li><li>Token 服务到期时间戳已过期：用户设置的服务到期时间戳小于当前时间戳，无法继续使用声网服务（比如正在进行的通话会被强制终止）；设置服务到期时间并不意味着 Token 失效，而仅仅用于限制用户使用当前服务的时间。需要重新在服务端申请生成 Token。 </li> |
 | `-110`    | **DEPRECATED** 请改用 `ConnectionChangeReason` 中的 `8`。<br/>生成的 Token 无效，一般有以下原因：<br/><li>用户在 Console 上启用了 App Certificate，但仍旧在代码里仅使用了 App ID。当启用了 App Certificate，必须使用 Token。</li><li>字段 `uid` 为生成 Token 的必须字段，用户在调用 `joinChannel` 加入频道时必须设置相同的 `uid`。 </li> |
 | `-113`    | 用户不在频道内。<br/>调用 `sendStreamMessage`，当调用发生在频道外时，会发生该错误. |
 | `-114`    | 调用 `sendStreamMessage`，当发送的数据长度大于 1024 个字节时，会发生该错误。 |
