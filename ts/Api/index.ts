@@ -1363,10 +1363,10 @@ class AgoraRtcEngine extends EventEmitter {
 
   /** @zh-cn
    * 初始化一个 `AgoraRtcEngine` 实例。
-   * @param {string} appid Agora 为 App 开发者签发的 App ID，每个项目都应该有一个独一无二的 App ID
+   * @param {string} appid 声网为 App 开发者签发的 App ID，每个项目都应该有一个独一无二的 App ID
    * @param areaCode 服务器的访问区域。该功能为高级设置，适用于有访问安全限制的场景。支持的区域详见 {@link AREA_CODE}
-   * 指定访问区域后，Agora SDK 会连接指定区域内的 Agora 服务器。注解：仅支持指定单个访问区域。
-   * @param logConfig Agora SDK 日志文件配置。默认情况下，SDK 会生成 `agorasdk.log`、`agorasdk_1.log`、`agorasdk_2.log`、`agorasdk_3.log`、`agorasdk_4.log` 这 5 个日志文件。
+   * 指定访问区域后，SDK 会连接指定区域内的声网服务器。注解：仅支持指定单个访问区域。
+   * @param logConfig SDK 日志文件配置。默认情况下，SDK 会生成 `agorasdk.log`、`agorasdk_1.log`、`agorasdk_2.log`、`agorasdk_3.log`、`agorasdk_4.log` 这 5 个日志文件。
    * 每个文件的默认大小为 1024 KB。日志文件为 UTF-8 编码。最新的日志永远写在 `agorasdk.log` 中。`agorasdk.log` 写满后，SDK 会从 1-4
    * 中删除修改时间最早的一个文件，然后将 `agorasdk.log` 重命名为该文件，并建立新的 `agorasdk.log` 写入最新的日志。
    *
@@ -1521,7 +1521,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 通信场景下的用户和直播场景下的主播加入频道后，远端会触发 `userJoined` 回调。
    *
    *
-   * 在网络状况不理想的情况下，客户端可能会与 Agora 的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 `rejoinedChannel` 回调。
+   * 在网络状况不理想的情况下，客户端可能会与声网的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 `rejoinedChannel` 回调。
    *
    * @note 请确保用于生成 Token 的 App ID 和调用 {@link initialize} 时传入的 App ID 一致。
    *
@@ -2028,7 +2028,7 @@ class AgoraRtcEngine extends EventEmitter {
   /** @zh-cn
    * 设置频道场景。
    *
-   * Agora 会根据你的 app 使用场景进行不同的优化。
+   * 声网会根据你的 app 使用场景进行不同的优化。
    *
    * @note
    * - 该方法必须在 {@link joinChannel} 方法之前调用
@@ -2348,7 +2348,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 如果待添加的 PNG 图片的尺寸与你在本方法中设置的尺寸不一致，SDK 会对 PNG 图片进行缩放或裁剪，以与设置相符。
    * - 如果你已经使用 {@link startPreview} 开启本地视频预览，那么本方法的 `visibleInPreview` 可设置水印在预览时是否可见。
    * - 如果你已设置本地视频为镜像模式，那么此处的本地水印也为镜像。为避免本地用户看本地视频时的水印也被镜像，
-   * Agora 建议你不要对本地视频同时使用镜像和水印功能，请在应用层实现本地水印功能。
+   * 建议你不要对本地视频同时使用镜像和水印功能，请在应用层实现本地水印功能。
    * @param path 待添加的水印图片的本地路径。本方法支持从本地绝对/相对路径添加水印图片。
    * @param options 待添加的水印图片的设置选项，详见 {@link WatermarkOptions}
    *
@@ -2592,7 +2592,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 {@link leaveChannel} 后仍然有效。
-   * - 该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制视频模块：
+   * - 该方法重置整个引擎，响应速度较慢，因此声网建议使用如下方法来控制视频模块：
    *
    *   - {@link enableLocalVideo}：是否启动摄像头采集并创建本地视频流
    *   - {@link muteLocalVideoStream}：是否发布本地视频流
@@ -2651,7 +2651,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 {@link leaveChannel} 后仍然有效。
-   * - 该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制视频模块：
+   * - 该方法重置整个引擎，响应速度较慢，因此声网建议使用如下方法来控制视频模块：
    *
    *   - {@link enableLocalVideo}：是否启动摄像头采集并创建本地视频流
    *   - {@link muteLocalVideoStream}：是否发布本地视频流
@@ -2751,7 +2751,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 设置视频属性。
    *
    * 每个属性对应一套视频参数，如分辨率、帧率、码率等。 当设备的摄像头不支持指定的分辨率时，
-   * Agora SDK 会自动选择一个合适的摄像头分辨率，但是编码分辨率仍然用 `setVideoProfile` 指定的。
+   * SDK 会自动选择一个合适的摄像头分辨率，但是编码分辨率仍然用 `setVideoProfile` 指定的。
    *
    * @param {VIDEO_PROFILE_TYPE} profile 视频属性
    * @param {boolean} swapWidthAndHeight 是否交换宽高值：
@@ -2843,7 +2843,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * 该方法设置视频编码属性。每个属性对应一套视频参数，如分辨率、帧率、码率、视频方向等。 所有设置的参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
    *
-   * 如果用户加入频道后不需要重新设置视频编码属性，则 Agora 建议在 {@link enableVideo} 前调用该方法，可以加快首帧出图的时间。
+   * 如果用户加入频道后不需要重新设置视频编码属性，则声网建议在 {@link enableVideo} 前调用该方法，可以加快首帧出图的时间。
    *
    * @param {VideoEncoderConfiguration} config 视频编码属性
    * @returns {number}
@@ -2963,7 +2963,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法仅适用于直播场景。
-   * - 目前 Agora SDK 仅允许将**一名**远端用户设为高优先级。
+   * - 目前 SDK 仅允许将**一名**远端用户设为高优先级。
    *
    * @param {number} uid 远端用户的 ID
    * @param {Priority} priority 远端用户的需求优先级
@@ -2996,7 +2996,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 {@link leaveChannel} 后仍然有效。
-   * - 该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：
+   * - 该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：
    *
    *   - {@link enableLocalAudio}：是否启动麦克风采集并创建本地音频流
    *   - {@link muteLocalAudioStream}：是否发布本地音频流
@@ -3040,7 +3040,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 {@link leaveChannel} 后仍然有效。
-   * - 该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：
+   * - 该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：
    *
    *   - {@link enableLocalAudio}：是否启动麦克风采集并创建本地音频流
    *   - {@link muteLocalAudioStream}：是否发布本地音频流
@@ -3243,7 +3243,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @depercated 该方法自 v3.2.0 起废弃。请改用 {@link enableEncryption} 方法。
    *
-   * Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
+   * RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
    *
    * 同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。
    *
@@ -3906,7 +3906,7 @@ class AgoraRtcEngine extends EventEmitter {
   }
 
   /** @zh-cn
-   * 设置 Agora SDK 输出的单个日志文件大小。
+   * 设置 SDK 输出的单个日志文件大小。
    *
    * @deprecated 该方法从 v3.3.1 起废弃，请改用 {@link initialize} 中的 `logConfig`。
    *
@@ -4153,10 +4153,10 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * 打开与 Web SDK 的互通（仅在直播下适用）。
    *
-   * 该方法打开或关闭与 Agora Web SDK 的互通。该方法仅在直播场景下适用，通信场景下默认互通是打开的。
+   * 该方法打开或关闭与 RTC Web SDK 的互通。该方法仅在直播场景下适用，通信场景下默认互通是打开的。
    *
    * 如果有用户通过 Web SDK 加入频道，请确保调用该方法，否则 Web 端用户看 Native 端的画面会是黑屏。
-   * @param {boolean} enable 是否打开与 Agora Web SDK 的互通：
+   * @param {boolean} enable 是否打开与 RTC Web SDK 的互通：
    * - true：打开互通
    * - false：关闭互通（默认）
    * @returns {number}
@@ -4275,7 +4275,7 @@ class AgoraRtcEngine extends EventEmitter {
   /** @zh-cn
    * 设置本地音效混响。
    *
-   * @note Agora SDK 提供一个使用更为简便的接口 {@link setLocalVoiceReverbPreset}，该
+   * @note SDK 提供一个使用更为简便的接口 {@link setLocalVoiceReverbPreset}，该
    * 方法通过一系列内置参数的调整，直接实现流行、R&B、摇滚、嘻哈等预置的混响效果。
    * @param {number} reverbKey 混响音效类型。：
    * - `0`：原始声音强度 (dB)，即所谓的 dry signal，取值范围 [-20, 10]
@@ -4504,13 +4504,13 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * 两种方式的区别在于，提前调用 {@link registerLocalUserAccount}，可以缩短使用 {@link joinChannelWithUserAccount} 进入频道的时间。
    *
-   * 为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
+   * 为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
    *
    * @note
    * - 请确保 `userAccount` 不能为空，否则该方法不生效。
    * - 请确保在该方法中设置的 `userAccount` 在频道中的唯一性。
    *
-   * @param appId 你的项目在 Agora Console 注册的 App ID
+   * @param appId 你的项目在声网控制台注册的 App ID
    * @param userAccount 用户 User Account。该参数为必填，最大不超过 255 字节，不可填 null。请确保注册的 User Account 的唯一性。以下为支持的字符集范围（共 89 个字符）：
    * - 26 个小写英文字母 a-z
    * - 26 个大写英文字母 A-Z
@@ -4586,7 +4586,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 用户成功加入频道后，默认订阅频道内所有其他用户的音频流和视频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 `mute` 方法实现。
    *
    * @note 为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。
-   * 如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
+   * 如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
    *
    * @param token 在服务端生成的用于鉴权的 Token。详见[从服务端生成 Token](https://docs.agora.io/cn/Interactive%20Broadcast/token_server?platform=Electron)。
    * @param channelId 标识频道的频道名，最大不超过 64 字节。以下为支持的字符集范围（共 89 个字符）：
@@ -4999,7 +4999,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法需要在加入频道后调用。
-   * - 该方法支持的音频文件格式见 [Agora RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
+   * - 该方法支持的音频文件格式见 [声网 RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
    *
    * @param filePath 文件路径：
    * - Windows: 音频文件的绝对路径或 URL 地址，需精确到文件名及后缀。例如：C: `\music\audio.mp4`。
@@ -5529,7 +5529,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 如果用户使用虚拟声卡，如 Soundflower，可以将虚拟声卡名称 `"soundflower"`
    * 作为参数传入，SDK 会找到对应的虚拟声卡设备，并开始采集。**Note**: macOS 系统默认声卡
    * 不支持采集功能，如需开启此功能需要 App 自己启用一个虚拟声卡，并将该虚拟声卡的名字
-   * 作为 `deviceName` 传入 SDK。 Agora 测试并推荐 soundflower 作为虚拟声卡。
+   * 作为 `deviceName` 传入 SDK。声网测试并推荐 soundflower 作为虚拟声卡。
    * @returns {number}
    * - 0：方法调用成功
    * - < 0：方法调用失败
@@ -5567,7 +5567,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @deprecated 自 v3.4.2 废弃。请改用 {@link startAudioRecordingWithConfig} 方法。
    *
-   * Agora SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内所有用户的音频，
+   * SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内所有用户的音频，
    * 并得到一个包含所有用户声音的录音文件。录音文件格式可以为:
    * - .wav: 文件大，音质保真度较高。
    * - .aac: 文件小，音质保真度较低。
@@ -5805,7 +5805,7 @@ class AgoraRtcEngine extends EventEmitter {
   /** @zh-cn
    * 双实例方法：初始化 `videoSource` 对象
    *
-   * @param {string} appId 你在 Agora Console 创建项目的 APP ID
+   * @param {string} appId 你在声网控制台创建项目的 APP ID
    *
    * @returns {number}
    * - 0：方法调用成功
@@ -5893,7 +5893,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * 双实例方法：`videoSource` 加入频道。
    * @param {string} token 在 App 服务器端生成的用于鉴权的 Token：
-   * - 安全要求不高：你可以填入在 Agora Console 获取到的临时 Token。详见[获取临时 Token](https://docs.agora.io/cn/Video/token?platform=All%20Platforms#获取临时-token)
+   * - 安全要求不高：你可以填入在声网控制台获取到的临时 Token。详见[获取临时 Token](https://docs.agora.io/cn/Video/token?platform=All%20Platforms#获取临时-token)
    * - 安全要求高：将值设为在 App 服务端生成的正式 Token。详见[获取 Token](https://docs.agora.io/cn/Video/token?platform=All%20Platforms#获取正式-token)
    * @param {string} cname 标识频道的频道名，最大不超过 64 字节。以下为支持的字符集范围（共 89 个字符）：
    * - 26 个小写英文字母 a-z
@@ -6288,7 +6288,7 @@ class AgoraRtcEngine extends EventEmitter {
   /** @zh-cn
    * 设置屏幕共享内容类型。
    *
-   * 设置屏幕共享的内容类型。Agora SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
+   * 设置屏幕共享的内容类型。SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
    * 如果不调用该方法，SDK 会将屏幕共享的内容默认为 CONTENT_HINT_NONE ，即无指定的内容类型。
    * @param hint 指定屏幕共享的内容类型。详见 {@link VideoContentHint}
    *
@@ -6421,7 +6421,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 如果用户使用虚拟声卡，如 Soundflower，可以将虚拟声卡名称 `"soundflower"`
    * 作为参数传入，SDK 会找到对应的虚拟声卡设备，并开始采集。**Note**: macOS 系统默认声卡
    * 不支持采集功能，如需开启此功能需要 App 自己启用一个虚拟声卡，并将该虚拟声卡的名字
-   * 作为 `deviceName` 传入 SDK。 Agora 测试并推荐 soundflower 作为虚拟声卡。
+   * 作为 `deviceName` 传入 SDK。声网测试并推荐 soundflower 作为虚拟声卡。
    * @returns {number}
    * - 0：方法调用成功
    * - < 0：方法调用失败
@@ -6461,7 +6461,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @note
    * - 该方法设置的是内部引擎为开启状态，在频道内和频道外均可调用，且在 {@link leaveChannel} 后仍然有效。
-   * - 该方法重置整个引擎，响应速度较慢，因此 Agora 建议使用如下方法来控制音频模块：
+   * - 该方法重置整个引擎，响应速度较慢，因此建议使用如下方法来控制音频模块：
    *
    *   - {@link enableLocalAudio}：是否启动麦克风采集并创建本地音频流
    *   - {@link muteLocalAudioStream}：是否发布本地音频流
@@ -6562,7 +6562,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @deprecated 该方法自 v3.2.0 废弃，请改用 {@link videoSourceEnableEncryption}。
    *
-   * Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
+   * RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
    *
    * 同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。
    *
@@ -6780,7 +6780,7 @@ class AgoraRtcEngine extends EventEmitter {
   /** @zh-cn
    * 双实例方法：设置共享屏幕的内容类型。
    *
-   * Agora SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
+   * SDK 会根据不同的内容类型，使用不同的算法对共享效果进行优化。
    * 如果不调用该方法，SDK 会将屏幕共享的内容默认为 `CONTENT_HINT_NONE (0)`，即无指定的内容类型。
    *
    * @param {VideoContentHint} hint 共享屏幕的内容类型
@@ -9077,7 +9077,7 @@ class AgoraRtcEngine extends EventEmitter {
    *  - 你需要在使用该枚举前将 {@link setAudioProfile} 的 `profile` 参数设置 为 `3` 或 `5`，否则该枚举设置无效。
    *  - 启用 3D 人声后，用户需要使用支持双声道的音频播放设备才能听到预期效果。
    * - 电音音效：PITCH_CORRECTION。为获取更好的人声效果，
-   * Agora 建议你在使用该枚举前将 {@link setAudioProfile} 的 `profile` 参数设置为 `4` 或 `5`。
+   * 建议你在使用该枚举前将 {@link setAudioProfile} 的 `profile` 参数设置为 `4` 或 `5`。
    *
    * @param param1
    * - 如果 `preset` 设为 `ROOM_ACOUSTICS_3D_VOICE`，则 `param1` 表示 3D 人声音效的环绕周期。
@@ -9211,7 +9211,7 @@ class AgoraRtcEngine extends EventEmitter {
 
   // 3.3.0 apis
   /** @zh-cn
-   * 设置 Agora 云代理服务。
+   * 设置声网云代理服务。
    *
    * @since v3.3.1
    *
@@ -9223,7 +9223,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 请先调用 `setCloudProxy(0)`，再调用 `setCloudProxy` 并传入你期望的 `type` 值。
    *
    * @note
-   * - Agora 推荐你在频道外调用该方法。
+   * - 推荐你在频道外调用该方法。
    * - 使用 UDP 协议的云代理时，旁路推流 和跨频道媒体流转发功能不可用。
    *
    * @param type 云代理类型。该参数为必填参数，如果你不赋值，SDK 会报错。
@@ -9291,7 +9291,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 你需要先调用 {@link leaveChannel}，再调用 `enableDeepLearningDenoise(true)`。
    *
    * @note
-   * - 该方法需要动态加载动态库，所以 Agora 推荐在加入频道前调用该方法。
+   * - 该方法需要动态加载动态库，所以推荐在加入频道前调用该方法。
    * - 该方法对人声的处理效果最佳，Agora 不推荐调用该方法处理含音乐的音频数据。
    *
    * @param enable 是否开启 AI 降噪模式：
@@ -9520,7 +9520,7 @@ class AgoraRtcEngine extends EventEmitter {
    *
    * @since v3.4.2
    *
-   * Agora SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内用户的音频，并得到一个录音文件。录音文件格式可以为:
+   * SDK 支持通话过程中在客户端进行录音。调用该方法后，你可以录制频道内用户的音频，并得到一个录音文件。录音文件格式可以为:
    * - WAV：音质保真度较高，文件较大。例如，采样率为 32000 Hz，录音时长为 10 分钟的文件大小约为 73 M。
    * - AAC：音质保真度较低，文件较小。例如，采样率为 32000 Hz，录音音质为 {@link AUDIO_RECORDING_QUALITY_MEDIUM}，录音时长为 10 分钟的文件大小约为 2 M。
    *
@@ -9599,7 +9599,7 @@ class AgoraRtcEngine extends EventEmitter {
    *    - iPad Pro 第一代及以上
    *    - iPad mini 第五代及以上
    *  - macOS 和 Windows：CPU 为 i5 及更好的设备
-   * - Agora 建议你在满足如下条件的场景中使用该功能：
+   * - 建议你在满足如下条件的场景中使用该功能：
    *  - 使用高清摄像设备、摄像环境光照均匀。
    *  - 摄像画面中，物件较少，用户的人像为半身人像且基本无遮挡，背景色较单一且与用户着装颜色不同。
    * - 虚拟背景功能不支持 Texture 格式视频和来自 Push 自采集的视频。
@@ -9838,7 +9838,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 你需要在调用 {@link startAudioMixing} 并
    * 收到 `audioMixingStateChanged (710)` 回调后调用该方法。
    * - 该方法仅适用于 Android、iOS 和 Windows。
-   * - 该方法支持的音频文件格式见 [Agora RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
+   * - 该方法支持的音频文件格式见 [声网 RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
    *
    * @return
    * - ≥ 0: 方法调用成功，返回当前音乐文件的音轨索引。
@@ -9874,7 +9874,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - 你需要在调用 {@link startAudioMixing} 并
    * 收到 `audioMixingStateChanged (710)` 回调后调用该方法。
    * - 该方法仅适用于 Android、iOS 和 Windows。
-   * - 该方法支持的音频文件格式见 [Agora RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
+   * - 该方法支持的音频文件格式见 [声网 RTC SDK 支持播放哪些格式的音频文件](https://docs.agora.io/cn/faq/audio_format)。
    *
    * @param index 指定的播放音轨。该参数需小于或等于 \ref IRtcEngine::getAudioTrackCount "getAudioTrackCount" 的返回值。
    *
@@ -10609,7 +10609,7 @@ class AgoraRtcEngine extends EventEmitter {
    * - Wi-Fi 加速功能默认开启，但必须与集成加速插件的路由器配合使用才能生效，详见[哪些 Wi-Fi 路由器可支持加速功能](https://docs.agora.io/cn/Interactive%20Broadcast/faq/wifi_routers)。如果 Wi-Fi 路由器不支持加速功能，系统性能不会受损。
    * - 加速功能生效后，路由器的 app 会显示加速效果和被加速 app 的名称。如果你不想在路由器的 app 中展示被加速 app 的名称，请调用 `enableWirelessAccelerate(false)` 关闭加速功能。
    * - 请在加入频道前或离开频道后调用该方法。
-   * - Agora 提供的 Wi-Fi 加速功能除应用于音视频流，还可以应用于其他第三方业务流，如私有信令、课件、RTMP 协议等。如有需要，请联系 sales@agora.io。
+   * - 声网提供的 Wi-Fi 加速功能除应用于音视频流，还可以应用于其他第三方业务流，如私有信令、课件、RTMP 协议等。如有需要，请联系 sales@agora.io。
    *
    * @param enabled 设置是否开启 Wi-Fi 加速功能：
    * - true: 开启。
@@ -10647,7 +10647,7 @@ class AgoraRtcEngine extends EventEmitter {
    * 相比 {@link takeSnapshot} 方法，本方法可以按照你设置的截图频率进行周期性截图，并将截图发送至你指定的第三方云存储。
    *
    * @note 调用该方法前，请确保满足以下要求：
-   * - [提交工单](https://docs.agora.io/cn/AgoraPlatform/ticket)开通 Agora 视频截图上传服务。
+   * - [提交工单](https://docs.agora.io/cn/AgoraPlatform/ticket)开通声网视频截图上传服务。
    * - 已将如下动态库集成到项目中：
    *    - Android：`libagora_ci_extension.so`
    *    - iOS/macOS：`AgoraCIExtension.xcframework`
@@ -11199,7 +11199,7 @@ on(
   /** @zh-cn
    * 通话中每个用户的网络上下行 last mile 质量报告回调。
    *
-   * 该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。
+   * 该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到声网边缘服务器的网络状态。
    *
    * 该回调每 2 秒触发一次。如果远端有多个用户，该回调每 2 秒会被触发多次。
    *
@@ -11242,7 +11242,7 @@ on(
   /** @zh-cn
    * 通话前网络上下行 last mile 质量报告回调。
    *
-   * 该回调描述本地用户在加入频道前的 last mile 网络探测的结果，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。
+   * 该回调描述本地用户在加入频道前的 last mile 网络探测的结果，其中 last mile 是指设备到声网边缘服务器的网络状态。
    *
    * 在调用 {@link enableLastmileTest} 之后，该回调函数每 2 秒触发一次。如果远端有多个用户/主播，该回调每 2 秒会被触发多次。
    *
@@ -11620,7 +11620,7 @@ on(
    *
    * 该回调是由远端用户调用 {@link enableVideo} 或 {@link disableVideo} 方法开启或关闭视频模块触发的。
    *
-   * @note Agora 视频模块指视频处理过程，而不是 SDK 中的模块实物。发送视频流时，视频模块指视频采集、前处理、编码等处理过程；接收视频流时，视频模块指视频解码、后处理、渲染/播放等处理过程。
+   * @note 声网视频模块指视频处理过程，而不是 SDK 中的模块实物。发送视频流时，视频模块指视频采集、前处理、编码等处理过程；接收视频流时，视频模块指视频解码、后处理、渲染/播放等处理过程。
    *
    *
    * @param cb.uid 用户 ID
@@ -12311,7 +12311,7 @@ on(
    * @param cb.url 推流状态发生改变的 URL 地址
    * @param cb.state 推流状态：
    * - `0`: 推流未开始或已结束。成功调用 {@link removePublishStreamUrl} 后会返回该状态。
-   * - `1`: 正在连接 Agora 推流服务器和 RTMP 服务器。调用 {@link addPublishStreamUrl}
+   * - `1`: 正在连接声网推流服务器和 RTMP 服务器。调用 {@link addPublishStreamUrl}
    * 后会返回该状态。
    * - `2`: 推流正在进行。成功推流后，会返回该状态。
    * - `3`: 正在恢复推流。当 CDN 出现异常，或推流短暂中断时，SDK 会自动尝试恢复推流，并返回该状态。
@@ -12319,7 +12319,7 @@ on(
    *  - 如服务器出错或 60 秒内未成功恢复，则进入状态 `4`。如果觉得 60 秒太长，也可以主动调用
    * {@link addPublishStreamUrl}，再调用 {@link removePublishStreamUrl} 尝试重连。
    * - `4`: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用 {@link addPublishStreamUrl} 重新尝试推流。
-   * - `5`: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
+   * - `5`: SDK 正在与声网推流服务器和 CDN 服务器断开连接。
    * 当你调用 `remove` 或 `stop` 方法正常结束推流时，SDK 会依次报告推流状态为 `DISCONNECTING`、`IDLE`。
    * @param cb.code 推流错误码：
    * - `0`: 推流成功。
@@ -12336,7 +12336,7 @@ on(
    * - `11`: 用户角色不是主播，该用户无法使用推流功能。请检查你的应用代码逻辑。
    * - `13`: 非转码推流情况下，调用了 `updateRtmpTranscoding` 或 `setLiveTranscoding` 方法更新转码属性。请检查你的应用代码逻辑。
    * - `14`: 主播的网络出错。
-   * - `15`: 你的 App ID 没有使用 Agora 推流服务的权限。请参考[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)开启推流服务。
+   * - `15`: 你的 App ID 没有使用声网推流服务的权限。请参考[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)开启推流服务。
    * - `100`: 推流已正常结束。当你调用 {@link removePublishStreamUrl} 结束推流后，SDK 会返回该值。
    */
   /**
@@ -13169,7 +13169,7 @@ on(
    *
    * 调用 {@link enableWirelessAccelerate} (true) 开启 Wi-Fi 加速功能后，当 Wi-Fi 连接质量不佳时，SDK 会触发该回调，报告 Wi-Fi 连接质量不佳的原因和改善 Wi-Fi 连接的操作建议。
    *
-   * @note Agora 强烈建议你在 app 中展示将该回调报告的 `action` 和 `wlAccMsg`，提示用户采取网络优化措施，以获得更好的音视频体验。
+   * @note 声网强烈建议你在 app 中展示将该回调报告的 `action` 和 `wlAccMsg`，提示用户采取网络优化措施，以获得更好的音视频体验。
    *
    * @param cb.reason Wi-Fi 连接质量不佳的原因。详见 {@link WLACC_MESSAGE_REASON} 。
    * @param cb.action 改善 Wi-Fi 连接质量的操作建议。详见 {@link WLACC_SUGGEST_ACTION} 。
@@ -13578,7 +13578,7 @@ class AgoraRtcChannel extends EventEmitter {
    * 通信场景下的用户和直播场景下的主播加入频道后，远端会触发 `userJoined` 回调。
    *
    *
-   * 在网络状况不理想的情况下，客户端可能会与 Agora 的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 `rejoinChannelSuccess` 回调。
+   * 在网络状况不理想的情况下，客户端可能会与声网的服务器失去连接；SDK 会自动尝试重连，重连成功后，本地会触发 `rejoinChannelSuccess` 回调。
    *
    * @note 请确保用于生成 Token 的 App ID 和调用 {@link initialize} 时传入的 App ID 一致。
    *
@@ -13698,7 +13698,7 @@ class AgoraRtcChannel extends EventEmitter {
    * 用户成功加入频道后，默认订阅频道内所有其他用户的音频流和视频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 `mute` 方法实现。
    *
    * @note 为保证通信质量，请确保频道内使用同一类型的数据标识用户身份。即同一频道内需要统一使用 UID 或 User Account。
-   * 如果有用户通过 Agora Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
+   * 如果有用户通过 RTC Web SDK 加入频道，请确保 Web 加入的用户也是同样类型。
    *
    * @param token 在服务端生成的用于鉴权的 Token。详见[从服务端生成 Token](https://docs.agora.io/cn/Interactive%20Broadcast/token_server?platform=Electron)。
    * @param channelId 标识频道的频道名，最大不超过 64 字节。以下为支持的字符集范围（共 89 个字符）：
@@ -14022,7 +14022,7 @@ class AgoraRtcChannel extends EventEmitter {
    * 设置内置的加密方案。
    *
    * @deprecated 该方法自 v3.2.0 废弃，请改用 {@link enableEncryption}。
-   * Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
+   * RTC Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。
    *
    * 同一频道内的所有用户必须设置相同的加密方式和密码才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。
    *
@@ -15742,7 +15742,7 @@ declare interface AgoraRtcChannel {
   /** @zh-cn
    * 通话中每个用户的网络上下行 last mile 质量报告回调。
    *
-   * 该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到 Agora 边缘服务器的网络状态。
+   * 该回调描述每个用户在通话中的 last mile 网络状态，其中 last mile 是指设备到声网边缘服务器的网络状态。
    *
    * 该回调每 2 秒触发一次。如果远端有多个用户，该回调每 2 秒会被触发多次。
    *
@@ -16157,7 +16157,7 @@ declare interface AgoraRtcChannel {
    * @param cb.url 推流状态发生改变的 URL 地址
    * @param cb.state 推流状态：
    * - `0`: 推流未开始或已结束。成功调用 {@link removePublishStreamUrl} 后会返回该状态。
-   * - `1`: 正在连接 Agora 推流服务器和 RTMP 服务器。调用 {@link addPublishStreamUrl}
+   * - `1`: 正在连接声网推流服务器和 RTMP 服务器。调用 {@link addPublishStreamUrl}
    * 后会返回该状态。
    * - `2`: 推流正在进行。成功推流后，会返回该状态。
    * - `3`: 正在恢复推流。当 CDN 出现异常，或推流短暂中断时，SDK 会自动尝试恢复推流，并返回该状态。
@@ -16166,7 +16166,7 @@ declare interface AgoraRtcChannel {
    * {@link addPublishStreamUrl}，再调用 {@link removePublishStreamUrl} 尝试重连。
    * - `4`: 推流失败。失败后，你可以通过返回的错误码排查错误原因，也可以再次调用
    * {@link addPublishStreamUrl} 重新尝试推流。
-   * - `5`: SDK 正在与 Agora 推流服务器和 CDN 服务器断开连接。
+   * - `5`: SDK 正在与声网推流服务器和 CDN 服务器断开连接。
    * 当你调用 `remove` 或 `stop` 方法正常结束推流时，SDK 会依次报告推流状态为 `DISCONNECTING`、`IDLE`。
    * @param cb.code 推流错误码：
    * - `0`: 推流成功。
@@ -16183,7 +16183,7 @@ declare interface AgoraRtcChannel {
    * - `11`: 用户角色不是主播，该用户无法使用推流功能。请检查你的应用代码逻辑。
    * - `13`: 非转码推流情况下，调用了 `updateRtmpTranscoding` 或 `setLiveTranscoding` 方法更新转码属性。请检查你的应用代码逻辑。
    * - `14`: 主播的网络出错。
-   * - `15`: 你的 App ID 没有使用 Agora 推流服务的权限。请参考[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)开启推流服务。
+   * - `15`: 你的 App ID 没有使用声网推流服务的权限。请参考[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_windows?platform=Windows#前提条件)开启推流服务。
    */
   /**
    * Occurs when the state of Media Push changes.

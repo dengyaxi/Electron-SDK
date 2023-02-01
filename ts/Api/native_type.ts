@@ -404,7 +404,7 @@ export interface TranscodingConfig {
    * 用于旁路直播的输出视频的码率，单位为 Kbps，默认值为 400 Kbps。
    *
    * 用户可以根据码率参考表中的码率值进行设置；如果设置的码率超出合理范围，
-   * Agora 服务器会在合理区间内自动调整码率值。
+   * 声网服务器会在合理区间内自动调整码率值。
    */
   /**
    * Bitrate of the CDN live output video stream.
@@ -1268,7 +1268,7 @@ export interface RtcStats {
   /** Client-server latency(ms). */
   lastmileDelay: number;
   /** @zh-cn
-   * 使用抗丢包技术前，客户端到 Agora 边缘服务器的丢包率(%)。
+   * 使用抗丢包技术前，客户端到声网边缘服务器的丢包率(%)。
    */
   /** The packet loss rate (%) from the local client to Agora's edge server,
    * before using the anti-packet-loss method.
@@ -1481,7 +1481,7 @@ export interface LocalVideoStats {
    */
   codecType: number;
   /** @zh-cn
-   * 使用抗丢包技术前，客户端到 Agora 边缘服务器的视频丢包率 (%)。
+   * 使用抗丢包技术前，客户端到声网边缘服务器的视频丢包率 (%)。
    *
    * @since v3.2.0
    */
@@ -1542,7 +1542,7 @@ export interface LocalAudioStats {
    */
   sentBitrate: number;
   /** @zh-cn
-   * 使用抗丢包技术前，客户端到 Agora 边缘服务器的音频丢包率 (%)。
+   * 使用抗丢包技术前，客户端到声网边缘服务器的音频丢包率 (%)。
    *
    * @since v3.2.0
    */
@@ -2398,7 +2398,7 @@ export interface RemoteAudioStats {
    *
    * 一个统计周期（2 秒）内，音频丢帧率达到 4% 即记为一次音频卡顿。
    *
-   * Agora 使用 2 秒为时间切片统计音频卡顿时间，因此音频卡顿时长 = `totalFrozenTime` = 音频卡顿次数 x 2 x 1000 (ms)。
+   * 声网使用 2 秒为时间切片统计音频卡顿时间，因此音频卡顿时长 = `totalFrozenTime` = 音频卡顿次数 x 2 x 1000 (ms)。
    */
   /**
    * The total freeze time (ms) of the remote audio stream after the remote
@@ -2492,7 +2492,7 @@ export interface RemoteAudioStats {
    *
    * @since v3.3.1
    *
-   * Agora 实时音频 MOS 评分对应的主观音质感受如下：
+   * 声网实时音频 MOS 评分对应的主观音质感受如下：
    *
    * | MOS 分数   | 音质感受                                             |
    * |------------|----------------------------------------------------|
@@ -4827,7 +4827,7 @@ export enum CLOUD_PROXY_TYPE {
   TCP_PROXY = 2,
 }
 /** @zh-cn
- * Agora SDK 日志文件的配置。
+ * SDK 日志文件的配置。
  *
  * @since v3.3.1
  */
@@ -4861,7 +4861,7 @@ export interface LogConfig {
    */
   fileSize: number;
   /** @zh-cn
-   * Agora SDK 的日志输出等级:
+   * SDK 的日志输出等级:
    * - `0x0000`: 不输出任何日志。
    * - `0x0001`: (默认) 输出 FATAL、ERROR、WARN、INFO 级别的日志。我们推荐你将日志级别设为该等级。
    * - `0x0002`: 仅输出 FATAL、ERROR、WARN 级别的日志。
@@ -8715,8 +8715,8 @@ export interface EchoTestConfiguration {
    */
   enableVideo: boolean;
   /** @zh-cn
-   * 用于保证音视频通话回路测试安全性的 Token。如果你在 Agora 控制台未启用 App 证书，则不需要向该参数传值；
-   * 如果你在 Agora 控制台已启用 App 证书，则必须向该参数传入 Token，且在你生成 Token 时使用的 `uid` 必须为 0xFFFFFFFF，
+   * 用于保证音视频通话回路测试安全性的 Token。如果你在声网控制台未启用 App 证书，则不需要向该参数传值；
+   * 如果你在声网控制台已启用 App 证书，则必须向该参数传入 Token，且在你生成 Token 时使用的 `uid` 必须为 0xFFFFFFFF，
    * 使用的频道名必须为标识每个音视频通话回路测试的频道名。服务端生成 Token 的方式请参考[使用 Token 鉴权](https://docs.agora.io/cn/Interactive%20Broadcast/token_server?platform=All%20Platforms)。
    */
   /**
@@ -8817,7 +8817,7 @@ export interface ContentInspectConfig {
   /** @zh-cn
    * 附加信息，最大长度为 1024 字节。
    *
-   * SDK 会将附加信息和截图一起上传至 Agora 服务器；截图完成后，Agora 服务器会将附加信息随审核结果一起发送给你的服务器。
+   * SDK 会将附加信息和截图一起上传至声网服务器；截图完成后，Agora 服务器会将附加信息随审核结果一起发送给你的服务器。
    */
   /** The extra information, max length of extraInfo is 1024.
    *  The extra information will send to server with content(image).
